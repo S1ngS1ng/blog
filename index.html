@@ -15,26 +15,27 @@
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/favicon.png">
+    <link rel="icon" href="/blog/img/favicon.png">
   
   
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
   <link rel="stylesheet" href="/blog/css/style.css">
-  <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="/blog/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
   
     
     
   
   
-      <link rel="stylesheet" href="./fancybox/jquery.fancybox.css">
+      <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
   
   <!-- 加载特效 -->
-    <script src="./js/pace.js"></script>
-    <link href="./css/pace/pace-theme-flash.css" rel="stylesheet" />
+    <script src="/blog/js/pace.js"></script>
+    <link href="/blog/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
       var yiliaConfig = {
+          rootUrl: '/blog/',
           fancybox: true,
           animate: true,
           isHome: true,
@@ -52,14 +53,14 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
-        <a href="/" class="profilepic">
+        <a href="/blog/" class="profilepic">
             
-            <img lazy-src="/img/head.jpg" class="js-avatar">
+            <img lazy-src="/blog/img/head.jpg" class="js-avatar">
             
         </a>
 
         <hgroup>
-          <h1 class="header-author"><a href="/">S1ngS1ng</a></h1>
+          <h1 class="header-author"><a href="/blog/" title="Hi Mate">S1ngS1ng</a></h1>
         </hgroup>
 
         
@@ -189,17 +190,17 @@
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">S1ngS1ng</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
-            <a href="/" class="profilepic">
+            <a href="/blog/" class="profilepic">
                 
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                    <img lazy-src="/blog/img/head.jpg" class="js-avatar">
                 
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">S1ngS1ng</a></h1>
+              <h1 class="header-author"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
             </hgroup>
             
             <nav class="header-menu">
@@ -345,7 +346,7 @@
     <script>
         $(document).ready(function() {
             var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            var backgroundimg = "url(/blog/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
             $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
             $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
         })

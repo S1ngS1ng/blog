@@ -2120,71 +2120,71 @@ a {
   margin-right: 0;
 }
 #header .header-nav .social a.weibo {
-  background: url("/img/weibo.png") center no-repeat #f00;
+  background: url("../img/weibo.png") center no-repeat #f00;
   border: 1px solid #f00;
 }
 #header .header-nav .social a.rss {
-  background: url("/img/rss.png") center no-repeat #ef7522;
+  background: url("../img/rss.png") center no-repeat #ef7522;
   border: 1px solid #ef7522;
 }
 #header .header-nav .social a.github {
-  background: url("/img/github.png") center no-repeat #000;
+  background: url("../img/github.png") center no-repeat #000;
   border: 1px solid #000;
 }
 #header .header-nav .social a.facebook {
-  background: url("/img/facebook.png") center no-repeat #3b5998;
+  background: url("../img/facebook.png") center no-repeat #3b5998;
   border: 1px solid #3b5998;
 }
 #header .header-nav .social a.google {
-  background: url("/img/google.png") center no-repeat #f00;
+  background: url("../img/google.png") center no-repeat #f00;
   border: 1px solid #f00;
 }
 #header .header-nav .social a.twitter {
-  background: url("/img/twitter.png") center no-repeat #1ab2e8;
+  background: url("../img/twitter.png") center no-repeat #1ab2e8;
   border: 1px solid #1ab2e8;
 }
 #header .header-nav .social a.linkedin {
-  background: url("/img/linkedin.png") center no-repeat #00639a;
+  background: url("../img/linkedin.png") center no-repeat #00639a;
   border: 1px solid #00639a;
 }
 #header .header-nav .social a.zhihu {
-  background: url("/img/zhihu.png") center no-repeat #0663c1;
+  background: url("../img/zhihu.png") center no-repeat #0663c1;
   border: 1px solid #0663c1;
 }
 #header .header-nav .social a.douban {
-  background: url("/img/douban.png") center no-repeat #06c611;
+  background: url("../img/douban.png") center no-repeat #06c611;
   border: 1px solid #06c611;
 }
 #header .header-nav .social a.mail {
-  background: url("/img/mail.png") center no-repeat #3b98ba;
+  background: url("../img/mail.png") center no-repeat #3b98ba;
   border: 1px solid #3b98ba;
 }
 #header .header-nav .social a.QQ {
-  background: url("/img/qq.png") center no-repeat #00abff;
+  background: url("../img/qq.png") center no-repeat #00abff;
   border: 1px solid #00abff;
 }
 #header .header-nav .social a.wechat {
-  background: url("/img/wechat.png") center no-repeat #51c332;
+  background: url("../img/wechat.png") center no-repeat #51c332;
   border: 1px solid #51c332;
 }
 #header .header-nav .social a.pinterest {
-  background: url("/img/pinterest.png") center no-repeat #cd1f28;
+  background: url("../img/pinterest.png") center no-repeat #cd1f28;
   border: 1px solid #cd1f28;
 }
 #header .header-nav .social a.pinboard {
-  background: url("/img/pinboard.png") center no-repeat #224cf4;
+  background: url("../img/pinboard.png") center no-repeat #224cf4;
   border: 1px solid #224cf4;
 }
 #header .header-nav .social a.stackoverflow {
-  background: url("/img/stackoverflow.png") center no-repeat #fe7a15;
+  background: url("../img/stackoverflow.png") center no-repeat #fe7a15;
   border: 1px solid #fe7a15;
 }
 #header .header-nav .social a.Instagram {
-  background: url("/img/instagram.png") center no-repeat #125688;
+  background: url("../img/instagram.png") center no-repeat #125688;
   border: 1px solid #125688;
 }
 #header .header-nav .social a.segmentfault {
-  background: url("/img/segmentfault.png") center no-repeat #009a61;
+  background: url("../img/segmentfault.png") center no-repeat #009a61;
   border: 1px solid #009a61;
 }
 #header .switch-part {
@@ -3365,7 +3365,7 @@ color
   content: attr(data-lang) " code";
   display: block;
   background-color: #0083a0;
-  margin: 0 -16px 16px -16px;
+  margin: 0 -10px 16px -10px;
   padding: 8px 16px;
   color: #efefef;
   font-family: Lato, "Microsoft YaHei", sans-serif;
@@ -3377,7 +3377,6 @@ color
 .article-entry .highlight {
   border-radius: 4px;
   padding: 0 10px;
-  overflow: hidden;
 }
 .article-entry .highlight pre {
   border: none;
@@ -3421,17 +3420,13 @@ color
 }
 .article-entry .highlight .gutter pre {
   text-align: right;
-  padding-right: 5px;
-  margin-right: 10px;
-  border-right: 2px solid #808080;
+  padding-right: 20px;
 }
 .article-entry .highlight .gutter pre .line {
   text-shadow: none;
 }
 .article-entry .highlight .line {
   font-size: 15px;
-  height: 20px;
-  line-height: 20px;
 }
 .article-entry .gist {
   margin: 0 -20px;
