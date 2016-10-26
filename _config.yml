@@ -4,10 +4,10 @@
 
 # Site
 title: S1ngS1ng
-subtitle:
-description:
+subtitle: 菜鸡前端
+description: 修身治国平天下，洗脸刷牙写代码
 author: S1ngS1ng
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -48,12 +48,12 @@ default_category: uncategorized
 category_map:
 tag_map:
 
-# Date / Time format
+# Date / Time format ZZ设置时区 -0500
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+time_format: HH:mm:ss ZZ
 
 # Pagination
 ## Set per_page to 0 to disable pagination
