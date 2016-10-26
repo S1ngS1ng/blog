@@ -2625,8 +2625,10 @@ color
 .article-entry li code {
   padding: 1px 3px;
   margin: 0 3px;
-  background: #ddd;
-  border: 1px solid #ccc;
+  color: #999;
+  background: #002b36;
+  border: 1px dashed #ccc;
+  border-radius: 3px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   word-wrap: break-word;
   font-size: 14px;
@@ -2717,6 +2719,12 @@ color
 }
 .article-entry figure table tbody tr:hover {
   background: none;
+}
+.article-entry code {
+  color: #999;
+  background: #002b36;
+  padding: 1px 3px;
+  border-radius: 5px;
 }
 .article-meta {
   width: 150px;
@@ -3201,7 +3209,7 @@ color
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
-  color: #999;
+  color: #9e90ff;
 }
 .article-entry pre,
 .article-entry code {
@@ -3223,7 +3231,7 @@ color
   box-sizing: border-box;
 }
 .article-entry code {
-  background: #eee;
+  background: #002b36;
   padding: 0 0.3em;
   border: none;
 }
@@ -3239,7 +3247,7 @@ color
 .article-entry p code {
   margin: 0 3px;
   border: dashed 1px #000;
-  color: #fff;
+  color: #999;
   padding: 1px 8px;
   font-size: 90%;
   -webkit-border-radius: 5px;
@@ -3377,6 +3385,7 @@ color
 .article-entry .highlight {
   border-radius: 4px;
   padding: 0 10px;
+  color: #fff;
 }
 .article-entry .highlight pre {
   border: none;
@@ -3403,7 +3412,7 @@ color
 }
 .article-entry .highlight figcaption {
   font-size: 0.85em;
-  color: highlight-comment;
+  color: #75715e;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -3427,6 +3436,7 @@ color
 }
 .article-entry .highlight .line {
   font-size: 15px;
+  height: 1.5em;
 }
 .article-entry .gist {
   margin: 0 -20px;
@@ -3460,7 +3470,7 @@ color
 }
 .article-entry .gist .gist-file .gist-meta {
   background: #002b36;
-  color: highlight-comment;
+  color: #75715e;
   font: 0.85em "Lucida Grande", Verdana, "Helvetica Neue", Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
@@ -3483,7 +3493,7 @@ pre .tag {
 pre .title {
   color: #66d9ef;
 }
-pre .strings {
+pre .string {
   color: #2aa198;
 }
 pre .attribute {
@@ -3507,7 +3517,7 @@ pre .class .params {
 pre .params,
 pre .function,
 pre .css .value {
-  color: #fff;
+  color: #fd971f;
 }
 pre .css ~ * .tag,
 pre .at_rule,
