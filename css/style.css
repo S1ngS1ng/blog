@@ -2626,7 +2626,7 @@ color
   padding: 1px 3px;
   margin: 0 3px;
   color: #999;
-  background: #002b36;
+  background: rgba(217,83,79,0.45);
   border: 1px dashed #ccc;
   border-radius: 3px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
@@ -2722,7 +2722,7 @@ color
 }
 .article-entry code {
   color: #999;
-  background: #002b36;
+  background: rgba(217,83,79,0.45);
   padding: 1px 3px;
   border-radius: 5px;
 }
@@ -3200,7 +3200,7 @@ color
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #002b36;
+  background: #282a36;
   margin: 10px 0;
   padding: 10px 10px;
   overflow: auto;
@@ -3209,7 +3209,7 @@ color
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
-  color: #9e90ff;
+  color: #009688;
 }
 .article-entry pre,
 .article-entry code {
@@ -3231,18 +3231,18 @@ color
   box-sizing: border-box;
 }
 .article-entry code {
-  background: #002b36;
+  background: rgba(217,83,79,0.45);
   padding: 0 0.3em;
   border: none;
 }
 .article-entry pre {
-  color: #fff;
+  color: #c3cee3;
 }
 .article-entry pre code {
   background: none;
   text-shadow: none;
   padding: 0;
-  color: #fff;
+  color: #c3cee3;
 }
 .article-entry p code {
   margin: 0 3px;
@@ -3254,7 +3254,7 @@ color
   border-radius: 5px;
   font-family: Consolas, "Courier New", Courier;
   text-shadow: none;
-  background-color: #002b36;
+  background-color: rgba(217,83,79,0.45);
   word-wrap: break-word;
   white-space: pre;
 }
@@ -3385,7 +3385,7 @@ color
 .article-entry .highlight {
   border-radius: 4px;
   padding: 0 10px;
-  color: #fff;
+  color: #c3cee3;
 }
 .article-entry .highlight pre {
   border: none;
@@ -3412,7 +3412,7 @@ color
 }
 .article-entry .highlight figcaption {
   font-size: 0.85em;
-  color: #75715e;
+  color: #546e7a;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -3443,7 +3443,7 @@ color
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #002b36;
+  background: #282a36;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -3469,8 +3469,8 @@ color
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #002b36;
-  color: #75715e;
+  background: #282a36;
+  color: #546e7a;
   font: 0.85em "Lucida Grande", Verdana, "Helvetica Neue", Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
@@ -3484,31 +3484,16 @@ color
 .article-entry .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
-pre .doctype {
-  color: #586e75;
-}
-pre .tag {
-  color: #839496;
-}
-pre .title {
-  color: #66d9ef;
-}
-pre .string {
-  color: #2aa198;
-}
-pre .attribute {
-  color: #b58900;
-}
 pre .cpp,
 pre .annotation,
 pre .command {
   color: #258fb8;
 }
 pre .comment {
-  color: #75715e;
+  color: #546e7a;
 }
 pre .keyword {
-  color: #66d9ef;
+  color: #c792ea;
 }
 pre .function,
 pre .class .params {
@@ -3517,18 +3502,18 @@ pre .class .params {
 pre .params,
 pre .function,
 pre .css .value {
-  color: #fd971f;
+  color: #ff5370;
 }
 pre .css ~ * .tag,
 pre .at_rule,
 pre .preprocessor {
-  color: #f92672;
+  color: code-tag;
 }
 pre .built_in,
 pre .class,
 pre .css ~ * .class,
 pre .function {
-  color: #a6e22e;
+  color: code-attr;
 }
 pre .value,
 pre .number {
@@ -3536,13 +3521,58 @@ pre .number {
 }
 pre .id,
 pre .css ~ * .id {
-  color: #fd971f;
+  color: #ff5370;
 }
 pre .link_label,
 pre .code,
 pre .operator,
 pre .link_url {
   color: #258fb8;
+}
+figure.html pre .doctype {
+  color: #c792ea;
+}
+figure.html pre .tag {
+  color: #ff5370;
+}
+figure.html pre .attr {
+  color: #c792ea;
+}
+figure.html pre .title {
+  color: #66d9ef;
+}
+figure.html pre .string {
+  color: #c3e887;
+}
+figure.css pre [class^="selector"] {
+  color: #ffc251;
+}
+figure.css pre .attribute {
+  color: #6dc2b8;
+}
+figure.css pre .value {
+  color: #ffea7d;
+}
+figure.css pre .built_in {
+  color: #c792ea;
+}
+figure.css pre .string {
+  color: #c3e887;
+}
+figure.css pre .number {
+  color: #f187b3;
+}
+figure.javascript pre .function {
+  color: #c3cee3;
+}
+figure.javascript pre .title {
+  color: #4caf50;
+}
+figure.javascript pre .number {
+  color: #f187b3;
+}
+figure.javascript pre .string {
+  color: #c3e887;
 }
 #footer {
   font-size: 12px;
