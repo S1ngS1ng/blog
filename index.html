@@ -154,7 +154,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/blog/tags/Tools-HammerSpoon/" style="font-size: 10px;">Tools, HammerSpoon</a>
                     </div>
                 </section>
                 
@@ -239,6 +239,143 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-HammerSpoon-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/11/20/HammerSpoon-1/" class="article-date">
+      <time datetime="2016-11-21T04:23:33.000Z" itemprop="datePublished">2016-11-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/11/20/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p><a href="http://www.hammerspoon.org/" target="_blank" rel="external">HammerSpoon</a> 是一个<strong>可以用来进行窗口管理</strong>的 App，开源免费。当然，功能也不仅限于此</p>
+<p>本文旨在介绍如何用 HammerSpoon 配置窗口管理功能。类似的软件，收费的有 <a href="http://www.irradiatedsoftware.com/sizeup/" target="_blank" rel="external">SizeUp</a>，<a href="https://manytricks.com/moom/" target="_blank" rel="external">Moom</a> 和 <a href="http://mizage.com/divvy/" target="_blank" rel="external">Divvy</a>, 免费的有 <a href="https://www.spectacleapp.com/" target="_blank" rel="external">Spectacle</a> 和 <a href="https://github.com/jigish/slate" target="_blank" rel="external">Slate</a></p>
+<p>SizeUp 和 Divvy 在功能上各有所长。SizeUp 方便快速调节窗口位置，但不方便快速调节窗口大小，Divvy反之。虽然也可以在 Divvy 里设置快速 Resize 到指定大小的快捷键，但只是比较基础的设置，不能实时调整。而 Spectacle 和 Slate 更像是这两个软件的功能集合，而且比他们都强大，只是在配置方面要花些时间。Slate 的原作者已经 3 年没管过这个项目了，但这个 <a href="https://github.com/mattr-/slate" target="_blank" rel="external">fork</a> 还是有人维护的</p>
+<p>推荐HammerSpoon，因为它的窗口管理功能足够强大。而且对开发者很友好，有控制台可以 Debug。语言采用 Lua，不难上手。另外，还有<strong>茫茫多</strong>的系统 API 可以随意调用。所以说，HammerSpoon 绝不仅仅是一个窗口管理软件</p>
+<p>如果你符合以下这几点：</p>
+<ol>
+<li>使用 MacOS</li>
+<li>想用键盘调整窗口大小和位置</li>
+<li>有多个外接屏幕，想用快捷键把窗口在屏幕之间扔来扔去</li>
+</ol>
+<p>那么，请继续往下读</p>
+<p>不想看配置细节或者已经掌握了配置方法的朋友，可以直接跳到下载页面，载入我的配置文件，只需要几分钟，你就可以告别这些不科学的操作了</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>我们先来看看配置好之后，有什么效果，随便举两个例子：</p>
+<p><img src="https://camo.githubusercontent.com/b1b1c3f8fb8792e580751ef76ba8b08b88997ed0/687474703a2f2f692e696d6775722e636f6d2f564e6f376e43492e676966" alt=""></p>
+<p><img src="https://camo.githubusercontent.com/427c887dec6102d60f4b047b9eedcadb9ed630e7/687474703a2f2f692e696d6775722e636f6d2f764971444d55442e676966" alt=""></p>
+<p>按照这篇教程配置，你可以用<strong>键盘快捷键</strong>触发以下动作：</p>
+<ol>
+<li>在当前的屏幕<strong>全屏化</strong>某个窗口，适用于任何屏幕和窗口</li>
+<li>在当前屏幕上居中窗口</li>
+<li>把窗口大小调整到屏幕大小的一半（上下左右）。<strong>适用于任何屏幕和窗口</strong></li>
+<li>把当前窗口扔到其他显示器上，<strong><em>并且全屏</em></strong>（可选）</li>
+<li><strong>任意调整</strong>当前窗口大小</li>
+<li>关于任意移动窗口，我没把这个功能写进来，因为自己不太需要。如果你需要实现这个功能，看完这篇博客就会了</li>
+</ol>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><ul>
+<li>首先是 <a href="https://github.com/Hammerspoon/hammerspoon" target="_blank" rel="external">HammerSpoon</a> 的主程序。这个一定要下载安装<ul>
+<li>先找到当前的<a href="https://github.com/Hammerspoon/hammerspoon/releases/" target="_blank" rel="external">最新版</a></li>
+<li>下载安装，把图标拖到 Application 里面去</li>
+</ul>
+</li>
+<li>我的配置文件在这里：<a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/init.lua" target="_blank" rel="external">init.lua</a>，懒得自己配置了就用这个好了</li>
+<li>把 <code>init.lua</code> 放到 <code>~/.hammerspoon/</code> 里面去，然后 Reload 一下就搞定了</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/README.md" target="_blank" rel="external">README</a> 文件里写的很清楚了，这里还是列出来吧（快捷键均为 MacOS 的）：</p>
+<ul>
+<li>把窗口移到另一个屏幕<ul>
+<li><code>Ctrl-Alt + 左</code> 移到左边的屏幕</li>
+<li><code>Ctrl-Alt + 右</code> 移到右边的屏幕</li>
+</ul>
+</li>
+<li>全屏<ul>
+<li><code>Ctrl-Alt-Command + M</code></li>
+</ul>
+</li>
+<li>把窗口放到屏幕中心<ul>
+<li><code>Ctrl-alt-Command + C</code></li>
+</ul>
+</li>
+<li>设置窗口大小为屏幕大小的一半<ul>
+<li><code>Ctrl-Alt-Command + 左</code> 宽度为一半，靠左</li>
+<li><code>Ctrl-Alt-Command + 右</code> 宽度为一半，靠右</li>
+<li><code>Ctrl-Alt-Command + 上</code> 高度为一半，靠上</li>
+<li><code>Ctrl-Alt-Command + 下</code> 高度为一半，靠下</li>
+</ul>
+</li>
+<li>设置窗口大小，以左、上为基准 （意思是左边界和上边界不动）<ul>
+<li><code>Ctrl-Alt-Shift + 左</code> 窗口右侧边左移</li>
+<li><code>Ctrl-Alt-Shift + 右</code> 窗口右侧边右移</li>
+<li><code>Ctrl-Alt-Shift + 上</code> 窗口上边界上移</li>
+<li><code>Ctrl-Alt-Shift + 下</code> 窗口上边界下移</li>
+</ul>
+</li>
+<li>设置窗口大小，以右、下为基准<ul>
+<li><code>Alt-Command-Shift + 左</code> 窗口左侧边左移</li>
+<li><code>Alt-Command-Shift + 右</code> 窗口左侧边右移</li>
+<li><code>Alt-Command-Shift + 上</code> 窗口下边界上移</li>
+<li><code>Alt-Command-Shift + 下</code> 窗口下边界下移</li>
+</ul>
+</li>
+</ul>
+<p>其中，居中、全屏、窗口移到其他屏幕、窗口设置为一半屏幕大小的快捷键都和 SizeUp 的一样。至于窗口大小调整，只要记住<code>Ctrl-Alt-Shift</code> 是保持左边和下边不动，<code>Command-Alt-Shift</code> 是保持右边和下边不动就好了。毕竟，<code>Ctrl</code> 在 <code>Command</code> 的左边</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置方面，HammerSpoon 本身就提供了众多的 API，不光有它自己的，还有来自 Mac OS 系统的。完整的 API 文档在<a href="http://www.hammerspoon.org/docs/index.html" target="_blank" rel="external">这里</a></p>
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>首先，根据屏幕的长宽比，把屏幕分成 Grid（网格）。比如 16:9 的屏幕，就分成 8 * 4</p>
+<p>比如一个 4 <em> 2 的网格，就是这样：<br>![Grid 4 </em> 2](./HammerSpoon-1/Grid4*2.jpg)</p>
+<p>那么，通过设置窗口占多少个格子，就可以实现快速布局了</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>以下的是配置文件中比较重要的几个 API：</p>
+<ol>
+<li><a href="http://www.hammerspoon.org/docs/hs.screen.html" target="_blank" rel="external">hs.screen</a> - 与屏幕（显示器）相关的 API，可以获取屏幕参数，设置 Grid（网格）</li>
+<li><a href="http://www.hammerspoon.org/docs/hs.screen.watcher.html" target="_blank" rel="external">hs.screen.watcher</a> - 用于监听屏幕（显示器）分辨率、数量变化等的 watcher</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Tools-HammerSpoon/">Tools, HammerSpoon</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
