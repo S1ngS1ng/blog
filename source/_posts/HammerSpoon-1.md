@@ -81,6 +81,15 @@ SizeUp 和 Divvy 在功能上各有所长。SizeUp 方便快速调节窗口位�
 
 配置方面，HammerSpoon 本身就提供了众多的 API，不光有它自己的，还有来自 Mac OS 系统的。完整的 API 文档在[这里](http://www.hammerspoon.org/docs/index.html)
 
+### API
+以下是我的配置文件中，用到的 API：
+1. [hs.screen](http://www.hammerspoon.org/docs/hs.screen.html) - 与屏幕（显示器）相关的 API，可以获取屏幕参数，设置 Grid（网格）
+2. [hs.screen.watcher](http://www.hammerspoon.org/docs/hs.screen.watcher.html) - 用于监听屏幕（显示器）分辨率、数量变化等的 watcher
+3. [hs.window](http://www.hammerspoon.org/docs/hs.window.html) - 与应用程序窗口相关的 API，提供了获取激活窗口，移动窗口到其他显示器，移动窗口到屏幕中心等方法
+4. [hs.grid](http://www.hammerspoon.org/docs/hs.grid.html) - 用来设置 Grid（网格）。我的配置文件中，实现窗口大小调整和位置调整，都是基于这个 API
+5. [hs.alert](http://www.hammerspoon.org/docs/hs.alert.html) - 用来显示提示信息。位置默认为屏幕中央，黑底白字，大概三秒钟之后消失。类似功能的还有 `hs.notify`，也就是系统的 Notification（通知）
+6. [hs.hotkey](http://www.hammerspoon.org/docs/hs.hotkey.html) - 用来设置快捷键。我的配置文件中调用的是它的 `bind` 方法
+
 ### 基本原理
 首先，根据屏幕的长宽比，把屏幕分成 Grid（网格）。比如 16:9 的屏幕，就分成 8 * 4
 
@@ -88,9 +97,4 @@ SizeUp 和 Divvy 在功能上各有所长。SizeUp 方便快速调节窗口位�
 {% asset_img Grid-4-2.jpg Grid Image %}
 
 那么，通过设置窗口占多少个格子，就可以实现快速布局了
-
-### API
-以下的是配置文件中比较重要的几个 API：
-1. [hs.screen](http://www.hammerspoon.org/docs/hs.screen.html) - 与屏幕（显示器）相关的 API，可以获取屏幕参数，设置 Grid（网格）
-2. [hs.screen.watcher](http://www.hammerspoon.org/docs/hs.screen.watcher.html) - 用于监听屏幕（显示器）分辨率、数量变化等的 watcher
 
