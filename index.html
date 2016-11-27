@@ -297,8 +297,8 @@
 <li>下载安装，把图标拖到 Application 里面去</li>
 </ul>
 </li>
-<li>我的配置文件在这里：<a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/init.lua" target="_blank" rel="external">init.lua</a>，懒得自己配置了就用这个好了</li>
-<li>把 <code>init.lua</code> 放到 <code>~/.hammerspoon/</code> 里面去，然后 Reload 一下就搞定了</li>
+<li>我的配置文件在这里：<a href="https://github.com/S1ngS1ng/HammerSpoon" target="_blank" rel="external">S1ngS1ng - HammerSpoon</a>，懒得自己配置了就用这个好了</li>
+<li>可以直接 <code>git clone</code> 我的 HammerSpoon 库，并把我的 <a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/init.lua" target="_blank" rel="external">init.lua</a> 以及 <a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/window-management.lua" target="_blank" rel="external">window-management.lua</a> 放到本地的 <code>~/.hammerspoon/</code> 文件夹中，然后 Reload 一下就可以使用了</li>
 </ul>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/README.md" target="_blank" rel="external">README</a> 文件里写的很清楚了，这里还是列出来吧（快捷键均为 MacOS 的）：</p>
 <ul>
@@ -341,16 +341,17 @@
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置方面，HammerSpoon 本身就提供了众多的 API，不光有它自己的，还有来自 Mac OS 系统的。完整的 API 文档在<a href="http://www.hammerspoon.org/docs/index.html" target="_blank" rel="external">这里</a></p>
 <h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>以下是我的配置文件中，用到的 API：</p>
 <ol>
+<li><a href="http://www.hammerspoon.org/docs/hs.alert.html" target="_blank" rel="external">hs.alert</a> - 用来显示提示信息。位置默认为屏幕中央，黑底白字，大概三秒钟之后消失。类似功能的还有 <code>hs.notify</code>，也就是系统的 Notification（通知）</li>
+<li><a href="http://www.hammerspoon.org/docs/hs.grid.html" target="_blank" rel="external">hs.grid</a> - 用来设置 Grid（网格）。我的配置文件中，实现窗口大小调整和位置调整，都是基于这个 API</li>
+<li><a href="http://www.hammerspoon.org/docs/hs.hotkey.html" target="_blank" rel="external">hs.hotkey</a> - 用来设置快捷键。我的配置文件中调用的是它的 <code>bind</code> 方法</li>
 <li><a href="http://www.hammerspoon.org/docs/hs.screen.html" target="_blank" rel="external">hs.screen</a> - 与屏幕（显示器）相关的 API，可以获取屏幕参数，设置 Grid（网格）</li>
 <li><a href="http://www.hammerspoon.org/docs/hs.screen.watcher.html" target="_blank" rel="external">hs.screen.watcher</a> - 用于监听屏幕（显示器）分辨率、数量变化等的 watcher</li>
 <li><a href="http://www.hammerspoon.org/docs/hs.window.html" target="_blank" rel="external">hs.window</a> - 与应用程序窗口相关的 API，提供了获取激活窗口，移动窗口到其他显示器，移动窗口到屏幕中心等方法</li>
-<li><a href="http://www.hammerspoon.org/docs/hs.grid.html" target="_blank" rel="external">hs.grid</a> - 用来设置 Grid（网格）。我的配置文件中，实现窗口大小调整和位置调整，都是基于这个 API</li>
-<li><a href="http://www.hammerspoon.org/docs/hs.alert.html" target="_blank" rel="external">hs.alert</a> - 用来显示提示信息。位置默认为屏幕中央，黑底白字，大概三秒钟之后消失。类似功能的还有 <code>hs.notify</code>，也就是系统的 Notification（通知）</li>
-<li><a href="http://www.hammerspoon.org/docs/hs.hotkey.html" target="_blank" rel="external">hs.hotkey</a> - 用来设置快捷键。我的配置文件中调用的是它的 <code>bind</code> 方法</li>
 </ol>
-<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>首先，根据屏幕的长宽比，把屏幕分成 Grid（网格）。比如 16:9 的屏幕，就分成 8 * 4</p>
-<p>比如一个 4 * 2 的网格，就是这样：<br><img src="/blog/2016/11/23/HammerSpoon-1/Grid-4-2.jpg" alt="Grid Image" title="Grid Image"></p>
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>首先，根据屏幕的长宽比，把屏幕分成 Grid（网格）。比如 16:9 的屏幕，就分成 8 * 4，也就是这样：</p>
+<img src="/blog/2016/11/23/HammerSpoon-1/GridExample.jpg" alt="GridExample" title="GridExample">
 <p>那么，通过设置窗口占多少个格子，就可以实现快速布局了</p>
+<h3 id="Lua-语言"><a href="#Lua-语言" class="headerlink" title="Lua 语言"></a>Lua 语言</h3><p>Lua 语言并不是很难学。如果有 Python 或者 JavaScript 的基础，写起配置来其实并不会太难</p>
 
       
     </div>
