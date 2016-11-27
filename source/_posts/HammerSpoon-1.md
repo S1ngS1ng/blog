@@ -47,8 +47,8 @@ SizeUp 和 Divvy 在功能上各有所长。SizeUp 方便快速调节窗口位�
 * 首先是 [HammerSpoon](https://github.com/Hammerspoon/hammerspoon) 的主程序。这个一定要下载安装
     * 先找到当前的[最新版](https://github.com/Hammerspoon/hammerspoon/releases/)
     * 下载安装，把图标拖到 Application 里面去
-* 我的配置文件在这里：[init.lua](https://github.com/S1ngS1ng/HammerSpoon/blob/master/init.lua)，懒得自己配置了就用这个好了
-* 把 `init.lua` 放到 `~/.hammerspoon/` 里面去，然后 Reload 一下就搞定了
+* 我的配置文件在这里：[S1ngS1ng - HammerSpoon](https://github.com/S1ngS1ng/HammerSpoon)，懒得自己配置了就用这个好了
+* 可以直接 `git clone` 我的 HammerSpoon 库，并把我的 [init.lua](https://github.com/S1ngS1ng/HammerSpoon/blob/master/init.lua) 以及 [window-management.lua](https://github.com/S1ngS1ng/HammerSpoon/blob/master/window-management.lua) 放到本地的 `~/.hammerspoon/` 文件夹中，然后 Reload 一下就可以使用了
 
 ## 快捷键
 [README](https://github.com/S1ngS1ng/HammerSpoon/blob/master/README.md) 文件里写的很清楚了，这里还是列出来吧（快捷键均为 MacOS 的）：
@@ -83,18 +83,21 @@ SizeUp 和 Divvy 在功能上各有所长。SizeUp 方便快速调节窗口位�
 
 ### API
 以下是我的配置文件中，用到的 API：
-1. [hs.screen](http://www.hammerspoon.org/docs/hs.screen.html) - 与屏幕（显示器）相关的 API，可以获取屏幕参数，设置 Grid（网格）
-2. [hs.screen.watcher](http://www.hammerspoon.org/docs/hs.screen.watcher.html) - 用于监听屏幕（显示器）分辨率、数量变化等的 watcher
-3. [hs.window](http://www.hammerspoon.org/docs/hs.window.html) - 与应用程序窗口相关的 API，提供了获取激活窗口，移动窗口到其他显示器，移动窗口到屏幕中心等方法
-4. [hs.grid](http://www.hammerspoon.org/docs/hs.grid.html) - 用来设置 Grid（网格）。我的配置文件中，实现窗口大小调整和位置调整，都是基于这个 API
-5. [hs.alert](http://www.hammerspoon.org/docs/hs.alert.html) - 用来显示提示信息。位置默认为屏幕中央，黑底白字，大概三秒钟之后消失。类似功能的还有 `hs.notify`，也就是系统的 Notification（通知）
-6. [hs.hotkey](http://www.hammerspoon.org/docs/hs.hotkey.html) - 用来设置快捷键。我的配置文件中调用的是它的 `bind` 方法
+1. [hs.alert](http://www.hammerspoon.org/docs/hs.alert.html) - 用来显示提示信息。位置默认为屏幕中央，黑底白字，大概三秒钟之后消失。类似功能的还有 `hs.notify`，也就是系统的 Notification（通知）
+2. [hs.grid](http://www.hammerspoon.org/docs/hs.grid.html) - 用来设置 Grid（网格）。我的配置文件中，实现窗口大小调整和位置调整，都是基于这个 API
+3. [hs.hotkey](http://www.hammerspoon.org/docs/hs.hotkey.html) - 用来设置快捷键。我的配置文件中调用的是它的 `bind` 方法
+4. [hs.screen](http://www.hammerspoon.org/docs/hs.screen.html) - 与屏幕（显示器）相关的 API，可以获取屏幕参数，设置 Grid（网格）
+5. [hs.screen.watcher](http://www.hammerspoon.org/docs/hs.screen.watcher.html) - 用于监听屏幕（显示器）分辨率、数量变化等的 watcher
+6. [hs.window](http://www.hammerspoon.org/docs/hs.window.html) - 与应用程序窗口相关的 API，提供了获取激活窗口，移动窗口到其他显示器，移动窗口到屏幕中心等方法
 
 ### 基本原理
-首先，根据屏幕的长宽比，把屏幕分成 Grid（网格）。比如 16:9 的屏幕，就分成 8 * 4
+首先，根据屏幕的长宽比，把屏幕分成 Grid（网格）。比如 16:9 的屏幕，就分成 8 * 4，也就是这样：
 
-比如一个 4 * 2 的网格，就是这样：
-{% asset_img Grid-4-2.jpg Grid Image %}
+{% asset_img GridExample.jpg GridExample %}
 
 那么，通过设置窗口占多少个格子，就可以实现快速布局了
+
+### Lua 语言
+Lua 语言并不是很难学。如果有 Python 或者 JavaScript 的基础，写起配置来其实并不会太难
+
 
