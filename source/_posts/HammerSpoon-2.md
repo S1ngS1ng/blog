@@ -130,4 +130,11 @@ voxBindTable({
 2. 对于没有封装的，也很简单。按照上面提到的方法查 API 文档，比如 Spotify 也提供了一个叫 `pause` 的 API，那就可以在控制台里执行这段代码测试：`hs.applescript.applescript('tell application "Spotify" to pause')`。理论上会让 Spotify 暂停播放
 3. 用好控制台 * 3，可以帮你在写代码过程中省不少时间。关于一些小技巧，我会在下一篇文章中提到
 
+# 写在最后
+这是 HammerSpoon 的第二篇。下一篇打算聊聊全局的快捷键绑定，已经实现的功能是，类似于 VIM，通过 `hyper + hjkl` 的方式来实现全局的光标移动（方向键）。涉及到的事儿可能比较多，感兴趣的朋友可以先试用一下，提提意见和建议。代码在[这里](https://github.com/S1ngS1ng/HammerSpoon/blob/master/vim-binding.lua)，文档在[这里](https://github.com/S1ngS1ng/HammerSpoon/blob/master/README-cn.md)
+
+---
+> 欢迎在页面下方评论和留言。如果你喜欢这篇文章，请帮我点个赞👍
+
+
 
