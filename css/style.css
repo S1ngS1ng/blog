@@ -2516,6 +2516,8 @@ color
 }
 .article img {
   max-width: 100%;
+  display: block;
+  margin: auto;
   vertical-align: -webkit-baseline-middle;
 }
 @-webkit-keyframes cd-bounce-1 {
