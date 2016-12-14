@@ -11,7 +11,11 @@ tags: [Tools,HammerSpoon]
 # 概述
 由于地区限制和版权原因，不得不忍痛割爱网易云音乐。从那之后便开始寻找一款 MacOS 上**适合自己**的播放器
 
-先说说本篇博客的主角，[VOX](https://vox.rocks/mac-music-player)。作为一个颜控，第一眼确实被它的外观吸引。同时，他们提供一个叫 [LOOP](https://vox.rocks/loop-music-cloud) 的音乐服务，可以简单理解为音乐云盘。用户可以把自己的歌曲上传到 LOOP 提供的云空间，然后就可以通过云或者下载到本地播放了。这个空间是 **"没有上限的!!!".repeat(3)**，至少现在是这样
+先说说本篇博客的主角，[VOX](https://vox.rocks/mac-music-player)。作为一个颜控，第一眼确实被它的外观吸引：
+
+{% asset_img vox-example.jpg vox-example %}
+
+同时，他们提供一个叫 [LOOP](https://vox.rocks/loop-music-cloud) 的音乐服务，可以简单理解为音乐云盘。用户可以把自己的歌曲上传到 LOOP 提供的云空间，然后就可以通过云或者下载到本地播放了。这个空间是 **"没有上限的!!!".repeat(3)**，至少现在是这样
 
 通过一段时间的调查，做了一个价格、服务方面的横向对比，分享给大家，如有错误欢迎指正：
 
@@ -58,6 +62,72 @@ AppleScript 的这个语法，其实和英语表达非常接近（接近自然�
 ### App 接口
 那么现在，我们只需要找到应用程序接口，就大功告成了。我们可以在系统里直接查看，步骤如下：
 
-1. 打开这个叫 ScriptEditor 的东西。
+1. 打开这个叫 ScriptEditor 的东西 （中文系统下叫“脚本编辑器”）
+  {% asset_img open-script-editor.jpg open-script-ediotor %}
+
+2. 然后就得到了这个界面，不用管它，点 "Done" 就好
+  {% asset_img script-editor-initialize.jpg script-editor-initialize %}
+
+3. 点击 `File -> Open Dictionary`，找到你想要折腾的 App，打开（注：如果这里面没有，那多半是没有文档，或者不支持，我没测试过所有 App）
+  {% asset_img open-dictionary.jpg open-dictionary %}
+
+4. 比如我们打开 VOX，就得到了如下的内容：
+  {% asset_img vox-api.jpg vox-api %}
+  
+至此，一切都变得很简单了。我们只要写这个代码 `tell application "VOX" to play`并执行，就可以让 VOX 播放歌曲了。同样道理，`tell application "VOX" to next` 就是切换到下一首歌。至于每个 API 是干什么的，文档里都有说明
+
+当然，我们也可以用同样的方式找到不仅限于 iTunes，Spotify，iTerm，Alfred，Atom 的 API，然后写一些自己想实现的功能
+
+## 与 HammerSpoon 合体
+说了半天，终于到了合体的时候。用 VOX 的朋友可以直接使用我封装好的 [API](http://www.hammerspoon.org/docs/hs.vox.html)
+
+### 基本操作
+代码也变得非常简单，比如，我们想把 `ctrl + j` 设置为切换播放/暂停。那么只需要：
+```lua
+hs.hotkey.bind({"ctrl"}, "j", hs.vox.playpause())
+```
+
+我的代码中，在快捷键绑定部分又封装了一次而已，封装部分是这样：
+
+```lua
+local voxHyper = {"cmd", "alt", "shift"}
+
+local function voxBindTable(keyFuncTable, hyper)
+  for key,fn in pairs(keyFuncTable) do
+    hs.hotkey.bind(hyper or voxHyper, key, function() fn() end)
+  end
+end
+```
+
+这个方法，首先接收一个 `table`(可以理解为 JS 的对象，或者，HashMap？)，然后接收 HyperKey 设置。我的 HyperKey 设置为 `cmd + alt + shift`。然后遍历传入的 `table`，把每一组的 `key` 和回调方法绑定上
+
+调用起来就很方便了。我把 `hyper + j` 绑定为切换播放/暂停，`hyper + h` 绑定为上一首
+
+```lua
+voxBindTable({
+  j = hs.vox.playpause,
+  h = hs.vox.previous,
+  l = hs.vox.next,
+  k = hs.vox.trackInfo,
+  i = hs.vox.togglePlaylist
+})
+```
+
+### 显示歌曲信息
+之前提到了 [hs.alert](http://www.hammerspoon.org/docs/hs.alert.html)。用处就是，读取 API 获得当前曲目的歌曲信息 （歌名，演唱者以及专辑名），然后显示在屏幕上，持续 2 秒。效果如下图：
+
+  {% asset_img vox-track-info.jpg vox-track-info %}
+
+代码就是上面的 `hyper + k`，`hs.vox.trackInfo()` 已经封装好了
+
+### 显示/隐藏 播放列表
+这个功能就是，类似于播放器的切换标准模式和 Mini 模式。API 已经封装成了 `hs.vox.togglePlaylist()`，实际效果如图：
+
+{% asset_img vox-toggle-playlist.gif vox-toggle-playlist %}
+
+# 不得不说的
+1. 每个应用程序的 API 不尽相同，比如我在 HammerSpoon 里封装的 `hs.vox.trackInfo()` 只适用于 VOX。如果你不放心，可以先在 Console 里执行一下：`hs.vox.trackInfo()`，然后你就会得到一个弹出的信息框
+2. 对于没有封装的，也很简单。按照上面提到的方法查 API 文档，比如 Spotify 也提供了一个叫 `pause` 的 API，那就可以在控制台里执行这段代码测试：`hs.applescript.applescript('tell application "Spotify" to pause')`。理论上会让 Spotify 暂停播放
+3. 用好控制台 * 3，可以帮你在写代码过程中省不少时间。关于一些小技巧，我会在下一篇文章中提到
 
 
