@@ -2932,6 +2932,41 @@ color
   color: #808080;
   cursor: pointer;
 }
+kbd {
+  display: inline;
+  min-width: 1em;
+  padding: 0.2em 0.3em;
+  margin: 0.3em;
+  font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+  text-align: center;
+  text-decoration: none;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  border: none;
+  cursor: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #505050;
+  background: -moz--webkit-linear-gradient(top, #3c3c3c, #505050);
+  background: -moz--moz-linear-gradient(top, #3c3c3c, #505050);
+  background: -moz--ms-linear-gradient(top, #3c3c3c, #505050);
+  background: -moz-linear-gradient(to bottom, #3c3c3c, #505050);
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
+  color: #fafafa;
+  text-shadow: -1px -1px 0 #464646;
+  -moz-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0,0,0,0.3);
+}
 @-moz-keyframes cd-bounce-1 {
   0% {
     opacity: 0;
