@@ -6,12 +6,20 @@ tags: [Tools,Mac]
 ---
 
 > 找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……
-> 希望我的这几篇博文能帮到你
+> 希望我的这一系列博文能帮到你
 
 # 概述
 我知道，类似的文章网上一搜一大把。作为一个只用 Mac 搞了不到一年开发的菜鸡，很多功能我也还在摸索中。本文旨在把自己积累的一些小技巧与大家分享，任何疑问、意见、建议，请在下方留言评论
 
-# 文本操作
+打算从这几个方面来总结：
+1. 文本编辑相关操作（即为本篇），以及一些常用的系统快捷键
+2. 窗口快捷键。以及如何调教系统，让它更符合你的使用习惯
+3. Finder 和 Chrome 里的一些实用快捷键
+4. 用 HammerSpoon 配置自己的全局快捷键
+
+包括 iTerm，WebStorm 在内的我每天都会用的 App，如果把它们也写进来，可能内容会过多，而且并不是每个人都用。另外也一直计划着要写一个详解 WebStorm 的系列文章
+
+# 移动与选取
 ## 光标移动
 刚从 Windows 转过来的时候可能会发现，Mac 上没有 <kbd>Home</kbd> 和 <kbd>End</kbd> 键。其实，直接这样就好了：
 <kbd>Cmd</kbd> + <kbd>←</kbd> 移至行首 (Home)
@@ -29,6 +37,11 @@ Mac 中也提供了按词跳光标的功能，英文中就是通过空格来判�
 <kbd>Alt</kbd> + <kbd>←</kbd> 向前跳一个词
 <kbd>Alt</kbd> + <kbd>→</kbd> 向后跳一个词
 
+## 删除
+Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位于等号右边的退格（BackSpace），一个是位于方向键上面的向后删除（Delete）。Mac 虽然只有一个 <kbd>delete</kbd>，相当于 Windows的退格。但其实，我们只要通过组合键 <kbd>fn</kbd> + <kbd>delete</kbd> 就可以实现向后删除了
+
+不仅如此，<kbd>delete</kbd> 和 <kbd>fn</kbd> + <kbd>delete</kbd> 绝大部分情况下可以搭配 <kbd>Alt</kbd> 实现向前/向后删除一个词。一些情况下可以搭配 <kbd>Cmd</kbd> 实现删除整行（在编辑器 Atom 中不行，因为 Atom 把这个组合键默认设置成了删除至行首/行尾，如有需要，改下配置就好了）
+
 ## 文本选取
 以上所有提到的快捷键，都可以搭配 <kbd>Shift</kbd> 来实现选取
 
@@ -45,20 +58,45 @@ Mac 中也提供了按词跳光标的功能，英文中就是通过空格来判�
 <kbd>Cmd</kbd> + <kbd>←</kbd> 然后 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd>
 当然也可以 <kbd>Cmd</kbd> + <kbd>→</kbd> 然后 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>←</kbd>
 
-## 基础编辑操作
+# 编辑操作
+## 基础操作
 简单来说，大部分快捷键，就是把 Windows 的 <kbd>Ctrl</kbd> 替换成 <kbd>Cmd</kbd> 就行了，比如：
 <kbd>Cmd</kbd> + <kbd>A</kbd> 全选
 <kbd>Cmd</kbd> + <kbd>C</kbd> 复制
 <kbd>Cmd</kbd> + <kbd>X</kbd> 剪切
 <kbd>Cmd</kbd> + <kbd>V</kbd> 粘贴
 <kbd>Cmd</kbd> + <kbd>Z</kbd> 撤销
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> 恢复（恢复撤销的内容）
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> 恢复（恢复撤销操作）
 
-对于文件操作同理，只是有一点需要特别注意。很多朋友抱怨说 Mac 不能剪切文件，只能复制，然后再把原来的删除，移动文件的时候很不方便。其实，Mac 是提供这个功能的，复制之后，只需要 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd> 就可以移动文件了，会出现这样的提示，确定就可以完成移动：
+## 移动文件
+> 这部分可能不应该放在这里。。。只是个人觉得，与复制粘贴文本快捷键一起去记忆和使用，会比较好
 
-{% asset_img MoveNotification.jpg MoveNotification %}
+上面提到的大部分快捷键对于在 Finder 中操作文件也是同理，我们可以全选、复制、粘贴甚至撤销和恢复，唯独不能通过 <kbd>Cmd</kbd> + <kbd>X</kbd> 来剪切
 
-其实在目标文件夹，右键菜单打开后，按住<kbd>Alt</kbd>，本来的 “Paste Item” 就会变成 “Move Item Here”：
+很多朋友抱怨说 Mac 只能复制粘贴之后再把原来的删除（顺便，把文件移动到 Trash 的快捷键是 <kbd>Cmd</kbd> + <kbd>delete</kbd>），移动文件的时候很不方便。其实，Mac 是有这个功能的。复制之后，在目标文件夹右键，菜单打开后，按住<kbd>Alt</kbd>，本来的 “Paste Item” 就会变成 “Move Item Here”：
 
 {% asset_img MoveItem.jpg MoveItem %}
 
+当然，也可以通过快捷键 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd> 来完成移动文件，会出现这样的提示，确定即可：
+
+{% asset_img MoveNotification.jpg MoveNotification %}
+
+## 格式快捷键
+在大部分文本编辑器，比如 Microsoft Word 或者 Apple 的 Pages，Numbers 中，我们可以用快捷键调格式：
+<kbd>Cmd</kbd> + <kbd>B</kbd> 文字加粗（Bold）
+<kbd>Cmd</kbd> + <kbd>I</kbd> 斜体文字（Italic）
+<kbd>Cmd</kbd> + <kbd>U</kbd> 文字下划线（Underline）
+
+# 特殊快捷键
+这些快捷键可以不去记忆，对于开发者来说可能会偶尔用，对于绝大部分用户，可能并不怎么需要
+
+比如在 iTerm 中，我们会发现，用 <kbd>Cmd</kbd> + <kbd>←</kbd> 是跳不回开头的，因为 iTerm 已经把这个键设置成了跳到上一个 Tab。同样，用 <kbd>Alt</kbd> 键跳单词也不行了
+
+这种情况下，我们需要这些特殊快捷键来实现功能：
+<kbd>Ctrl</kbd> + <kbd>A</kbd> 跳到行首（Home）
+<kbd>Ctrl</kbd> + <kbd>E</kbd> 跳到行尾（End）
+<kbd>Ctrl</kbd> + <kbd>F</kbd> 向后移动一个词<kbd>Ctrl</kbd> + <kbd>B</kbd> 向前移动一个词
+<kbd>Ctrl</kbd> + <kbd>P</kbd> 光标上移一行
+<kbd>Ctrl</kbd> + <kbd>N</kbd> 光标下移一行
+
+这些快捷键，特别是在手打比较长的命令的时候，会很有用。这些快捷键也适用于其他的大部分环境。对于一般用户，没必要去特别记忆了，用上面提到的那些就好
