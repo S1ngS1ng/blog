@@ -3250,7 +3250,7 @@ kbd {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: Menlo, Consolas, "Source Code Pro", Inconsolata, Monaco, monospace;
+  font-family: Monaco, Menlo, Consolas, "Source Code Pro", Inconsolata, monospace;
 }
 .article-entry blockquote {
   background-color: #555;
@@ -3471,7 +3471,7 @@ kbd {
 }
 .article-entry .gist .gist-file {
   border: none;
-  font-family: Menlo, Consolas, "Source Code Pro", Inconsolata, Monaco, monospace;
+  font-family: Monaco, Menlo, Consolas, "Source Code Pro", Inconsolata, monospace;
   margin: 0;
 }
 .article-entry .gist .gist-file .gist-data {
@@ -4334,6 +4334,22 @@ figure.javascript pre .string {
   .youyan {
     padding: 20px 10px;
   }
+}
+.ds-comment-body > p {
+  color: #bdbdbd !important;
+}
+.ds-comment-body .ds-comment-header > span.ua > span[class^="ua_"] {
+  background: #9575cd !important;
+  padding: 0 5px !important;
+  border: 1px solid #9575cd !important;
+  border-radius: 6px !important;
+}
+.ds-comment-body .ds-comment-header > span.ua > span[class^="os_"] {
+  margin-left: 1em !important;
+  background: #f06292 !important;
+  padding: 0 5px !important;
+  border: 1px solid #f06292 !important;
+  border-radius: 6px !important;
 }
 .inner1 {
   margin: 0 40px;
