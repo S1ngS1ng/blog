@@ -88,7 +88,8 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 这种情况下，我们需要这些特殊快捷键来实现功能：
 <kbd>Ctrl</kbd> + <kbd>A</kbd> 跳到行首（Home）
 <kbd>Ctrl</kbd> + <kbd>E</kbd> 跳到行尾（End）
-<kbd>Ctrl</kbd> + <kbd>F</kbd> 向后移动一个词<kbd>Ctrl</kbd> + <kbd>B</kbd> 向前移动一个词
+<kbd>Ctrl</kbd> + <kbd>F</kbd> 向后移动一个词
+<kbd>Ctrl</kbd> + <kbd>B</kbd> 向前移动一个词
 <kbd>Ctrl</kbd> + <kbd>P</kbd> 光标上移一行
 <kbd>Ctrl</kbd> + <kbd>N</kbd> 光标下移一行
 
@@ -100,9 +101,10 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 # 写在最后
 目前打算从以下几个方面来总结常用的技巧：
 1. 文本编辑相关操作（即为本篇）
-2. 系统快捷键。以及如何调教系统，让它更符合你的使用习惯
-3. Finder 和 Chrome 里的一些实用快捷键
-4. 用 HammerSpoon 配置自己的全局快捷键
+2. 系统快捷键
+3. 如何调教系统，让它更符合你的使用习惯
+4. Finder 和 Chrome 里的一些实用快捷键
+5. 用 HammerSpoon 配置自己的全局快捷键
 
 包括 iTerm 和 WebStorm 在内的我每天都会用的 App，如果把它们的快捷操作也写全，内容可能会过多，而且并不是所有人都需要用，只打算在文章中稍微提一些。另外我也一直计划着要写一个详解 WebStorm 的系列文章
 
