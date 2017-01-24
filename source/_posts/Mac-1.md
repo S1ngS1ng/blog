@@ -11,7 +11,7 @@ tags: [Tools,Mac]
 # 概述
 我知道，类似的文章网上一搜一大把。作为一个只用 Mac 搞了不到一年开发的菜鸡，很多功能我也还在摸索中。本文旨在把自己积累的一些小技巧与大家分享，任何疑问、意见、建议，请在下方留言评论
 
-> 补充：可以到这里看看官方的[快捷键文档](https://support.apple.com/zh-cn/HT201236)
+> 补充：可以到这里看看官方的[快捷键文档][1]
 
 # 移动与选取
 ## 光标移动
@@ -46,8 +46,8 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 想从当前位置选到末尾（多行），只需要：
 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd>
 
-想向后选中三个词，只需要（* 3 表示按三次）：
-<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd> * 3
+想向后选中三个词，只需要（\* 3 表示按三次）：
+<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd> \* 3
 
 想选择整行，只需要：
 <kbd>Cmd</kbd> + <kbd>←</kbd> 然后 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd>
@@ -92,10 +92,14 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 这种情况下，我们需要这些特殊快捷键来实现功能：
 <kbd>Ctrl</kbd> + <kbd>A</kbd> 跳到行首（Home）
 <kbd>Ctrl</kbd> + <kbd>E</kbd> 跳到行尾（End）
-<kbd>Ctrl</kbd> + <kbd>F</kbd> 向后移动一个词
-<kbd>Ctrl</kbd> + <kbd>B</kbd> 向前移动一个词
+<kbd>Ctrl</kbd> + <kbd>F</kbd> 向后移动一个字符
+<kbd>Ctrl</kbd> + <kbd>B</kbd> 向前移动一个字符
 <kbd>Ctrl</kbd> + <kbd>P</kbd> 光标上移一行
 <kbd>Ctrl</kbd> + <kbd>N</kbd> 光标下移一行
+
+向前后调词的方式比较特殊，我们需要：
+<kbd>ESC</kbd> + <kbd>F</kbd> 向后移动一个单词
+<kbd>ESC</kbd> + <kbd>B</kbd> 向前移动一个单词
 
 这些快捷键，特别是在手打比较长的命令的时候，会很有用。这些快捷键也适用于其他的大部分环境。对于一般用户，没必要去特别记忆了，用上面提到的那些就好
 
@@ -115,3 +119,5 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 我想，这一篇已经基本覆盖了文本编辑中的重要操作。如果你觉得还有需要补充的，欢迎在下方留言
 
 > 如果你喜欢这篇文章，请帮我点个赞👍
+
+[1]:	https://support.apple.com/zh-cn/HT201236
