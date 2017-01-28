@@ -114,10 +114,28 @@ killall SystemUiServer
 
 之后，如果你再通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd>/<kbd>4</kbd> 截图，图片就会保存在这个文件夹里
 
-截图部分就跟大家聊到这里，能想到的也就这些了
+截图部分就跟大家聊到这里，能想到的也就这些了。macOS 上截图相关的快捷键就介绍到这里，以下为 App 推荐环节，写给有需要的朋友
 
-# 利益无关的 App 推荐
-## SnagIt
+# 截图 App 推荐
+经常会被问到，Mac 上如何制作 Gif，以及有什么截图 App 可以替代原生的截图工具。这里推荐以下几款，从免费到收费的都有。顺便提一句，Windows 系统自带的截图工具就很方便了，另外 [PicPick](http://ngwin.com/picpick) 也是极好的。可以一直免费试用，不需要去找破解，只是这款 App 没有 Mac 版本
+
+## 系统截图 App 替代品
+以下提到的三款软件均免费，至少在标注方面比原生的略胜一筹，详情请点击链接查看
+### 浏览器插件 Awesome Screenshot
+[Awesome Screenshot](https://www.awesomescreenshot.com) 是一款免费的截图工具，非本地 App，只是一个浏览器插件。它支持延时截图区域截图等常用功能。也内置了一个网页版的标注工具
+### Evernote 旗下的 Skitch
+[Skitch](https://evernote.com/intl/zh-cn/skitch/) 也是一款免费的截图 App，标注功能相比 Awesome Screenshot 会稍好一些。如果你用 Evernote（印象笔记），经常需要截图并保存到自己的笔记中，那么这款 App 可能会比较适合你。同时，Skitch 也有 iOS 版本
+### Jing
+[Jing](https://www.techsmith.com/jing.html) 同样是一款免费的截图 App，来自 TechSmith 公司，这家公司出品的另一款更为强大的截图工具 SnagIt 会在后文详细说明
+
+## 制作 Gif
+经常会被问到，如何在 macOS 上制作 Gif。这里给大家推荐以下几个不错的 App
+### LICEcap - 收费
+[LICEcap](http://www.cockos.com/licecap/) 是一款老牌的 macOS 系统 Gif 制作工具，不免费。相比其他 App，LICEcap 本身并不提供分享和上传功能，所以我本人并不是很推荐
+### Giphy Capture - 免费
+[Giphy](https://itunes.apple.com/us/app/giphy-capture.-the-gif-maker/id668208984?mt=12) 是由一个很火的 Gif 分享网站 [Giphy.com](http://giphy.com/) 开发的。一个很方便的功能就是可以直接上传至 giphy.com（可能需要 VPN 才能访问），然后把链接 Share 给朋友就可以了。同样，保存至本地也没问题
+
+## SnagIt - 全套解决方案
 我一般的习惯是，如果截图只是为了粘贴到聊天框之类的地方，而且不需要标注的话，就会用系统截图。如果需要标注，或者想要留下来，就会用一个第三方的 App：[SnagIt](https://www.techsmith.com/screen-capture.html)。虽然是付费软件，价格也有点儿高，但我觉得还是很值得购买的。目前我的博客、GitHub 上面，截图和 Gif 都是用这个 App 做的
 
 ### 截图功能
@@ -135,4 +153,6 @@ SnagIt 在截图方面提供了区域延时截图、全景截图、Expose 模式
 作为一款付费 App，它确实为我们提供了相比 macOS 原生 Preview 更多的编辑功能。暂且不去比较已有的箭头之类的功能，虽然我还是觉得 SnagIt 里面的元素更好看些，SnagIt 还提供了打码功能，效果嘛，大家可以参考下上面 Grab 那里的配图。放大镜功能也是极好的，突出重点的时候很有用。还有 Stamp（图章），有茫茫多的图章选择，从 PC 键盘按键图章，到 Emoji 表情，再到数学符号和花体英文字母，都可以直接扔到截图上。虽然没有提供拼图工具，但拼起来也不麻烦，裁好图，加上分割线，粘贴到一起就可以了
 
 ### 视频功能
-有这个功能，我觉得才对得起这个 App 的价位。首先，可以录制很高清的视频
+首先，SnagIt 可以录制很高清的视频，时长也是没有限制的。支持全屏和区域录制两种模式，同时也可以录制摄像头输入和麦克风输入，这个功能用来录制会议视频应该也是极好的。另一个应用场景就是，我们在一些网站上看到喜欢的视频想留下来，而网站又不提供下载，那我们就可以直接选好视频播放的区域来自己录成视频
+
+格式输出，支持 MP4，也支持 Gif。我的博客和 [GitHub](github.com/S1ngS1ng/HammerSpoon) 上的动图都是用这个做的
