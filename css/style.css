@@ -2518,6 +2518,8 @@ color
   max-width: 100%;
   display: block;
   margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
   vertical-align: -webkit-baseline-middle;
 }
 @-webkit-keyframes cd-bounce-1 {
@@ -2621,7 +2623,7 @@ color
   padding-left: 30px;
 }
 .article-entry p {
-  margin-top: 10px;
+  margin-top: 0.7em;
 }
 .article-entry p code,
 .article-entry li code {
