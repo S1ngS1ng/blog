@@ -2601,6 +2601,11 @@ color
   -webkit-box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
   box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
 }
+.article-inner p,
+.article-inner ul,
+.article-inner ol > li {
+  padding-left: 1em;
+}
 .article-header {
   border-left: rgba(63,63,63,0) 5px solid;
   padding: 15px 0px 15px 25px;
@@ -3354,14 +3359,14 @@ kbd {
 }
 .article-entry h5 {
   position: relative;
-  margin: 1em 0 0.6em 1em;
+  margin: 1em 0 0.6em 2em;
   color: #fafafa;
   padding: 0.2em 0.6em;
   font-weight: normal;
 }
 .article-entry h6 {
   position: relative;
-  margin: 1em 0 0.6em 1em;
+  margin: 1em 0 0.6em 3em;
   color: #fafafa;
   padding: 0.2em 0.6em;
   font-weight: normal;
