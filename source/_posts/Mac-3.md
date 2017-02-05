@@ -14,6 +14,20 @@ tags: [Tools,Mac]
 # 复习
 如果忘记了基本的操作，请回去翻翻[第一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/)
 
+# macOS 的 Window，Apps 和 Space
+## Window（窗口）
+Window，我们可以理解为一个窗口，一个程序当然可以有多个窗口，一般来说，通过快捷键 <kbd>Cmd</kbd> + <kbd>n</kbd> 就可以新建窗口。另外，可能有些朋友不知道，macOS 为我们提供了切换程序内窗口的快捷键，就是 <kbd>Cmd</kbd> + <kbd>\`</kbd>。这个 <kbd>\`</kbd> 就是 <kbd>1</kbd> 左边的那个键
+
+在 Chrome，Webstorm，iTerm 以及 Safari 等绝大部分常用 App 中，我们可以通过快捷键 <kbd>Cmd</kbd> + <kbd>t</kbd> 来新建一个 tab。最新版的 macOS 还引入了系统原生 App 对 tabs（标签）的支持，比如 Finder，大家可以尝试下
+
+
+
+## Apps（应用）
+App 在 macOS 上，其实就是程序，也可以叫软件，台湾叫软体。
+
+## Space
+Space 本义是空间，不过在 macOS 中，官方也没有给出中文翻译，我们可以简单地把它理解为“工作区”。
+
 # 用好 Spotlight/Alfred
 我的一个核心观点是尽量少用鼠标多用键盘。Mac 的触摸板其实很不错，手势操作很方便，但个人觉得有时候有点儿影响效率，比如打开一个 App，完全不需要动鼠标。用 Spotlight 或者 Alfred 就可以打开
 
@@ -23,17 +37,7 @@ tags: [Tools,Mac]
 
 顺便，Alfred 默认是不搜索文件的，如果也要搜索文件，在设置里把 Folders 打开就好了。这样，我们只要记得起文件名，直接在里面输入，然后一按回车就可以打开了，不用再去 Finder 里面一点一点找了
 
-当然 Alfred 和 Spotlight 功能还不仅限于此，详细说的话就要再写一篇博客了
-
-# macOS 的 Window，Apps 和 Space
-## Window
-Window，我们可以简单的理解为一个窗口。
-
-## Apps（应用）
-App 在 macOS 上，其实就是程序，也可以叫软件，台湾叫软体。
-
-## Space
-
+当然 Alfred 和 Spotlight 功能还不仅限于此，特别是 Alfred 强大的 Workflow 功能，详细说的话就要再写一篇博客了
 
 # 消息提示
 
