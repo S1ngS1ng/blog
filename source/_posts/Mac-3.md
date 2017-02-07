@@ -1,6 +1,6 @@
 ---
 title: 你可能不知道的 Mac 技巧 - 系统快捷键和一些小技巧
-date: 2017-01-23 01:22:32
+date: 2017-02-07 01:22:32
 tags: [Tools,Mac]
 ---
 
@@ -12,15 +12,35 @@ tags: [Tools,Mac]
 老规矩，如果你对内容有任何意见、建议或者疑问，记得留言
 
 # 复习
-如果忘记了基本的操作，请回去翻翻[第一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/)
+如果忘记了基本的操作，请回去翻翻 [第一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/)
 
-# macOS 的 Window，Apps 和 Space
-## Window（窗口）
-Window，我们可以理解为一个窗口，一个程序当然可以有多个窗口，一般来说，通过快捷键 <kbd>Cmd</kbd> + <kbd>n</kbd> 就可以新建窗口。另外，可能有些朋友不知道，macOS 为我们提供了切换程序内窗口的快捷键，就是 <kbd>Cmd</kbd> + <kbd>\`</kbd>。这个 <kbd>\`</kbd> 就是 <kbd>1</kbd> 左边的那个键
+# macOS 的 Window，Tab 与 Space
+## Window（窗口）与 App（应用程序）
+Window，我们可以理解为一个窗口，一个应用程序当然可以有多个窗口
+### 新建
+在绝大部分 App 中，通过快捷键 <kbd>Cmd</kbd> + <kbd>n</kbd> 就可以新建窗口。不同的程序会提供不同的快捷键，有时候用 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>n</kbd> 会有不同的效果
 
-在 Chrome，Webstorm，iTerm 以及 Safari 等绝大部分常用 App 中，我们可以通过快捷键 <kbd>Cmd</kbd> + <kbd>t</kbd> 来新建一个 tab。最新版的 macOS 还引入了系统原生 App 对 tabs（标签）的支持，比如 Finder，大家可以尝试下
+### 切换
+切换程序的快捷键是 <kbd>Cmd</kbd> + <kbd>Tab</kbd>，这个不少朋友都知道。按住 <kbd>Cmd</kbd> 然后不停的按 <kbd>Tab</kbd> 就可以顺着列表一直往后找，找到需要打开的程序后，松开 <kbd>Cmd</kbd> 即可。如果 <kbd>Tab</kbd> 过头了，可以通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 往前找
 
+在 macOS 中，我们还可以快速切换程序内所有打开的窗口，快捷键是：<kbd>Cmd</kbd> + <kbd>\`</kbd>。这个 <kbd>\`</kbd> 就是 <kbd>Tab</kbd> 上方，<kbd>1</kbd> 左边的那个键，很好记忆
 
+## Tab
+在 Chrome，Webstorm，iTerm 以及 Safari 等绝大部分常用 App 中，我们可以通过快捷键 <kbd>Cmd</kbd> + <kbd>t</kbd> 来新建一个 tab。最新版的 macOS 还引入了系统原生 App 对 tabs（标签）的支持，比如 Finder
+
+切换方面，macOS 原生的 App，比如 Finder 和 Safari，都可以通过 <kbd>Ctrl</kbd> + <kbd>Tab</kbd> 或者 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 来切换
+
+其他 App 会有一些自定义的按键，比如：
+- Webstorm 是 <kbd>Ctrl</kbd> + <kbd>←</kbd> 和 <kbd>Ctrl</kbd> + <kbd>→</kbd>
+- iTerm 是 <kbd>Cmd</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>右</kbd>
+- Chrome 是 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>→</kbd>
+
+对于 Safari 的快捷键，如果我们想改也很简单，只需要在这里改动就行：
+
+{% asset_img safari-shortcut.jpg safari-shortcut %}
+
+## 关于 Help Menu
+顺便说一句，我把上面那个 Show Help Menu 给关了，是因为它和 Webstorm 里面的“注释代码”功能有冲突。其实这个功能很方便，有时候 Chrome 很卡，需要清理下进程，我们只要用 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd> 打开 Help Menu，光标会自动定位到搜索栏，然后输入 “task manager” 就可以打开 Chrome 的进程管理器了。而且这个 Task Manager，本身是没有快捷键的。任何软件，所有在菜单栏出现的操作，都可以通过这种方式按名称搜索到
 
 ## Apps（应用）
 App 在 macOS 上，其实就是程序，也可以叫软件，台湾叫软体。
