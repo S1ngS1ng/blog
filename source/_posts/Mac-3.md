@@ -23,16 +23,16 @@ Window，我们可以理解为一个窗口，一个应用程序当然可以有�
 ### 切换
 切换程序的快捷键是 <kbd>Cmd</kbd> + <kbd>Tab</kbd>，这个不少朋友都知道。按住 <kbd>Cmd</kbd> 然后不停的按 <kbd>Tab</kbd> 就可以顺着列表一直往后找，找到需要打开的程序后，松开 <kbd>Cmd</kbd> 即可。如果 <kbd>Tab</kbd> 过头了，可以通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 往前找
 
-在 macOS 中，我们还可以快速切换程序内所有打开的窗口，快捷键是：<kbd>Cmd</kbd> + <kbd>\`</kbd>。这个 <kbd>\`</kbd> 就是 <kbd>Tab</kbd> 上方，<kbd>1</kbd> 左边的那个键，很好记忆
+在 macOS 中，我们还可以快速切换程序内所有打开的窗口，快捷键是：<kbd>Cmd</kbd> + <kbd>\`</kbd>。这个 <kbd>\`</kbd> 就是 <kbd>Tab</kbd> 上方，<kbd>1</kbd> 左边的那个键，很容易适应
 
 ## Tab
 在 Chrome，Webstorm，iTerm 以及 Safari 等绝大部分常用 App 中，我们可以通过快捷键 <kbd>Cmd</kbd> + <kbd>t</kbd> 来新建一个 tab。最新版的 macOS 还引入了系统原生 App 对 tabs（标签）的支持，比如 Finder
 
-切换方面，macOS 原生的 App，比如 Finder 和 Safari，都可以通过 <kbd>Ctrl</kbd> + <kbd>Tab</kbd> 或者 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 来切换
+切换方面，macOS 原生的 App，比如 Finder 和 Safari，都可以通过 <kbd>Ctrl</kbd> + <kbd>Tab</kbd> 或者 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 来切换，也可以通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd> 或者 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd> 来切换
 
 其他 App 会有一些自定义的按键，比如：
 - Webstorm 是 <kbd>Ctrl</kbd> + <kbd>←</kbd> 和 <kbd>Ctrl</kbd> + <kbd>→</kbd>
-- iTerm 是 <kbd>Cmd</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>右</kbd>
+- iTerm 是 <kbd>Cmd</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>→</kbd>
 - Chrome 是 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>→</kbd>
 
 对于 Safari 的快捷键，如果我们想改也很简单，只需要在这里改动就行：
