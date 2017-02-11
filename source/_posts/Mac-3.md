@@ -65,23 +65,27 @@ App 在 macOS 上，其实就是程序，也可以叫软件，台湾叫软体
 这时候我们想把窗口恢复回来，如果我们是“隐藏的”，只需要按 <kbd>Cmd</kbd> + <kbd>Tab</kbd> 就可以了。但如果是“最小化”的，事情就变得十分微妙
 
 试一下就可以发现，<kbd>Cmd</kbd> + <kbd>Tab</kbd> 是不能让窗口显示回来的。这时候我们有三种方式把窗口弄回来。首当其冲的当然是用鼠标点，点击 Dock 栏最右边（下边）的窗口图标。只是这样不够效率，特别是在多屏的情况下。以下提供两种键盘快捷键操作：
-第一种方式比较复杂，但很有意思，适合只有一个窗口开启的 App：
+第一种方式看起来复杂，但适应之后，其实很顺手的。美中不足的是，它只适合开启了单个窗口的 App：
 1. <kbd>Cmd</kbd> + <kbd>Tab</kbd> 选中最小化窗口的 App，一般需要用 <kbd>Shift</kbd> 往回跳一个才行
 2. 大拇指滑一下，**保持** <kbd>Cmd</kbd> **按住**的同时按住 <kbd>Alt</kbd>
 3. 继续滑大拇指，**保持** <kbd>Alt</kbd> **按住的情况下**松开 <kbd>Cmd</kbd>，这时候就能看到窗口已经回来了。然后松开 <kbd>Alt</kbd> 即可
 
 {% asset_img show-minimized-1.gif show-minimized-1 %}
 
-第二种方式需要自带的 Mission Control 功能。如果我们的一个 App 有很多窗口打开，可以这样做：
+第二种方式需要自带的一个类似与 App Expose 的功能。如果我们的一个 App 有很多窗口打开，可以这样做：
 1. <kbd>Cmd</kbd> + <kbd>Tab</kbd> 选中最小化窗口的 App，和上面一样
 2. 保持 <kbd>Cmd</kbd> 按住，然后按方向键 <kbd>↑</kbd> 或者 <kbd>↓</kbd>。这时候就能看到其他打开的 App 全都不见了，屏幕上只剩下当前 App 的窗口
 3. （可以松开 <kbd>Cmd</kbd>）用方向键 <kbd>←</kbd> 或者 <kbd>→</kbd> 选中那个最小化的窗口，选中的窗口外面会有蓝色的边框
 4. 按回车，窗口就回来了
 
-说实话，第一种乍一看很复杂，但习惯之后，你会发现，这个快捷键用起来非常顺手
+另外，这个功能在任何时候都可以用，默认设置这里是开启的，只是在键盘快捷键设置中叫 Application Windows，在触摸板设置中叫 App Expose。我们可以通过 <kbd>Ctrl</kbd> + <kbd>↓</kbd> 激活：
+
+{% asset_img application-windows.jpg application-windows %}
+
+激活之后还可以通过 <kbd>Tab</kbd> 来切换其他 App。顺便，那个 Mission Control，也就是 <kbd>Ctrl</kbd> + <kbd>↓</kbd> 和触摸板四指上滑效果是一样的，都是查看所有打开的窗口。
 
 ## Space
-Space 本义是空间，不过在 macOS 中，官方也没有给出中文翻译，我们可以简单地把它理解为“工作区”。
+Space 本义是空间，不过在 macOS 中，官方也没有给出中文翻译，我们可以简单地把它理解为“工作区”
 
 # 用好 Spotlight/Alfred
 我的一个核心观点是尽量少用鼠标多用键盘。Mac 的触摸板其实很不错，手势操作很方便，但个人觉得有时候有点儿影响效率，比如打开一个 App，完全不需要动鼠标。用 Spotlight 或者 Alfred 就可以打开
@@ -94,11 +98,32 @@ Space 本义是空间，不过在 macOS 中，官方也没有给出中文翻译�
 
 当然 Alfred 和 Spotlight 功能还不仅限于此，特别是 Alfred 强大的 Workflow 功能，详细说的话就要再写一篇博客了
 
-# 消息提示
+# 通知
+macOS 集成了通知功能，来自系统、 App 的消息都可以显示在通知里。我们可以自主选择显示哪些不显示哪些，在“系统设置”的“通知”里面修改就可以了
+
+点击下图的这个图标，可以显示通知。或者从触摸板右侧的外面，两指滑入，也可以显示通知。另外，有时候我们可能需要暂时关闭通知。只需要按住 <kbd>Alt</kbd> 的同时点击下图这个图标就可以暂时关闭了，点击之后我们会发现，这个图标变灰了
+
+{% asset_img notification.jpg notification %}
 
 # 字典
+macOS 为我们提供了字典功能，阅读 PDF 或者看网页的时候，我们都可以通过内置字典查询不认识的单词。印象中查单词的默认方式是三指点按，我是把它改成了用力按，也就是 Force Touch 的时候查询
 
-# 预览功能
+我们可以设置想要显示的字典，首先打开字典 App：
+
+{% asset_img dictionary-entry.jpg dictionary-entry %}
+
+然后按 <kbd>Cmd</kbd> + <kbd>,</kbd> 打开设置：
+
+{% asset_img dictionary.jpg dictionary %}
+
+在上面选择我们想要看到的字典就可以了。系统里不只提供这四本，上下滚动一下就可以看到其他字典了
+
+设置好之后，我们在浏览网页的时候，就可以使用了：
+
+{% asset_img word-definition.jpg word-definition %}
+
+# 快速预览
+macOS 系统里，我认为最实用的功能之一就是这个 Quickview（快速预览）了。支持很多文件格式。
 
 # 预告
 下一篇博客将为大家介绍下一些常用的系统快捷键。另外，[上一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/) 文末列出了大纲，已经更新（并且可能随时都会更新）：
