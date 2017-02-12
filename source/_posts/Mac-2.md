@@ -14,8 +14,8 @@ Anyway，老规矩，如果大家有任何疑问、意见或者建议，请在�
 macOS 系统内置了截图功能，每次截图都会发出声音，当然这个声音可以关，后面会提到。基础操作有以下四种（快捷键也可以自定义，后面也会提到）：
 
 ## 截图并保存至桌面
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + 3 截取整个屏幕，并保存截图至桌面
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + 4 截取区域，并保存截图至桌面
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd> 截取整个屏幕，并保存截图至桌面
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> 截取区域，并保存截图至桌面
 
 激活区域截图之后，鼠标指针会变成下图这样，然后按住拖动就可以了
 
@@ -23,19 +23,19 @@ macOS 系统内置了截图功能，每次截图都会发出声音，当然这�
 
 ## 截图并复制
 有些时候，截图内容只是我们临时要用一下的，而不打算保存下来。我们只需要：
-<kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + 3 截取整个屏幕并复制
-<kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + 4 截取区域并复制
+<kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd> 截取整个屏幕并复制
+<kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> 截取区域并复制
 <!-- more -->
 以上两个快捷键，截图之后，我们只需要 <kbd>Cmd</kbd> + <kbd>v</kbd> 就可以随意粘贴了
 
 ## 关于新版 MacBook 的 Touch Bar
 新版的 MacBook 加入了 Touch Bar，同时系统也为我们提供了截取 Touch Bar 屏幕的快捷键：
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + 6 截取 Touch Bar 显示内容，并保存至桌面
-<kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + 6 截取 Touch Bar 显示内容并复制
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>6</kbd> 截取 Touch Bar 显示内容，并保存至桌面
+<kbd>Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>6</kbd> 截取 Touch Bar 显示内容并复制
 
 ## 一些高级操作
 ### 截取窗口
-一个比较常用的功能就是截取某个窗口，不需要用截取区域的快捷键然后拉满整个窗口，只需要在 <kbd>Cmd</kbd> + [<kbd>Ctrl</kbd> +] <kbd>Shift</kbd> + 4 之后按一下 <kbd>空格</kbd>，然后鼠标和窗口就会变成这样：
+一个比较常用的功能就是截取某个窗口，不需要用截取区域的快捷键然后拉满整个窗口，只需要在 <kbd>Cmd</kbd> + [<kbd>Ctrl</kbd> +] <kbd>Shift</kbd> + <kbd>4</kbd> 之后按一下 <kbd>空格</kbd>，然后鼠标和窗口就会变成这样：
 
 {% asset_img window-screenshot.jpg window-screenshot %}
 
@@ -172,3 +172,4 @@ TechSmith 自己提供了 screencast.com 和 TechSmith relay 服务，当然我�
 6. 用 HammerSpoon 配置自己的全局快捷键
 
 > 如果你喜欢这篇文章，请帮我点个赞👍
+
