@@ -9,7 +9,7 @@ tags: [Mac]
 # 概述
 [上一篇博客](http://singsing.io/blog/2017/01/23/Mac-2/) 内容略多，本来没打算写成一篇。提纲已更新，大家可以翻到文末看下（<kbd>Cmd</kbd> + <kbd>↓</kbd> 可以直接跳到文末，你还记得不？😏），如果忘记了基本操作，请回去翻翻 [第一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/)
 
-不少朋友一开始上手 Mac，对于系统方面的设置都会一脸懵逼，也有些功能隐藏的比较深。我是一个做前端开发的菜鸡，所以也会提到一些和开发相关的配置，写给有需要的朋友
+不少朋友刚上手 Mac，对 macOS 系统提供的功能会很不适应，确实，有些功能隐藏的比较深，多少会影响些效率。我是一个做前端开发的菜鸡，所以这个系列多少也会涉及到一些开发相关的配置，写给有需要的朋友
 
 文中提到的功能，强烈建议大家边看边试，有些东西文字描述起来会很复杂，自己操作一下就明白了，其实都很简单
 
@@ -37,6 +37,11 @@ App 相关的快捷键主要有：
 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>w</kbd> 关闭当前 App 的所有 Tab
 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>h</kbd> 隐藏所有**其他 App** 的窗口
 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>m</kbd> 最小化**当前 App** 的所有窗口
+
+一些和编辑相关的 App 中：
+<kbd>Cmd</kbd> + <kbd>o</kbd> 打开文件
+<kbd>Cmd</kbd> + <kbd>s</kbd> 保存文件
+<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>s</kbd> 文件另存为
 
 至于如何让隐藏或最小化的窗口重新显示，后文会详细说明
 
@@ -114,10 +119,21 @@ Space 本义是空间，macOS 中，官方也没有给出中文翻译，我们�
 
 {% asset_img new-space.jpg new-space %}
 
+新建的 Space 中窗口是全屏的。上文提到过，点击窗口按钮最右边那个两个箭头的图标也可以实现相同的效果。这时，我们还可以再拖一个窗口上去，这样就可以让这两个窗口在屏幕上左右排列，各占 50%，这个功能是在上一个 macOS 稳定版 El Capitan 系统中才加入的，效果如图：
+
+{% asset_img split-screen.jpg split-screen %}
+
+切换 Space 其实非常方便，我们只需要在触摸板上四指向左右滑动就可以了，默认的键盘快捷键是 <kbd>Ctrl</kbd> + <kbd>←</kbd> 和 <kbd>Ctrl</kbd> + <kbd>→</kbd>
+
+记得我一年多以前，刚开始接触 macOS 的时候，那时候刚更新了 El Capitan 系统，朋友就教会了我这个玩法。那时候我还没入多屏的坑，写代码的时候 IDE 放到一个 Space，Google 和 Dash 之类的放到另一个，需要查资料，一滑就行。很可惜的是，macOS 新建的 Space 只能放两个窗口，而且只能横向排列。但好消息是，Space 是无限的 😂
+
+直到我发现我同时开的窗口越来越多，也就开始寻找窗口管理的解决方案了。第三方 App 很多，付费的、免费的和开源的都有。试了大部分之后，我决定自己写配置。如果你对这个感兴趣，欢迎来看看我的第一篇[博客](http://singsing.io/blog/2016/11/27/HammerSpoon-1/)。我写的插件也放到了 [Github](https://github.com/S1ngS1ng/hammerspoon) 上，[中文文档和示例](https://github.com/S1ngS1ng/HammerSpoon/blob/master/README-cn.md) 也都加好了。最新的一次更新，加入了类似与 Windows 中 "Cycle through" 的效果，就是 <kbd>Win</kbd> + <kbd>←/→</kbd> 的效果。安装和使用也很简单，希望你能从中获得些思路。如果你也是开发者，欢迎给我的这个 repo 提交 issue 和 PR
+
+# 总结
+希望这篇长文涉及到的内容会对大家有所帮助。还是那句话，建议大家一边看一遍操作，这样会更好理解。
 
 # 预告
 下一篇博客将为大家介绍一些常用的系统内置功能。以下为更新之后的大纲：
-
 1. [文本编辑相关操作](http://singsing.io/blog/2017/01/17/Mac-1/)
 2. [截图，Gif 制作以及 App 推荐](http://singsing.io/blog/2017/01/23/Mac-2/)
 3. macOS 的窗口、标签与工作区（本篇）
