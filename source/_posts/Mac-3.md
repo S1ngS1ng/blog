@@ -1,8 +1,10 @@
 ---
-title: 你可能不知道的 Mac 技巧 - 系统快捷键和一些小技巧
-date: 2017-02-07 01:22:32
-tags: [Tools,Mac]
+title: 你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区
+date: 2017-02-12 22:22:32
+tags: [Mac]
 ---
+> 找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……
+> 希望我的这一系列博文能帮到你
 
 # 概述
 [上一篇博客](http://singsing.io/blog/2017/01/23/Mac-2/) 内容略多，本来没打算写成一篇。提纲已更新，大家可以翻到文末看下（<kbd>Cmd</kbd> + <kbd>↓</kbd> 可以直接跳到文末，你还记得不？😏），如果忘记了基本操作，请回去翻翻 [第一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/)
@@ -13,13 +15,12 @@ tags: [Tools,Mac]
 
 老规矩，如果大家有任何疑问、意见或者建议，请在下方留言评论
 
-# macOS 的 Window，Tab 与 Space
-## Window（窗口）与 App（应用程序）
+# Window（窗口）与 App（应用程序）
 Window 就是窗口，一个 App 当然可以有多个窗口。App 就是程序，也可以叫软件（软体）
-### 新建
+## 新建
 在绝大部分 App 中，通过快捷键 <kbd>Cmd</kbd> + <kbd>n</kbd> 就可以新建窗口。不同的 App 中，有时候用 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>n</kbd> 会有不同的新建效果
 
-### 切换
+## 切换
 切换 App 的快捷键是 <kbd>Cmd</kbd> + <kbd>Tab</kbd>，这个不少朋友都知道。按住 <kbd>Cmd</kbd> 然后不停地 <kbd>Tab</kbd> 就可以顺着列表一直往后找，<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 可以往前找。找到需要打开的 App 后，松开 <kbd>Cmd</kbd> 即可切换到 App。如果不松开 <kbd>Cmd</kbd>，我们还可以按 <kbd>q</kbd> 退出程序，或者按 <kbd>h</kbd> 隐藏程序
 
 我发现，不少朋友不知道可以快速切换 App 内所有打开的窗口，快捷键是：<kbd>Cmd</kbd> + <kbd>\`</kbd>。这个 <kbd>\`</kbd> 就是 <kbd>1</kbd> 左边，<kbd>Tab</kbd> 上方的那个键，很好记
@@ -39,7 +40,7 @@ App 相关的快捷键主要有：
 
 至于如何让隐藏或最小化的窗口重新显示，后文会详细说明
 
-### 窗口按钮
+## 窗口按钮
 在 macOS 上，所有窗口的左上角都有四种按钮：
 {% asset_img window-icons.jpg window-icons %}
 
@@ -52,7 +53,7 @@ App 相关的快捷键主要有：
 
 第三个按钮有两种形式，第一种，就是两个箭头的那个，确实会把 App 全屏，但是会创建一个新的 Space。关于 Space 的使用方式，后文会讨论。另一种就是那个加号，尽管在一些 App 中，点击这个就可以全屏，但确切的说，是“把当前窗口放大到**合适尺寸**”
 
-### 最小化和隐藏
+## 最小化和隐藏
 macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个叫“隐藏”，快捷键分别为：
 <kbd>Cmd</kbd> + <kbd>h</kbd> 隐藏
 <kbd>Cmd</kbd> + <kbd>m</kbd> 最小化
@@ -88,7 +89,7 @@ macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个�
 
 激活之后还可以通过 <kbd>Tab</kbd> 来切换其他 App。顺便，那个 Mission Control，也就是 <kbd>Ctrl</kbd> + <kbd>↓</kbd> 和触摸板四指上滑效果是一样的，都是查看所有打开的窗口。
 
-## Tab
+# Tab
 在 Chrome，Webstorm，iTerm 以及 Safari 等绝大部分常用 App 中，我们可以通过快捷键 <kbd>Cmd</kbd> + <kbd>t</kbd> 来新建一个 tab。最新版的 macOS 还引入了系统原生 App 对 tabs（标签）的支持，比如 Finder
 
 切换方面，macOS 原生的 App，比如 Finder 和 Safari，都可以通过 <kbd>Ctrl</kbd> + <kbd>Tab</kbd> 或者 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 来切换，也可以通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd> 或者 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd> 来切换。我更喜欢前面的那种方式
@@ -102,61 +103,27 @@ macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个�
 
 {% asset_img safari-shortcut.jpg safari-shortcut %}
 
-## 关于 Help Menu
-顺便说一句，我把上面那个 Show Help Menu 给关了，是因为它和 Webstorm 里面的“注释代码”功能有冲突。其实这个功能很方便，比如有时候 Chrome 很卡，我们只要用 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd> 打开 Help Menu，光标会自动定位到搜索栏，然后输入 “task manager” 就可以打开 Chrome 的进程管理器了。任何软件，所有在菜单栏出现的操作，都可以通过这种方式按名称搜索到
+# Space
+Space 本义是空间，macOS 中，官方也没有给出中文翻译，我们可以简单地把它理解为“工作区”。这个功能确实可以为我们在使用中提供不少的便利，只是我个人不太习惯这种操作方式，尤其是在已经配了多屏幕的条件下
 
-## Space
-Space 本义是空间，macOS 中，官方也没有给出中文翻译，我们可以简单地把它理解为“工作区”
+如果我们点击窗口左上角，最右边那个两个箭头的按钮，就会把这个窗口放到一个新的 Space 里面，并且全屏。这时候我们可以调出来 Mission Control 看看。按照**默认设置**，我们可以通过 <kbd>Ctrl</kbd> + <kbd>↑</kbd> 或者直接按 <kbd>F3</kbd> 或者在触摸板上四指上滑来打开。**所有的屏幕以及屏幕上的所有窗口**都会显示出来：
 
-如果我们点击窗口左上角，最右边那个两个箭头的按钮，就会把这个窗口放到一个新的 Space 里面，并且全屏。这时候我们可以调出来 Mission Control 看看，触摸板上四指向上滑动就好，如果
+{% asset_img space.jpg space%}
 
-# 用好 Spotlight/Alfred
-我的一个核心观点是尽量少用鼠标多用键盘。macOS 的触摸板其实很不错，手势操作很方便，但个人觉得有时候有点儿影响效率，比如打开一个 App，完全不需要动鼠标。用 Spotlight 或者 Alfred 就可以打开
+最上面的就是 Space，我们可以点击最右侧的“＋”新建一个空的 Space，也可以拖拽一个窗口上去形成新的 Space：
 
-比如，要打开 Webstorm，快捷键激活 Spotlight/Alfred，然后输入几个字母，按回车就可以了：
+{% asset_img new-space.jpg new-space %}
 
-{% asset_img webstorm.jpg webstorm %}
-
-顺便，Alfred 默认是不搜索文件的，如果也要搜索文件，在设置里把 Folders 打开就好了。这样，我们只要记得起文件名，直接在里面输入，然后一按回车就可以打开了，不用再去 Finder 里面一点一点找了
-
-当然 Alfred 和 Spotlight 功能还不仅限于此，特别是 Alfred 强大的 Workflow 功能，详细说的话就要再写一篇博客了
-
-# 通知
-macOS 集成了通知功能，来自系统、 App 的消息都可以显示在通知里。我们可以自主选择显示哪些不显示哪些，在“系统设置”的“通知”里面修改就可以了
-
-点击下图的这个图标，可以显示通知。或者从触摸板右侧的外面，两指滑入，也可以显示通知。另外，有时候我们可能需要暂时关闭通知。只需要按住 <kbd>Alt</kbd> 的同时点击下图这个图标就可以暂时关闭了，点击之后我们会发现，这个图标变成了灰色：
-
-{% asset_img notification.jpg notification %}
-
-# 字典
-macOS 为我们提供了字典功能，阅读 PDF 或者看网页的时候，我们都可以通过内置字典查询不认识的单词。印象中查单词的默认方式是三指点按，我是把它改成了用力按，也就是 Force Touch 的时候查询
-
-我们可以设置想要显示的字典，首先打开字典 App：
-
-{% asset_img dictionary-entry.jpg dictionary-entry %}
-
-然后按 <kbd>Cmd</kbd> + <kbd>,</kbd> 打开设置：
-
-{% asset_img dictionary.jpg dictionary %}
-
-在上面选择我们想要看到的字典就可以了。系统里不只提供这四本，上下滚动一下就可以看到其他字典了
-
-设置好之后，我们在浏览网页的时候，就可以使用了：
-
-{% asset_img word-definition.jpg word-definition %}
-
-# Quick Look（快速预览）
-macOS 系统里，我认为最实用的功能之一就是这个 Quick Look 了。激活方式非常简单，只需要在选中的文件上按一下 <kbd>空格</kbd>。Quick Look 支持的格式非常多，文档类的包括 txt、doc、docx、ppt、pptx 以及 PDF，图片类的 JPG、GIF、PNG 和 SVG，音频类的 MIDI、MP3、AAC、WAV，以及视频类的 MP4，AVI
-
-我们不仅可以在 Finder 里面 Quick Look 这些，甚至是在网页、QQ、微信中上传文件的时候，我们也可以按下空格来 Quick Look。比如，在上传邮件附件的时候，先 Quick Look 一下再点确认，可以大大减少我们发错文件的可能
 
 # 预告
-下一篇博客将为大家介绍下一些常用的系统快捷键。另外，[上一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/) 文末列出了大纲，已经更新（并且可能随时都会更新）：
+下一篇博客将为大家介绍一些常用的系统内置功能。以下为更新之后的大纲：
+
 1. [文本编辑相关操作](http://singsing.io/blog/2017/01/17/Mac-1/)
-2. 截图，Gif 制作以及 App 推荐（本篇）
-3. 系统快捷键
-4. 如何调教系统，让它更符合你的使用习惯
-5. Finder 和 Chrome 里的一些实用快捷键
-6. 用 HammerSpoon 配置自己的全局快捷键
+2. [截图，Gif 制作以及 App 推荐](http://singsing.io/blog/2017/01/23/Mac-2/)
+3. macOS 的窗口、标签与工作区（本篇）
+4. macOS 的实用功能
+5. 如何调教系统，让它更符合你的使用习惯
+6. Finder 和 Chrome 里的一些实用快捷键
+7. 用 HammerSpoon 配置自己的全局快捷键
 
 > 如果你喜欢这篇文章，请帮我点个赞👍
