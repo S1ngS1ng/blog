@@ -4,7 +4,8 @@ date: 2017-02-12 22:22:32
 tags: [Mac]
 ---
 > 找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……
-> 希望我的这一系列博文能帮到你
+> 希望我的这一系列博文能帮到你。
+> 推 (an) 荐 (li) 一下自己写的 HammerSpoon 插件，帮助大家更方便地进行窗口管理，以及其他实用功能。[点我](https://github.com/S1ngS1ng/hammerspoon) 查看。也可以去看看我的 [第一篇博客](http://singsing.io/blog/2016/11/27/HammerSpoon-1/)
 
 # 概述
 [上一篇博客](http://singsing.io/blog/2017/01/23/Mac-2/) 内容略多，本来没打算写成一篇。提纲已更新，大家可以翻到文末看下（<kbd>Cmd</kbd> + <kbd>↓</kbd> 可以直接跳到文末，你还记得不？😏），如果忘记了基本操作，请回去翻翻 [第一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/)
@@ -130,7 +131,7 @@ Space 本义是空间，macOS 中，官方也没有给出中文翻译，我们�
 直到我发现我同时开的窗口越来越多，也就开始寻找窗口管理的解决方案了。第三方 App 很多，付费的、免费的和开源的都有。试了大部分之后，我决定自己写配置。如果你对这个感兴趣，欢迎来看看我的第一篇[博客](http://singsing.io/blog/2016/11/27/HammerSpoon-1/)。我写的插件也放到了 [Github](https://github.com/S1ngS1ng/hammerspoon) 上，[中文文档和示例](https://github.com/S1ngS1ng/HammerSpoon/blob/master/README-cn.md) 也都加好了。最新的一次更新，加入了类似与 Windows 中 "Cycle through" 的效果，就是 <kbd>Win</kbd> + <kbd>←/→</kbd> 的效果。安装和使用也很简单，希望你能从中获得些思路。如果你也是开发者，欢迎给我的这个 repo 提交 issue 和 PR
 
 # 总结
-希望这篇长文涉及到的内容会对大家有所帮助。还是那句话，建议大家一边看一遍操作，这样会更好理解。
+这篇主要涉及到了 macOS 最基本的三个概念：窗口、标签和工作区。用好这三个功能，一定可以起到事半功倍的效果
 
 # 预告
 下一篇博客将为大家介绍一些常用的系统内置功能。以下为更新之后的大纲：
