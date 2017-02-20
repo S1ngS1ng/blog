@@ -28,7 +28,7 @@
 <meta property="og:image" content="S1ngS1ng.github.io/blog/blog/2016/12/11/HammerSpoon-2/vox-api.jpg">
 <meta property="og:image" content="S1ngS1ng.github.io/blog/blog/2016/12/11/HammerSpoon-2/vox-track-info.jpg">
 <meta property="og:image" content="S1ngS1ng.github.io/blog/blog/2016/12/11/HammerSpoon-2/vox-toggle-playlist.gif">
-<meta property="og:updated_time" content="2017-01-24T06:46:49.000Z">
+<meta property="og:updated_time" content="2017-02-20T04:30:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HammerSpoon - 实现音乐播放的全局键盘控制">
 <meta name="twitter:description" content="关于 HammerSpoon 的基本介绍，请参考我的上一篇博文关于本文中提到的 VOX，请点这里
@@ -468,7 +468,7 @@
 <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>代码也变得非常简单，比如，我们想把 <code>ctrl + j</code> 设置为切换播放/暂停。那么只需要：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hs.hotkey.bind(&#123;<span class="string">"ctrl"</span>&#125;, <span class="string">"j"</span>, hs.vox.playpause())</div></pre></td></tr></table></figure></p>
 <p>我的代码中，在快捷键绑定部分又封装了一次而已，封装部分是这样：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">local</span> voxHyper = &#123;<span class="string">"cmd"</span>, <span class="string">"alt"</span>, <span class="string">"shift"</span>&#125;</div><div class="line"></div><div class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">voxBindTable</span><span class="params">(keyFuncTable, hyper)</span></span></div><div class="line">  <span class="keyword">for</span> key,fn <span class="keyword">in</span> <span class="built_in">pairs</span>(keyFuncTable) <span class="keyword">do</span></div><div class="line">    hs.hotkey.bind(hyper <span class="keyword">or</span> voxHyper, key, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> fn() <span class="keyword">end</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>这个方法，首先接收一个 <code>table</code>(可以理解为 JS 的对象，或者，HashMap？)，然后接收 HyperKey 设置。我的 HyperKey 设置为 <code>cmd + alt + shift</code>。然后遍历传入的 <code>table</code>，把每一组的 <code>key</code> 和回调方法绑定上</p>
+<p>这个方法，首先接收一个 <code>table</code>(可以理解为 JS 的对象，或者，HashMap？)，然后接收 HyperKey 设置。我的 HyperKey 设置为 <code>cmd + option + shift</code>。然后遍历传入的 <code>table</code>，把每一组的 <code>key</code> 和回调方法绑定上</p>
 <p>调用起来就很方便了。我把 <code>hyper + j</code> 绑定为切换播放/暂停，<code>hyper + h</code> 绑定为上一首</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">voxBindTable(&#123;</div><div class="line">  j = hs.vox.playpause,</div><div class="line">  h = hs.vox.previous,</div><div class="line">  l = hs.vox.<span class="built_in">next</span>,</div><div class="line">  k = hs.vox.trackInfo,</div><div class="line">  i = hs.vox.togglePlaylist</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h3 id="显示歌曲信息"><a href="#显示歌曲信息" class="headerlink" title="显示歌曲信息"></a>显示歌曲信息</h3><p>之前提到了 <a href="http://www.hammerspoon.org/docs/hs.alert.html" target="_blank" rel="external">hs.alert</a>。用处就是，读取 API 获得当前曲目的歌曲信息 （歌名，演唱者以及专辑名），然后显示在屏幕上，持续 2 秒。效果如下图：</p>
@@ -497,7 +497,7 @@
         <p><span>本文标题:</span><a href="/blog/2016/12/11/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
         <p><span>发布时间:</span>2016年12月11日 - 01时10分</p>
-        <p><span>最后更新:</span>2017年01月24日 - 00时46分</p>
+        <p><span>最后更新:</span>2017年02月19日 - 22时30分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/2016/12/11/HammerSpoon-2/" title="HammerSpoon - 实现音乐播放的全局键盘控制">S1ngS1ng.github.io/blog/blog/2016/12/11/HammerSpoon-2/</a>
             <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2016/12/11/HammerSpoon-2/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
