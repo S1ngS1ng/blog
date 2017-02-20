@@ -54,29 +54,29 @@ SizeUp 和 Divvy 在功能上各有所长。SizeUp 方便快速调节窗口位�
 # 快捷键
 [README](https://github.com/S1ngS1ng/HammerSpoon/blob/master/README.md) 文件里写的很清楚了，这里还是列出来吧（快捷键均为 MacOS 的）：
 * 把窗口移到另一个屏幕
-    * `Ctrl-Alt + 左` 移到左边的屏幕
-    * `Ctrl-Alt + 右` 移到右边的屏幕
+    * `Ctrl-Option + 左` 移到左边的屏幕
+    * `Ctrl-Option + 右` 移到右边的屏幕
 * 全屏
-    * `Ctrl-Alt-Command + M`
+    * `Ctrl-Option-Command + M`
 * 把窗口放到屏幕中心
-    * `Ctrl-alt-Command + C`
+    * `Ctrl-Option-Command + C`
 * 设置窗口大小为屏幕大小的一半
-    * `Ctrl-Alt-Command + 左` 宽度为一半，靠左
-    * `Ctrl-Alt-Command + 右` 宽度为一半，靠右
-    * `Ctrl-Alt-Command + 上` 高度为一半，靠上
-    * `Ctrl-Alt-Command + 下` 高度为一半，靠下
+    * `Ctrl-Option-Command + 左` 宽度为一半，靠左
+    * `Ctrl-Option-Command + 右` 宽度为一半，靠右
+    * `Ctrl-Option-Command + 上` 高度为一半，靠上
+    * `Ctrl-Option-Command + 下` 高度为一半，靠下
 * 设置窗口大小，以左、上为基准 （意思是左边界和上边界不动）
-    * `Ctrl-Alt-Shift + 左` 窗口右侧边左移
-    * `Ctrl-Alt-Shift + 右` 窗口右侧边右移
-    * `Ctrl-Alt-Shift + 上` 窗口上边界上移
-    * `Ctrl-Alt-Shift + 下` 窗口上边界下移
+    * `Ctrl-Option-Shift + 左` 窗口右侧边左移
+    * `Ctrl-Option-Shift + 右` 窗口右侧边右移
+    * `Ctrl-Option-Shift + 上` 窗口上边界上移
+    * `Ctrl-Option-Shift + 下` 窗口上边界下移
 * 设置窗口大小，以右、下为基准
-    * `Alt-Command-Shift + 左` 窗口左侧边左移
-    * `Alt-Command-Shift + 右` 窗口左侧边右移
-    * `Alt-Command-Shift + 上` 窗口下边界上移
-    * `Alt-Command-Shift + 下` 窗口下边界下移
+    * `Option-Command-Shift + 左` 窗口左侧边左移
+    * `Option-Command-Shift + 右` 窗口左侧边右移
+    * `Option-Command-Shift + 上` 窗口下边界上移
+    * `Option-Command-Shift + 下` 窗口下边界下移
 
-其中，居中、全屏、窗口移到其他屏幕、窗口设置为一半屏幕大小的快捷键都和 SizeUp 的一样。至于窗口大小调整，只要记住`Ctrl-Alt-Shift` 是保持左边和下边不动，`Command-Alt-Shift` 是保持右边和下边不动就好了。毕竟，`Ctrl` 在 `Command` 的左边
+其中，居中、全屏、窗口移到其他屏幕、窗口设置为一半屏幕大小的快捷键都和 SizeUp 的一样。至于窗口大小调整，只要记住`Ctrl-Option-Shift` 是保持左边和下边不动，`Command-Option-Shift` 是保持右边和下边不动就好了。毕竟，`Ctrl` 在 `Command` 的左边
 
 # 配置
 

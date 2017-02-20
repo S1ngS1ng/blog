@@ -104,7 +104,7 @@ local function voxBindTable(keyFuncTable, hyper)
 end
 ```
 
-这个方法，首先接收一个 `table`(可以理解为 JS 的对象，或者，HashMap？)，然后接收 HyperKey 设置。我的 HyperKey 设置为 `cmd + alt + shift`。然后遍历传入的 `table`，把每一组的 `key` 和回调方法绑定上
+这个方法，首先接收一个 `table`(可以理解为 JS 的对象，或者，HashMap？)，然后接收 HyperKey 设置。我的 HyperKey 设置为 `cmd + option + shift`。然后遍历传入的 `table`，把每一组的 `key` 和回调方法绑定上
 
 调用起来就很方便了。我把 `hyper + j` 绑定为切换播放/暂停，`hyper + h` 绑定为上一首
 

@@ -28,14 +28,14 @@ tags: [Tools,Mac]
 <kbd>Cmd</kbd> + <kbd>↓</kbd> 跳到底部
 
 Mac 中也提供了按词跳光标的功能，英文中就是通过空格来判断：
-<kbd>Alt</kbd> + <kbd>←</kbd> 向前跳一个词
-<kbd>Alt</kbd> + <kbd>→</kbd> 向后跳一个词
+<kbd>Option</kbd> + <kbd>←</kbd> 向前跳一个词
+<kbd>Option</kbd> + <kbd>→</kbd> 向后跳一个词
 <!-- more -->
 
 ## 删除
 Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位于等号右边的退格（BackSpace），一个是位于方向键上面的向后删除（Delete）。Mac 虽然只有一个 <kbd>delete</kbd>，相当于 Windows的退格。但其实，我们只要通过组合键 <kbd>fn</kbd> + <kbd>delete</kbd> 就可以实现向后删除了
 
-不仅如此，<kbd>delete</kbd> 和 <kbd>fn</kbd> + <kbd>delete</kbd> 绝大部分情况下可以搭配 <kbd>Alt</kbd> 实现向前/向后删除一个词。一些情况下可以搭配 <kbd>Cmd</kbd> 实现删除整行（在编辑器 Atom 中不行，因为 Atom 把这个组合键默认设置成了删除至行首/行尾，如有需要，改下配置就好了）
+不仅如此，<kbd>delete</kbd> 和 <kbd>fn</kbd> + <kbd>delete</kbd> 绝大部分情况下可以搭配 <kbd>Option</kbd> 实现向前/向后删除一个词。一些情况下可以搭配 <kbd>Cmd</kbd> 实现删除整行（在编辑器 Atom 中不行，因为 Atom 把这个组合键默认设置成了删除至行首/行尾，如有需要，改下配置就好了）
 
 ## 文本选取
 以上所有提到的快捷键，都可以搭配 <kbd>Shift</kbd> 来实现选取
@@ -47,7 +47,7 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd>
 
 想向后选中三个词，只需要（\* 3 表示按三次）：
-<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd> \* 3
+<kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd> \* 3
 
 想选择整行，只需要：
 <kbd>Cmd</kbd> + <kbd>←</kbd> 然后 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd>
@@ -68,11 +68,11 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 
 上面提到的大部分快捷键对于在 Finder 中操作文件也是同理，我们可以全选、复制、粘贴甚至撤销和恢复，唯独不能通过 <kbd>Cmd</kbd> + <kbd>X</kbd> 来剪切
 
-很多朋友抱怨说 Mac 只能复制粘贴文件之后再把原来的删除（顺便，把文件移动到 Trash 的快捷键是 <kbd>Cmd</kbd> + <kbd>delete</kbd>），移动文件的时候很不方便。其实，Mac 是有这个功能的。复制之后，在目标文件夹右键，菜单打开后，按住<kbd>Alt</kbd>，本来的 “Paste Item” 就会变成 “Move Item Here”：
+很多朋友抱怨说 Mac 只能复制粘贴文件之后再把原来的删除（顺便，把文件移动到 Trash 的快捷键是 <kbd>Cmd</kbd> + <kbd>delete</kbd>），移动文件的时候很不方便。其实，Mac 是有这个功能的。复制之后，在目标文件夹右键，菜单打开后，按住<kbd>Option</kbd>，本来的 “Paste Item” 就会变成 “Move Item Here”：
 
 {% asset_img MoveItem.jpg MoveItem %}
 
-当然，也可以通过快捷键 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd> 来完成移动文件，会出现这样的提示，确定即可：
+当然，也可以通过快捷键 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>V</kbd> 来完成移动文件，会出现这样的提示，确定即可：
 
 {% asset_img MoveNotification.jpg MoveNotification %}
 
@@ -87,7 +87,7 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 
 这些快捷键可以不去记忆，对于开发者来说可能会偶尔用，对于绝大部分用户，可能并不怎么需要
 
-比如在 iTerm 中，我们会发现，用 <kbd>Cmd</kbd> + <kbd>←</kbd> 是跳不回开头的，因为 iTerm 已经把这个键设置成了跳到上一个 Tab。同样，用 <kbd>Alt</kbd> 键跳单词也不行了
+比如在 iTerm 中，我们会发现，用 <kbd>Cmd</kbd> + <kbd>←</kbd> 是跳不回开头的，因为 iTerm 已经把这个键设置成了跳到上一个 Tab。同样，用 <kbd>Option</kbd> 键跳单词也不行了
 
 这种情况下，我们需要这些特殊快捷键来实现功能：
 <kbd>Ctrl</kbd> + <kbd>A</kbd> 跳到行首（Home）

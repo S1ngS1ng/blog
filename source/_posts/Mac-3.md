@@ -34,10 +34,10 @@ App 相关的快捷键主要有：
 <kbd>Cmd</kbd> + <kbd>h</kbd> 隐藏（App）
 <kbd>Cmd</kbd> + <kbd>m</kbd> 最小化（窗口）
 
-以上功能可以配合 <kbd>Alt</kbd> 一起使用：
-<kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>w</kbd> 关闭当前 App 的所有 Tab
-<kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>h</kbd> 隐藏所有**其他 App** 的窗口
-<kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>m</kbd> 最小化**当前 App** 的所有窗口
+以上功能可以配合 <kbd>Option</kbd> 一起使用：
+<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>w</kbd> 关闭当前 App 的所有 Tab
+<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>h</kbd> 隐藏所有**其他 App** 的窗口
+<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>m</kbd> 最小化**当前 App** 的所有窗口
 
 一些和编辑相关的 App 中：
 <kbd>Cmd</kbd> + <kbd>o</kbd> 打开文件
@@ -50,10 +50,10 @@ App 相关的快捷键主要有：
 在 macOS 上，所有窗口的左上角都有四种按钮：
 {% asset_img window-icons.jpg window-icons %}
 
-这不是三个嘛？其实，按住 <kbd>Alt</kbd>，第四种就出来了：
+这不是三个嘛？其实，按住 <kbd>Option</kbd>，第四种就出来了：
 {% asset_img window-icons-plus.jpg window-icons-plus %}
 
-先说第一个按钮，就是最左边的那个"×"。要注意的是，点"×"并不能退出程序。如果要退出，可以用上面提到的快捷键；可以在菜单栏点击 App 名称，然后点退出；也可以右键点 Dock 栏的程序图标，然后点退出。有时候会遇到 App 停止响应的情况，我们可以通过 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>ESC</kbd> 来打开强制退出窗口，或者点击菜单栏里的苹果图标，也能找到强制退出
+先说第一个按钮，就是最左边的那个"×"。要注意的是，点"×"并不能退出程序。如果要退出，可以用上面提到的快捷键；可以在菜单栏点击 App 名称，然后点退出；也可以右键点 Dock 栏的程序图标，然后点退出。有时候会遇到 App 停止响应的情况，我们可以通过 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>ESC</kbd> 来打开强制退出窗口，或者点击菜单栏里的苹果图标，也能找到强制退出
 
 第二个按钮，功能上相当于 <kbd>Cmd</kbd> + <kbd>m</kbd>，也就是最小化。最小化之后，<kbd>Cmd</kbd> + <kbd>Tab</kbd> 是不能重新打开的，请继续看下一节
 
@@ -78,8 +78,8 @@ macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个�
 
 这种方式看起来复杂，但适应之后，其实很顺手的。美中不足的是，它只适合开启了单个窗口的 App：
 1. <kbd>Cmd</kbd> + <kbd>Tab</kbd> 选中最小化窗口的 App，一般需要用 <kbd>Shift</kbd> 往回跳一个才行
-2. 大拇指滑一下，**保持** <kbd>Cmd</kbd> **按住的同时**按住 <kbd>Alt</kbd>
-3. 继续滑大拇指，**保持** <kbd>Alt</kbd> **按住的情况下**松开 <kbd>Cmd</kbd>，这时候就能看到窗口已经回来了。然后松开 <kbd>Alt</kbd> 即可
+2. 大拇指滑一下，**保持** <kbd>Cmd</kbd> **按住的同时**按住 <kbd>Option</kbd>
+3. 继续滑大拇指，**保持** <kbd>Option</kbd> **按住的情况下**松开 <kbd>Cmd</kbd>，这时候就能看到窗口已经回来了。然后松开 <kbd>Option</kbd> 即可
 
 {% asset_img show-minimized-1.gif show-minimized-1 %}
 
@@ -103,7 +103,7 @@ macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个�
 其他 App 会有一些自定义的按键，比如：
 - Webstorm 是 <kbd>Ctrl</kbd> + <kbd>←</kbd> 和 <kbd>Ctrl</kbd> + <kbd>→</kbd>
 - iTerm 是 <kbd>Cmd</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>→</kbd>
-- Chrome 是 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>→</kbd>
+- Chrome 是 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>→</kbd>
 
 对于 Safari 的快捷键，我们可以直接在系统设置里改：
 
