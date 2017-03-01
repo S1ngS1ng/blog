@@ -48,9 +48,11 @@ App 相关的快捷键主要有：
 
 ## 窗口按钮
 在 macOS 上，所有窗口的左上角都有四种按钮：
+
 {% asset_img window-icons.jpg window-icons %}
 
 这不是三个嘛？其实，按住 <kbd>Option</kbd>，第四种就出来了：
+
 {% asset_img window-icons-plus.jpg window-icons-plus %}
 
 先说第一个按钮，就是最左边的那个"×"。要注意的是，点"×"并不能退出程序。如果要退出，可以用上面提到的快捷键；可以在菜单栏点击 App 名称，然后点退出；也可以右键点 Dock 栏的程序图标，然后点退出。有时候会遇到 App 停止响应的情况，我们可以通过 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>ESC</kbd> 来打开强制退出窗口，或者点击菜单栏里的苹果图标，也能找到强制退出
