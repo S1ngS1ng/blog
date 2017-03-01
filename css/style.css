@@ -4561,3 +4561,166 @@ figure.javascript pre .string {
   -ms-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
+.page-reward {
+  margin: 20px auto;
+}
+.page-reward .dashang {
+  display: block;
+  width: 56px;
+  margin: auto;
+  height: 56px;
+  line-height: 56px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  background: #4094c7;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  -webkit-transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -ms-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.page-reward .dashang:before {
+  display: none;
+}
+.page-reward .dashang:hover,
+.page-reward .dashang:active {
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 4px 15px rgba(0,0,0,0.2);
+}
+.page-reward .hide_box {
+  z-index: 999;
+  background: #000;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  left: 0;
+  top: 0;
+  height: 99%;
+  width: 100%;
+  position: fixed;
+  display: none;
+}
+.page-reward .shang_box {
+  width: 540px;
+  height: 450px;
+  padding: 10px;
+  background-color: #3f3f3f;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  margin-left: -280px;
+  margin-top: -225px;
+  border: 1px dotted #000;
+  display: none;
+}
+.page-reward .shang_box img {
+  border: none;
+  border-width: 0;
+}
+.page-reward .shang_close {
+  position: absolute;
+  display: inline-block;
+  font-weight: 200;
+  font-size: 40px;
+  right: 10px;
+  outline: none;
+  text-shadow: none;
+}
+.page-reward .shang_tit {
+  width: 100%;
+  font-family: Roboto, "Roboto", serif;
+  height: 75px;
+  text-align: center;
+  line-height: 66px;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 7px;
+  margin-right: 2px;
+}
+.page-reward .shang_tit p {
+  color: #a3a3a3;
+  text-align: center;
+  font-size: 16px;
+}
+.page-reward .shang_payimg {
+  width: 140px;
+  padding: 10px;
+  border: 6px solid #4094c7;
+  margin: 0 auto;
+  border-radius: 3px;
+  height: 140px;
+}
+.page-reward .shang_payimg img {
+  display: block;
+  text-align: center;
+  width: 140px;
+  height: 140px;
+}
+.page-reward .shang_payselect {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  height: 60px;
+  width: 320px;
+}
+.page-reward .shang_payselect .pay_item {
+  display: inline-block;
+  margin-right: 10px;
+  float: left;
+}
+.page-reward .shang_logo {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+.page-reward .pay_explain {
+  text-align: center;
+  margin: 10px auto;
+  font-size: 12px;
+  color: #fff;
+}
+.page-reward .radiobox {
+  width: 10px;
+  height: 10px;
+  border: 3px solid #4094c7;
+  border-radius: 50%;
+  display: block;
+  float: left;
+  margin-top: 10px;
+  margin-right: 14px;
+}
+.page-reward .checked .radiobox {
+  background: #4094c7;
+}
+.page-reward .shang_info {
+  clear: both;
+}
+.page-reward .shang_info p,
+.page-reward .shang_info a {
+  color: #c3c3c3;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  line-height: 2em;
+}
+.page-reward .pay_logo img {
+  height: 36px;
+}
+@media screen and (max-width: 800px) {
+  .page-reward .shang_box {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 0;
+    top: initial;
+    bottom: 0;
+    margin: 0;
+  }
+}
