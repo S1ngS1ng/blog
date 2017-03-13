@@ -66,7 +66,7 @@ macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个�
 <kbd>Cmd</kbd> + <kbd>h</kbd> 隐藏
 <kbd>Cmd</kbd> + <kbd>m</kbd> 最小化
 
-他们的区别在于，“隐藏”是把当前 App 的**所有窗口**都放回去，而“最小化”，是把当前窗口放回去。收入的位置也不同，“隐藏”会把 App 都收入 Dock 上的程序图标内，其实看起来和平时没有什么区别：
+他们的区别在于，“隐藏”是 App 级别的操作，把当前 App 的**所有窗口**都收起来，而“最小化”，是窗口级别的操作，只把**当前窗口**收起来。收入的位置也不同，“隐藏”会把 App 都收入 Dock 上的程序图标内，其实看起来和平时没有什么区别：
 
 {% asset_img hide.jpg hide %}
 
@@ -102,7 +102,7 @@ macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个�
 
 切换方面，macOS 原生的 App，比如 Finder 和 Safari，都可以通过 <kbd>Ctrl</kbd> + <kbd>Tab</kbd> 或者 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 来切换，也可以通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd> 或者 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd> 来切换。我更喜欢前面的那种方式
 
-其他 App 会有一些自定义的按键，比如：
+其他 App 会有一些自定义的切换标签快捷键，比如：
 - Webstorm 是 <kbd>Ctrl</kbd> + <kbd>←</kbd> 和 <kbd>Ctrl</kbd> + <kbd>→</kbd>
 - iTerm 是 <kbd>Cmd</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>→</kbd>
 - Chrome 是 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>→</kbd>
