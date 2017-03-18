@@ -2648,10 +2648,6 @@ color
 .article-entry em {
   font-style: italic;
 }
-.article-entry ul,
-.article-entry ol {
-  font-size: 14px;
-}
 .article-entry li ul,
 .article-entry li ol {
   margin-left: 30px;
