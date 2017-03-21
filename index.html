@@ -305,54 +305,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="重复输出字符串"><a href="#重复输出字符串" class="headerlink" title="重复输出字符串"></a>重复输出字符串</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/repeat-a-string-repeat-a-string" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/repeat-a-string-repeat-a-string" target="_blank" rel="external">英文链接</a></li>
+              <h1 id="重复输出字符串"><a href="#重复输出字符串" class="headerlink" title="重复输出字符串"></a>重复输出字符串</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/repeat-a-string-repeat-a-string">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/repeat-a-string-repeat-a-string">英文链接</a></li>
 <li>级别：初级 (Basic Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收两个参数。第一个参数为字符串 <code>str</code>，即为要重复输出的字符串。第二个参数 <code>num</code> 为一个数字，表示要重复输出的次数。返回值为字符串</li>
-<li>比如接收参数为 <code>&quot;*&quot;</code> 和 <code>3</code>，那么应该返回 <code>***</code>。如果接受的第二个参数为负数，则返回空字符 <code>&quot;&quot;</code></li>
-</ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li>没什么可以参考的，会写循环就行</li>
-</ul>
-<h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>重复输出，最直观的方式就是写一个循环。当然，<code>for</code> 或者 <code>while</code> 都可以。以下会给出这两种写法</li>
-<li>当然，首先要在外面建立一个空字符，用于存储结果。在遍历过程中，只需要把字符串加到这个变量就行了</li>
-<li>如果采用其他方法，请注意判断传入的 <code>num</code> 是否为负数。你会在文章后面看到具体说明</li>
-</ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案-for-循环"><a href="#基本答案-for-循环" class="headerlink" title="基本答案 - for 循环"></a>基本答案 - for 循环</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">        result += str;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="基本答案-while-循环"><a href="#基本答案-while-循环" class="headerlink" title="基本答案 - while 循环"></a>基本答案 - while 循环</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">        result += str;</div><div class="line">        num--;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>有些朋友可能会问，为什么这里不处理特殊情况，就是判断 <code>num</code> 是否大于 0 呢？其实，如果 <code>num</code> 小于等于 0，那就不会通过第一个解法中 <code>i &lt; num</code> 或 第二个解法中 <code>num &gt; 0</code> 的判断，也就不会执行循环体的代码，直接 <code>return result</code>。既然我们已经把初始值设置为了空字符串 “”，因此这时得到的就是正确的结果</li>
-<li>多说一句关于 <code>while</code> 和 <code>do while</code>。两者的区别在于，<code>while</code> 是先判断再执行，<code>do while</code> 是先执行再判断</li>
-<li>对于 <code>while</code>，我们可以直接用 <code>num</code> 来判断，执行的时候 <code>num--</code> 就可以了。不需要再定义额外的参数</li>
-</ul>
-<h3 id="内建方法-repeat"><a href="#内建方法-repeat" class="headerlink" title="内建方法 - repeat"></a>内建方法 - repeat</h3><p>在 ES6 中，有一个字符串的内建方法 <code>String.repeat()</code>。只是，一定要先判断 <code>num</code> 是否大于 0，否则会报错</p>
-<h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/repeat" target="_blank" rel="external">String.repeat()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank" rel="external">Ternary Operator</a></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> num &gt; <span class="number">0</span> ? str.repeat(num) : <span class="string">""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>这里用了三元运算符。其实也可以写成 <code>if else</code> 的形式</li>
-<li>ES6 需要浏览器支持，只要你用的是最新版的 Chrome，Safari 或者 Firefox，就肯定没问题</li>
-</ul>
-<h3 id="巧妙的解法-join"><a href="#巧妙的解法-join" class="headerlink" title="巧妙的解法 - join"></a>巧妙的解法 - join</h3><p>还记得数组有一个 <code>.join()</code> 方法吗？它也可以返回字符串</p>
-<h4 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="external">Array.join()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">Array()</a></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Array</span>(num + <span class="number">1</span>).join(str);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>其实最后的 <code>return &quot;&quot;</code> 就相当于是 <code>else</code> 的部分。因为如果通过了判断，会直接返回 <code>if</code> 里面的内容，形成逻辑短路，也就不会执行 <code>return &quot;&quot;</code> 这一句了</li>
-<li>原理也不复杂。<code>Array()</code> 是 JavaScript 中的数组构造器，传入一个数字 <code>num + 1</code>，就可以生成长度为 <code>num + 1</code> 的空数组，数组中的元素均为 <code>undefined</code></li>
-<li>然后我们通过 <code>.join()</code> 方法，把这个数组变成字符串。<code>undefined</code> 会自动转换成空字符串。对于每个元素，用 <code>join()</code> 的参数把它们连接起来。这就是代码的意思</li>
-<li>举个例子，执行 <code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].join(&quot;x&quot;)</code>，我们就可以得到字符串 <code>&quot;axbxc&quot;</code></li>
-<li>至于 <code>num + 1</code>，是因为我们需要输出 <code>num</code> 次，如果生成的数组长度为 <code>num</code>，那么 <code>join</code> 之后会少一次，因为 <code>join</code> 相当于把参数填入数组元素的”空缺”中</li>
-</ul>
-
+<li>比如接收参数为 <code>&quot;*&quot;</code> 和 <code>3</code>，那么应该返回 <code>***</code>。如果接受的第二个参数为负数，则返回空字符 <code>&quot;&quot;</code>
+          
       
       
     </div>
@@ -366,6 +327,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FCC/">FCC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/blog/2017/03/20/repeat-a-string-repeat-a-string/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -410,76 +375,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="检查字符串结尾"><a href="#检查字符串结尾" class="headerlink" title="检查字符串结尾"></a>检查字符串结尾</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/confirm-the-ending" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/confirm-the-ending" target="_blank" rel="external">英文链接</a></li>
+              <h1 id="检查字符串结尾"><a href="#检查字符串结尾" class="headerlink" title="检查字符串结尾"></a>检查字符串结尾</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/confirm-the-ending">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/confirm-the-ending">英文链接</a></li>
 <li>级别：初级 (Basic Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收两个参数，第一个参数为待检查的字符串 <code>str</code>，第二个参数为要比较的目标字符串 <code>target</code>。需要确认 <code>str</code> 是否以 <code>target</code> 结尾，如果是则返回 <code>true</code>，否则返回 <code>false</code></li>
-<li>比如接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;o&quot;</code>，那么输出就是 <code>true</code>。如果接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;e&quot;</code>，那么输出就是 <code>false</code></li>
-</ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr" target="_blank" rel="external">String.substr()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">String.slice()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring" target="_blank" rel="external">String.substring()</a></li>
-</ul>
-<h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>这道题目难度不大，而且解决方案很多</li>
-<li>我们不需要分割字符串，只需要用字符串的 <code>substr</code> 或 <code>slice</code> 方法，获取到 <code>str</code> 的最后 n 位，再与 <code>target</code> 比较即可</li>
-<li>需要注意的是，由于 <code>target</code> 长度不定，因此要根据它的长度来截取 <code>str</code></li>
-</ul>
-<h3 id="比较字符串的-substr-slice-与-substring-方法"><a href="#比较字符串的-substr-slice-与-substring-方法" class="headerlink" title="比较字符串的 substr, slice 与 substring 方法"></a>比较字符串的 substr, slice 与 substring 方法</h3><p>既然说到截取字符串，还是先来比较一下 <code>substr</code>, <code>slice</code> 和 <code>substring</code> 这三个方法吧。一开始很容易搞混，其实并不复杂</p>
-<ul>
-<li>大体上来说，这三个方法可以根据参数分为两类。第一类是 <code>substring</code> 和 <code>slice</code>，他们的两个参数分别是 Start Index (起始索引) 和 End Index (终点索引)。第二类是 <code>substr</code>，第一个参数是 Start Index (起始索引)，第二个参数是 Length (截取长度)</li>
-<li>共同点在于，以上这三个方法，第二个参数都是可以省略的，而且，很显然，他们都返回截取后的字符串。另外，他们都不会改变原字符串</li>
-<li>先来说 <code>substr</code><ul>
-<li>首先，需要注意，它的第二个参数是截取长度，而非结尾的索引</li>
-<li>第一个参数可以为负数，负数代表以结尾为基准</li>
-<li>如果第二个参数为负数，那么会返回空字符 <code>&quot;&quot;</code></li>
-</ul>
-</li>
-<li>再来对比一下 <code>slice</code> 与 <code>substring</code><ul>
-<li>相同点：<ul>
-<li>如果第一个参数与第二个相等，那么 <code>slice</code> 与 <code>substring</code> 都返回空字符 <code>&quot;&quot;</code></li>
-<li>如果只传入了第一个参数，那么都会截取到终点</li>
-<li>如果任何一个参数大于字符串长度，那就会使用字符串长度作这个参数</li>
-</ul>
-</li>
-<li>不同点：<ul>
-<li>如果传入负数，<code>substring</code> 会当成 0 去计算，而 <code>slice</code> 会以字符串结尾为参考进行计算</li>
-<li>如果第一个参数大于第二个，<code>substring</code> 会把两个参数换位然后计算，而 <code>slice</code> 则会返回空字符 <code>&quot;&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>因此，个人认为，如果要截取特定长度的字符串，就用 <code>substr</code>，否则就推荐用 <code>slice</code>。之所以更推荐 <code>slice</code>，是因为，首先它支持负数作为索引，在一些情况下会很方便。只要我们在用 <code>slice</code> 的时候，保证第一个数小于第二个数，那就不会出问题</li>
-</ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案"><a href="#基本答案" class="headerlink" title="基本答案"></a>基本答案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="comment">// 计算出开始的索引</span></div><div class="line">    <span class="keyword">var</span> startIndex = str.length - target.length;</div><div class="line">    <span class="comment">// 从开始索引，一直截取到字符串终点</span></div><div class="line">    <span class="keyword">var</span> strEnd = str.slice(startIndex);</div><div class="line">    <span class="keyword">return</span> strEnd === target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>根据上面的解释，其实写成 <code>str.substr(startIndex)</code> 或者 <code>str.substring(startIndex)</code> 都行</li>
-<li>如果你不能理解，请打开浏览器 console 试试以上提到的三种方法</li>
-</ul>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
-<li>上面我们声明了两个变量，但其实完全可以不声明，直接返回结果就好了</li>
-<li>既然 <code>slice</code> 可以传入负数作为参数，题目要求也是检测结尾，所以，可以直接从结尾来截取<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.slice(-target.length) === target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>当然，把 <code>slice</code> 换成 <code>substr</code> 也是没问题的。只是，绝对不要换成 <code>substring</code></li>
-</ul>
-<h3 id="利用正则来解决"><a href="#利用正则来解决" class="headerlink" title="利用正则来解决"></a>利用正则来解决</h3><h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="external">RegExp()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" target="_blank" rel="external">RegExp.test()</a><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">RegExp</span>(target + <span class="string">'$'</span>).test(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>注意，并不是说这种解法效率高，事实上正则效率很低。放在这里只是多提供一种思路</li>
-<li>如果你不理解正则构造器 <code>RegExp</code> 的用法，请点击上面的链接读一读</li>
-<li>举个例子，如果传入的 <code>target</code> 是 <code>&quot;abc&quot;</code>，那么通过 <code>RegExp</code> 构造器就生成了 <code>/abc$/</code>。<code>$</code> 符号就表示字符串结尾</li>
-<li>然后我们用这个正则的 <code>test</code> 方法来测试 <code>str</code>，返回测试结果</li>
-</ul>
-
+<li>比如接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;o&quot;</code>，那么输出就是 <code>true</code>。如果接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;e&quot;</code>，那么输出就是 <code>false</code>
+          
       
       
     </div>
@@ -493,6 +397,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FCC/">FCC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/blog/2017/03/20/confirm-the-ending/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -537,170 +445,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="找出多个数组中的最大数"><a href="#找出多个数组中的最大数" class="headerlink" title="找出多个数组中的最大数"></a>找出多个数组中的最大数</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/return-largest-numbers-in-arrays" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/return-largest-numbers-in-arrays" target="_blank" rel="external">英文链接</a></li>
+              <h1 id="找出多个数组中的最大数"><a href="#找出多个数组中的最大数" class="headerlink" title="找出多个数组中的最大数"></a>找出多个数组中的最大数</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/return-largest-numbers-in-arrays">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/return-largest-numbers-in-arrays">英文链接</a></li>
 <li>级别：初级 (Basic Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收多个数组为参数，返回每个数组的最大值组成的新数组</li>
-<li>这道题不会涉及到特殊情况的处理，因此只需要遍历，找出最大值就可以了</li>
-</ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li>对于初级解法，没什么太多要参考的。只需要想想，如何从数组中提取出最大值就可以了</li>
-<li>题目的整体思路与之前的 <a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a> 十分相似。区别在于，这道题是在操作二维数组，那道题是在操作一维数组</li>
-</ul>
-<h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>首先设置一个空数组，用于存储结果</li>
-<li>遍历一遍传入的参数，参数是一个二维数组。因此，在遍历的过程中，我们操作的对象就是其中的每一个数组</li>
-<li>然后，提取出当前数组的最大值，并把它添加到第一步初始化的数组中。最后返回这个数组即可</li>
-<li>获取数组的最大值也很容易，首先在外面设置一个变量，初始化为 0。然后，遍历一遍数组，发现更大的就赋值给它，没发现更大的就什么也不做。遍历结束后，这个变量就是数组最大值</li>
-<li>基本思路中，我们先不涉及太多的技巧，就用最直观、最简单的方式，先把它写出来</li>
-</ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案"><a href="#基本答案" class="headerlink" title="基本答案"></a>基本答案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="comment">// 空数组，用于存储结果</span></div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    </div><div class="line">    <span class="comment">// 遍历传入的数组</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="comment">// 初始化最大值，可以想一下为什么要写在这里</span></div><div class="line">        <span class="keyword">var</span> largest = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// arr 是一个二维数组，arr[i] 才是我们要找最大值的每一个数组</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[i][j] &gt; largest) &#123;</div><div class="line">                <span class="comment">// 找到更大的值，更新 largest</span></div><div class="line">                largest = arr[i][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 把最大值存储到 `result`</span></div><div class="line">        result.push(largest);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>首先要想明白一点，第一层的 <code>for</code> 循环我们是在遍历传入的参数。第二层的才是每一个数组。比如 <code>arr[0]</code> 就是传入的二维数组中的第一个数组，那么 <code>arr[0][0]</code> 就是传入的二维数组中，第一个数组的第一个元素</li>
-<li>明白了上一条，你应该就能理解，为什么我们要在第一个 <code>for</code> 循环里面，第二个 <code>for</code> 循环的外面声明 <code>largest</code>。简单来说，我们需要找的是 <code>arr[0]</code>, <code>arr[1]</code>, <code>arr[2]</code>… 的最大值。举个例子来说，我们希望 <code>largest</code> 在从 <code>arr[0]</code> 换成 <code>arr[1]</code> 的时候重新赋值</li>
-<li>在第二层 <code>for</code> 循环结束之后，我们就得到了当前数组的最大值，因此需要把它 <code>push</code> 到 <code>result</code> 中</li>
-</ul>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
-<li>数组方法中，有个叫 <code>.reduce()</code> 的。之前提到过，是在遍历中，把上一次计算结果用于下一次计算</li>
-<li>因此，对于上面两个 <code>for</code> 循环，我们都可以通过 <code>reduce</code> 来改写。寻找最大值的改写这里不再赘述，请参考<a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a>那篇”优化”部分，对 <code>reduce</code> 的详细解释</li>
-<li>对于生成结果数组，一样是可以通过 <code>reduce</code> 来实现的。初始值设置为一个空数组 <code>[]</code>，然后把每一个最大值 <code>push</code> 进去，记得一定要返回这个数组，用于下次计算。<code>.push()</code> 的返回值不是数组，而是操作之后的数组长度<h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="external">Array.reduce()</a></li>
-<li><a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prevArr, nextArr</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> prevArr.concat(nextArr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prevNum, nextNum</span>) </span>&#123;</div><div class="line">           <span class="keyword">return</span> <span class="built_in">Math</span>.max(prevNum, nextNum); </div><div class="line">        &#125;, <span class="number">0</span>));</div><div class="line">    &#125;, []); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>一定要注意这里的层级关系。我们可以简单理解为，一层 <code>reduce</code> 就相当于一层 <code>for</code> 循环。因此，第一层 <code>reduce</code> 是遍历传入的参数，也就是二维数组，第二层才是遍历数组中的所有元素，也就是要找出最大值的那些数字</li>
-<li>理解了上面这一点，也就应该能理解为什么在第一层要传入空数组作为默认值，而在第二层要传入 0 作为默认值</li>
-<li>简单解释一下每一层发生了什么。里面的那一层，对于一个数组，比如 <code>[1, 2, 3, 4]</code> 来说，设定一个初始值为 0，并作为第一次遍历的 <code>prevNum</code> 传入，这时候 <code>nextNum</code> 为第一个元素，就是 1。我们通过 <code>Math.max()</code>，返回较大的 1。这时候 1 作为下一次执行的 <code>prevNum</code> 传入，同时，<code>nextNum</code> 为第二个元素，就是 2</li>
-<li>外面那一层，第一次执行，用 <code>[]</code> 作为 <code>prevArr</code>，这时候 <code>nextArr</code> 为参数二维数组中的第一个数组。我们计算出 <code>nextArr</code> 的最大值，然后把这个结果 <code>concat</code> 到 <code>prevArr</code>。之所以用 <code>concat</code>，是因为 <code>concat</code> 返回操作后的数组，而 <code>push</code> 并没有这个效果</li>
-<li>如果你还没想明白，要么 <code>console.log</code> 一下每一层执行过程中的 <code>prev</code> 和 <code>next</code>，要么对照着<a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a>这一篇，自己画出来一个表格，应该就能理解了</li>
-</ul>
-<h3 id="再优化-更简单的思路"><a href="#再优化-更简单的思路" class="headerlink" title="再优化 - 更简单的思路"></a>再优化 - 更简单的思路</h3><ul>
-<li>我们可以注意到一点，传入的参数是数组，返回的结果也是数组。进一步思考，传入的参数长度应该与结果的长度是一致的，因为参数长度就表示我们需要找出多少个数组中的最大值</li>
-<li>如果能想明白上面这一点，那么用 <code>.map()</code> 就顺理成章了。之前提到过，<code>.map()</code> 适用于”返回一个相同长度，并经过一些处理的数组”</li>
-<li>至于找出数组最大值，最简便的写法恐怕是 <code>Math.max.apply(null, arr)</code>。这一点在<a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a>那一篇也提到了<h4 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h4></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="external">Array.map()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="external">Function.apply()</a></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.map(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, e);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>这是我能想到的，看起来最简洁的方式</li>
-<li>只需要想清楚，调用 <code>arr.map()</code>，这时候，回调函数里面的 <code>e</code> 其实是数组，也就是对应着 <code>arr[0]</code>，<code>arr[1]</code>…</li>
-</ul>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FCC/">FCC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-title-case-a-sentence" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/03/18/title-case-a-sentence/" class="article-date">
-      <time datetime="2017-03-18T08:35:10.000Z" itemprop="datePublished">2017-03-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/18/title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+<li>这道题不会涉及到特殊情况的处理，因此只需要遍历，找出最大值就可以了
           
-        <h1 id="句中单词首字母大写"><a href="#句中单词首字母大写" class="headerlink" title="句中单词首字母大写"></a>句中单词首字母大写</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/title-case-a-sentence" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/title-case-a-sentence" target="_blank" rel="external">英文链接</a></li>
-<li>级别：初级 (Basic Algorithm Scripting)</li>
-</ul>
-<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收一个字符串参数，返回操作之后的字符串</li>
-<li>比如接收的是 <code>&quot;short sentence&quot;</code>，那么输出就是 <code>Short Sentence</code>，如果接收的是 <code>&quot;shOrT sEnTEnce&quot;</code>，那么输出也应该是 <code>Short Sentence</code></li>
-<li>需要注意的是，题目中暗含了一个情况需要处理，就是每个单词，如果在非首字母位置出现了大写，也要输出小写</li>
-</ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="external">String.split()</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Array/join" target="_blank" rel="external">Array.join()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase" target="_blank" rel="external">String.toLowerCase()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase" target="_blank" rel="external">String.toUpperCase()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr" target="_blank" rel="external">String.substr()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">String.slice()</a></li>
-</ul>
-<h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>既然我们要操作每一个单词，那可以先用 <code>split(&quot; &quot;)</code> 去分割传入的字符串成为数组，这样操作起来就会方便很多</li>
-<li>另一方面，为了方便操作，我们可以在分割之前先把所有字符都用 <code>.toLowerCase()</code> 转换成小写。JavaScript 只会去操作大写字符，转换成小写。至于特殊符号和空格，不会影响函数执行</li>
-<li>分割之后，遍历数据，然后把第一个字符变成大写就行。转换方式就是用 <code>toUpperCase()</code></li>
-<li>为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 <code>.substr()</code> 或者 <code>.slice()</code> 取出单词剩余部分，拼凑起来就可以了</li>
-<li>同样，这道题也可以使用正则表达式以及字符串方法完成</li>
-</ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案-分割，转换，合并"><a href="#基本答案-分割，转换，合并" class="headerlink" title="基本答案 - 分割，转换，合并"></a>基本答案 - 分割，转换，合并</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 转小写及分割成数组</span></div><div class="line">    <span class="keyword">var</span> stringArr = str.toLowerCase().split(<span class="string">" "</span>);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; stringArr.length; i++) &#123;</div><div class="line">        <span class="comment">// 修改数组元素。第[0]位就是单词的首字母，转成大写，然后把后面的字符加上去</span></div><div class="line">        stringArr[i] = stringArr[i][<span class="number">0</span>].toUpperCase() + stringArr[i].slice(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> stringArr.join(<span class="string">" "</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>可能会有朋友问，为什么不在 <code>function</code> 里生成一个空字符串，再遍历数组，动态地把处理过的字符串添加进去呢？这个思路当然是没问题的，只是需要多做一步，就是处理多余的空格。大家可以写一下试试，顺便，去掉首尾空格的方法叫 <code>.trim()</code></li>
-<li><code>.slice(1)</code> 的意思就是，从索引为 1 的字符，一直复制到字符串结尾。这个步骤同样可以写成 <code>.substr(1)</code></li>
-<li>最后那里，一定要 <code>.join(&quot; &quot;)</code>，这表示我们用空格把所有元素合并起来。而且这个空格，不会加到首尾。这也许是用数组的一个好处，毕竟 <code>.join()</code> 是数组方法</li>
-</ul>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
-<li>既然用了数组，这里又是要对每一个元素执行相同的操作，不妨用用 <code>.map()</code><h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Array/map" target="_blank" rel="external">Array.map()</a><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.toLowerCase().split(<span class="string">" "</span>).map(<span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> word[<span class="number">0</span>].toUpperCase() + word.slice(<span class="number">1</span>);</div><div class="line">    &#125;).join(<span class="string">" "</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li><code>.toLowerCase()</code> 返回字符串，调用 <code>.split()</code> 方法之后返回数组。数组再去调用 <code>.map()</code> 方法</li>
-<li>只要你理解了上面的基本解法，同时理解了 <code>.map()</code> 方法的作用，就应该不难理解这段代码。<code>.map()</code> 的好处就在于，它是数组方法，而且返回值为操作之后的数组</li>
-</ul>
-<h3 id="中级解法-使用正则表达式及字符串方法"><a href="#中级解法-使用正则表达式及字符串方法" class="headerlink" title="中级解法 - 使用正则表达式及字符串方法"></a>中级解法 - 使用正则表达式及字符串方法</h3><ul>
-<li>思路上来说，就是通过正则匹配到首字母，并把它替换成为大写字符，同时，保留其他字符不变</li>
-<li>当然，也是需要先进行 <code>.toLowerCase()</code> 操作的<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.toLowerCase().replace(<span class="regexp">/(\s|^)[a-z]/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">match</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> match.toUpperCase();</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>首先转换成小写，这一步应该不需要多解释</li>
-<li>然后我们调用字符串的 <code>.replace()</code> 方法，这个正则其实不复杂。<code>\s</code> 包含了空格，<code>^</code> 是用来匹配字符串开头。意思就是，如果在空格之后有一个字母，或者一个字母位于 <code>str</code> 的开头，那就可以匹配</li>
-<li>而且，我们还设置了 flag 为 <code>/g</code>。因此，对于 <code>abc def ghi</code> 这个 <code>str</code>，会匹配到三个位置，分别是 <code>a</code>，<code>d</code> 以及 <code>g</code>。值得注意的是，d 和 g 前面的空格也是会被匹配到的</li>
-<li><code>.replace()</code> 的第二个参数，常见的情况是传入字符。但其实，传入一个 callback function (回调函数) 也是没问题的。传入的回调函数，第一个参数即为匹配的组，这个函数的返回值一定要是一个字符串，即为我们要把前面匹配到的部分替换成什么</li>
-<li>由于匹配的部分 (也就是上面代码中的形式参数 match) 本身就是字符，那么我们可以直接调用 <code>.toUpperCase()</code> 把它转成大写。<code>.toUpperCase()</code> 会忽略掉不能转换的东西，比如特殊字符、大写字符和空格</li>
-</ul>
-
       
       
     </div>
@@ -714,6 +467,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FCC/">FCC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/blog/2017/03/20/return-largest-numbers-in-arrays/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -784,6 +541,77 @@
       
         <p class="article-more-link">
           <a  href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-title-case-a-sentence" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2017/03/18/title-case-a-sentence/" class="article-date">
+      <time datetime="2017-03-18T08:35:10.000Z" itemprop="datePublished">2017-03-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/03/18/title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="句中单词首字母大写"><a href="#句中单词首字母大写" class="headerlink" title="句中单词首字母大写"></a>句中单词首字母大写</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/title-case-a-sentence">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/title-case-a-sentence">英文链接</a></li>
+<li>级别：初级 (Basic Algorithm Scripting)</li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>这个 <code>function</code> 接收一个字符串参数，返回操作之后的字符串</li>
+<li>比如接收的是 <code>&quot;short sentence&quot;</code>，那么输出就是 <code>Short Sentence</code>，如果接收的是 <code>&quot;shOrT sEnTEnce&quot;</code>，那么输出也应该是 <code>Short Sentence</code></li>
+<li>需要注意的是，题目中暗含了一个情况需要处理，就是每个单词，如果在非首字母位置出现了大写，也要输出小写
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FCC/">FCC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/blog/2017/03/18/title-case-a-sentence/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
