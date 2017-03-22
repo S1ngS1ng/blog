@@ -3,45 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FreeCodeCamp 初级算法题 - 检查回文字符串 | S1ngS1ng</title>
+  <title>FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组 | S1ngS1ng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="检查回文字符串题目链接
+  <meta name="description" content="猴子吃香蕉, 分割数组题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收一个字符串参数，返回 Boolean
-回文字符串意思就是正着读和反着读都一样的字符串
-比如接收的是 “eye”，那么输出就是 true，如果接受的是 “nope”，那么输出就是 false
-需要注意的是，在这道题目中，需要忽略空格和特殊符号的影响，">
+这个 function 接收两个参数，第一个参数为数组 arr，即为需要分割的原数组。第二个参数为数字 size，表示分割后每段的长度。返回值为分割后形成的二维数组
+比如接收的是 [1, 2, 3, 4, 5, 6] 与 2，那么输出就是 [[1, 2], [3, 4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeCodeCamp 初级算法题 - 检查回文字符串">
-<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/17/fcc-basic-check-for-palindromes/index.html">
+<meta property="og:title" content="FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/21/chunky-monkey/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
-<meta property="og:description" content="检查回文字符串题目链接
+<meta property="og:description" content="猴子吃香蕉, 分割数组题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收一个字符串参数，返回 Boolean
-回文字符串意思就是正着读和反着读都一样的字符串
-比如接收的是 “eye”，那么输出就是 true，如果接受的是 “nope”，那么输出就是 false
-需要注意的是，在这道题目中，需要忽略空格和特殊符号的影响，">
-<meta property="og:updated_time" content="2017-03-18T04:34:20.000Z">
+这个 function 接收两个参数，第一个参数为数组 arr，即为需要分割的原数组。第二个参数为数字 size，表示分割后每段的长度。返回值为分割后形成的二维数组
+比如接收的是 [1, 2, 3, 4, 5, 6] 与 2，那么输出就是 [[1, 2], [3, 4">
+<meta property="og:updated_time" content="2017-03-22T02:32:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 检查回文字符串">
-<meta name="twitter:description" content="检查回文字符串题目链接
+<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组">
+<meta name="twitter:description" content="猴子吃香蕉, 分割数组题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收一个字符串参数，返回 Boolean
-回文字符串意思就是正着读和反着读都一样的字符串
-比如接收的是 “eye”，那么输出就是 true，如果接受的是 “nope”，那么输出就是 false
-需要注意的是，在这道题目中，需要忽略空格和特殊符号的影响，">
+这个 function 接收两个参数，第一个参数为数组 arr，即为需要分割的原数组。第二个参数为数字 size，表示分割后每段的长度。返回值为分割后形成的二维数组
+比如接收的是 [1, 2, 3, 4, 5, 6] 与 2，那么输出就是 [[1, 2], [3, 4">
   
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
@@ -301,11 +295,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-fcc-basic-check-for-palindromes" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-chunky-monkey" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2017/03/17/fcc-basic-check-for-palindromes/" class="article-date">
-      <time datetime="2017-03-18T04:10:47.000Z" itemprop="datePublished">2017-03-17</time>
+      <a href="/blog/2017/03/21/chunky-monkey/" class="article-date">
+      <time datetime="2017-03-22T02:25:30.000Z" itemprop="datePublished">2017-03-21</time>
 </a>
     </div>
   
@@ -318,7 +312,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      FreeCodeCamp 初级算法题 - 检查回文字符串
+      FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组
     </h1>
   
 
@@ -339,85 +333,58 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="检查回文字符串"><a href="#检查回文字符串" class="headerlink" title="检查回文字符串"></a>检查回文字符串</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/check-for-palindromes" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/check-for-palindromes" target="_blank" rel="external">英文链接</a></li>
+        <h1 id="猴子吃香蕉-分割数组"><a href="#猴子吃香蕉-分割数组" class="headerlink" title="猴子吃香蕉, 分割数组"></a>猴子吃香蕉, 分割数组</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/chunky-monkey" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/chunky-monkey" target="_blank" rel="external">英文链接</a></li>
 <li>级别：初级 (Basic Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收一个字符串参数，返回 Boolean</li>
-<li>回文字符串意思就是正着读和反着读都一样的字符串</li>
-<li>比如接收的是 “eye”，那么输出就是 true，如果接受的是 “nope”，那么输出就是 false</li>
-<li>需要注意的是，在这道题目中，需要忽略空格和特殊符号的影响，只考虑数字和字母部分<a id="more"></a>
+<li>这个 <code>function</code> 接收两个参数，第一个参数为数组 <code>arr</code>，即为需要分割的原数组。第二个参数为数字 <code>size</code>，表示分割后每段的长度。返回值为分割后形成的二维数组</li>
+<li>比如接收的是 <code>[1, 2, 3, 4, 5, 6]</code> 与 <code>2</code>，那么输出就是 <code>[[1, 2], [3, 4], [5, 6]]</code></li>
+<li>需要注意的是，如果分割的过程出现剩余，那么返回值的最后一个数组会比较短。比如接收的是 <code>[1, 2, 3]</code> 与 <code>2</code>，那么输出就是 <code>[[1, 2], [3]]</code><a id="more"></a>
 </li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="external">String.replace()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase" target="_blank" rel="external">String.toLowerCase()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="external">正则表达式</a></li>
+<li>对于基本解法，我们先不用数组内建方法，只通过最基本的循环来实现，因此，你只需要知道 <code>for</code> 循环和 <code>push</code> 就够了</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="external">Array.push()</a></li>
 </ul>
 <h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>在判断之前，以下这两步是一定要做的，顺序无所谓：<ul>
-<li>去掉所有”干扰项”，比如特殊字符和空格</li>
-<li>把字符串转换成小写</li>
+<li>只需要模拟一下执行过程，就知道我们只需要写一个循环，实现先取出数组的 <code>0</code> 到 <code>size</code> 位，然后给两个值都加上 <code>size</code>，也就是取出 <code>size</code> 到 <code>size + size</code> 位，直到数组终点。这样，每次截取的长度都是 <code>size</code></li>
+<li>因此，需要嵌套循环。外层的循环用于确定范围，内层的循环就是把范围内的元素每个都 <code>push</code> 到临时数组中，再在内层循环结束后把生成的数组 <code>push</code> 到结果中就可以了</li>
+<li>写的时候需要注意，一定要判断边界。否则你会得到 <code>undefined</code></li>
+<li>这个思路其实就是双指针，请先试着自己写一下，再看答案</li>
 </ul>
-</li>
-<li>逻辑判断部分，大体可以分为两种思路：<ul>
-<li>翻转字符串，并与排除干扰项之后的字符串比较，如果相等就返回 true，反之则为 false</li>
-<li>双指针。用两个变量代表两个”指针”，一个从开头往右移动，另一个从结尾向左移动，比较每次指向的字符是否相等</li>
-</ul>
-</li>
-<li>对于第一种”翻转字符串后比较”的思路，可以参考之前做过的 <code>Reverse a String</code> 那道题，有以下两种实现方式：<ul>
-<li>先把字符串变成数组，用数组的 <code>.reverse()</code> 方法，然后合并成字符串</li>
-<li>不用数组，直接通过 <code>for</code> 循环翻转字符串，然后与排除干扰项后的字符串比较</li>
-</ul>
-</li>
-<li>对于第二种”双指针”的思路，也有两种实现方式：<ul>
-<li>循环，设置一个指针初始值为开头(0) 另一个为结尾(str.length - 1)，然后判断当前字符是否相等。相等就把左边的指针向右移动一位(++)，同时右边的指针向左移动一位(–)。如果不相等就可以直接跳出了，并返回 false</li>
-<li>递归，不需要创建指针。每次都判断字符串的开头和结尾是否相等，递归调用的时候参数传入去掉头尾的 <code>str</code></li>
-</ul>
-</li>
-<li>建议先用第一种思路写，通过了再试试第二种思路</li>
-<li>如果要写递归，一定要记得设置好边界条件和跳出条件</li>
-</ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="关于正则"><a href="#关于正则" class="headerlink" title="关于正则"></a>关于正则</h3><p>在给出答案之前，先简单说说这道题的正则如何写最好</p>
-<p>在这道题目中，我们需要把空格、特殊符号都去掉。<code>.replace()</code> 方法接收的第一个参数为一个正则表达式(或字符)，第二个参数为字符(或一个 function)。作用就是把通过第一个参数匹配到的字符给替换成第二个参数的字符。括号中的参数类型，这道题中并不会用到</p>
-<p>那么，我们需要做的就是，在第一个参数中匹配空格和特殊符号，第二个参数中传入 <code>&quot;&quot;</code> 空字符，顺便，记得要在正则结尾写上 <code>/g</code>，否则不能替换全部</p>
-<p>匹配空格和特殊符号，空格是 <code>\s</code> (请注意，反之不成立，<code>\s</code> 不光是空格，还包括制表符 tab，以及换行符 <code>\r</code> 或者 <code>\r\n</code>)。然而，特殊符号，并没有一个通用的匹配写法</p>
-<p>有些朋友可能会想这样做，事实上我也真的见过有不少人这样做：<code>/[!@#$%^&amp;*()_+\-=\[\]{};&#39;:&quot;\\|,.&lt;&gt;\/?]/g</code>，嗯，没毛病</p>
-<p>但我们换一种思路想想，其实我们要做的，就是”保留英文字母和数字”。这样，正则就变得简单很多了，只需要 <code>/[^A-Za-z0-9]/g</code>。另一方面，如果你先 <code>.toLowerCase()</code> 再 <code>.replace()</code>，正则就可以直接写成 <code>/[^a-z0-9]/g</code></p>
-<p>如果你决定用 <code>\w</code> 的相反形式 <code>\W</code>，没有问题，但一定要记住，<code>\w</code> 不仅包含英文字母，还包含了下划线 <code>_</code>。因此，你需要写成 <code>/[\W_]/g</code>，或者写成 <code>/\W|_/g</code></p>
-<h3 id="基本答案-翻转字符串后比较"><a href="#基本答案-翻转字符串后比较" class="headerlink" title="基本答案 - 翻转字符串后比较"></a>基本答案 - 翻转字符串后比较</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 转换成小写</span></div><div class="line">    <span class="keyword">var</span> lowerStr = str.toLowerCase();</div><div class="line">    <span class="comment">// 替换掉干扰项</span></div><div class="line">    <span class="keyword">var</span> replacedStr = lowerStr.replace(<span class="regexp">/[^a-z0-9]/g</span>, <span class="string">""</span>);</div><div class="line">    <span class="comment">// 分割成数组</span></div><div class="line">    <span class="keyword">var</span> strArr = replacedStr.split(<span class="string">""</span>);</div><div class="line">    <span class="comment">// 翻转数组</span></div><div class="line">    <span class="keyword">var</span> reversedArr = strArr.reverse();</div><div class="line">    <span class="comment">// 合并成字符</span></div><div class="line">    <span class="keyword">var</span> reversedStr = reversedArr.join(<span class="string">""</span>);</div><div class="line">    <span class="comment">// 返回判断结果</span></div><div class="line">    <span class="keyword">return</span> replacedStr === reversedStr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案"><a href="#基本答案" class="headerlink" title="基本答案"></a>基本答案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</div><div class="line">    <span class="comment">// 这个数组用于存储结果</span></div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i += size) &#123;</div><div class="line">        <span class="comment">// 这个数组用于存储临时的数组片段</span></div><div class="line">        <span class="keyword">var</span> temp = [];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i; j &lt; i + size; j++) &#123;</div><div class="line">            <span class="comment">// 判断边界。可以思考一下，为什么不能写成 if (arr[j])</span></div><div class="line">            <span class="keyword">if</span> (j &lt; arr.length) &#123;</div><div class="line">                temp.push(arr[j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        result.push(temp);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>需要注意的是，最后的步骤不应该与传入的 <code>str</code> 比较，而是应该与 <code>replacedStr</code> 去比较</li>
-<li>如果看了上面的注释还不懂，请打开浏览器控制台，在里面给每行都加上 <code>console.log()</code>，看下执行过程中都发生了什么</li>
+<li>整体思路应该不难理解。外层的 <code>i</code> 用于确定截取的起始点。内层的 <code>j</code> 就是在 <code>i</code> 与 <code>i + size</code> 之间，读出每一个元素，并存储到 <code>temp</code> 中。每存好一个片段 (即内层循环结束)，就把 <code>temp</code> 保存到 <code>result</code> 中</li>
+<li>这个思路的关键在于选对 <code>i</code> 和 <code>j</code> 的初始值以及循环过程中增值。既然我们需要实现每 <code>size</code> 个元素为一个片段，那么我们肯定需要确定每次截取的起点和终点</li>
+<li>我们用 <code>i</code> 来表示截取的起点，那么不难得出 <code>i</code> 的初始值为 0。增值应该为 <code>size</code>。跳出条件也很简单，只要 <code>i &lt; arr.length</code>，我们就可以一直执行</li>
+<li>用 <code>j</code> 来选取范围中的元素，因此 <code>j</code> 的初始值应该就为 <code>i</code> (注意，这个 <code>i</code> 是会变化的)。至于 <code>j</code> 的结束值，那么应该为 <code>i + size</code>。因为我们需要截取的是从 <code>i</code> 到 <code>i + size</code> 的元素。<code>j</code> 的增值显然应该为 <code>j++</code>，因为我们需要获取这个范围之内的所有元素</li>
+<li>既然我们设置了 <code>j</code> 是从 <code>i</code> 到 <code>i + size</code>，那么就需要处理 <code>i + size</code> 超出数组长度的情况。简单考虑下这个例子，传入数组 <code>[1, 2, 3, 4, 5]</code>，<code>size</code> 为 <code>4</code>，那么我们应该得到 <code>[[1, 2, 3, 4], [5]]</code>。当 <code>i</code> 为 0 的时候没有问题，但当第二次循环，即 <code>i</code> 为 4 的时候，这时 <code>j</code> 也为 4。而内层循环跳出条件，<code>i + size</code> 为 8，显然超出了原数组的长度。如果我们读取 <code>arr[6]</code>，会得到 <code>undefined</code>，显然我们不想把这个结果放进 <code>temp</code></li>
+<li>那么如何判断呢？你可能第一反应是用 <code>if (arr[j])</code> 来判断。可以先试试，结果是通不过测试的。原因在于 JavaScript 的隐式类型转换，<code>if()</code> 中的内容会被转换成 <code>Boolean</code>，相当于执行的是 <code>if(Boolean(arr[j]))</code> 或者说 <code>if(!!arr[j])</code>。那么如果 <code>arr[j]</code> 是 0，就也会返回 false。但其实，<code>0</code> 在数组中肯定是允许的情况，我们不应该把它排除掉</li>
+<li>因此，这里我们只需要简单地判断 <code>j</code> 是否超出了 <code>arr.length</code> 即可。也就有了上面的代码<h4 id="多说一句"><a href="#多说一句" class="headerlink" title="多说一句"></a>多说一句</h4>我知道，上面解释的内容有点多，看起来好像很复杂。但其实，自己写一写就知道了，这个思路是最容易想出来的</li>
 </ul>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
-<li>还记得链式调用么？<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 边界判断</span></div><div class="line">    <span class="keyword">if</span> (str.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> replacedStr = str.toLowerCase().replace(<span class="regexp">/[^a-z0-9]/g</span>, <span class="string">""</span>);</div><div class="line">    <span class="keyword">var</span> reversedStr = replacedStr.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> replacedStr === reversedStr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="优化-使用-slice"><a href="#优化-使用-slice" class="headerlink" title="优化 - 使用 slice"></a>优化 - 使用 slice</h3><ul>
+<li>没错，上面我们就是造了一个 <code>.slice()</code> 的轮子 u.u<h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="external">Array.slice()</a><h4 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h4></li>
+<li>之所以推荐用 <code>slice</code>，是因为就算第二个参数超出了数组的长度也没有关系，不会产生 <code>undefined</code> 之类的问题</li>
+<li>基本答案中，<code>j</code> 那一层循环的代码，其实就是 <code>.slice()</code>。我们来用 <code>slice</code> 替换掉那部分吧<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    <span class="comment">// 设置起点</span></div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (i &lt; arr.length) &#123;</div><div class="line">        result.push(arr.slice(i, i + size));</div><div class="line">        i += size;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li><code>.toLowerCase()</code> 返回字符串，<code>.replace()</code> 是字符串方法，同样也返回字符串。这两个连用，我们就可以得到排除干扰项之后的结果</li>
-<li><code>.split()</code> 是字符串方法，返回分割后的数组。<code>.reverse()</code> 是数组方法，返回翻转后的数组。<code>.join()</code> 是数组方法，返回合并后的字符串。最后，我们得到的就是翻转后的字符串</li>
-<li>养成一个好习惯，只声明必要的变量，比如这个步骤中的 <code>replacedStr</code> 和 <code>reversedStr</code></li>
-<li>养成另一个好习惯，先判断边界值。如果 <code>str</code> 的长度为 1，那么肯定是回文字符串了。直接返回 <code>true</code> 就行</li>
-<li>不用数组方法，直接遍历字符串并翻转，这里就不写了，请参考 <a href="http://singsing.io/blog/2017/03/17/fcc-basic-reverse-a-string" target="_blank" rel="external">翻转字符串</a></li>
+<li>用 <code>while</code> 写循环要注意什么？一定不要忘了写 <code>i += size</code>。否则就是无限循环了。另外，记得要先给 <code>i</code> 设置一个初始值 0</li>
+<li>由于 <code>.slice()</code> 返回截取后的数组，因此我们直接 <code>push</code> 就可以了。给一个数组 <code>push</code> 一个数组，就会形成二维数组。顺便，如果你想生成一维数组，请用 <code>.concat()</code></li>
+<li>这个方法看起来简洁很多了。当然，还有更简洁的写法</li>
 </ul>
-<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (str.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> replacedStr = str.toLowerCase().replace(<span class="regexp">/[^a-z0-9]/g</span>, <span class="string">""</span>);</div><div class="line">    <span class="comment">// 双指针 i 与 j，用来代表当前判断位置的索引</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, j = replacedStr.length - <span class="number">1</span>; i &lt; replacedStr.length / <span class="number">2</span>; i++,j--) &#123;</div><div class="line">        <span class="comment">// 如果检测到了不相同</span></div><div class="line">        <span class="keyword">if</span> (replacedStr[i] !== replacedStr[j]) &#123;</div><div class="line">            <span class="comment">// 直接跳出判断，返回 false</span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 所有的都判断完了，没有不相同的，返回 true</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><p>这个解法的思路不复杂，但写的时候有几个错误比较容易犯</p>
-<ol>
-<li>初始值，当然要设置为 <code>.length - 1</code></li>
-<li>循环跳出条件，设置为 <code>i &lt; replacedStr.length / 2</code> 就可以。不管字符长度是奇数还是偶数，都不影响。除以 2 是因为，只要两个指针相遇，就证明我们已经判断完了所有的字符</li>
-<li><code>return false</code> 涉及到逻辑短路，也就是，循环的过程中，只要出现不相等，我们就可以得出”不是回文字符串” 的结论。但”是回文字符串”的结论，只能在循环完全执行完成的时候才可以得出。类似的思路同样应用在 <a href="https://freecodecamp.cn/challenges/profile-lookup" target="_blank" rel="external">Profile-Lookup</a> 这道题</li>
-</ol>
-<p>当然，我们也可以只采用一个变量 <code>i</code> 来实现，只需要把循环部分写成这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; replacedStr.length / <span class="number">2</span>; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (replacedStr[i] !== replacedStr[replacedStr.length - i - <span class="number">1</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>要注意的是，一定要写成 <code>replacedStr.length - i - 1</code>。至于为什么，举个例子就知道了，比如当 <code>length</code> 为 5，<code>i</code> 为 0 的时候，我们应该需要找到 <code>index</code> 为 4 的位置才对</p>
-<h3 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 排除干扰项</span></div><div class="line">    str = str.toLowerCase().replace(<span class="regexp">/[^a-z0-9]/g</span>, <span class="string">''</span>);</div><div class="line">    <span class="comment">// 设置边界条件</span></div><div class="line">    <span class="keyword">if</span> (str.length &lt; <span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 检测首尾是否相等不相等，如果不等就直接返回 false</span></div><div class="line">    <span class="keyword">if</span> (str[<span class="number">0</span>] !== str[str.length - <span class="number">1</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 递归调用</span></div><div class="line">    <span class="keyword">return</span> palindrome(str.slice(<span class="number">1</span>, <span class="number">-1</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-3"><a href="#解释-3" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>整体思路是，递归地判断字符串的首尾是否相等</li>
-<li>如果相等，就排除掉首尾字符，继续判断首尾是否相等，注意在最后的 <code>return</code> 那里，传入参数的改变</li>
-<li>边界条件(跳出条件) 只需要设置为 <code>str.length &lt; 2</code>，因为当 <code>length</code> 为 0 或者 1 的时候就表示这个字符是回文字符串</li>
-<li>最后的递归调用，可以用 <code>else</code> 包起来，但其实没有必要。可以这样去理解，一旦前面的判断生效了，就会直接跳出，也就不会执行到这里因为。既然能执行到这一步，就表示前面的 <code>if</code> 判断都没有生效。</li>
+<h3 id="换个写法-使用-splice"><a href="#换个写法-使用-splice" class="headerlink" title="换个写法 - 使用 splice"></a>换个写法 - 使用 splice</h3><ul>
+<li><code>.splice()</code> 是为数不多的，会直接改变原数组的数组方法。我们可以通过 <code>.splice()</code> 来删除数组中的元素，返回值又恰好是被删除的数组部分。具体语法请参考下面的链接<h4 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h4></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="external">Array.splice()</a></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (arr.length) &#123;</div><div class="line">        result.push(arr.splice(<span class="number">0</span>, size));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
+<li><code>splice</code> 方法可以接收两个参数，第一个是起始点，第二个是需要删除的长度。后面还可以再加参数，表示删除后需要在当前位置添加的元素</li>
+<li>既然 <code>splice</code> 返回的是被删除部分，我们直接 <code>push</code> 到 <code>result</code> 就好了</li>
+<li>至于循环的跳出条件，由于 <code>splice</code> 会删元素，因此数组长度会改变。而数组长度不可能为负数，只能为非负整数。所以，当长度为 0 的时候，我们就可以跳出了。因此就有了上面的写法</li>
 </ul>
 
       
@@ -428,13 +395,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2017/03/17/fcc-basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></p>
+        <p><span>本文标题:</span><a href="/blog/2017/03/21/chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
-        <p><span>发布时间:</span>2017年03月17日 - 23时10分</p>
-        <p><span>最后更新:</span>2017年03月17日 - 23时34分</p>
+        <p><span>发布时间:</span>2017年03月21日 - 21时25分</p>
+        <p><span>最后更新:</span>2017年03月21日 - 21时32分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/17/fcc-basic-check-for-palindromes/" title="FreeCodeCamp 初级算法题 - 检查回文字符串">S1ngS1ng.github.io/blog/blog/2017/03/17/fcc-basic-check-for-palindromes/</a>
-            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/17/fcc-basic-check-for-palindromes/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/21/chunky-monkey/" title="FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组">S1ngS1ng.github.io/blog/blog/2017/03/21/chunky-monkey/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/21/chunky-monkey/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/blog/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -447,18 +414,9 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          FreeCodeCamp 初级算法题 - 找出最长的单词
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2017/03/17/fcc-basic-factorialize-a-number/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 计算整数阶乘</div>
+    <a href="/blog/2017/03/21/truncate-a-string/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 截断字符串</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -469,7 +427,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#检查回文字符串"><span class="toc-number">1.</span> <span class="toc-text">检查回文字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.3.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">1.4.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考答案"><span class="toc-number">1.5.</span> <span class="toc-text">参考答案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于正则"><span class="toc-number">1.5.1.</span> <span class="toc-text">关于正则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案-翻转字符串后比较"><span class="toc-number">1.5.2.</span> <span class="toc-text">基本答案 - 翻转字符串后比较</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化"><span class="toc-number">1.5.3.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-1"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双指针解法"><span class="toc-number">1.5.4.</span> <span class="toc-text">双指针解法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-2"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归解法"><span class="toc-number">1.5.5.</span> <span class="toc-text">递归解法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-3"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#猴子吃香蕉-分割数组"><span class="toc-number">1.</span> <span class="toc-text">猴子吃香蕉, 分割数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.3.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">1.4.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考答案"><span class="toc-number">1.5.</span> <span class="toc-text">参考答案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本答案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多说一句"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">多说一句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化-使用-slice"><span class="toc-number">1.5.2.</span> <span class="toc-text">优化 - 使用 slice</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接-1"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路提示-1"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-1"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#换个写法-使用-splice"><span class="toc-number">1.5.3.</span> <span class="toc-text">换个写法 - 使用 splice</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接-2"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-2"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -517,7 +475,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/03/17/fcc-basic-check-for-palindromes/" data-title="FreeCodeCamp 初级算法题 - 检查回文字符串" data-url="S1ngS1ng.github.io/blog/blog/2017/03/17/fcc-basic-check-for-palindromes/"></div>
+    <div class="ds-thread" data-thread-key="2017/03/21/chunky-monkey/" data-title="FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组" data-url="S1ngS1ng.github.io/blog/blog/2017/03/21/chunky-monkey/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -540,13 +498,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" title="上一篇: FreeCodeCamp 初级算法题 - 找出最长的单词">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/blog/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/2017/03/17/fcc-basic-factorialize-a-number/" title="下一篇: FreeCodeCamp 初级算法题 - 计算整数阶乘">
+            <a href="/blog/2017/03/21/truncate-a-string/" title="下一篇: FreeCodeCamp 初级算法题 - 截断字符串">
                 <i class="fa fa-angle-right"></i>
             </a>
         
