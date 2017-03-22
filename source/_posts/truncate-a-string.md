@@ -13,6 +13,7 @@ tags: [FreeCodeCamp, FCC, 算法]
 ## 问题解释
 - 这个 `function` 接收两个参数。第一个是字符串 `str`，即为原字符串。第二个是截取长度 `num`。返回值为截取后的字符串
 - 这道题，关键问题在于对后续 `...` 的处理，可以先考虑一下
+<!-- more -->
 
 ## 参考链接
 - [String.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
