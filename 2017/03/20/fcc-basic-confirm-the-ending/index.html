@@ -3,39 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FreeCodeCamp 初级算法题 - 截断字符串 | S1ngS1ng</title>
+  <title>FreeCodeCamp 初级算法题 - 检查字符串结尾 | S1ngS1ng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="截断字符串题目链接
+  <meta name="description" content="检查字符串结尾题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
-这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
+这个 function 接收两个参数，第一个参数为待检查的字符串 str，第二个参数为要比较的目标字符串 target。需要确认 str 是否以 target 结尾，如果是则返回 true，否则返回 false
+比如接收的是 &amp;quot;Hello&amp;quot; 与 &amp;quot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeCodeCamp 初级算法题 - 截断字符串">
-<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/21/truncate-a-string/index.html">
+<meta property="og:title" content="FreeCodeCamp 初级算法题 - 检查字符串结尾">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/20/fcc-basic-confirm-the-ending/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
-<meta property="og:description" content="截断字符串题目链接
+<meta property="og:description" content="检查字符串结尾题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
-这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
-<meta property="og:updated_time" content="2017-03-22T02:32:02.000Z">
+这个 function 接收两个参数，第一个参数为待检查的字符串 str，第二个参数为要比较的目标字符串 target。需要确认 str 是否以 target 结尾，如果是则返回 true，否则返回 false
+比如接收的是 &amp;quot;Hello&amp;quot; 与 &amp;quot">
+<meta property="og:updated_time" content="2017-03-21T02:41:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 截断字符串">
-<meta name="twitter:description" content="截断字符串题目链接
+<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 检查字符串结尾">
+<meta name="twitter:description" content="检查字符串结尾题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
-这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
+这个 function 接收两个参数，第一个参数为待检查的字符串 str，第二个参数为要比较的目标字符串 target。需要确认 str 是否以 target 结尾，如果是则返回 true，否则返回 false
+比如接收的是 &amp;quot;Hello&amp;quot; 与 &amp;quot">
   
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
@@ -295,11 +295,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-truncate-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-fcc-basic-confirm-the-ending" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2017/03/21/truncate-a-string/" class="article-date">
-      <time datetime="2017-03-22T02:02:53.000Z" itemprop="datePublished">2017-03-21</time>
+      <a href="/blog/2017/03/20/fcc-basic-confirm-the-ending/" class="article-date">
+      <time datetime="2017-03-20T15:18:14.000Z" itemprop="datePublished">2017-03-20</time>
 </a>
     </div>
   
@@ -312,7 +312,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      FreeCodeCamp 初级算法题 - 截断字符串
+      FreeCodeCamp 初级算法题 - 检查字符串结尾
     </h1>
   
 
@@ -333,49 +333,75 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="截断字符串"><a href="#截断字符串" class="headerlink" title="截断字符串"></a>截断字符串</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/truncate-a-string" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/truncate-a-string" target="_blank" rel="external">英文链接</a></li>
+        <h1 id="检查字符串结尾"><a href="#检查字符串结尾" class="headerlink" title="检查字符串结尾"></a>检查字符串结尾</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/confirm-the-ending" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/confirm-the-ending" target="_blank" rel="external">英文链接</a></li>
 <li>级别：初级 (Basic Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收两个参数。第一个是字符串 <code>str</code>，即为原字符串。第二个是截取长度 <code>num</code>。返回值为截取后的字符串</li>
-<li>这道题，关键问题在于对后续 <code>...</code> 的处理，可以先考虑一下<a id="more"></a>
+<li>这个 <code>function</code> 接收两个参数，第一个参数为待检查的字符串 <code>str</code>，第二个参数为要比较的目标字符串 <code>target</code>。需要确认 <code>str</code> 是否以 <code>target</code> 结尾，如果是则返回 <code>true</code>，否则返回 <code>false</code></li>
+<li>比如接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;o&quot;</code>，那么输出就是 <code>true</code>。如果接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;e&quot;</code>，那么输出就是 <code>false</code><a id="more"></a>
 </li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">String.slice()</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr" target="_blank" rel="external">String.substr()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">String.slice()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring" target="_blank" rel="external">String.substring()</a></li>
 </ul>
 <h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>首先应该想到，截取的逻辑大致分为两种情况：<ol>
-<li>截取后，带 <code>...</code></li>
-<li>截取后不带 <code>...</code>，这种情况其实就是输出 <code>str</code> 本身</li>
-</ol>
-</li>
-<li>进一步考虑第一种情况，又分为两种：<ol>
-<li><code>num &gt; 3</code> 的时候，需要少截取三位，因为 <code>...</code> 的长度会计入结果长度</li>
-<li><code>num &lt; 3</code> 的时候，正常截取，并把 <code>...</code> 加到结尾</li>
-</ol>
-</li>
-<li>对于带 <code>...</code> 和不带 <code>...</code> 的情况，判断依据是 <code>num</code> 是否大于 <code>str.length</code></li>
-<li>先想清楚这些，代码就很好写了</li>
+<li>这道题目难度不大，而且解决方案很多</li>
+<li>我们不需要分割字符串，只需要用字符串的 <code>substr</code> 或 <code>slice</code> 方法，获取到 <code>str</code> 的最后 n 位，再与 <code>target</code> 比较即可</li>
+<li>需要注意的是，由于 <code>target</code> 长度不定，因此要根据它的长度来截取 <code>str</code></li>
 </ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案"><a href="#基本答案" class="headerlink" title="基本答案"></a>基本答案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (str.length &gt; num) &#123;</div><div class="line">        <span class="keyword">if</span> (num &gt; <span class="number">3</span>) &#123;</div><div class="line">            <span class="comment">// num 大于 3，因此要少截三位，留出 ... 的位置</span></div><div class="line">            <span class="keyword">return</span> str.substr(<span class="number">0</span>, num - <span class="number">3</span>) + <span class="string">'...'</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// num 小于 3，正常截取，并把 ... 补到后面</span></div><div class="line">            <span class="keyword">return</span> str.substr(<span class="number">0</span>, num) + <span class="string">'...'</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// num 比字符串长度大</span></div><div class="line">        <span class="keyword">return</span> str;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="比较字符串的-substr-slice-与-substring-方法"><a href="#比较字符串的-substr-slice-与-substring-方法" class="headerlink" title="比较字符串的 substr, slice 与 substring 方法"></a>比较字符串的 substr, slice 与 substring 方法</h3><p>既然说到截取字符串，还是先来比较一下 <code>substr</code>, <code>slice</code> 和 <code>substring</code> 这三个方法吧。一开始很容易搞混，其实并不复杂</p>
+<ul>
+<li>大体上来说，这三个方法可以根据参数分为两类。第一类是 <code>substring</code> 和 <code>slice</code>，他们的两个参数分别是 Start Index (起始索引) 和 End Index (终点索引)。第二类是 <code>substr</code>，第一个参数是 Start Index (起始索引)，第二个参数是 Length (截取长度)</li>
+<li>共同点在于，以上这三个方法，第二个参数都是可以省略的，而且，很显然，他们都返回截取后的字符串。另外，他们都不会改变原字符串</li>
+<li>先来说 <code>substr</code><ul>
+<li>首先，需要注意，它的第二个参数是截取长度，而非结尾的索引</li>
+<li>第一个参数可以为负数，负数代表以结尾为基准</li>
+<li>如果第二个参数为负数，那么会返回空字符 <code>&quot;&quot;</code></li>
+</ul>
+</li>
+<li>再来对比一下 <code>slice</code> 与 <code>substring</code><ul>
+<li>相同点：<ul>
+<li>如果第一个参数与第二个相等，那么 <code>slice</code> 与 <code>substring</code> 都返回空字符 <code>&quot;&quot;</code></li>
+<li>如果只传入了第一个参数，那么都会截取到终点</li>
+<li>如果任何一个参数大于字符串长度，那就会使用字符串长度作这个参数</li>
+</ul>
+</li>
+<li>不同点：<ul>
+<li>如果传入负数，<code>substring</code> 会当成 0 去计算，而 <code>slice</code> 会以字符串结尾为参考进行计算</li>
+<li>如果第一个参数大于第二个，<code>substring</code> 会把两个参数换位然后计算，而 <code>slice</code> 则会返回空字符 <code>&quot;&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>因此，个人认为，如果要截取特定长度的字符串，就用 <code>substr</code>，否则就推荐用 <code>slice</code>。之所以更推荐 <code>slice</code>，是因为，首先它支持负数作为索引，在一些情况下会很方便。只要我们在用 <code>slice</code> 的时候，保证第一个数小于第二个数，那就不会出问题</li>
+</ul>
+<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案"><a href="#基本答案" class="headerlink" title="基本答案"></a>基本答案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="comment">// 计算出开始的索引</span></div><div class="line">    <span class="keyword">var</span> startIndex = str.length - target.length;</div><div class="line">    <span class="comment">// 从开始索引，一直截取到字符串终点</span></div><div class="line">    <span class="keyword">var</span> strEnd = str.slice(startIndex);</div><div class="line">    <span class="keyword">return</span> strEnd === target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>由于这道题目逻辑层次嵌套比较复杂，因此我决定不省略 <code>else</code> 了</li>
-<li>用 <code>substr</code> 或者 <code>slice</code> 都是没问题的。而且这道题是从 0 开始，所以两个方法的第二个参数都为 <code>num</code></li>
-<li>由于是根据长度来决定，因此我首先考虑到的是用 <code>substr</code></li>
+<li>根据上面的解释，其实写成 <code>str.substr(startIndex)</code> 或者 <code>str.substring(startIndex)</code> 都行</li>
+<li>如果你不能理解，请打开浏览器 console 试试以上提到的三种方法</li>
 </ul>
-<h3 id="中级解法-用三元运算符合并逻辑"><a href="#中级解法-用三元运算符合并逻辑" class="headerlink" title="中级解法 - 用三元运算符合并逻辑"></a>中级解法 - 用三元运算符合并逻辑</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (str.length &gt; num) &#123;</div><div class="line">        <span class="keyword">return</span> str.substr(<span class="number">0</span>, num &gt; <span class="number">3</span> ? num - <span class="number">3</span> : num) + <span class="string">'...'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> str;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>嗯，这并不算是什么优化，对运算速度并没有什么提升，而且可能有些朋友认为可读性很差</li>
-<li>有些朋友会说，既然都用了三元，为什么不把 <code>str.length &gt; num</code> 也合并成三元？原因很简单，我个人很反对三元嵌套</li>
-<li>我们先来读一下代码。对于 <code>str.length &lt; num</code> 的情况，也就是 <code>num</code> 比 <code>str</code> 的长度还要大，那么我们就直接返回 <code>str</code>。这个没毛病，和上面的思路一样</li>
-<li>通过基本答案中的代码，可以观察到，对于 <code>num</code> 大于 3 的判断，我们只是改变了 <code>substr</code> 的第二个参数，除此之外没有任何其他改变</li>
-<li>因此，我们需要干的事就是，当 <code>num</code> 大于 3 的时候，我们把第二个参数设置为 <code>num - 3</code>，否则就用 <code>num</code>。这就是上面三元表达式的意思</li>
-<li>三元表达式 <code>a ? b : c</code>，意思就是当 <code>a</code> 成立，我们就返回 <code>b</code>，否则返回 <code>c</code>，就这么简单。相当于<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    b;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
+<li>上面我们声明了两个变量，但其实完全可以不声明，直接返回结果就好了</li>
+<li>既然 <code>slice</code> 可以传入负数作为参数，题目要求也是检测结尾，所以，可以直接从结尾来截取<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.slice(-target.length) === target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
+<li>当然，把 <code>slice</code> 换成 <code>substr</code> 也是没问题的。只是，绝对不要换成 <code>substring</code></li>
+</ul>
+<h3 id="利用正则来解决"><a href="#利用正则来解决" class="headerlink" title="利用正则来解决"></a>利用正则来解决</h3><h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="external">RegExp()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" target="_blank" rel="external">RegExp.test()</a><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">RegExp</span>(target + <span class="string">'$'</span>).test(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
+<li>注意，并不是说这种解法效率高，事实上正则效率很低。放在这里只是多提供一种思路</li>
+<li>如果你不理解正则构造器 <code>RegExp</code> 的用法，请点击上面的链接读一读</li>
+<li>举个例子，如果传入的 <code>target</code> 是 <code>&quot;abc&quot;</code>，那么通过 <code>RegExp</code> 构造器就生成了 <code>/abc$/</code>。<code>$</code> 符号就表示字符串结尾</li>
+<li>然后我们用这个正则的 <code>test</code> 方法来测试 <code>str</code>，返回测试结果</li>
 </ul>
 
       
@@ -386,13 +412,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2017/03/21/truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></p>
+        <p><span>本文标题:</span><a href="/blog/2017/03/20/fcc-basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
-        <p><span>发布时间:</span>2017年03月21日 - 21时02分</p>
-        <p><span>最后更新:</span>2017年03月21日 - 21时32分</p>
+        <p><span>发布时间:</span>2017年03月20日 - 10时18分</p>
+        <p><span>最后更新:</span>2017年03月20日 - 21时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/21/truncate-a-string/" title="FreeCodeCamp 初级算法题 - 截断字符串">S1ngS1ng.github.io/blog/blog/2017/03/21/truncate-a-string/</a>
-            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/21/truncate-a-string/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/20/fcc-basic-confirm-the-ending/" title="FreeCodeCamp 初级算法题 - 检查字符串结尾">S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-confirm-the-ending/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-confirm-the-ending/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/blog/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -405,18 +431,18 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/2017/03/21/chunky-monkey/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2017/03/20/fcc-basic-repeat-a-string-repeat-a-string/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组
+          FreeCodeCamp 初级算法题 - 重复输出字符串
         
       </div>
     </a>
   
   
-    <a href="/blog/2017/03/20/repeat-a-string-repeat-a-string/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 重复输出字符串</div>
+    <a href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -427,7 +453,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#截断字符串"><span class="toc-number">1.</span> <span class="toc-text">截断字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.3.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">1.4.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考答案"><span class="toc-number">1.5.</span> <span class="toc-text">参考答案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本答案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中级解法-用三元运算符合并逻辑"><span class="toc-number">1.5.2.</span> <span class="toc-text">中级解法 - 用三元运算符合并逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-1"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#检查字符串结尾"><span class="toc-number">1.</span> <span class="toc-text">检查字符串结尾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.3.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">1.4.</span> <span class="toc-text">思路提示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#比较字符串的-substr-slice-与-substring-方法"><span class="toc-number">1.4.1.</span> <span class="toc-text">比较字符串的 substr, slice 与 substring 方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考答案"><span class="toc-number">1.5.</span> <span class="toc-text">参考答案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本答案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化"><span class="toc-number">1.5.2.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-1"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用正则来解决"><span class="toc-number">1.5.3.</span> <span class="toc-text">利用正则来解决</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接-1"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-2"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -475,7 +501,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/03/21/truncate-a-string/" data-title="FreeCodeCamp 初级算法题 - 截断字符串" data-url="S1ngS1ng.github.io/blog/blog/2017/03/21/truncate-a-string/"></div>
+    <div class="ds-thread" data-thread-key="2017/03/20/fcc-basic-confirm-the-ending/" data-title="FreeCodeCamp 初级算法题 - 检查字符串结尾" data-url="S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-confirm-the-ending/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -498,18 +524,18 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2017/03/21/chunky-monkey/" title="上一篇: FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组">
+            <a href="/blog/2017/03/20/fcc-basic-repeat-a-string-repeat-a-string/" title="上一篇: FreeCodeCamp 初级算法题 - 重复输出字符串">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/2017/03/20/repeat-a-string-repeat-a-string/" title="下一篇: FreeCodeCamp 初级算法题 - 重复输出字符串">
+            <a href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" title="下一篇: FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/21/chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/21/truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/20/repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/20/confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/20/return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/18/title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/17/fcc-basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/17/fcc-basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/17/fcc-basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/12/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/01/23/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/01/17/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/11/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/27/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2010/01/01/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/21/fcc-basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/21/fcc-basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/20/fcc-basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/20/fcc-basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/18/fcc-basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/17/fcc-basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/17/fcc-basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/17/fcc-basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/12/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/01/23/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/01/17/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/12/11/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/27/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2010/01/01/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
