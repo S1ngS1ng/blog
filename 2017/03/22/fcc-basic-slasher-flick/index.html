@@ -3,39 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FreeCodeCamp 初级算法题 - 找出多个数组中的最大数 | S1ngS1ng</title>
+  <title>FreeCodeCamp 初级算法题 - 截断数组 | S1ngS1ng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="找出多个数组中的最大数题目链接
+  <meta name="description" content="截断数组题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收多个数组为参数，返回每个数组的最大值组成的新数组
-这道题不会涉及到特殊情况的处理，因此只需要遍历，找出最大值就可以了">
+这个 function 接收两个参数，第一个参数为数组 arr，即为需要截断的原数组。第二个参数为数字 howMany，表示从第一个开始，删去元素的数量。返回值为截断之后的数组
+比如接收的是 [1, 2, 3] 与 2，那么输出就是 [3]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">
-<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/index.html">
+<meta property="og:title" content="FreeCodeCamp 初级算法题 - 截断数组">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/22/fcc-basic-slasher-flick/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
-<meta property="og:description" content="找出多个数组中的最大数题目链接
+<meta property="og:description" content="截断数组题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收多个数组为参数，返回每个数组的最大值组成的新数组
-这道题不会涉及到特殊情况的处理，因此只需要遍历，找出最大值就可以了">
-<meta property="og:updated_time" content="2017-03-21T02:41:57.000Z">
+这个 function 接收两个参数，第一个参数为数组 arr，即为需要截断的原数组。第二个参数为数字 howMany，表示从第一个开始，删去元素的数量。返回值为截断之后的数组
+比如接收的是 [1, 2, 3] 与 2，那么输出就是 [3]">
+<meta property="og:updated_time" content="2017-03-23T04:11:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">
-<meta name="twitter:description" content="找出多个数组中的最大数题目链接
+<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 截断数组">
+<meta name="twitter:description" content="截断数组题目链接
 中文链接
 英文链接
 级别：初级 (Basic Algorithm Scripting)
 
 问题解释
-这个 function 接收多个数组为参数，返回每个数组的最大值组成的新数组
-这道题不会涉及到特殊情况的处理，因此只需要遍历，找出最大值就可以了">
+这个 function 接收两个参数，第一个参数为数组 arr，即为需要截断的原数组。第二个参数为数字 howMany，表示从第一个开始，删去元素的数量。返回值为截断之后的数组
+比如接收的是 [1, 2, 3] 与 2，那么输出就是 [3]">
   
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
@@ -295,11 +295,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-fcc-basic-return-largest-numbers-in-arrays" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-fcc-basic-slasher-flick" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" class="article-date">
-      <time datetime="2017-03-20T15:12:59.000Z" itemprop="datePublished">2017-03-20</time>
+      <a href="/blog/2017/03/22/fcc-basic-slasher-flick/" class="article-date">
+      <time datetime="2017-03-23T04:06:50.000Z" itemprop="datePublished">2017-03-22</time>
 </a>
     </div>
   
@@ -312,7 +312,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      FreeCodeCamp 初级算法题 - 找出多个数组中的最大数
+      FreeCodeCamp 初级算法题 - 截断数组
     </h1>
   
 
@@ -333,59 +333,29 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="找出多个数组中的最大数"><a href="#找出多个数组中的最大数" class="headerlink" title="找出多个数组中的最大数"></a>找出多个数组中的最大数</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/return-largest-numbers-in-arrays" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/return-largest-numbers-in-arrays" target="_blank" rel="external">英文链接</a></li>
+        <h1 id="截断数组"><a href="#截断数组" class="headerlink" title="截断数组"></a>截断数组</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/slasher-flick" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/slasher-flick" target="_blank" rel="external">英文链接</a></li>
 <li>级别：初级 (Basic Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收多个数组为参数，返回每个数组的最大值组成的新数组</li>
-<li>这道题不会涉及到特殊情况的处理，因此只需要遍历，找出最大值就可以了<a id="more"></a>
+<li>这个 <code>function</code> 接收两个参数，第一个参数为数组 <code>arr</code>，即为需要截断的原数组。第二个参数为数字 <code>howMany</code>，表示从第一个开始，删去元素的数量。返回值为截断之后的数组</li>
+<li>比如接收的是 <code>[1, 2, 3]</code> 与 <code>2</code>，那么输出就是 <code>[3]</code><a id="more"></a>
 </li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li>对于初级解法，没什么太多要参考的。只需要想想，如何从数组中提取出最大值就可以了</li>
-<li>题目的整体思路与之前的 <a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a> 十分相似。区别在于，这道题是在操作二维数组，那道题是在操作一维数组</li>
+<li>这应该是初级算法中最简单的题目</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="external">Array.splice()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="external">Array.slice()</a></li>
 </ul>
 <h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>首先设置一个空数组，用于存储结果</li>
-<li>遍历一遍传入的参数，参数是一个二维数组。因此，在遍历的过程中，我们操作的对象就是其中的每一个数组</li>
-<li>然后，提取出当前数组的最大值，并把它添加到第一步初始化的数组中。最后返回这个数组即可</li>
-<li>获取数组的最大值也很容易，首先在外面设置一个变量，初始化为 0。然后，遍历一遍数组，发现更大的就赋值给它，没发现更大的就什么也不做。遍历结束后，这个变量就是数组最大值</li>
-<li>基本思路中，我们先不涉及太多的技巧，就用最直观、最简单的方式，先把它写出来</li>
+<li>连边界条件都不用判断，如果不会做，请先看看上面的两个链接</li>
+<li>对于不用 <code>for</code> 循环不舒服的朋友，可以考虑对数组执行 <code>howMany</code> 次 <code>shift()</code>。当然，不推荐这么写</li>
 </ul>
-<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案"><a href="#基本答案" class="headerlink" title="基本答案"></a>基本答案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="comment">// 空数组，用于存储结果</span></div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line">    </div><div class="line">    <span class="comment">// 遍历传入的数组</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="comment">// 初始化最大值，可以想一下为什么要写在这里</span></div><div class="line">        <span class="keyword">var</span> largest = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// arr 是一个二维数组，arr[i] 才是我们要找最大值的每一个数组</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[i][j] &gt; largest) &#123;</div><div class="line">                <span class="comment">// 找到更大的值，更新 largest</span></div><div class="line">                largest = arr[i][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 把最大值存储到 `result`</span></div><div class="line">        result.push(largest);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h2><h3 id="基本答案-用-splice"><a href="#基本答案-用-splice" class="headerlink" title="基本答案 - 用 splice"></a>基本答案 - 用 splice</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">slasher</span>(<span class="params">arr, howMany</span>) </span>&#123;</div><div class="line">    arr.splice(<span class="number">0</span>, howMany);</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="基本答案-用-slice"><a href="#基本答案-用-slice" class="headerlink" title="基本答案 - 用 slice"></a>基本答案 - 用 slice</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">slasher</span>(<span class="params">arr, howMany</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.slice(howMany);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>首先要想明白一点，第一层的 <code>for</code> 循环我们是在遍历传入的参数。第二层的才是每一个数组。比如 <code>arr[0]</code> 就是传入的二维数组中的第一个数组，那么 <code>arr[0][0]</code> 就是传入的二维数组中，第一个数组的第一个元素</li>
-<li>明白了上一条，你应该就能理解，为什么我们要在第一个 <code>for</code> 循环里面，第二个 <code>for</code> 循环的外面声明 <code>largest</code>。简单来说，我们需要找的是 <code>arr[0]</code>, <code>arr[1]</code>, <code>arr[2]</code>… 的最大值。举个例子来说，我们希望 <code>largest</code> 在从 <code>arr[0]</code> 换成 <code>arr[1]</code> 的时候重新赋值</li>
-<li>在第二层 <code>for</code> 循环结束之后，我们就得到了当前数组的最大值，因此需要把它 <code>push</code> 到 <code>result</code> 中</li>
-</ul>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
-<li>数组方法中，有个叫 <code>.reduce()</code> 的。之前提到过，是在遍历中，把上一次计算结果用于下一次计算</li>
-<li>因此，对于上面两个 <code>for</code> 循环，我们都可以通过 <code>reduce</code> 来改写。寻找最大值的改写这里不再赘述，请参考<a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a>那篇”优化”部分，对 <code>reduce</code> 的详细解释</li>
-<li>对于生成结果数组，一样是可以通过 <code>reduce</code> 来实现的。初始值设置为一个空数组 <code>[]</code>，然后把每一个最大值 <code>push</code> 进去，记得一定要返回这个数组，用于下次计算。<code>.push()</code> 的返回值不是数组，而是操作之后的数组长度<h4 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h4></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="external">Array.reduce()</a></li>
-<li><a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prevArr, nextArr</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> prevArr.concat(nextArr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prevNum, nextNum</span>) </span>&#123;</div><div class="line">           <span class="keyword">return</span> <span class="built_in">Math</span>.max(prevNum, nextNum); </div><div class="line">        &#125;, <span class="number">0</span>));</div><div class="line">    &#125;, []); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>一定要注意这里的层级关系。我们可以简单理解为，一层 <code>reduce</code> 就相当于一层 <code>for</code> 循环。因此，第一层 <code>reduce</code> 是遍历传入的参数，也就是二维数组，第二层才是遍历数组中的所有元素，也就是要找出最大值的那些数字</li>
-<li>理解了上面这一点，也就应该能理解为什么在第一层要传入空数组作为默认值，而在第二层要传入 0 作为默认值</li>
-<li>简单解释一下每一层发生了什么。里面的那一层，对于一个数组，比如 <code>[1, 2, 3, 4]</code> 来说，设定一个初始值为 0，并作为第一次遍历的 <code>prevNum</code> 传入，这时候 <code>nextNum</code> 为第一个元素，就是 1。我们通过 <code>Math.max()</code>，返回较大的 1。这时候 1 作为下一次执行的 <code>prevNum</code> 传入，同时，<code>nextNum</code> 为第二个元素，就是 2</li>
-<li>外面那一层，第一次执行，用 <code>[]</code> 作为 <code>prevArr</code>，这时候 <code>nextArr</code> 为参数二维数组中的第一个数组。我们计算出 <code>nextArr</code> 的最大值，然后把这个结果 <code>concat</code> 到 <code>prevArr</code>。之所以用 <code>concat</code>，是因为 <code>concat</code> 返回操作后的数组，而 <code>push</code> 并没有这个效果</li>
-<li>如果你还没想明白，要么 <code>console.log</code> 一下每一层执行过程中的 <code>prev</code> 和 <code>next</code>，要么对照着<a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a>这一篇，自己画出来一个表格，应该就能理解了</li>
-</ul>
-<h3 id="再优化-更简单的思路"><a href="#再优化-更简单的思路" class="headerlink" title="再优化 - 更简单的思路"></a>再优化 - 更简单的思路</h3><ul>
-<li>我们可以注意到一点，传入的参数是数组，返回的结果也是数组。进一步思考，传入的参数长度应该与结果的长度是一致的，因为参数长度就表示我们需要找出多少个数组中的最大值</li>
-<li>如果能想明白上面这一点，那么用 <code>.map()</code> 就顺理成章了。之前提到过，<code>.map()</code> 适用于”返回一个相同长度，并经过一些处理的数组”</li>
-<li>至于找出数组最大值，最简便的写法恐怕是 <code>Math.max.apply(null, arr)</code>。这一点在<a href="http://singsing.io/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" target="_blank" rel="external">找出最长单词(Find the Longest word in a String)</a>那一篇也提到了<h4 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h4></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="external">Array.map()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="external">Function.apply()</a></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.map(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, e);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h4><ul>
-<li>这是我能想到的，看起来最简洁的方式</li>
-<li>只需要想清楚，调用 <code>arr.map()</code>，这时候，回调函数里面的 <code>e</code> 其实是数组，也就是对应着 <code>arr[0]</code>，<code>arr[1]</code>…</li>
+<li>唯一一道不需要任何解释的题目</li>
 </ul>
 
       
@@ -396,13 +366,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></p>
+        <p><span>本文标题:</span><a href="/blog/2017/03/22/fcc-basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
-        <p><span>发布时间:</span>2017年03月20日 - 10时12分</p>
-        <p><span>最后更新:</span>2017年03月20日 - 21时41分</p>
+        <p><span>发布时间:</span>2017年03月22日 - 23时06分</p>
+        <p><span>最后更新:</span>2017年03月22日 - 23时11分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" title="FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/</a>
-            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/22/fcc-basic-slasher-flick/" title="FreeCodeCamp 初级算法题 - 截断数组">S1ngS1ng.github.io/blog/blog/2017/03/22/fcc-basic-slasher-flick/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/22/fcc-basic-slasher-flick/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/blog/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -415,18 +385,18 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/2017/03/20/fcc-basic-confirm-the-ending/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2017/03/22/fcc-basic-mutations/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          FreeCodeCamp 初级算法题 - 检查字符串结尾
+          FreeCodeCamp 初级算法题 - 比较字符串
         
       </div>
     </a>
   
   
-    <a href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 找出最长的单词</div>
+    <a href="/blog/2017/03/21/fcc-basic-chunky-monkey/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -437,7 +407,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#找出多个数组中的最大数"><span class="toc-number">1.</span> <span class="toc-text">找出多个数组中的最大数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.3.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">1.4.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考答案"><span class="toc-number">1.5.</span> <span class="toc-text">参考答案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本答案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化"><span class="toc-number">1.5.2.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接-1"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-1"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再优化-更简单的思路"><span class="toc-number">1.5.3.</span> <span class="toc-text">再优化 - 更简单的思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考链接-2"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解释-2"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#截断数组"><span class="toc-number">1.</span> <span class="toc-text">截断数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.3.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">1.4.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考答案"><span class="toc-number">1.5.</span> <span class="toc-text">参考答案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案-用-splice"><span class="toc-number">1.5.1.</span> <span class="toc-text">基本答案 - 用 splice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本答案-用-slice"><span class="toc-number">1.5.2.</span> <span class="toc-text">基本答案 - 用 slice</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">解释</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -485,7 +455,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" data-title="FreeCodeCamp 初级算法题 - 找出多个数组中的最大数" data-url="S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/"></div>
+    <div class="ds-thread" data-thread-key="2017/03/22/fcc-basic-slasher-flick/" data-title="FreeCodeCamp 初级算法题 - 截断数组" data-url="S1ngS1ng.github.io/blog/blog/2017/03/22/fcc-basic-slasher-flick/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -508,13 +478,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2017/03/20/fcc-basic-confirm-the-ending/" title="上一篇: FreeCodeCamp 初级算法题 - 检查字符串结尾">
+            <a href="/blog/2017/03/22/fcc-basic-mutations/" title="上一篇: FreeCodeCamp 初级算法题 - 比较字符串">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/2017/03/18/fcc-basic-find-the-longest-word-in-a-string/" title="下一篇: FreeCodeCamp 初级算法题 - 找出最长的单词">
+            <a href="/blog/2017/03/21/fcc-basic-chunky-monkey/" title="下一篇: FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组">
                 <i class="fa fa-angle-right"></i>
             </a>
         
