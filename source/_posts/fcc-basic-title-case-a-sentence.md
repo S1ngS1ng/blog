@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 句中单词首字母大写
 date: 2017-03-18 03:35:10
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 句中单词首字母大写
+# 句中单词首字母大写 (Title Case a Sentence)
 
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/title-case-a-sentence)

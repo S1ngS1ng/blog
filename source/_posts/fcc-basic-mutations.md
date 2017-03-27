@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 比较字符串
 date: 2017-03-22 23:09:26
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 比较字符串
+# 比较字符串 (Mutations)
 
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/mutations)

@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 检查回文字符串
 date: 2017-03-17 23:10:47
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 检查回文字符串
+# 检查回文字符串 (Check for Palindromes)
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/check-for-palindromes)
 - [英文链接](https://www.freecodecamp.com/challenges/check-for-palindromes)

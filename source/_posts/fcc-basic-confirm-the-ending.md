@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 检查字符串结尾
 date: 2017-03-20 10:18:14
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 检查字符串结尾
+# 检查字符串结尾 (Confirm the Ending)
 
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/confirm-the-ending)

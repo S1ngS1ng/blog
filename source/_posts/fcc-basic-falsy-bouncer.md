@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 过滤数组假值
 date: 2017-03-22 23:12:25
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 过滤数组假值
+# 过滤数组假值 (Falsy Bouncer)
 
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/falsy-bouncer)

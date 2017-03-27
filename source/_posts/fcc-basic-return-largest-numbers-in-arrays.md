@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 找出多个数组中的最大数
 date: 2017-03-20 10:12:59
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 找出多个数组中的最大数
+# 找出多个数组中的最大数 (Return Largest Numbers in Arrays)
 
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/return-largest-numbers-in-arrays)

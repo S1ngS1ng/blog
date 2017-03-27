@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 重复输出字符串
 date: 2017-03-20 12:09:24
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 重复输出字符串
+# 重复输出字符串 (Repeat a string repeat a string)
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/repeat-a-string-repeat-a-string)
 - [英文链接](https://www.freecodecamp.com/challenges/repeat-a-string-repeat-a-string)

@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 凯撒密码
 date: 2017-03-23 23:27:48
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 凯撒密码
+# 凯撒密码 (Caesars Cipher)
 
 ## 问题解释
 - 这个 `function` 接收一个字符串参数 `str`，即为需要解密的字符串。返回值为解密后的字符串

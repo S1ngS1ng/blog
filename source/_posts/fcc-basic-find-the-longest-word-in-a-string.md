@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 找出最长的单词
 date: 2017-03-18 03:35:10
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 找出最长单词
+# 找出最长单词 (Find the Longest word in a String)
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/find-the-longest-word-in-a-string)
 - [英文链接](https://www.freecodecamp.com/challenges/find-the-longest-word-in-a-string)

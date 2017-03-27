@@ -3,7 +3,7 @@ title: FreeCodeCamp 初级算法题 - 数组排序并找出元素索引
 date: 2017-03-23 23:22:29
 tags: [FreeCodeCamp, FCC, 算法]
 ---
-# 数组排序并找出元素索引
+# 数组排序并找出元素索引 (Where Do I belong)
 
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/where-do-i-belong)
