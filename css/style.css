@@ -2648,9 +2648,13 @@ color
 .article-entry em {
   font-style: italic;
 }
+.article-entry li {
+  text-indent: -1em;
+  padding-left: 2em;
+}
 .article-entry li ul,
 .article-entry li ol {
-  margin-left: 30px;
+  padding-left: 0;
 }
 .article-entry li ul li:before,
 .article-entry li ol li:before {

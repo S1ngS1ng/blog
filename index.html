@@ -305,7 +305,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="凯撒密码-Caesars-Cipher"><a href="#凯撒密码-Caesars-Cipher" class="headerlink" title="凯撒密码 (Caesars Cipher)"></a>凯撒密码 (Caesars Cipher)</h1><h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+              <h1 id="凯撒密码-Caesars-Cipher"><a href="#凯撒密码-Caesars-Cipher" class="headerlink" title="凯撒密码 (Caesars Cipher)"></a>凯撒密码 (Caesars Cipher)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/caesars-cipher">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/caesars-cipher">英文链接</a></li>
+<li>级别：初级 (Basic Algorithm Scripting)</li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个字符串参数 <code>str</code>，即为需要解密的字符串。返回值为解密后的字符串</li>
 <li>比如接收的是 <code>&quot;A&quot;</code>，那么输出就是 <code>&quot;N&quot;</code>，如果接收的是 <code>&quot;SERR PBQR PNZC&quot;</code>，那么输出就是 <code>&quot;FREE CODE CAMP&quot;</code></li>
 <li>值得注意的一点是，解密的过程，其实可以通过对字符串再进行一次 ROT13 加密实现。ROT13 的加密原理是偏移 13 位，保持大小写不变。因此，再偏移一次就能得到原字符串
@@ -520,8 +525,7 @@
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 一个数组参数 <code>arr</code>，即为需要过滤的原数组。返回值为过滤假值后的数组</li>
 <li>比如接收的是 <code>[&quot;a&quot;, 7, false]</code>，那么输出就是 <code>[&quot;a&quot;, 7]</code>。如果接收的是 <code>[&quot;a&quot;, &quot;b&quot;, 7]</code>，那么输出应该还是 <code>[&quot;a&quot;, &quot;b&quot;, 7]</code></li>
-<li>大体上这道题有两个思路。如果你知道数组的 <code>filter</code> 方法，那么可以直接用这个方法去写。如果你不知道，那么用循环写也是没问题的</li>
-<li>在 JavaScript 中，只有以下这几个会被认为是假值 (falsy)：<code>false</code>, <code>null</code>, 0, <code>&quot;&quot;</code>, <code>undefined</code>, <code>NaN</code>。我们可以直接通过 <code>Boolean()</code> 构造器来得出元素究竟是不是假值
+<li>大体上这道题有两个思路。如果你知道数组的 <code>filter</code> 方法，那么可以直接用这个方法去写。如果你不知道，那么用循环写也是没问题的
           
       
       
