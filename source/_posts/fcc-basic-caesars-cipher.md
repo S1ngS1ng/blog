@@ -53,6 +53,7 @@ function rot13(str) {
     return result;
 }
 ```
+
 ## 解释
 - 如果你看不懂上面的代码，请再看一遍思路提示里面的内容，这里应该不需要其他解释了
 
@@ -102,7 +103,6 @@ function rot13(str) {
     })
 }
 ```
-
 ### ES6
 ```js
 function rot13(str) {

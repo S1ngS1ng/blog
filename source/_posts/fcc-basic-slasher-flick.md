@@ -4,7 +4,6 @@ date: 2017-03-22 23:06:50
 tags: [FreeCodeCamp, FCC, 算法]
 ---
 # 截断数组 (Slasher Flick)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/slasher-flick)
 - [英文链接](https://www.freecodecamp.com/challenges/slasher-flick)
@@ -15,17 +14,17 @@ tags: [FreeCodeCamp, FCC, 算法]
 - 比如接收的是 `[1, 2, 3]` 与 `2`，那么输出就是 `[3]`
 <!-- more -->
 
+# 基本解法 - 使用 splice
+## 思路提示
+- 连边界条件都不用判断，如果不会做，请先看看上面的两个链接
+- 对于不用 `for` 循环不舒服的朋友，可以考虑对数组执行 `howMany` 次 `shift()`。当然，不推荐这么写
+
 ## 参考链接
 - 这应该是初级算法中最简单的题目
 - [Array.splice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 - [Array.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
-## 思路提示
-- 连边界条件都不用判断，如果不会做，请先看看上面的两个链接
-- 对于不用 `for` 循环不舒服的朋友，可以考虑对数组执行 `howMany` 次 `shift()`。当然，不推荐这么写
-
-## 参考答案
-### 基本答案 - 用 splice
+## 代码
 ```js
 function slasher(arr, howMany) {
     arr.splice(0, howMany);
@@ -33,11 +32,13 @@ function slasher(arr, howMany) {
 }
 ```
 
-### 基本答案 - 用 slice
+# 优化 - 使用 slice
+## 代码
 ```js
 function slasher(arr, howMany) {
     return arr.slice(howMany);
 }
 ```
-#### 解释
+
+## 解释
 - 唯一一道不需要任何解释的题目

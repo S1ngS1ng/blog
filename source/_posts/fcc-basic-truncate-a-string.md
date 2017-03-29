@@ -4,7 +4,6 @@ date: 2017-03-21 21:02:53
 tags: [FreeCodeCamp, FCC, 算法]
 ---
 # 截断字符串 (Truncate a string)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/truncate-a-string)
 - [英文链接](https://www.freecodecamp.com/challenges/truncate-a-string)
@@ -15,22 +14,22 @@ tags: [FreeCodeCamp, FCC, 算法]
 - 这道题，关键问题在于对后续 `...` 的处理，可以先考虑一下
 <!-- more -->
 
+# 基本解法
+## 思路提示
+- 首先应该想到，截取的逻辑大致分为两种情况：
+    - 截取后，带 `...`
+    - 截取后不带 `...`，这种情况其实就是输出 `str` 本身
+- 进一步考虑第一种情况，又分为两种：
+    - `num > 3` 的时候，需要少截取三位，因为 `...` 的长度会计入结果长度
+    - `num < 3` 的时候，正常截取，并把 `...` 加到结尾
+- 对于带 `...` 和不带 `...` 的情况，判断依据是 `num` 是否大于 `str.length`
+- 先想清楚这些，代码就很好写了
+
 ## 参考链接
 - [String.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 - [String.substr()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
 
-## 思路提示
-- 首先应该想到，截取的逻辑大致分为两种情况：
-	1. 截取后，带 `...`
-	2. 截取后不带 `...`，这种情况其实就是输出 `str` 本身
-- 进一步考虑第一种情况，又分为两种：
-	1. `num > 3` 的时候，需要少截取三位，因为 `...` 的长度会计入结果长度
-	2. `num < 3` 的时候，正常截取，并把 `...` 加到结尾
-- 对于带 `...` 和不带 `...` 的情况，判断依据是 `num` 是否大于 `str.length`
-- 先想清楚这些，代码就很好写了
-
-## 参考答案
-### 基本答案
+## 代码
 ```js
 function truncate(str, num) {
     if (str.length > num) {
@@ -47,12 +46,14 @@ function truncate(str, num) {
     }
 }
 ```
-#### 解释
+
+## 解释
 - 由于这道题目逻辑层次嵌套比较复杂，因此我决定不省略 `else` 了
 - 用 `substr` 或者 `slice` 都是没问题的。而且这道题是从 0 开始，所以两个方法的第二个参数都为 `num`
 - 由于是根据长度来决定，因此我首先考虑到的是用 `substr`
 
-### 中级解法 - 用三元运算符合并逻辑
+# 中级解法 - 用三元运算符合并逻辑
+## 代码
 ```js
 function truncate(str, num) {
     if (str.length > num) {
@@ -61,7 +62,8 @@ function truncate(str, num) {
     return str;
 }
 ```
-#### 解释
+
+## 解释
 - 嗯，这并不算是什么优化，对运算速度并没有什么提升，而且可能有些朋友认为可读性很差
 - 有些朋友会说，既然都用了三元，为什么不把 `str.length > num` 也合并成三元？原因很简单，我个人很反对三元嵌套
 - 我们先来读一下代码。对于 `str.length < num` 的情况，也就是 `num` 比 `str` 的长度还要大，那么我们就直接返回 `str`。这个没毛病，和上面的思路一样
