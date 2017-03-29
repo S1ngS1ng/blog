@@ -16,6 +16,14 @@ tags: [FreeCodeCamp, FCC, 算法]
 - 需要注意的是，题目中暗含了一个情况需要处理，就是每个单词，如果在非首字母位置出现了大写，也要输出小写
 <!-- more -->
 
+# 基本解法
+## 思路提示
+- 既然我们要操作每一个单词，那可以先用 `split(" ")` 去分割传入的字符串成为数组，这样操作起来就会方便很多
+- 另一方面，为了方便操作，我们可以在分割之前先把所有字符都用 `.toLowerCase()` 转换成小写。JavaScript 只会去操作大写字符，转换成小写。至于特殊符号和空格，不会影响函数执行
+- 分割之后，遍历数据，然后把第一个字符变成大写就行。转换方式就是用 `toUpperCase()`
+- 为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 `.substr()` 或者 `.slice()` 取出单词剩余部分，拼凑起来就可以了
+- 同样，这道题也可以使用正则表达式以及字符串方法完成
+
 ## 参考链接
 - [String.split()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
 - [Array.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Array/join)
@@ -24,15 +32,7 @@ tags: [FreeCodeCamp, FCC, 算法]
 - [String.substr()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
 - [String.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 
-## 思路提示
-- 既然我们要操作每一个单词，那可以先用 `split(" ")` 去分割传入的字符串成为数组，这样操作起来就会方便很多
-- 另一方面，为了方便操作，我们可以在分割之前先把所有字符都用 `.toLowerCase()` 转换成小写。JavaScript 只会去操作大写字符，转换成小写。至于特殊符号和空格，不会影响函数执行
-- 分割之后，遍历数据，然后把第一个字符变成大写就行。转换方式就是用 `toUpperCase()`
-- 为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 `.substr()` 或者 `.slice()` 取出单词剩余部分，拼凑起来就可以了
-- 同样，这道题也可以使用正则表达式以及字符串方法完成
-
-## 参考答案
-### 基本答案 - 分割，转换，合并
+## 代码
 ```js
 function titleCase(str) {
     // 转小写及分割成数组
@@ -46,15 +46,19 @@ function titleCase(str) {
     return stringArr.join(" ");
 }
 ```
-#### 解释
+
+## 解释
 - 可能会有朋友问，为什么不在 `function` 里生成一个空字符串，再遍历数组，动态地把处理过的字符串添加进去呢？这个思路当然是没问题的，只是需要多做一步，就是处理多余的空格。大家可以写一下试试，顺便，去掉首尾空格的方法叫 `.trim()`
 - `.slice(1)` 的意思就是，从索引为 1 的字符，一直复制到字符串结尾。这个步骤同样可以写成 `.substr(1)`
 - 最后那里，一定要 `.join(" ")`，这表示我们用空格把所有元素合并起来。而且这个空格，不会加到首尾。这也许是用数组的一个好处，毕竟 `.join()` 是数组方法
 
-### 优化
+# 优化
+## 思路提示
 - 既然用了数组，这里又是要对每一个元素执行相同的操作，不妨用用 `.map()`
-#### 参考链接
+## 参考链接
 - [Array.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Array/map)
+
+## 代码
 ```js
 function titleCase(str) {
     return str.toLowerCase().split(" ").map(function (word) {
@@ -62,13 +66,17 @@ function titleCase(str) {
     }).join(" ")
 }
 ```
-#### 解释
+
+## 解释
 - `.toLowerCase()` 返回字符串，调用 `.split()` 方法之后返回数组。数组再去调用 `.map()` 方法
 - 只要你理解了上面的基本解法，同时理解了 `.map()` 方法的作用，就应该不难理解这段代码。`.map()` 的好处就在于，它是数组方法，而且返回值为操作之后的数组
 
-### 中级解法 - 使用正则表达式及字符串方法
+# 中级解法 - 使用正则表达式及字符串方法
+## 思路提示
 - 思路上来说，就是通过正则匹配到首字母，并把它替换成为大写字符，同时，保留其他字符不变
 - 当然，也是需要先进行 `.toLowerCase()` 操作的
+
+## 代码
 ```js
 function titleCase(str) {
     return str.toLowerCase().replace(/(\s|^)[a-z]/g, function (match) {
@@ -76,7 +84,8 @@ function titleCase(str) {
     })
 }
 ```
-#### 解释
+
+## 解释
 - 首先转换成小写，这一步应该不需要多解释
 - 然后我们调用字符串的 `.replace()` 方法，这个正则其实不复杂。`\s` 包含了空格，`^` 是用来匹配字符串开头。意思就是，如果在空格之后有一个字母，或者一个字母位于 `str` 的开头，那就可以匹配
 - 而且，我们还设置了 flag 为 `/g`。因此，对于 `abc def ghi` 这个 `str`，会匹配到三个位置，分别是 `a`，` d` 以及 ` g`。值得注意的是，d 和 g 前面的空格也是会被匹配到的
