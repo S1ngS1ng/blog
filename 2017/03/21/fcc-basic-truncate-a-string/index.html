@@ -25,7 +25,7 @@
 问题解释
 这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
 这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
-<meta property="og:updated_time" content="2017-03-29T02:44:11.000Z">
+<meta property="og:updated_time" content="2017-03-29T07:02:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 截断字符串">
 <meta name="twitter:description" content="截断字符串 (Truncate a string)题目链接
@@ -374,9 +374,9 @@
 <li>我们先来读一下代码。对于 <code>str.length &lt; num</code> 的情况，也就是 <code>num</code> 比 <code>str</code> 的长度还要大，那么我们就直接返回 <code>str</code>。这个没毛病，和上面的思路一样</li>
 <li>通过基本答案中的代码，可以观察到，对于 <code>num</code> 大于 3 的判断，我们只是改变了 <code>substr</code> 的第二个参数，除此之外没有任何其他改变</li>
 <li>因此，我们需要干的事就是，当 <code>num</code> 大于 3 的时候，我们把第二个参数设置为 <code>num - 3</code>，否则就用 <code>num</code>。这就是上面三元表达式的意思</li>
-<li>三元表达式 <code>a ? b : c</code>，意思就是当 <code>a</code> 成立，我们就返回 <code>b</code>，否则返回 <code>c</code>，就这么简单。相当于<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    b;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
+<li>三元表达式 <code>a ? b : c</code>，意思就是当 <code>a</code> 成立，我们就返回 <code>b</code>，否则返回 <code>c</code>，就这么简单。相当于</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    b;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
       
@@ -389,7 +389,7 @@
         <p><span>本文标题:</span><a href="/blog/2017/03/21/fcc-basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
         <p><span>发布时间:</span>2017年03月21日 - 21时02分</p>
-        <p><span>最后更新:</span>2017年03月28日 - 21时44分</p>
+        <p><span>最后更新:</span>2017年03月29日 - 02时02分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/2017/03/21/fcc-basic-truncate-a-string/" title="FreeCodeCamp 初级算法题 - 截断字符串">S1ngS1ng.github.io/blog/blog/2017/03/21/fcc-basic-truncate-a-string/</a>
             <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/21/fcc-basic-truncate-a-string/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
