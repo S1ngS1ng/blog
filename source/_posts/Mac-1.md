@@ -2,7 +2,7 @@
 layout: post
 title: 你可能不知道的 Mac 技巧 - 文本操作
 date: 2017-01-17 00:11:30
-tags: [Tools,Mac]
+tags: [Mac]
 ---
 
 > 找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……
