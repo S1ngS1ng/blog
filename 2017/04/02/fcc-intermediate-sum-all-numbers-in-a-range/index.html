@@ -3,39 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FreeCodeCamp 初级算法题 - 检查字符串结尾 | S1ngS1ng</title>
+  <title>FreeCodeCamp 中级算法题 - 给定范围内的数字总和 | S1ngS1ng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="检查字符串结尾 (Confirm the Ending)题目链接
+  <meta name="description" content="给定范围内的数字总和 (Sum All Numbers in a Range)题目链接
 中文链接
 英文链接
-级别：初级 (Basic Algorithm Scripting)
+级别：中级 (Intermediate Algorithm Scripting)
 
 问题解释
-这个 function 接收两个参数，第一个参数为待检查的字符串 str，第二个参数为要比较的目标字符串 target。需要确认 str 是否以 target 结尾，如果是则返回 true，否则返回 false
-比如接收的是 &amp;quo">
+这个 function 接收一个数组参数 arr，其中包含两个数字。返回值为这两个数字范围内所有数字的总和
+比如接收的是 [1, 4]，那么输出就是 10
+需要注意的是，如果接收的是 [4, 1]，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeCodeCamp 初级算法题 - 检查字符串结尾">
-<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/03/20/fcc-basic-confirm-the-ending/index.html">
+<meta property="og:title" content="FreeCodeCamp 中级算法题 - 给定范围内的数字总和">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/2017/04/02/fcc-intermediate-sum-all-numbers-in-a-range/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
-<meta property="og:description" content="检查字符串结尾 (Confirm the Ending)题目链接
+<meta property="og:description" content="给定范围内的数字总和 (Sum All Numbers in a Range)题目链接
 中文链接
 英文链接
-级别：初级 (Basic Algorithm Scripting)
+级别：中级 (Intermediate Algorithm Scripting)
 
 问题解释
-这个 function 接收两个参数，第一个参数为待检查的字符串 str，第二个参数为要比较的目标字符串 target。需要确认 str 是否以 target 结尾，如果是则返回 true，否则返回 false
-比如接收的是 &amp;quo">
-<meta property="og:updated_time" content="2017-03-29T02:54:38.000Z">
+这个 function 接收一个数组参数 arr，其中包含两个数字。返回值为这两个数字范围内所有数字的总和
+比如接收的是 [1, 4]，那么输出就是 10
+需要注意的是，如果接收的是 [4, 1]，">
+<meta property="og:updated_time" content="2017-04-02T20:04:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 检查字符串结尾">
-<meta name="twitter:description" content="检查字符串结尾 (Confirm the Ending)题目链接
+<meta name="twitter:title" content="FreeCodeCamp 中级算法题 - 给定范围内的数字总和">
+<meta name="twitter:description" content="给定范围内的数字总和 (Sum All Numbers in a Range)题目链接
 中文链接
 英文链接
-级别：初级 (Basic Algorithm Scripting)
+级别：中级 (Intermediate Algorithm Scripting)
 
 问题解释
-这个 function 接收两个参数，第一个参数为待检查的字符串 str，第二个参数为要比较的目标字符串 target。需要确认 str 是否以 target 结尾，如果是则返回 true，否则返回 false
-比如接收的是 &amp;quo">
+这个 function 接收一个数组参数 arr，其中包含两个数字。返回值为这两个数字范围内所有数字的总和
+比如接收的是 [1, 4]，那么输出就是 10
+需要注意的是，如果接收的是 [4, 1]，">
   
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
@@ -299,11 +302,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-fcc-basic-confirm-the-ending" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-fcc-intermediate-sum-all-numbers-in-a-range" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2017/03/20/fcc-basic-confirm-the-ending/" class="article-date">
-      <time datetime="2017-03-20T15:18:14.000Z" itemprop="datePublished">2017-03-20</time>
+      <a href="/blog/2017/04/02/fcc-intermediate-sum-all-numbers-in-a-range/" class="article-date">
+      <time datetime="2017-04-02T19:59:32.000Z" itemprop="datePublished">2017-04-02</time>
 </a>
     </div>
   
@@ -316,7 +319,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      FreeCodeCamp 初级算法题 - 检查字符串结尾
+      FreeCodeCamp 中级算法题 - 给定范围内的数字总和
     </h1>
   
 
@@ -337,75 +340,62 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="检查字符串结尾-Confirm-the-Ending"><a href="#检查字符串结尾-Confirm-the-Ending" class="headerlink" title="检查字符串结尾 (Confirm the Ending)"></a>检查字符串结尾 (Confirm the Ending)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/confirm-the-ending" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/confirm-the-ending" target="_blank" rel="external">英文链接</a></li>
-<li>级别：初级 (Basic Algorithm Scripting)</li>
+        <h1 id="给定范围内的数字总和-Sum-All-Numbers-in-a-Range"><a href="#给定范围内的数字总和-Sum-All-Numbers-in-a-Range" class="headerlink" title="给定范围内的数字总和 (Sum All Numbers in a Range)"></a>给定范围内的数字总和 (Sum All Numbers in a Range)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/sum-all-numbers-in-a-range" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/sum-all-numbers-in-a-range" target="_blank" rel="external">英文链接</a></li>
+<li>级别：中级 (Intermediate Algorithm Scripting)</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收两个参数，第一个参数为待检查的字符串 <code>str</code>，第二个参数为要比较的目标字符串 <code>target</code>。需要确认 <code>str</code> 是否以 <code>target</code> 结尾，如果是则返回 <code>true</code>，否则返回 <code>false</code></li>
-<li>比如接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;o&quot;</code>，那么输出就是 <code>true</code>。如果接收的是 <code>&quot;Hello&quot;</code> 与 <code>&quot;e&quot;</code>，那么输出就是 <code>false</code><a id="more"></a>
+<li>这个 <code>function</code> 接收一个数组参数 <code>arr</code>，其中包含两个数字。返回值为这两个数字范围内所有数字的总和</li>
+<li>比如接收的是 <code>[1, 4]</code>，那么输出就是 <code>10</code></li>
+<li>需要注意的是，如果接收的是 <code>[4, 1]</code>，那么输出也应为 <code>10</code><a id="more"></a>
 </li>
-</ul>
-<h2 id="比较字符串的-substr-slice-与-substring-方法"><a href="#比较字符串的-substr-slice-与-substring-方法" class="headerlink" title="比较字符串的 substr, slice 与 substring 方法"></a>比较字符串的 substr, slice 与 substring 方法</h2><p>既然说到截取字符串，还是先来比较一下 <code>substr</code>, <code>slice</code> 和 <code>substring</code> 这三个方法吧。一开始很容易搞混，其实并不复杂</p>
-<ul>
-<li>大体上来说，这三个方法可以根据参数分为两类。第一类是 <code>substring</code> 和 <code>slice</code>，他们的两个参数分别是 Start Index (起始索引) 和 End Index (终点索引)。第二类是 <code>substr</code>，第一个参数是 Start Index (起始索引)，第二个参数是 Length (截取长度)</li>
-<li>共同点在于，以上这三个方法，第二个参数都是可以省略的，而且，很显然，他们都返回截取后的字符串。另外，他们都不会改变原字符串</li>
-<li>先来说 <code>substr</code><ul>
-<li>首先，需要注意，它的第二个参数是截取长度，而非结尾的索引</li>
-<li>第一个参数可以为负数，负数代表以结尾为基准</li>
-<li>如果第二个参数为负数，那么会返回空字符 <code>&quot;&quot;</code></li>
-</ul>
-</li>
-<li>再来对比一下 <code>slice</code> 与 <code>substring</code><ul>
-<li>相同点：<ul>
-<li>如果第一个参数与第二个相等，那么 <code>slice</code> 与 <code>substring</code> 都返回空字符 <code>&quot;&quot;</code></li>
-<li>如果只传入了第一个参数，那么都会截取到终点</li>
-<li>如果任何一个参数大于字符串长度，那就会使用字符串长度作这个参数</li>
-</ul>
-</li>
-<li>不同点：<ul>
-<li>如果传入负数，<code>substring</code> 会当成 0 去计算，而 <code>slice</code> 会以字符串结尾为参考进行计算</li>
-<li>如果第一个参数大于第二个，<code>substring</code> 会把两个参数换位然后计算，而 <code>slice</code> 则会返回空字符 <code>&quot;&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>因此，个人认为，如果要截取特定长度的字符串，就用 <code>substr</code>，否则就推荐用 <code>slice</code>。之所以更推荐 <code>slice</code>，是因为，首先它支持负数作为索引，在一些情况下会很方便。只要我们在用 <code>slice</code> 的时候，保证第一个数小于第二个数，那就不会出问题</li>
 </ul>
 <h1 id="基本解法"><a href="#基本解法" class="headerlink" title="基本解法"></a>基本解法</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>这道题目难度不大，而且解决方案很多</li>
-<li>我们不需要分割字符串，只需要用字符串的 <code>substr</code> 或 <code>slice</code> 方法，获取到 <code>str</code> 的最后 n 位，再与 <code>target</code> 比较即可</li>
-<li>需要注意的是，由于 <code>target</code> 长度不定，因此要根据它的长度来截取 <code>str</code></li>
+<li>这道题目的计算方式很简单，但需要判断传入数组的两个数字大小</li>
+<li>你可能会想到使用 <code>Array.sort()</code>。但其实，既然我们确定了只有两个元素，直接通过索引去访问就足够了。排序的话，反正也只有两种可能，所以完全不必要用</li>
+<li>那么，在基本解法中，我们先不涉及太多的技巧，直接通过循环来解</li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr" target="_blank" rel="external">String.substr()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">String.slice()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring" target="_blank" rel="external">String.substring()</a></li>
+<li>没什么可以参考的，只要想清楚逻辑过程，会写 <code>for</code> 循环就足够了。当然，用 <code>while</code> 写也是没问题的</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="comment">// 计算出开始的索引</span></div><div class="line">    <span class="keyword">var</span> startIndex = str.length - target.length;</div><div class="line">    <span class="comment">// 从开始索引，一直截取到字符串终点</span></div><div class="line">    <span class="keyword">var</span> strEnd = str.slice(startIndex);</div><div class="line">    <span class="keyword">return</span> strEnd === target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumAll</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="comment">// 用 left 代表较小的数，right 代表较大的数</span></div><div class="line">    <span class="keyword">var</span> left, right;</div><div class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (arr[<span class="number">0</span>] &lt; arr[<span class="number">1</span>]) &#123;</div><div class="line">        left = arr[<span class="number">0</span>];</div><div class="line">        right = arr[<span class="number">1</span>];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        left = arr[<span class="number">1</span>];</div><div class="line">        right = arr[<span class="number">0</span>];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = left; i &lt;= right; i++) &#123;</div><div class="line">        sum += i;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>根据上面的解释，其实写成 <code>str.substr(startIndex)</code> 或者 <code>str.substring(startIndex)</code> 都行</li>
-<li>如果你不能理解，请打开浏览器 console 试试以上提到的三种方法</li>
+<li>没有太多要解释的，思路就是先判断大小，定下循环的边界，然后遍历求和</li>
 </ul>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>上面我们声明了两个变量，但其实完全可以不声明，直接返回结果就好了</li>
-<li>既然 <code>slice</code> 可以传入负数作为参数，题目要求也是检测结尾，所以，可以直接从结尾来截取</li>
+<h1 id="优化-使用数学方法"><a href="#优化-使用数学方法" class="headerlink" title="优化 - 使用数学方法"></a>优化 - 使用数学方法</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>你应该还记得，JavaScript 中有个 <code>Math.max()</code> 方法，相对应的，还有个 <code>Math.min()</code></li>
+<li>所以我们可以简单地通过这两个方法来获取较大数和较小数</li>
+<li>至于数学方法，其实就是等差数列求和公式。来一起念一遍：”首项加上末项的和乘以项数除以 2”</li>
 </ul>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.slice(-target.length) === target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/max" target="_blank" rel="external">Math.max()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/min" target="_blank" rel="external">Math.min()</a></li>
+<li>初中数学课本</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumAll</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> left = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr);</div><div class="line">    <span class="keyword">var</span> right = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> (left + right) * (right - left + <span class="number">1</span>) / <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="优化-使用数组方法"><a href="#优化-使用数组方法" class="headerlink" title="优化 - 使用数组方法"></a>优化 - 使用数组方法</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>首先我们先想一点，如果只给我们两个数字，那除了上面的循环解法，恐怕不会有其他更好的解法了。因为我们只有两个端点，而没有一个连续的序列</li>
+<li>你可能还记得，数组有个 <code>reduce</code> 方法，可以用于求和。我们在基础算法题中用到过</li>
+<li>那么现在我们只要解决，如何通过传入的参数生成数组就可以了。可以通过循环，然后把元素 <code>push</code> 进去。也可以用 ES6 的 <code>Array.from</code> 方法，写起来会简洁不少。因为这个方法的回调函数就是一个 “map function”</li>
+</ul>
+<h2 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="external">Array.reduce()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="external">Array.from()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/abs" target="_blank" rel="external">Math.abs()</a></li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><h3 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumAll</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> left = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr);</div><div class="line">    <span class="keyword">var</span> right = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);</div><div class="line">    <span class="keyword">var</span> numArr = [];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = left; i &lt;= right; i++) &#123;</div><div class="line">        numArr.push(i);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> numArr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev, next</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> prev + next;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>当然，把 <code>slice</code> 换成 <code>substr</code> 也是没问题的。只是，绝对不要换成 <code>substring</code></li>
+<li>嗯，看起来好像没省多少事儿。在这道题里可能看不出太大区别，但在一些情况下可能会简单一些</li>
+<li>由于 ES5 生成范围内的数组没有什么简便写法，我们这里就只能用 <code>for</code> 循环了。当然，你也可以尝试一下用 <code>new Array()</code> 来生成。但请注意，这个构造器不会真正的生成元素，所以你不能使用 <code>map</code> 方法</li>
+<li>我能想到的解决方案只有先 <code>join</code> 然后再 <code>split</code>。但个人觉得这样写还不如直接用循环完成。如果你有更好的方法，请留言评论</li>
 </ul>
-<h1 id="利用正则来解决"><a href="#利用正则来解决" class="headerlink" title="利用正则来解决"></a>利用正则来解决</h1><h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="external">RegExp()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" target="_blank" rel="external">RegExp.test()</a><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmEnding</span>(<span class="params">str, target</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">RegExp</span>(target + <span class="string">'$'</span>).test(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumAll</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> numArr = <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="built_in">Math</span>.abs(arr[<span class="number">0</span>] - arr[<span class="number">1</span>]) + <span class="number">1</span>&#125;, (_, i) =&gt; i + <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr));</div><div class="line"></div><div class="line">    <span class="keyword">return</span> numArr.reduce(<span class="function">(<span class="params">prev, next</span>) =&gt;</span> prev + next);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>注意，并不是说这种解法效率高，事实上正则效率很低。放在这里只是多提供一种思路</li>
-<li>如果你不理解正则构造器 <code>RegExp</code> 的用法，请点击上面的链接读一读</li>
-<li>举个例子，如果传入的 <code>target</code> 是 <code>&quot;abc&quot;</code>，那么通过 <code>RegExp</code> 构造器就生成了 <code>/abc$/</code>。<code>$</code> 符号就表示字符串结尾</li>
-<li>然后我们用这个正则的 <code>test</code> 方法来测试 <code>str</code>，返回测试结果</li>
+<li>看起来好像很复杂，其实只要你理解了之前说的思路，理解起来应该不困难</li>
+<li>通过 <code>Array.from</code> 方法来生成数组。那么首先我们得定好数组长度，很简单，只需要通过 <code>length</code> 来设定就可以了。由于两个值的前后顺序我们不确定，所以求差可能得到负数，因此需要用 <code>Math.abs</code> 来转换一下。至于加不加 1，随便举个例子试一下就知道了。由于左右都要包含，因此要加 1</li>
+<li>然后，需要在数组中填充元素。其实这里也可以用 <code>Array.fill</code> 方法。上面的写法，下划线 <code>_</code> 只是一种习惯写法，表示回调函数中不需要调用的参数。由于 <code>map</code> 方法回调函数的参数按顺序为”元素”和”索引”，而这里我们只需要索引。索引是从 0 到 <code>arr.length</code> 递增的，那么我们只需要给每一个都加上数组中较小的，也就能得到我们想要的数组了</li>
+<li>至于后面的 <code>reduce</code> 方法，就不多解释了。如果不懂，请去看 MDN 的文档</li>
 </ul>
 
       
@@ -416,13 +406,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2017/03/20/fcc-basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></p>
+        <p><span>本文标题:</span><a href="/blog/2017/04/02/fcc-intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
-        <p><span>发布时间:</span>2017年03月20日 - 10时18分</p>
-        <p><span>最后更新:</span>2017年03月28日 - 21时54分</p>
+        <p><span>发布时间:</span>2017年04月02日 - 14时59分</p>
+        <p><span>最后更新:</span>2017年04月02日 - 15时04分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/20/fcc-basic-confirm-the-ending/" title="FreeCodeCamp 初级算法题 - 检查字符串结尾">S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-confirm-the-ending/</a>
-            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/03/20/fcc-basic-confirm-the-ending/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2017/04/02/fcc-intermediate-sum-all-numbers-in-a-range/" title="FreeCodeCamp 中级算法题 - 给定范围内的数字总和">S1ngS1ng.github.io/blog/blog/2017/04/02/fcc-intermediate-sum-all-numbers-in-a-range/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/2017/04/02/fcc-intermediate-sum-all-numbers-in-a-range/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/blog/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -435,18 +425,9 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/2017/03/20/fcc-basic-repeat-a-string-repeat-a-string/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          FreeCodeCamp 初级算法题 - 重复输出字符串
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</div>
+    <a href="/blog/2017/03/23/fcc-basic-caesars-cipher/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 凯撒密码</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -457,7 +438,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#检查字符串结尾-Confirm-the-Ending"><span class="toc-number">1.</span> <span class="toc-text">检查字符串结尾 (Confirm the Ending)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比较字符串的-substr-slice-与-substring-方法"><span class="toc-number">1.3.</span> <span class="toc-text">比较字符串的 substr, slice 与 substring 方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法"><span class="toc-number">2.</span> <span class="toc-text">基本解法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">2.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">2.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">2.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化"><span class="toc-number">3.</span> <span class="toc-text">优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-1"><span class="toc-number">3.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">3.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-1"><span class="toc-number">3.3.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#利用正则来解决"><span class="toc-number">4.</span> <span class="toc-text">利用正则来解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">4.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-2"><span class="toc-number">4.2.</span> <span class="toc-text">解释</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#给定范围内的数字总和-Sum-All-Numbers-in-a-Range"><span class="toc-number">1.</span> <span class="toc-text">给定范围内的数字总和 (Sum All Numbers in a Range)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法"><span class="toc-number">2.</span> <span class="toc-text">基本解法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">2.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">2.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">2.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-使用数学方法"><span class="toc-number">3.</span> <span class="toc-text">优化 - 使用数学方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-1"><span class="toc-number">3.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">3.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-使用数组方法"><span class="toc-number">4.</span> <span class="toc-text">优化 - 使用数组方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-2"><span class="toc-number">4.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-2"><span class="toc-number">4.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">4.3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES5"><span class="toc-number">4.3.1.</span> <span class="toc-text">ES5</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-1"><span class="toc-number">4.4.</span> <span class="toc-text">解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6"><span class="toc-number">4.4.1.</span> <span class="toc-text">ES6</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-2"><span class="toc-number">4.5.</span> <span class="toc-text">解释</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -524,13 +505,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2017/03/20/fcc-basic-repeat-a-string-repeat-a-string/" title="上一篇: FreeCodeCamp 初级算法题 - 重复输出字符串">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/blog/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/2017/03/20/fcc-basic-return-largest-numbers-in-arrays/" title="下一篇: FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">
+            <a href="/blog/2017/03/23/fcc-basic-caesars-cipher/" title="下一篇: FreeCodeCamp 初级算法题 - 凯撒密码">
                 <i class="fa fa-angle-right"></i>
             </a>
         
