@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 检查字符串结尾
 date: 2017-03-20 10:18:14
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 检查字符串结尾 (Confirm the Ending)
 

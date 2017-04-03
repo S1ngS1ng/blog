@@ -3,8 +3,8 @@ layout: post
 title: HammerSpoon - 不止是窗口管理
 date: 2016-11-27 3:10:00
 tags: [Tools,HammerSpoon]
+categories: HammerSpoon
 ---
-
 
 # 概述
 [HammerSpoon](http://www.hammerspoon.org/) 是一个**可以用来进行窗口管理**的 App，开源免费。当然，功能也不仅限于此
@@ -113,6 +113,4 @@ hs.application.allWindows(hs.application.find('chrome'))
 # 写在最后
 开头提到过，其实 HammerSpoon 能干的事情很多，绝不止窗口管理。我会在下一篇博客中讲讲关于音乐播放器的全局控制。感兴趣的朋友可以看下我提交的[代码](https://github.com/Hammerspoon/hammerspoon/pull/1076/files)，以及[文档](http://www.hammerspoon.org/docs/hs.vox.html)
 
----
 > 欢迎在页面下方评论和留言。如果你喜欢这篇文章，请帮我点个赞👍
-

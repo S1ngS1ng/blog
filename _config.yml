@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: S1ngS1ng.github.io/blog
 root: /blog/
-permalink: :year/:month/:day/:title/
+permalink: :category/:title/
 permalink_defaults:
 
 # Directory
@@ -44,8 +44,11 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: dev
 category_map:
+  mac: mac
+  FCC: fcc
+  HammerSpoon: hs
 tag_map:
 
 # Date / Time format ZZ设置时区 -0500

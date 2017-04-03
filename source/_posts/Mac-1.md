@@ -3,6 +3,7 @@ layout: post
 title: 你可能不知道的 Mac 技巧 - 文本操作
 date: 2017-01-17 00:11:30
 tags: [Mac]
+categories: mac
 ---
 
 > 找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……
@@ -114,8 +115,8 @@ Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位�
 # 写在最后
 目前打算从以下几个方面来总结常用的技巧：
 1. 文本编辑相关操作（本篇）
-2. [截图，Gif 制作以及 App 推荐](singsing.io/blog/2017/01/23/Mac-2/)
-3. 系统快捷键
+2. [截图，Gif 制作以及 App 推荐](http://singsing.io/blog/mac/Mac-2/)
+3. [系统快捷键](http://singsing.io/blog/mac/Mac-3/)
 4. 如何调教系统，让它更符合你的使用习惯
 5. Finder 和 Chrome 里的一些实用快捷键
 6. 用 HammerSpoon 配置自己的全局快捷键

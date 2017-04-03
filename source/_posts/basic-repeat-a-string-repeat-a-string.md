@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 重复输出字符串
 date: 2017-03-20 12:09:24
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 重复输出字符串 (Repeat a string repeat a string)
 

@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 检查回文字符串
 date: 2017-03-17 23:10:47
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 检查回文字符串 (Check for Palindromes)
 
@@ -99,7 +100,7 @@ function palindrome (str) {
 - `.split()` 是字符串方法，返回分割后的数组。`.reverse()` 是数组方法，返回翻转后的数组。`.join()` 是数组方法，返回合并后的字符串。最后，我们得到的就是翻转后的字符串
 - 养成一个好习惯，只声明必要的变量，比如这个步骤中的 `replacedStr` 和 `reversedStr`
 - 养成另一个好习惯，先判断边界值。如果 `str` 的长度为 1，那么肯定是回文字符串了。直接返回 `true` 就行
-- 不用数组方法，直接遍历字符串并翻转，这里就不写了，请参考 [翻转字符串](http://singsing.io/blog/2017/03/17/fcc-basic-reverse-a-string)
+- 不用数组方法，直接遍历字符串并翻转，这里就不写了，请参考 [翻转字符串](http://singsing.io/blog/fcc/basic-reverse-a-string)
 
 # 双指针解法
 ## 代码

@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 翻转字符串
 date: 2017-03-17 22:53:25
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 翻转字符串 (Reverse a String)
 

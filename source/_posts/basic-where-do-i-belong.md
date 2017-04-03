@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 数组排序并找出元素索引
 date: 2017-03-23 23:22:29
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 数组排序并找出元素索引 (Where Do I belong)
 ## 题目链接
@@ -94,4 +95,3 @@ function where(arr, num) {
     return arr.filter(e => e < num).length;
 }
 ```
-

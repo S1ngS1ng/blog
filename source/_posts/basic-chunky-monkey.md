@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组
 date: 2017-03-21 21:25:30
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 猴子吃香蕉, 分割数组 (Chunky Monkey)
 ## 题目链接

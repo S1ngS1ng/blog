@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 中级算法题 - 给定范围内的数字总和
 date: 2017-04-02 14:59:32
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,中级,算法]
+categories: FCC
 ---
 # 给定范围内的数字总和 (Sum All Numbers in a Range)
 ## 题目链接

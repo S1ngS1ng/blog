@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 截断数组
 date: 2017-03-22 23:06:50
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 截断数组 (Slasher Flick)
 ## 题目链接

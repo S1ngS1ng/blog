@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 计算整数阶乘
 date: 2017-03-17 23:05:01
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 计算一个整数的阶乘 (Factorialize a Number)
 
@@ -59,6 +60,6 @@ function factorialize(num) {
 ```
 
 ## 解释
-- 如果你想不明白上面的过程，请参考 [翻转字符串](http://singsing.io/blog/2017/03/17/fcc-basic-reverse-a-string) 的解释，相信你看完之后就知道如何分析这个执行过程了
+- 如果你想不明白上面的过程，请参考 [翻转字符串](http://singsing.io/blog/fcc/basic-reverse-a-string) 的解释，相信你看完之后就知道如何分析这个执行过程了
 - 请注意这里的初始判断条件。如果设置为 `if (num === 1)` 是不行的，这样传入 0 的时候就不能得到 1 了
 - 如果传入的数字很大，那么就可能出现栈溢出(stack overflow，没错，那个世界上最大的程序员问答平台就叫这个名字)的情况，这时候需要进行尾递归优化。由于 FCC 中没有这方面的检测，因此这里不再展开，有兴趣的朋友可以去搜搜"尾递归优化"，顺便，推荐[阮一峰老师的一篇文章](http://www.ruanyifeng.com/blog/2015/04/tail-call.html)

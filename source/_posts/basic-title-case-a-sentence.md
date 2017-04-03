@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 句中单词首字母大写
 date: 2017-03-18 03:35:10
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 句中单词首字母大写 (Title Case a Sentence)
 

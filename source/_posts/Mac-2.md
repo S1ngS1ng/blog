@@ -2,6 +2,7 @@
 title: 你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐
 date: 2017-01-23 01:22:32
 tags: [Mac]
+categories: mac
 ---
 > 找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……
 > 希望我的这一系列博文能帮到你
@@ -140,7 +141,7 @@ macOS 上截图相关的快捷键就介绍到这里，能想到的也就这些�
 [Giphy](https://itunes.apple.com/us/app/giphy-capture.-the-gif-maker/id668208984?mt=12) 是由一个很火的 Gif 分享网站 [Giphy.com](http://giphy.com/) 开发的。一个很方便的功能就是可以直接上传至 giphy.com（可能需要 VPN 才能访问），然后把链接 Share 给朋友就可以了。同样，保存至本地也没问题
 
 ## SnagIt - 全套解决方案
-我一般的习惯是，如果截图只是为了粘贴到聊天框之类的地方，而且不需要标注的话，就会用系统截图。如果需要标注，或者想要留下来，就会用一个第三方的 App：[SnagIt](https://www.techsmith.com/screen-capture.html)。虽然是付费软件，价格也有点儿高，但我觉得还是很值得购买的。目前我的[博客](singsing.io/blog)和 [GitHub](github.com/S1ngS1ng/HammerSpoon) 上的截图、动图都是用这个做的
+我一般的习惯是，如果截图只是为了粘贴到聊天框之类的地方，而且不需要标注的话，就会用系统截图。如果需要标注，或者想要留下来，就会用一个第三方的 App：[SnagIt](https://www.techsmith.com/screen-capture.html)。虽然是付费软件，价格也有点儿高，但我觉得还是很值得购买的。目前我的[博客](http://singsing.io/blog)和 [GitHub](github.com/S1ngS1ng/HammerSpoon) 上的截图、动图都是用这个做的
 
 ### 截图功能
 SnagIt 在截图方面提供了区域延时截图、全景截图、Expose 模式截图甚至摄像头输入内容截图这些很实用的功能。个人觉得，它 Menu Bar 的 Panel（面板）本身颜值就很高：
@@ -163,13 +164,12 @@ SnagIt 在截图方面提供了区域延时截图、全景截图、Expose 模式
 TechSmith 自己提供了 screencast.com 和 TechSmith relay 服务，当然我们也可以选择上传到 Google Drive 或者 Dropbox。也以配置自己的 FTP，或者直接扔到 iCloud 文件夹也是没问题的。同样，也可以选择本地文件夹保存，支持命名规则等方面的设置
 
 # 预告
-下一篇博客将为大家介绍下一些常用的系统快捷键。另外，[上一篇博客](http://singsing.io/blog/2017/01/17/Mac-1/) 文末列出了大纲，已经更新（并且可能随时都会更新）：
-1. [文本编辑相关操作](http://singsing.io/blog/2017/01/17/Mac-1/)
+下一篇博客将为大家介绍下一些常用的系统快捷键。另外，[上一篇博客](http://singsing.io/blog/mac/Mac-1/) 文末列出了大纲，已经更新（并且可能随时都会更新）：
+1. [文本编辑相关操作](http://singsing.io/blog/mac/Mac-1/)
 2. 截图，Gif 制作以及 App 推荐（本篇）
-3. 系统快捷键
+3. [系统快捷键](http://singsing.io/blog/mac/Mac-3/)
 4. 如何调教系统，让它更符合你的使用习惯
 5. Finder 和 Chrome 里的一些实用快捷键
 6. 用 HammerSpoon 配置自己的全局快捷键
 
 > 如果你喜欢这篇文章，请帮我点个赞👍
-

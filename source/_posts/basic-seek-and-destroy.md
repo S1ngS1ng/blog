@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 摧毁数组
 date: 2017-03-22 23:15:36
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 摧毁数组 (Seek and Destroy)
 ## 题目链接

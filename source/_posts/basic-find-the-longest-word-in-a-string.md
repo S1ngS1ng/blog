@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 找出最长的单词
 date: 2017-03-18 03:35:10
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 找出最长单词 (Find the Longest word in a String)
 

@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 凯撒密码
 date: 2017-03-23 23:27:48
-tags: [FreeCodeCamp, FCC, 算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 凯撒密码 (Caesars Cipher)
 ## 题目链接

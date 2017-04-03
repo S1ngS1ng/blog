@@ -3,9 +3,10 @@ layout: post
 title: HammerSpoon - 实现音乐播放的全局键盘控制
 date: 2016-12-11 1:10:00
 tags: [Tools,HammerSpoon]
+categories: HammerSpoon
 ---
 
-> 关于 HammerSpoon 的基本介绍，请参考我的[上一篇博文](http://singsing.io/blog/2016/11/27/HammerSpoon-1/)
+> 关于 HammerSpoon 的基本介绍，请参考我的[上一篇博文](http://singsing.io/blog/hs/HammerSpoon-1/)
 > 关于本文中提到的 VOX，请点[这里](https://vox.rocks/mac-music-player)
 
 # 概述
@@ -47,7 +48,7 @@ tags: [Tools,HammerSpoon]
 篇幅有限，不得不开启下一个话题。对播放器方面有问题的朋友欢迎在底下留言，大家一起讨论
 
 ## HammerSpoon
-[上一篇博文](http://singsing.io/blog/2016/11/27/HammerSpoon-1/) 中已经提到，HammerSpoon 不止是窗口管理。它还可以读取系统的 API，可以执行 AppleScript。这两个特性，为我们通过键盘全局操作音乐播放提供了坚实的基础。实现全局的音乐播放控制，我们只需要 HammerSpoon 的这几个 API：
+[上一篇博文](http://singsing.io/blog/hs/HammerSpoon-1/) 中已经提到，HammerSpoon 不止是窗口管理。它还可以读取系统的 API，可以执行 AppleScript。这两个特性，为我们通过键盘全局操作音乐播放提供了坚实的基础。实现全局的音乐播放控制，我们只需要 HammerSpoon 的这几个 API：
 
 * [hs.osascript.applescript()](http://www.hammerspoon.org/docs/hs.osascript.html#applescript) - 执行 AppleScript。同时， `hs.osascript.javascript()` 也提供了执行 `JavaScript` 的接口
 * [hs.hotkey.bind()](http://www.hammerspoon.org/docs/hs.hotkey.html) - 既然是用键盘来控制音乐播放，那么绑定键盘快捷键的方法肯定是必不可少的
