@@ -5,7 +5,6 @@ tags: [FreeCodeCamp,初级,算法]
 categories: FCC
 ---
 # 检查字符串结尾 (Confirm the Ending)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/confirm-the-ending)
 - [英文链接](https://www.freecodecamp.com/challenges/confirm-the-ending)

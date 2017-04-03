@@ -1,7 +1,8 @@
 ---
 title: FreeCodeCamp 初级算法题 - 截断字符串
 date: 2017-03-21 21:02:53
-tags: [FreeCodeCamp,FCC,算法]
+tags: [FreeCodeCamp,初级,算法]
+categories: FCC
 ---
 # 截断字符串 (Truncate a string)
 ## 题目链接

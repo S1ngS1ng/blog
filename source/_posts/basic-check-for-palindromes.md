@@ -5,7 +5,6 @@ tags: [FreeCodeCamp,初级,算法]
 categories: FCC
 ---
 # 检查回文字符串 (Check for Palindromes)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/check-for-palindromes)
 - [英文链接](https://www.freecodecamp.com/challenges/check-for-palindromes)

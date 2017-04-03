@@ -5,7 +5,6 @@ tags: [FreeCodeCamp,初级,算法]
 categories: FCC
 ---
 # 找出多个数组中的最大数 (Return Largest Numbers in Arrays)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/return-largest-numbers-in-arrays)
 - [英文链接](https://www.freecodecamp.com/challenges/return-largest-numbers-in-arrays)

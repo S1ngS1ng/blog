@@ -5,7 +5,6 @@ tags: [FreeCodeCamp,初级,算法]
 categories: FCC
 ---
 # 计算一个整数的阶乘 (Factorialize a Number)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/factorialize-a-number)
 - [英文链接](https://www.freecodecamp.com/challenges/factorialize-a-number)

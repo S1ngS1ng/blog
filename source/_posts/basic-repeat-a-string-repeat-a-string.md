@@ -5,7 +5,6 @@ tags: [FreeCodeCamp,初级,算法]
 categories: FCC
 ---
 # 重复输出字符串 (Repeat a string repeat a string)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/repeat-a-string-repeat-a-string)
 - [英文链接](https://www.freecodecamp.com/challenges/repeat-a-string-repeat-a-string)

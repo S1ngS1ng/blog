@@ -5,7 +5,6 @@ tags: [FreeCodeCamp,初级,算法]
 categories: FCC
 ---
 # 句中单词首字母大写 (Title Case a Sentence)
-
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/title-case-a-sentence)
 - [英文链接](https://www.freecodecamp.com/challenges/title-case-a-sentence)
