@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HammerSpoon - 实现音乐播放的全局键盘控制 | S1ngS1ng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于 HammerSpoon 的基本介绍，请参考我的上一篇博文关于本文中提到的 VOX，请点这里
+
+概述由于地区限制和版权原因，不得不忍痛割爱网易云音乐。从那之后便开始寻找一款 MacOS 上适合自己的播放器
+先说说本篇博客的主角，VOX。作为一个颜控，第一眼确实被它的外观吸引：
+  
+同时，他们提供一个叫 LOOP 的音乐服务，可以简单理解为音乐云盘。用户可以把自己的歌曲上传到 LOOP 提供">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HammerSpoon - 实现音乐播放的全局键盘控制">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/hs/HammerSpoon-2/index.html">
+<meta property="og:site_name" content="S1ngS1ng">
+<meta property="og:description" content="关于 HammerSpoon 的基本介绍，请参考我的上一篇博文关于本文中提到的 VOX，请点这里
+
+概述由于地区限制和版权原因，不得不忍痛割爱网易云音乐。从那之后便开始寻找一款 MacOS 上适合自己的播放器
+先说说本篇博客的主角，VOX。作为一个颜控，第一眼确实被它的外观吸引：
+  
+同时，他们提供一个叫 LOOP 的音乐服务，可以简单理解为音乐云盘。用户可以把自己的歌曲上传到 LOOP 提供">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/vox-example.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/open-script-editor.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/script-editor-initialize.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/open-dictionary.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/vox-api.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/vox-track-info.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/vox-toggle-playlist.gif">
+<meta property="og:updated_time" content="2017-04-03T04:56:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HammerSpoon - 实现音乐播放的全局键盘控制">
+<meta name="twitter:description" content="关于 HammerSpoon 的基本介绍，请参考我的上一篇博文关于本文中提到的 VOX，请点这里
+
+概述由于地区限制和版权原因，不得不忍痛割爱网易云音乐。从那之后便开始寻找一款 MacOS 上适合自己的播放器
+先说说本篇博客的主角，VOX。作为一个颜控，第一眼确实被它的外观吸引：
+  
+同时，他们提供一个叫 LOOP 的音乐服务，可以简单理解为音乐云盘。用户可以把自己的歌曲上传到 LOOP 提供">
+<meta name="twitter:image" content="S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/vox-example.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/blog/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  <link rel="stylesheet" href="/blog/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/blog/js/pace.js"></script>
+    <link href="/blog/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/blog/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+<a href="https://github.com/S1ngS1ng/blog" class="github-corner" aria-label="View Source Code on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+         style="fill:#BA68C8; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
+         aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>
+    a.github-corner > svg {
+        z-index: 100;
+    }
+    .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+    @keyframes octocat-wave {
+        0%, 100% {
+            transform: rotate(0)
+        }
+        20%, 60% {
+            transform: rotate(-25deg)
+        }
+        40%, 80% {
+            transform: rotate(10deg)
+        }
+    }
+    @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }
+</style>
+</body>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            
+            <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/" title="Hi Mate">S1ngS1ng</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸡前端</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/">博客首页</a></li>
+                        
+                            <li><a href="/blog/tags/Tools">工具控</a></li>
+                        
+                            <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                        
+                            <li><a href="/blog/tags/FCC">FCC 算法题详解</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                            
+                                <a class="fl facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                            
+                                <a class="fl QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                            
+                                <a class="fl segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/blog/tags/FCC/" style="font-size: 10px;">FCC</a> <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 12.5px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 12.5px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 10px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 17.5px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">luuman</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.fengchenguyi.com/">浮生</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">修身治国平天下，洗脸刷牙写代码</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                
+                    <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸡前端</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/">博客首页</a></li>
+                
+                    <li><a href="/blog/tags/Tools">工具控</a></li>
+                
+                    <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                
+                    <li><a href="/blog/tags/FCC">FCC 算法题详解</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                    
+                        <a class="QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                    
+                        <a class="segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-HammerSpoon-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/hs/HammerSpoon-2/" class="article-date">
+      <time datetime="2016-12-11T07:10:00.000Z" itemprop="datePublished">2016-12-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HammerSpoon - 实现音乐播放的全局键盘控制
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/hs/">HammerSpoon</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HammerSpoon/">HammerSpoon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Tools/">Tools</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>关于 HammerSpoon 的基本介绍，请参考我的<a href="http://singsing.io/blog/hs/HammerSpoon-1/" target="_blank" rel="external">上一篇博文</a><br>关于本文中提到的 VOX，请点<a href="https://vox.rocks/mac-music-player" target="_blank" rel="external">这里</a></p>
+</blockquote>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>由于地区限制和版权原因，不得不忍痛割爱网易云音乐。从那之后便开始寻找一款 MacOS 上<strong>适合自己</strong>的播放器</p>
+<p>先说说本篇博客的主角，<a href="https://vox.rocks/mac-music-player" target="_blank" rel="external">VOX</a>。作为一个颜控，第一眼确实被它的外观吸引：</p>
+  <img src="/blog/hs/HammerSpoon-2/vox-example.jpg" alt="vox-example" title="vox-example">
+<p>同时，他们提供一个叫 <a href="https://vox.rocks/loop-music-cloud" target="_blank" rel="external">LOOP</a> 的音乐服务，可以简单理解为音乐云盘。用户可以把自己的歌曲上传到 LOOP 提供的云空间，然后就可以通过云或者下载到本地播放了。这个空间是 <strong>“没有上限的!!!”.repeat(3)</strong>，至少现在是这样</p>
+<p>另外，如果你的 iTunes 有珍藏多年的音乐，VOX 一样可以读取出来，无缝同步，这个功能并不需要付费</p>
+<p>通过一段时间的调查，做了一个价格、服务方面的横向对比，分享给大家，如有错误欢迎指正：<br><a id="more"></a></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>价格 (美元/月)</th>
+<th>试用</th>
+<th>在线/跨平台</th>
+<th>格式支持</th>
+<th>无损支持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://vox.rocks/mac-music-player" target="_blank" rel="external">VOX (LOOP)</a></td>
+<td>$10.99 ~ $15.99</td>
+<td>15天免费</td>
+<td>通过 VOX Free/只支持 MacOS 和 iOS</td>
+<td>绝大部分格式</td>
+<td>是，需用户上传</td>
+</tr>
+<tr>
+<td><a href="http://www.apple.com/music/" target="_blank" rel="external">Apple Music</a></td>
+<td>$9.99</td>
+<td>3个月免费</td>
+<td>是/需要 iTunes</td>
+<td>AAC, MP3</td>
+<td>否，但接近无损</td>
+</tr>
+<tr>
+<td><a href="https://www.spotify.com/" target="_blank" rel="external">Spotify</a></td>
+<td>$9.99</td>
+<td>$0.99 三个月试用</td>
+<td>是/全平台</td>
+<td>320K MP3 (Spotify Premium)</td>
+<td>否</td>
+</tr>
+<tr>
+<td><a href="https://www.spotify.com/" target="_blank" rel="external">Google Play Music</a></td>
+<td>$9.99</td>
+<td>30天免费</td>
+<td>是/全平台</td>
+<td>MP3</td>
+<td>否，上传无损会转为 320K MP3</td>
+</tr>
+<tr>
+<td><a href="tidal.com">TIDAL</a></td>
+<td>$9.99/$19.99</td>
+<td>30天免费</td>
+<td>是/不支持 Windows</td>
+<td>FLAC, MP3</td>
+<td>需要购买 $19.99 的服务</td>
+</tr>
+<tr>
+<td><a href="deezer.com">Deezer</a></td>
+<td>$9.99/$14.99</td>
+<td>30天免费</td>
+<td>是/全平台</td>
+<td>MP3</td>
+<td>需要第三方硬件</td>
+</tr>
+<tr>
+<td><a href="https://www.clementine-player.org/" target="_blank" rel="external">Clementine</a></td>
+<td>免费，开源</td>
+<td>N/A</td>
+<td>否/全平台</td>
+<td>绝大部分格式</td>
+<td>是，需用户上传 (支持 Dropbox，Spotify 等)</td>
+</tr>
+<tr>
+<td><a href="http://www.foobar2000.org/" target="_blank" rel="external">foobar2000</a></td>
+<td>免费，开源</td>
+<td>N/A</td>
+<td>否/Windows, 安卓，iOS</td>
+<td>绝大部分格式</td>
+<td>是，需用户上传</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Foobar2000 就不用说了，懂的人自然懂，可惜没有 Mac 版，这款软件一直都是资深音乐爱好者首推的神器</li>
+<li>Clementine 则胜在全平台兼容，以及可以读取 Dropbox 之类的网盘，当然前提是你的网盘空间得足够大 （好像不支持百度云。。）</li>
+<li>Deezer 和 TIDAL 一样，提供<strong>在线</strong>的无损音乐播放。虽然他们宣称的总歌曲数比 Google Play 和 Apple Music 都要多，但中文歌曲数量还是太少了。另外，Deezer 需要第三方的硬件 <a href="http://www.sonos.com/" target="_blank" rel="external">SONOS</a> 才能提供无损音乐播放服务</li>
+<li>Google Play 其实中文歌不少。当然，肯定是不全的，至于一些小众的歌曲就别指望找到了。播放器网页版中规中矩，本地版，能用肯定是能用，但颜控估计是不会喜欢的</li>
+<li>Spotify，付费用户可以选择高音质，也即是 320K MP3，并不提供无损。其实 Spotify 界面还是不错的，而且跨平台性非常好，甚至 PS4，Bose 音箱都支持</li>
+<li>Apple Music 用起来着实方便，和系统的结合度倒是值得一提，比如，你可以用在 iTunes 找到的歌来当闹钟铃声。英文歌资源非常多，从大众的 Taylor Swift 到小众的 Mono Inc，Bullet For My Valentine 都有，新砖也能找到。中文歌曲方面和 Google Play 差不多，不少，但称不上全（至少很多我爱听的歌没有）。顺便，iTunes 其实支持 FLAC 或者 APE 格式的播放，只是需要安装插件</li>
+</ul>
+<h1 id="HammerSpoon-Whatever"><a href="#HammerSpoon-Whatever" class="headerlink" title="HammerSpoon + Whatever"></a>HammerSpoon + Whatever</h1><blockquote>
+<p>软件，没有最好的，只有最适合的</p>
+</blockquote>
+<p>篇幅有限，不得不开启下一个话题。对播放器方面有问题的朋友欢迎在底下留言，大家一起讨论</p>
+<h2 id="HammerSpoon"><a href="#HammerSpoon" class="headerlink" title="HammerSpoon"></a>HammerSpoon</h2><p><a href="http://singsing.io/blog/hs/HammerSpoon-1/" target="_blank" rel="external">上一篇博文</a> 中已经提到，HammerSpoon 不止是窗口管理。它还可以读取系统的 API，可以执行 AppleScript。这两个特性，为我们通过键盘全局操作音乐播放提供了坚实的基础。实现全局的音乐播放控制，我们只需要 HammerSpoon 的这几个 API：</p>
+<ul>
+<li><a href="http://www.hammerspoon.org/docs/hs.osascript.html#applescript" target="_blank" rel="external">hs.osascript.applescript()</a> - 执行 AppleScript。同时， <code>hs.osascript.javascript()</code> 也提供了执行 <code>JavaScript</code> 的接口</li>
+<li><a href="http://www.hammerspoon.org/docs/hs.hotkey.html" target="_blank" rel="external">hs.hotkey.bind()</a> - 既然是用键盘来控制音乐播放，那么绑定键盘快捷键的方法肯定是必不可少的</li>
+<li><a href="http://www.hammerspoon.org/docs/hs.alert.html" target="_blank" rel="external">hs.alert</a> - 可选，非必备。我是用这个来显示曲目信息的</li>
+</ul>
+<h2 id="AppleScript-概述"><a href="#AppleScript-概述" class="headerlink" title="AppleScript 概述"></a>AppleScript 概述</h2><p>AppleScript 是苹果公司开发的脚本语言，可以用来控制 MacOS 上运行的程序，也可以写成独立的 Applet</p>
+<p>所以，只要我们能获取到 App 的接口，就可以通过 AppleScript 让 App 来搞事情了。举个例子，比如咱们安装了迅雷，迅雷提供了一个开始下载的接口，叫 <code>startDownload</code>。这时候，我们只需要这样写 AppleScript：<code>tell application &quot;迅雷&quot; to startDownload</code>，然后执行，那么迅雷就可以开始下载了（事实上，迅雷并没有提供这样的接口=。=</p>
+<p>AppleScript 的这个语法，其实和英语表达非常接近（接近自然语言），直接翻译过来就是 <code>告诉应用程序“迅雷”，（让它）开始下载</code>。很好理解是不是？</p>
+<h2 id="App-接口"><a href="#App-接口" class="headerlink" title="App 接口"></a>App 接口</h2><p>那么现在，我们只需要找到应用程序接口，就大功告成了。我们可以在系统里直接查看，步骤如下：</p>
+<ol>
+<li><p>打开这个叫 ScriptEditor 的东西 （中文系统下叫“脚本编辑器”）</p>
+<img src="/blog/hs/HammerSpoon-2/open-script-editor.jpg" alt="open-script-ediotor" title="open-script-ediotor">
+</li>
+<li><p>然后就得到了这个界面，不用管它，点 “Done” 就好</p>
+<img src="/blog/hs/HammerSpoon-2/script-editor-initialize.jpg" alt="script-editor-initialize" title="script-editor-initialize">
+</li>
+<li><p>点击 <code>File -&gt; Open Dictionary</code>，找到你想要折腾的 App，打开（注：如果这里面没有，那多半是没有文档，或者不支持，我没测试过所有 App）</p>
+<img src="/blog/hs/HammerSpoon-2/open-dictionary.jpg" alt="open-dictionary" title="open-dictionary">
+</li>
+<li><p>比如我们打开 VOX，就得到了如下的内容：</p>
+<img src="/blog/hs/HammerSpoon-2/vox-api.jpg" alt="vox-api" title="vox-api">
+</li>
+</ol>
+<p>至此，一切都变得很简单了。我们只要写这个代码 <code>tell application &quot;VOX&quot; to play</code>并执行，就可以让 VOX 播放歌曲了。同样道理，<code>tell application &quot;VOX&quot; to next</code> 就是切换到下一首歌。至于每个 API 是干什么的，文档里都有说明</p>
+<p>当然，我们也可以用同样的方式找到不仅限于 iTunes，Spotify，iTerm，Alfred，Atom 的 API，然后写一些自己想实现的功能</p>
+<h2 id="与-HammerSpoon-合体"><a href="#与-HammerSpoon-合体" class="headerlink" title="与 HammerSpoon 合体"></a>与 HammerSpoon 合体</h2><p>说了半天，终于到了合体的时候。用 VOX 的朋友可以直接使用我封装好的 <a href="http://www.hammerspoon.org/docs/hs.vox.html" target="_blank" rel="external">API</a></p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>代码也变得非常简单，比如，我们想把 <code>ctrl + j</code> 设置为切换播放/暂停。那么只需要：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hs.hotkey.bind(&#123;<span class="string">"ctrl"</span>&#125;, <span class="string">"j"</span>, hs.vox.playpause())</div></pre></td></tr></table></figure></p>
+<p>我的代码中，在快捷键绑定部分又封装了一次而已，封装部分是这样：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">local</span> voxHyper = &#123;<span class="string">"cmd"</span>, <span class="string">"alt"</span>, <span class="string">"shift"</span>&#125;</div><div class="line"></div><div class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">voxBindTable</span><span class="params">(keyFuncTable, hyper)</span></span></div><div class="line">  <span class="keyword">for</span> key,fn <span class="keyword">in</span> <span class="built_in">pairs</span>(keyFuncTable) <span class="keyword">do</span></div><div class="line">    hs.hotkey.bind(hyper <span class="keyword">or</span> voxHyper, key, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> fn() <span class="keyword">end</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>这个方法，首先接收一个 <code>table</code>(可以理解为 JS 的对象，或者，HashMap？)，然后接收 HyperKey 设置。我的 HyperKey 设置为 <code>cmd + option + shift</code>。然后遍历传入的 <code>table</code>，把每一组的 <code>key</code> 和回调方法绑定上</p>
+<p>调用起来就很方便了。我把 <code>hyper + j</code> 绑定为切换播放/暂停，<code>hyper + h</code> 绑定为上一首</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">voxBindTable(&#123;</div><div class="line">  j = hs.vox.playpause,</div><div class="line">  h = hs.vox.previous,</div><div class="line">  l = hs.vox.<span class="built_in">next</span>,</div><div class="line">  k = hs.vox.trackInfo,</div><div class="line">  i = hs.vox.togglePlaylist</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="显示歌曲信息"><a href="#显示歌曲信息" class="headerlink" title="显示歌曲信息"></a>显示歌曲信息</h3><p>之前提到了 <a href="http://www.hammerspoon.org/docs/hs.alert.html" target="_blank" rel="external">hs.alert</a>。用处就是，读取 API 获得当前曲目的歌曲信息 （歌名，演唱者以及专辑名），然后显示在屏幕上，持续 2 秒。效果如下图：</p>
+  <img src="/blog/hs/HammerSpoon-2/vox-track-info.jpg" alt="vox-track-info" title="vox-track-info">
+<p>代码就是上面的 <code>hyper + k</code>，<code>hs.vox.trackInfo()</code> 已经封装好了</p>
+<h3 id="显示-隐藏-播放列表"><a href="#显示-隐藏-播放列表" class="headerlink" title="显示/隐藏 播放列表"></a>显示/隐藏 播放列表</h3><p>这个功能就是，类似于播放器的切换标准模式和 Mini 模式。API 已经封装成了 <code>hs.vox.togglePlaylist()</code>，实际效果如图：</p>
+<img src="/blog/hs/HammerSpoon-2/vox-toggle-playlist.gif" alt="vox-toggle-playlist" title="vox-toggle-playlist">
+<h1 id="不得不说的"><a href="#不得不说的" class="headerlink" title="不得不说的"></a>不得不说的</h1><ol>
+<li>每个应用程序的 API 不尽相同，比如我在 HammerSpoon 里封装的 <code>hs.vox.trackInfo()</code> 只适用于 VOX。如果你不放心，可以先在 Console 里执行一下：<code>hs.vox.trackInfo()</code>，然后你就会得到一个弹出的信息框</li>
+<li>对于没有封装的，也很简单。按照上面提到的方法查 API 文档，比如 Spotify 也提供了一个叫 <code>pause</code> 的 API，那就可以在控制台里执行这段代码测试：<code>hs.applescript.applescript(&#39;tell application &quot;Spotify&quot; to pause&#39;)</code>。理论上会让 Spotify 暂停播放</li>
+<li>用好控制台 * 3，可以帮你在写代码过程中省不少时间。关于一些小技巧，我会在下一篇文章中提到</li>
+</ol>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>这是 HammerSpoon 的第二篇。下一篇打算聊聊全局的快捷键绑定，已经实现的功能是，类似于 VIM，通过 <code>hyper + hjkl</code> 的方式来实现全局的光标移动（方向键）。涉及到的事儿可能比较多，感兴趣的朋友可以先试用一下，提提意见和建议。代码在<a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/vim-binding.lua" target="_blank" rel="external">这里</a>，文档在<a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/README-cn.md" target="_blank" rel="external">这里</a></p>
+<hr>
+<blockquote>
+<p>欢迎在页面下方评论和留言。如果你喜欢这篇文章，请帮我点个赞👍</p>
+</blockquote>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></p>
+        <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
+        <p><span>发布时间:</span>2016年12月11日 - 01时10分</p>
+        <p><span>最后更新:</span>2017年04月02日 - 23时56分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/hs/HammerSpoon-2/" title="HammerSpoon - 实现音乐播放的全局键盘控制">S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/hs/HammerSpoon-2/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/blog/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/blog/mac/Mac-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          你可能不知道的 Mac 技巧 - 文本操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/hs/HammerSpoon-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HammerSpoon - 不止是窗口管理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HammerSpoon-Whatever"><span class="toc-number">2.</span> <span class="toc-text">HammerSpoon + Whatever</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HammerSpoon"><span class="toc-number">2.1.</span> <span class="toc-text">HammerSpoon</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppleScript-概述"><span class="toc-number">2.2.</span> <span class="toc-text">AppleScript 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#App-接口"><span class="toc-number">2.3.</span> <span class="toc-text">App 接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与-HammerSpoon-合体"><span class="toc-number">2.4.</span> <span class="toc-text">与 HammerSpoon 合体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">2.4.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示歌曲信息"><span class="toc-number">2.4.2.</span> <span class="toc-text">显示歌曲信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示-隐藏-播放列表"><span class="toc-number">2.4.3.</span> <span class="toc-text">显示/隐藏 播放列表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#不得不说的"><span class="toc-number">3.</span> <span class="toc-text">不得不说的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写在最后"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/blog/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'singsing-io-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/mac/Mac-1/" title="上一篇: 你可能不知道的 Mac 技巧 - 文本操作">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/blog/hs/HammerSpoon-1/" title="下一篇: HammerSpoon - 不止是窗口管理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 S1ngS1ng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >大神到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/blog/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/blog/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86282270-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>你可能不知道的 Mac 技巧 - 文本操作 | S1ngS1ng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……希望我的这一系列博文能帮到你
+
+概述我知道，类似的文章网上一搜一大把。作为一个只用 Mac 搞了不到一年开发的菜鸡，很多功能我也还在摸索中。本文旨在把自己积累的一些小技巧与大家分享，任何疑问、意见、建议，请">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你可能不知道的 Mac 技巧 - 文本操作">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/mac/Mac-1/index.html">
+<meta property="og:site_name" content="S1ngS1ng">
+<meta property="og:description" content="找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……希望我的这一系列博文能帮到你
+
+概述我知道，类似的文章网上一搜一大把。作为一个只用 Mac 搞了不到一年开发的菜鸡，很多功能我也还在摸索中。本文旨在把自己积累的一些小技巧与大家分享，任何疑问、意见、建议，请">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/mac/Mac-1/MoveItem.jpg">
+<meta property="og:image" content="S1ngS1ng.github.io/blog/blog/mac/Mac-1/MoveNotification.jpg">
+<meta property="og:updated_time" content="2017-04-03T05:00:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你可能不知道的 Mac 技巧 - 文本操作">
+<meta name="twitter:description" content="找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……希望我的这一系列博文能帮到你
+
+概述我知道，类似的文章网上一搜一大把。作为一个只用 Mac 搞了不到一年开发的菜鸡，很多功能我也还在摸索中。本文旨在把自己积累的一些小技巧与大家分享，任何疑问、意见、建议，请">
+<meta name="twitter:image" content="S1ngS1ng.github.io/blog/blog/mac/Mac-1/MoveItem.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/blog/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  <link rel="stylesheet" href="/blog/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/blog/js/pace.js"></script>
+    <link href="/blog/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/blog/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+<a href="https://github.com/S1ngS1ng/blog" class="github-corner" aria-label="View Source Code on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+         style="fill:#BA68C8; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
+         aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>
+    a.github-corner > svg {
+        z-index: 100;
+    }
+    .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+    @keyframes octocat-wave {
+        0%, 100% {
+            transform: rotate(0)
+        }
+        20%, 60% {
+            transform: rotate(-25deg)
+        }
+        40%, 80% {
+            transform: rotate(10deg)
+        }
+    }
+    @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }
+</style>
+</body>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            
+            <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/" title="Hi Mate">S1ngS1ng</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸡前端</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/">博客首页</a></li>
+                        
+                            <li><a href="/blog/tags/Tools">工具控</a></li>
+                        
+                            <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                        
+                            <li><a href="/blog/tags/FCC">FCC 算法题详解</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                            
+                                <a class="fl facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                            
+                                <a class="fl QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                            
+                                <a class="fl segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/blog/tags/FCC/" style="font-size: 10px;">FCC</a> <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 12.5px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 12.5px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 10px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 17.5px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">luuman</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.fengchenguyi.com/">浮生</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">修身治国平天下，洗脸刷牙写代码</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                
+                    <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸡前端</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/">博客首页</a></li>
+                
+                    <li><a href="/blog/tags/Tools">工具控</a></li>
+                
+                    <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                
+                    <li><a href="/blog/tags/FCC">FCC 算法题详解</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                    
+                        <a class="QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                    
+                        <a class="segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Mac-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/mac/Mac-1/" class="article-date">
+      <time datetime="2017-01-17T06:11:30.000Z" itemprop="datePublished">2017-01-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      你可能不知道的 Mac 技巧 - 文本操作
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/mac/">mac</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Mac/">Mac</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……<br>希望我的这一系列博文能帮到你</p>
+</blockquote>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>我知道，类似的文章网上一搜一大把。作为一个只用 Mac 搞了不到一年开发的菜鸡，很多功能我也还在摸索中。本文旨在把自己积累的一些小技巧与大家分享，任何疑问、意见、建议，请在下方留言评论</p>
+<blockquote>
+<p>补充：可以到这里看看官方的<a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="external">快捷键文档</a></p>
+</blockquote>
+<h1 id="移动与选取"><a href="#移动与选取" class="headerlink" title="移动与选取"></a>移动与选取</h1><h2 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h2><p>刚从 Windows 转过来的时候可能会发现，Mac 上没有 <kbd>Home</kbd> 和 <kbd>End</kbd> 键。其实，直接这样就好了：<br><kbd>Cmd</kbd> + <kbd>←</kbd> 移至行首 (Home)<br><kbd>Cmd</kbd> + <kbd>→</kbd> 移至行尾 (End)</p>
+<p>类似的，找不到 <kbd>PageUp</kbd> 和 <kbd>PageDown</kbd>，其实 Mac 系统也是有的：<br><kbd>Fn</kbd> + <kbd>↓</kbd> 向下翻页 (PageUp)<br><kbd>Fn</kbd> + <kbd>↑</kbd> 向上翻页 (PageDown)</p>
+<p>再比如，对于一些很长的网页，想快速跳到顶部和底部，即使网页上没有按钮也没关系，可以这样：<br><kbd>Cmd</kbd> + <kbd>↑</kbd> 回到顶部<br><kbd>Cmd</kbd> + <kbd>↓</kbd> 跳到底部</p>
+<p>Mac 中也提供了按词跳光标的功能，英文中就是通过空格来判断：<br><kbd>Option</kbd> + <kbd>←</kbd> 向前跳一个词<br><kbd>Option</kbd> + <kbd>→</kbd> 向后跳一个词<br><a id="more"></a></p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>Windows 系统很贴 ♂ 心地为我们加上了两个删除键，一个是位于等号右边的退格（BackSpace），一个是位于方向键上面的向后删除（Delete）。Mac 虽然只有一个 <kbd>delete</kbd>，相当于 Windows的退格。但其实，我们只要通过组合键 <kbd>fn</kbd> + <kbd>delete</kbd> 就可以实现向后删除了</p>
+<p>不仅如此，<kbd>delete</kbd> 和 <kbd>fn</kbd> + <kbd>delete</kbd> 绝大部分情况下可以搭配 <kbd>Option</kbd> 实现向前/向后删除一个词。一些情况下可以搭配 <kbd>Cmd</kbd> 实现删除整行（在编辑器 Atom 中不行，因为 Atom 把这个组合键默认设置成了删除至行首/行尾，如有需要，改下配置就好了）</p>
+<h2 id="文本选取"><a href="#文本选取" class="headerlink" title="文本选取"></a>文本选取</h2><p>以上所有提到的快捷键，都可以搭配 <kbd>Shift</kbd> 来实现选取</p>
+<p>想向上选中半页的内容，只需要：<br><kbd>Fn</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd></p>
+<p>想从当前位置选到末尾（多行），只需要：<br><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd></p>
+<p>想向后选中三个词，只需要（* 3 表示按三次）：<br><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd> * 3</p>
+<p>想选择整行，只需要：<br><kbd>Cmd</kbd> + <kbd>←</kbd> 然后 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>→</kbd><br>当然也可以 <kbd>Cmd</kbd> + <kbd>→</kbd> 然后 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>←</kbd></p>
+<h1 id="编辑操作"><a href="#编辑操作" class="headerlink" title="编辑操作"></a>编辑操作</h1><h2 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h2><p>简单来说，大部分快捷键，就是把 Windows 的 <kbd>Ctrl</kbd> 替换成 <kbd>Cmd</kbd> 就行了，比如：<br><kbd>Cmd</kbd> + <kbd>A</kbd> 全选<br><kbd>Cmd</kbd> + <kbd>C</kbd> 复制<br><kbd>Cmd</kbd> + <kbd>X</kbd> 剪切<br><kbd>Cmd</kbd> + <kbd>V</kbd> 粘贴<br><kbd>Cmd</kbd> + <kbd>Z</kbd> 撤销<br><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> 恢复（恢复撤销操作）</p>
+<h2 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h2><blockquote>
+<p>这部分可能不应该放在这篇博客中。只是个人觉得，与复制粘贴文本快捷键一起去记忆和使用，会比较好理解</p>
+</blockquote>
+<p>上面提到的大部分快捷键对于在 Finder 中操作文件也是同理，我们可以全选、复制、粘贴甚至撤销和恢复，唯独不能通过 <kbd>Cmd</kbd> + <kbd>X</kbd> 来剪切</p>
+<p>很多朋友抱怨说 Mac 只能复制粘贴文件之后再把原来的删除（顺便，把文件移动到 Trash 的快捷键是 <kbd>Cmd</kbd> + <kbd>delete</kbd>），移动文件的时候很不方便。其实，Mac 是有这个功能的。复制之后，在目标文件夹右键，菜单打开后，按住<kbd>Option</kbd>，本来的 “Paste Item” 就会变成 “Move Item Here”：</p>
+<img src="/blog/mac/Mac-1/MoveItem.jpg" alt="MoveItem" title="MoveItem">
+<p>当然，也可以通过快捷键 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>V</kbd> 来完成移动文件，会出现这样的提示，确定即可：</p>
+<img src="/blog/mac/Mac-1/MoveNotification.jpg" alt="MoveNotification" title="MoveNotification">
+<h2 id="格式快捷键"><a href="#格式快捷键" class="headerlink" title="格式快捷键"></a>格式快捷键</h2><p>在大部分文本编辑器，比如 Microsoft Word 或者 Apple 的 Pages，Numbers 中，我们可以用快捷键调格式：<br><kbd>Cmd</kbd> + <kbd>B</kbd> 文字加粗（Bold）<br><kbd>Cmd</kbd> + <kbd>I</kbd> 斜体文字（Italic）<br><kbd>Cmd</kbd> + <kbd>U</kbd> 文字下划线（Underline）</p>
+<h1 id="特殊快捷键"><a href="#特殊快捷键" class="headerlink" title="特殊快捷键"></a>特殊快捷键</h1><blockquote>
+<p>补充：有朋友提到，绝大部分文字编辑区都支持以下快捷键，如果你用 Emacs，可能对这些不会陌生</p>
+</blockquote>
+<p>这些快捷键可以不去记忆，对于开发者来说可能会偶尔用，对于绝大部分用户，可能并不怎么需要</p>
+<p>比如在 iTerm 中，我们会发现，用 <kbd>Cmd</kbd> + <kbd>←</kbd> 是跳不回开头的，因为 iTerm 已经把这个键设置成了跳到上一个 Tab。同样，用 <kbd>Option</kbd> 键跳单词也不行了</p>
+<p>这种情况下，我们需要这些特殊快捷键来实现功能：<br><kbd>Ctrl</kbd> + <kbd>A</kbd> 跳到行首（Home）<br><kbd>Ctrl</kbd> + <kbd>E</kbd> 跳到行尾（End）<br><kbd>Ctrl</kbd> + <kbd>F</kbd> 向后移动一个字符<br><kbd>Ctrl</kbd> + <kbd>B</kbd> 向前移动一个字符<br><kbd>Ctrl</kbd> + <kbd>P</kbd> 光标上移一行<br><kbd>Ctrl</kbd> + <kbd>N</kbd> 光标下移一行</p>
+<p>向前后跳词的方式比较特殊，我们需要：<br><kbd>ESC</kbd> + <kbd>F</kbd> 向后移动一个单词<br><kbd>ESC</kbd> + <kbd>B</kbd> 向前移动一个单词<br>同时，iTerm 也为我们提供了特殊快捷键：<br><kbd>Ctrl</kbd> + <kbd>←</kbd> 向前移动一个单词<br><kbd>Ctrl</kbd> + <kbd>→</kbd> 向后移动一个单词<br>再比如，iTerm 中我还经常用这个：<br><kbd>Ctrl</kbd> + <kbd>U</kbd> 删除整行</p>
+<p>这些快捷键，特别是在手打比较长的命令的时候，会很有用。这些快捷键也适用于其他的大部分环境。对于一般用户，没必要去特别记忆了，用上面提到的那些就好</p>
+<h1 id="一点点补充"><a href="#一点点补充" class="headerlink" title="一点点补充"></a>一点点补充</h1><p>关于 <kbd>Cmd</kbd> + <kbd>F</kbd> 文字查找，我打算在后面说 Chrome 操作的时候再提及。关于 <kbd>Cmd</kbd> + <kbd>R</kbd> 文字替换，暂时不打算多介绍。个人觉得这个功能对于普通用户来说可能意义不太大吧。而且现在很多编辑器和软件都有比较友好的替换窗口，用起来也不会太困难</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>目前打算从以下几个方面来总结常用的技巧：</p>
+<ol>
+<li>文本编辑相关操作（本篇）</li>
+<li><a href="http://singsing.io/blog/mac/Mac-2/" target="_blank" rel="external">截图，Gif 制作以及 App 推荐</a></li>
+<li><a href="http://singsing.io/blog/mac/Mac-3/" target="_blank" rel="external">系统快捷键</a></li>
+<li>如何调教系统，让它更符合你的使用习惯</li>
+<li>Finder 和 Chrome 里的一些实用快捷键</li>
+<li>用 HammerSpoon 配置自己的全局快捷键</li>
+</ol>
+<p>包括 iTerm 和 WebStorm 在内的我每天都会用的 App，如果把它们的快捷操作也写全，内容可能会过多，而且并不是所有人都需要用，只打算在文章中稍微提一些。另外我也一直计划着要写一个详解 WebStorm 的系列文章</p>
+<p>我想，这一篇已经基本覆盖了文本编辑中的重要操作。如果你觉得还有需要补充的，欢迎在下方留言</p>
+<blockquote>
+<p>如果你喜欢这篇文章，请帮我点个赞👍</p>
+</blockquote>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></p>
+        <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
+        <p><span>发布时间:</span>2017年01月17日 - 00时11分</p>
+        <p><span>最后更新:</span>2017年04月03日 - 00时00分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/mac/Mac-1/" title="你可能不知道的 Mac 技巧 - 文本操作">S1ngS1ng.github.io/blog/blog/mac/Mac-1/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/mac/Mac-1/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/blog/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/blog/mac/Mac-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/hs/HammerSpoon-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HammerSpoon - 实现音乐播放的全局键盘控制</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#移动与选取"><span class="toc-number">2.</span> <span class="toc-text">移动与选取</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#光标移动"><span class="toc-number">2.1.</span> <span class="toc-text">光标移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除"><span class="toc-number">2.2.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本选取"><span class="toc-number">2.3.</span> <span class="toc-text">文本选取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编辑操作"><span class="toc-number">3.</span> <span class="toc-text">编辑操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础操作"><span class="toc-number">3.1.</span> <span class="toc-text">基础操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动文件"><span class="toc-number">3.2.</span> <span class="toc-text">移动文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式快捷键"><span class="toc-number">3.3.</span> <span class="toc-text">格式快捷键</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#特殊快捷键"><span class="toc-number">4.</span> <span class="toc-text">特殊快捷键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一点点补充"><span class="toc-number">5.</span> <span class="toc-text">一点点补充</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写在最后"><span class="toc-number">6.</span> <span class="toc-text">写在最后</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/blog/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'singsing-io-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/mac/Mac-2/" title="上一篇: 你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/blog/hs/HammerSpoon-2/" title="下一篇: HammerSpoon - 实现音乐播放的全局键盘控制">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 S1ngS1ng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >大神到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/blog/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/blog/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86282270-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
