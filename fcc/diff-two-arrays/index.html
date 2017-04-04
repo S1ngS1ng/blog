@@ -3,39 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FreeCodeCamp 初级算法题 - 截断字符串 | S1ngS1ng</title>
+  <title>FreeCodeCamp 中级算法题 - 比较两数组差异 | S1ngS1ng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="截断字符串 (Truncate a string)题目链接
+  <meta name="description" content="比较两数组差异题目链接
 中文链接
 英文链接
-级别：初级 (Basic Algorithm Scripting)
-
-问题解释
-这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
-这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
+级别：中级 (Intermediate Algorithm Scripting)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeCodeCamp 初级算法题 - 截断字符串">
-<meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/basic-truncate-a-string/index.html">
+<meta property="og:title" content="FreeCodeCamp 中级算法题 - 比较两数组差异">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/diff-two-arrays/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
-<meta property="og:description" content="截断字符串 (Truncate a string)题目链接
+<meta property="og:description" content="比较两数组差异题目链接
 中文链接
 英文链接
-级别：初级 (Basic Algorithm Scripting)
-
-问题解释
-这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
-这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
-<meta property="og:updated_time" content="2017-04-03T05:33:03.000Z">
+级别：中级 (Intermediate Algorithm Scripting)">
+<meta property="og:updated_time" content="2017-04-04T05:26:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 截断字符串">
-<meta name="twitter:description" content="截断字符串 (Truncate a string)题目链接
+<meta name="twitter:title" content="FreeCodeCamp 中级算法题 - 比较两数组差异">
+<meta name="twitter:description" content="比较两数组差异题目链接
 中文链接
 英文链接
-级别：初级 (Basic Algorithm Scripting)
-
-问题解释
-这个 function 接收两个参数。第一个是字符串 str，即为原字符串。第二个是截取长度 num。返回值为截取后的字符串
-这道题，关键问题在于对后续 ... 的处理，可以先考虑一下">
+级别：中级 (Intermediate Algorithm Scripting)">
   
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
@@ -299,11 +287,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-basic-truncate-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-diff-two-arrays" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/fcc/basic-truncate-a-string/" class="article-date">
-      <time datetime="2017-03-22T02:02:53.000Z" itemprop="datePublished">2017-03-21</time>
+      <a href="/blog/fcc/diff-two-arrays/" class="article-date">
+      <time datetime="2017-04-04T05:10:39.000Z" itemprop="datePublished">2017-04-04</time>
 </a>
     </div>
   
@@ -316,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      FreeCodeCamp 初级算法题 - 截断字符串
+      FreeCodeCamp 中级算法题 - 比较两数组差异
     </h1>
   
 
@@ -331,7 +319,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/初级/">初级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -341,50 +329,73 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="截断字符串-Truncate-a-string"><a href="#截断字符串-Truncate-a-string" class="headerlink" title="截断字符串 (Truncate a string)"></a>截断字符串 (Truncate a string)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/truncate-a-string" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/truncate-a-string" target="_blank" rel="external">英文链接</a></li>
-<li>级别：初级 (Basic Algorithm Scripting)</li>
+        <h1 id="比较两数组差异"><a href="#比较两数组差异" class="headerlink" title="比较两数组差异"></a>比较两数组差异</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/diff-two-arrays" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/diff-two-arrays" target="_blank" rel="external">英文链接</a></li>
+<li>级别：中级 (Intermediate Algorithm Scripting)<a id="more"></a>
+</li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收两个参数。第一个是字符串 <code>str</code>，即为原字符串。第二个是截取长度 <code>num</code>。返回值为截取后的字符串</li>
-<li>这道题，关键问题在于对后续 <code>...</code> 的处理，可以先考虑一下<a id="more"></a>
-</li>
+<li>这个 <code>function</code> 接收两个数组参数，分别为 <code>arr1</code> 和 <code>arr2</code>。返回值也为一个数组，元素是两数组的差异部分</li>
+<li>比如接收的是 <code>[1, 2, 3, 5]</code> 与 <code>[1, 2, 3, 4, 5]</code>，那么输出就是 <code>[4]</code></li>
+<li>需要注意的是，返回值不一定完全来自第二个数组。也就是说，差异部分也有可能包含在第一个数组中。举个例子，如果接收的参数是 <code>[1, 2, 3]</code> 与 <code>[1, 2, 4]</code>，那么返回值应该为 <code>[3, 4]</code></li>
 </ul>
-<h1 id="基本解法"><a href="#基本解法" class="headerlink" title="基本解法"></a>基本解法</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>首先应该想到，截取的逻辑大致分为两种情况：<ul>
-<li>截取后，带 <code>...</code></li>
-<li>截取后不带 <code>...</code>，这种情况其实就是输出 <code>str</code> 本身</li>
-</ul>
-</li>
-<li>进一步考虑第一种情况，又分为两种：<ul>
-<li><code>num &gt; 3</code> 的时候，需要少截取三位，因为 <code>...</code> 的长度会计入结果长度</li>
-<li><code>num &lt; 3</code> 的时候，正常截取，并把 <code>...</code> 加到结尾</li>
-</ul>
-</li>
-<li>对于带 <code>...</code> 和不带 <code>...</code> 的情况，判断依据是 <code>num</code> 是否大于 <code>str.length</code></li>
-<li>先想清楚这些，代码就很好写了</li>
+<h1 id="基本解法-循环"><a href="#基本解法-循环" class="headerlink" title="基本解法 - 循环"></a>基本解法 - 循环</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>既然要比较数组，那么肯定要遍历传入的两个数组</li>
+<li>首先，我们需要先建立一个空数组用来存储结果</li>
+<li>然后，分别遍历两个数组，找出在另一个数组中不存在的元素，并 <code>push</code> 到结果数组中就可以了</li>
+<li>遍历的时候，需要判断元素在另一个数组中是否存在，只需要使用 <code>indexOf</code> 方法。这个方法返回的是索引，当索引为非负数即表示存在，若为 <code>-1</code> 则表示不存在</li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice" target="_blank" rel="external">String.slice()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr" target="_blank" rel="external">String.substr()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="external">Array.push()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank" rel="external">Array.indexOf()</a></li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (str.length &gt; num) &#123;</div><div class="line">        <span class="keyword">if</span> (num &gt; <span class="number">3</span>) &#123;</div><div class="line">            <span class="comment">// num 大于 3，因此要少截三位，留出 ... 的位置</span></div><div class="line">            <span class="keyword">return</span> str.substr(<span class="number">0</span>, num - <span class="number">3</span>) + <span class="string">'...'</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// num 小于 3，正常截取，并把 ... 补到后面</span></div><div class="line">            <span class="keyword">return</span> str.substr(<span class="number">0</span>, num) + <span class="string">'...'</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// num 比字符串长度大</span></div><div class="line">        <span class="keyword">return</span> str;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">arr1, arr2</span>) </span>&#123;</div><div class="line">    <span class="comment">// 这个数组用于存储结果</span></div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line"></div><div class="line">    <span class="comment">// 在 arr1 中找出不存在于 arr2 的元素</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr1.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr2.indexOf(arr1[i]) === <span class="number">-1</span>) &#123;</div><div class="line">            result.push(arr1[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 在 arr2 中找出不存在于 arr1 的元素</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr2.length; j++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr1.indexOf(arr2[j]) === <span class="number">-1</span>) &#123;</div><div class="line">            result.push(arr2[j]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>由于这道题目逻辑层次嵌套比较复杂，因此我决定不省略 <code>else</code> 了</li>
-<li>用 <code>substr</code> 或者 <code>slice</code> 都是没问题的。而且这道题是从 0 开始，所以两个方法的第二个参数都为 <code>num</code></li>
-<li>由于是根据长度来决定，因此我首先考虑到的是用 <code>substr</code></li>
+<li>应该不需要太多解释，如果看不懂这个解法，请再看一遍思路提示部分</li>
 </ul>
-<h1 id="中级解法-用三元运算符合并逻辑"><a href="#中级解法-用三元运算符合并逻辑" class="headerlink" title="中级解法 - 用三元运算符合并逻辑"></a>中级解法 - 用三元运算符合并逻辑</h1><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (str.length &gt; num) &#123;</div><div class="line">        <span class="keyword">return</span> str.substr(<span class="number">0</span>, num &gt; <span class="number">3</span> ? num - <span class="number">3</span> : num) + <span class="string">'...'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> str;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="优化-封装逻辑"><a href="#优化-封装逻辑" class="headerlink" title="优化 - 封装逻辑"></a>优化 - 封装逻辑</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>你可能听说过”封装”这个词。封装的作用之一就是提取出代码的重复部分，并写成函数 (function)</li>
+<li>至于为什么要这样做，不知道你是否听说过一个叫 <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank" rel="external">DRY</a> 的原则，它是 Don’t Repeat Yourself 的缩写</li>
+<li>举个简单的例子，现在咱们写的 <code>diff</code> 方法其实本身就是一种封装。如果我们现在在开发一个项目，代码中经常需要用到”取出两数组的差值”这个功能，当然我们可以在每次要用到的时候，把上面写的两个 <code>for</code> 循环都复制粘贴进去。但如果我们要用 100 次呢？显然，粘贴 200 个 <code>for</code> 循环并不是一个好办法</li>
+<li>因此，我们就把它封装成 <code>diff</code>，然后接受两个数组为参数，只要我们调用这个方法，就可以得到两数组的差值</li>
+<li>之所以要提到这点，因为我们可以观察出，其实上面的两个 <code>for</code> 循环是有点儿重复的。因为他们干的事很类似，都是遍历一个数组，然后在另一个数组中找出不存在的元素</li>
+<li>对于封装，个人的思路一般是这样：<ul>
+<li>首先，根据代码来判断需不需要进行封装。如果代码中有重复的部分，而且这些重复的部分可以合并，那么就表示可以进行封装</li>
+<li>之后，根据代码的逻辑部分来制定传入的参数，以及返回值</li>
+</ul>
+</li>
+<li>那么，对于上面的判断逻辑，其实我们需要的参数就是两个数组，返回值是计算后的差异数组</li>
+<li>因此，我们只需要使用这个封装好的方法，对两个数组都执行这个操作，然后把得到的两个差异数组合并 (<code>concat</code>) 起来，就是最终结果了</li>
+<li>如果你看懂了上面说的内容，那就先自己写写吧</li>
+</ul>
+<h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="external">Array.concat()</a></li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">arr1, arr2</span>) </span>&#123;</div><div class="line">    <span class="comment">// 用 firstArr 和 secondArr 来表示传入的参数，均为数组</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getDiff</span> (<span class="params">firstArr, secondArr</span>) </span>&#123;</div><div class="line">        <span class="comment">// 设置一个变量用于暂存结果</span></div><div class="line">        <span class="keyword">var</span> result = [];</div><div class="line"></div><div class="line">        <span class="comment">// 逻辑思路是，遍历 firstArr，然后与 secondArr 比较</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; firstArr.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (secondArr.indexOf(firstArr[i]) === <span class="number">-1</span>) &#123;</div><div class="line">                result.push(firstArr[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 这个 result 并不是最终的结果。我们需要对传入的参数操作两次，然后把两次的结果合并起来</span></div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> getDiff(arr1, arr2).concat(getDiff(arr2, arr1));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>嗯，这并不算是什么优化，对运算速度并没有什么提升，而且可能有些朋友认为可读性很差</li>
-<li>有些朋友会说，既然都用了三元，为什么不把 <code>str.length &gt; num</code> 也合并成三元？原因很简单，我个人很反对三元嵌套</li>
-<li>我们先来读一下代码。对于 <code>str.length &lt; num</code> 的情况，也就是 <code>num</code> 比 <code>str</code> 的长度还要大，那么我们就直接返回 <code>str</code>。这个没毛病，和上面的思路一样</li>
-<li>通过基本答案中的代码，可以观察到，对于 <code>num</code> 大于 3 的判断，我们只是改变了 <code>substr</code> 的第二个参数，除此之外没有任何其他改变</li>
-<li>因此，我们需要干的事就是，当 <code>num</code> 大于 3 的时候，我们把第二个参数设置为 <code>num - 3</code>，否则就用 <code>num</code>。这就是上面三元表达式的意思</li>
-<li>三元表达式 <code>a ? b : c</code>，意思就是当 <code>a</code> 成立，我们就返回 <code>b</code>，否则返回 <code>c</code>，就这么简单。相当于</li>
+<li>可能有朋友并不觉得这算是优化。事实上，优化分为很多方面。公有逻辑的封装，本身就是对代码的优化</li>
+<li>另外希望大家不要走进一个误区，就是错误地认为代码越短越好。事实上，有时候强行合并逻辑，比如通过嵌套三元运算符之类的方法去缩短代码，在我看来是不可取的。因为这会大大降低代码的可读性</li>
+<li>上面的封装效果可能不够好，在更复杂的逻辑中，你可能更容易感受到封装的好处</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    b;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="中级解法-使用数组的-filter-方法"><a href="#中级解法-使用数组的-filter-方法" class="headerlink" title="中级解法 - 使用数组的 filter 方法"></a>中级解法 - 使用数组的 filter 方法</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>在上面的 <code>for</code> 循环写法上，我们来进一步思考一下，其实做的事情就是要过滤数组。对于其中一个数组来说，我们需要过滤它，也就是只保留它的一部分。过滤的规则是：只保留不存在于另一个数组中的元素</li>
+<li>这也就是为什么我们可以使用 <code>.filter</code> 方法。只需要写对 <code>.filter</code> 的回调函数就可以了。先自己尝试一下吧</li>
+<li>顺便，我们也可以使用另一个数组内建方法，叫 <code>includes</code>。如果你没听说过这个方法，请点击下面的链接去 MDN 看一下。这个方法是 ES2016 (或者叫 ES7) 中的，目前主流浏览器的最新版本都支持这个方法。这里就不给出了，有兴趣的朋友可以试着写写</li>
+</ul>
+<h2 id="参考链接-2"><a href="#参考链接-2" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="external">Array.filter()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank" rel="external">Array.includes()</a></li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">arr1, arr2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr1.filter(<span class="function"><span class="params">e</span> =&gt;</span> arr2.indexOf(e) === <span class="number">-1</span>).concat(</div><div class="line">        arr2.filter(<span class="function"><span class="params">e</span> =&gt;</span> arr1.indexOf(e) === <span class="number">-1</span>)</div><div class="line">    );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>如果你理解 <code>filter</code> 的语法，那上面的写法应该不难懂。<code>filter</code> 方法返回的是过滤后的数组，只需要分别过滤两个数组，然后把返回值合并起来就可以了</li>
+</ul>
+<h1 id="一行搞定-先合并，再过滤"><a href="#一行搞定-先合并，再过滤" class="headerlink" title="一行搞定 - 先合并，再过滤"></a>一行搞定 - 先合并，再过滤</h1><h2 id="思路提示-3"><a href="#思路提示-3" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>由于我们操作的是合并后的数组，所以这时候过滤的逻辑是：过滤掉既存在于 <code>arr1</code> 也存在于 <code>arr2</code> 中的元素</li>
+<li>自己先试着写一下吧</li>
+</ul>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><h3 id="ES6-1"><a href="#ES6-1" class="headerlink" title="ES6"></a>ES6</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">arr1, arr2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr1.concat(arr2).filter(<span class="function"><span class="params">e</span> =&gt;</span> arr1.indexOf(e) === <span class="number">-1</span> || arr2.indexOf(e) === <span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
       
@@ -394,13 +405,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/fcc/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></p>
+        <p><span>本文标题:</span><a href="/blog/fcc/diff-two-arrays/">FreeCodeCamp 中级算法题 - 比较两数组差异</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
-        <p><span>发布时间:</span>2017年03月21日 - 21时02分</p>
-        <p><span>最后更新:</span>2017年04月03日 - 00时33分</p>
+        <p><span>发布时间:</span>2017年04月04日 - 00时10分</p>
+        <p><span>最后更新:</span>2017年04月04日 - 00时26分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/fcc/basic-truncate-a-string/" title="FreeCodeCamp 初级算法题 - 截断字符串">S1ngS1ng.github.io/blog/blog/fcc/basic-truncate-a-string/</a>
-            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/fcc/basic-truncate-a-string/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/fcc/diff-two-arrays/" title="FreeCodeCamp 中级算法题 - 比较两数组差异">S1ngS1ng.github.io/blog/blog/fcc/diff-two-arrays/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/fcc/diff-two-arrays/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/blog/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -413,18 +424,18 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/fcc/basic-chunky-monkey/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/fcc/roman-numeral-converter/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组
+          FreeCodeCamp 中级算法题 - 罗马数字转换器
         
       </div>
     </a>
   
   
-    <a href="/blog/fcc/basic-repeat-a-string-repeat-a-string/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 重复输出字符串</div>
+    <a href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -435,7 +446,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#截断字符串-Truncate-a-string"><span class="toc-number">1.</span> <span class="toc-text">截断字符串 (Truncate a string)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法"><span class="toc-number">2.</span> <span class="toc-text">基本解法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">2.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">2.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">2.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#中级解法-用三元运算符合并逻辑"><span class="toc-number">3.</span> <span class="toc-text">中级解法 - 用三元运算符合并逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">3.1.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-1"><span class="toc-number">3.2.</span> <span class="toc-text">解释</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#比较两数组差异"><span class="toc-number">1.</span> <span class="toc-text">比较两数组差异</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法-循环"><span class="toc-number">2.</span> <span class="toc-text">基本解法 - 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">2.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">2.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">2.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-封装逻辑"><span class="toc-number">3.</span> <span class="toc-text">优化 - 封装逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-1"><span class="toc-number">3.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">3.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-1"><span class="toc-number">3.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#中级解法-使用数组的-filter-方法"><span class="toc-number">4.</span> <span class="toc-text">中级解法 - 使用数组的 filter 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-2"><span class="toc-number">4.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-2"><span class="toc-number">4.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">4.3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6"><span class="toc-number">4.3.1.</span> <span class="toc-text">ES6</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-2"><span class="toc-number">4.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一行搞定-先合并，再过滤"><span class="toc-number">5.</span> <span class="toc-text">一行搞定 - 先合并，再过滤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-3"><span class="toc-number">5.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-3"><span class="toc-number">5.2.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6-1"><span class="toc-number">5.2.1.</span> <span class="toc-text">ES6</span></a></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -502,13 +513,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/fcc/basic-chunky-monkey/" title="上一篇: FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组">
+            <a href="/blog/fcc/roman-numeral-converter/" title="上一篇: FreeCodeCamp 中级算法题 - 罗马数字转换器">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/fcc/basic-repeat-a-string-repeat-a-string/" title="下一篇: FreeCodeCamp 初级算法题 - 重复输出字符串">
+            <a href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/" title="下一篇: FreeCodeCamp 中级算法题 - 给定范围内的数字总和">
                 <i class="fa fa-angle-right"></i>
             </a>
         

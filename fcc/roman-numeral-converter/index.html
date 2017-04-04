@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FreeCodeCamp 中级算法题 - 罗马数字转换器 | S1ngS1ng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="罗马数字转换器题目链接
+中文链接
+英文链接
+级别：中级 (Intermediate Algorithm Scripting)
+
+问题解释
+这个 function 接收一个数字参数 num。返回值为转换罗马数字字符串
+比如接收的是 2，那么输出就是 &amp;quot;II&amp;quot;。如果接受的是 12，那么输出就是 &amp;quot;XII&amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeCodeCamp 中级算法题 - 罗马数字转换器">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/roman-numeral-converter/index.html">
+<meta property="og:site_name" content="S1ngS1ng">
+<meta property="og:description" content="罗马数字转换器题目链接
+中文链接
+英文链接
+级别：中级 (Intermediate Algorithm Scripting)
+
+问题解释
+这个 function 接收一个数字参数 num。返回值为转换罗马数字字符串
+比如接收的是 2，那么输出就是 &amp;quot;II&amp;quot;。如果接受的是 12，那么输出就是 &amp;quot;XII&amp;quot;">
+<meta property="og:updated_time" content="2017-04-04T05:25:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FreeCodeCamp 中级算法题 - 罗马数字转换器">
+<meta name="twitter:description" content="罗马数字转换器题目链接
+中文链接
+英文链接
+级别：中级 (Intermediate Algorithm Scripting)
+
+问题解释
+这个 function 接收一个数字参数 num。返回值为转换罗马数字字符串
+比如接收的是 2，那么输出就是 &amp;quot;II&amp;quot;。如果接受的是 12，那么输出就是 &amp;quot;XII&amp;quot;">
+  
+    <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/blog/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  <link rel="stylesheet" href="/blog/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/blog/js/pace.js"></script>
+    <link href="/blog/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/blog/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+<a href="https://github.com/S1ngS1ng/blog" class="github-corner" aria-label="View Source Code on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+         style="fill:#BA68C8; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
+         aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>
+    a.github-corner > svg {
+        z-index: 100;
+    }
+    .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+    @keyframes octocat-wave {
+        0%, 100% {
+            transform: rotate(0)
+        }
+        20%, 60% {
+            transform: rotate(-25deg)
+        }
+        40%, 80% {
+            transform: rotate(10deg)
+        }
+    }
+    @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }
+</style>
+</body>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            
+            <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/" title="Hi Mate">S1ngS1ng</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸡前端</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/">博客首页</a></li>
+                        
+                            <li><a href="/blog/tags/Tools">工具控</a></li>
+                        
+                            <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                        
+                            <li><a href="/blog/tags/FreeCodeCamp">FCC 算法题详解</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                            
+                                <a class="fl facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                            
+                                <a class="fl QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                            
+                                <a class="fl segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 10px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 13.33px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 16.67px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">luuman</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.fengchenguyi.com/">浮生</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">修身治国平天下，洗脸刷牙写代码</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                
+                    <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸡前端</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/">博客首页</a></li>
+                
+                    <li><a href="/blog/tags/Tools">工具控</a></li>
+                
+                    <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                
+                    <li><a href="/blog/tags/FreeCodeCamp">FCC 算法题详解</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                    
+                        <a class="QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                    
+                        <a class="segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-roman-numeral-converter" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/roman-numeral-converter/" class="article-date">
+      <time datetime="2017-04-04T05:14:18.000Z" itemprop="datePublished">2017-04-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FreeCodeCamp 中级算法题 - 罗马数字转换器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="罗马数字转换器"><a href="#罗马数字转换器" class="headerlink" title="罗马数字转换器"></a>罗马数字转换器</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/roman-numeral-converter" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/roman-numeral-converter" target="_blank" rel="external">英文链接</a></li>
+<li>级别：中级 (Intermediate Algorithm Scripting)</li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>这个 <code>function</code> 接收一个数字参数 <code>num</code>。返回值为转换罗马数字字符串</li>
+<li>比如接收的是 <code>2</code>，那么输出就是 <code>&quot;II&quot;</code>。如果接受的是 <code>12</code>，那么输出就是 <code>&quot;XII&quot;</code><a id="more"></a>
+</li>
+</ul>
+<h1 id="基本解法"><a href="#基本解法" class="headerlink" title="基本解法"></a>基本解法</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>这道题其实是有一点难度的，至少我在第一次尝试的时候花了些时间</li>
+<li>我们先来梳理一些基本概念，和逻辑思路。只有这些想清楚了，才能开始写代码</li>
+<li>首先，罗马数字通过以下几个字母来表示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>I</td>
+</tr>
+<tr>
+<td>5</td>
+<td>V</td>
+</tr>
+<tr>
+<td>10</td>
+<td>X</td>
+</tr>
+<tr>
+<td>50</td>
+<td>L</td>
+</tr>
+<tr>
+<td>100</td>
+<td>C</td>
+</tr>
+<tr>
+<td>500</td>
+<td>D</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>M</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>我们可以先通过罗马数字转数字的逻辑来反推这道题目的解题思路，转换时，对于相邻的字母，如果左边比右边大就相加，右边比左边大就相减<ul>
+<li>比如，<code>&quot;CX&quot;</code> 表示 <code>110</code>，而 <code>&quot;XC&quot;</code> 表示 <code>90</code></li>
+</ul>
+</li>
+<li>现在，我们至少可以有一条基本思路。对于给定的数字，只需要按照上面的对应关系<strong>从大到小</strong>进行比较，匹配到了(小于等于)就得出罗马数字字符，然后原数减去匹配数字，再继续匹配就可以了<ul>
+<li>举个例子，给出数字为 <code>100</code>，它小于 <code>1000</code> 和 <code>500</code>。比较到 <code>100</code> 发现它们相等，因此得出 <code>C</code></li>
+<li>如果给出 <code>120</code>，还是先获取到 <code>&quot;C&quot;</code>，然后减去 <code>100</code> 得到 <code>20</code>。那么 <code>20</code> 根据上面的对应关系匹配到 <code>10</code>，因此得到 <code>&quot;X&quot;</code>。再减去 <code>10</code>，也是匹配到 <code>&quot;X&quot;</code>。因此，结果是 <code>&quot;CXX&quot;</code></li>
+</ul>
+</li>
+<li>下一步，就是考虑一些特殊情况，这里有一个很重要的原则：同一罗马数字字符，最多连续出现三次。引申出一条原则：如果右边比左边大，那么左边只可以有一位数<ul>
+<li>听起来好像很复杂，来看例子。对于 <code>4</code>，不能转换成 <code>&quot;IIII&quot;</code>，而应为 <code>&quot;IV&quot;</code></li>
+<li>对于 <code>8</code>，不可以转换成 <code>&quot;IIX&quot;</code>，而应为 <code>&quot;VIII&quot;</code></li>
+</ul>
+</li>
+<li>进一步考虑，我们会发现，其实<strong>特殊情况就是罗马字符相减</strong>，或者说左边比右边小的情况。比如对于 <code>8</code>，转换逻辑与上面提到的基本思路是完全相符的。但 <code>9</code> 是不符合的，因为按照一开始的思路，<code>9</code> 会被转换成 <code>&quot;VIIII&quot;</code>。<strong>这条结论十分重要，如果没看懂，请再读一遍</strong>。特殊情况列表如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>IV</td>
+</tr>
+<tr>
+<td>9</td>
+<td>IX</td>
+</tr>
+<tr>
+<td>40</td>
+<td>XL</td>
+</tr>
+<tr>
+<td>90</td>
+<td>XC</td>
+</tr>
+<tr>
+<td>400</td>
+<td>CD</td>
+</tr>
+<tr>
+<td>900</td>
+<td>CM</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>这时候你可能会有疑问，为什么 <code>99</code> 不算特殊情况？这就涉及到另一条规则，如果左边比右边小，那么左右两个罗马数字字符只可以跨一位。意思是，比如对于 <code>&quot;I&quot;</code>，可以有 <code>&quot;IV&quot;</code> 和 <code>&quot;IX&quot;</code>，但不会有 <code>&quot;IC&quot;</code><ul>
+<li>对于 <code>99</code>，转换思路是，先转换 <code>90</code>，得到 <code>&quot;XC&quot;</code>。再转换 <code>9</code>，得到 <code>&quot;IX&quot;</code>。因此结果是 <code>&quot;XCIX&quot;</code>，而不是 <code>&quot;IC&quot;</code>。<strong>这个结论，是解决这道题目的关键</strong></li>
+<li>同理，对于 <code>999</code>，也应该是先转换 <code>900</code>，再转换 <code>90</code>，再转换 <code>9</code></li>
+</ul>
+</li>
+<li>以上就是转换的基本思路。剩下的就是写代码了</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://zh.wikipedia.org/wiki/罗马数字" target="_blank" rel="external">罗马数字 维基百科页面</a></li>
+<li>除此之外，不需要其他参考，只要你会写循环、会四则运算就行</li>
+</ul>
+<h2 id="伪代码-逻辑思路"><a href="#伪代码-逻辑思路" class="headerlink" title="伪代码(逻辑思路)"></a>伪代码(逻辑思路)</h2><ul>
+<li>由于这道题代码看起来会比较复杂，因此先给出伪代码。如果你已经理解了上面的思路，那么你可以参考以下的逻辑思路，来试着自己写一下</li>
+<li>整体上，我们才用 <code>num</code> 来进行循环。只要找到对应的罗马字符，我们就把 <code>num</code> 缩小，同时把对应的罗马字符添加到结果。显然，循环的跳出条件就是 <code>num === 0</code></li>
+<li>如果你在写的过程中遇到问题，请通过在代码中加上 <code>console.log</code> 来调试，或者再回顾一下上面的思路详解</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 生成一个用于判断的数组，[1, 5, 10, 50, 100, 500, 1000]</div><div class="line"># 生成一个数组，元素为以上数组元素的罗马字符对应值</div><div class="line"># 生成一个空字符串，用于储存结果</div><div class="line"></div><div class="line">当 num &gt; 0 时:</div><div class="line">    从右开始遍历数组:</div><div class="line">        如果 num 大于等于数组中的当前元素:</div><div class="line">            根据索引，生成需要判断的特殊值(比如这时候元素是50，那就要生成 90)</div><div class="line">            如果 num 大于等于这个特殊值:</div><div class="line">                给结果添加上特殊值的对应的罗马字符(比如 90 就添加 XC)</div><div class="line">                num 减去这个特殊值，用于下次循环判断</div><div class="line">            否则:</div><div class="line">                直接把这个匹配到的元素转换成对应的罗马字符</div><div class="line">                num 减去这个元素，用于下次循环判断</div><div class="line">        否则:</div><div class="line">            继续遍历数组</div><div class="line"></div><div class="line"></div><div class="line">两层循环结束，返回结果</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">convert</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> numArr = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">1000</span>];</div><div class="line">    <span class="keyword">var</span> strArr = [<span class="string">"I"</span>, <span class="string">"V"</span>, <span class="string">"X"</span>, <span class="string">"L"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"M"</span>];</div><div class="line">    <span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">var</span> i = numArr.length;</div><div class="line"></div><div class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (num &gt;= numArr[i]) &#123;</div><div class="line">                <span class="comment">// 如果你看不懂这部分，先举几个例子来试试</span></div><div class="line">                <span class="comment">// 详情请看底下的解释</span></div><div class="line">                <span class="keyword">var</span> checkerIndex = [i + <span class="number">1</span>, i % <span class="number">2</span> ? i - <span class="number">1</span> : i];</div><div class="line">                <span class="keyword">var</span> checkerNum = numArr[checkerIndex[<span class="number">0</span>]] - numArr[checkerIndex[<span class="number">1</span>]];</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (i &lt; <span class="number">6</span> &amp;&amp; num &gt;= checkerNum ) &#123;</div><div class="line">                    result += strArr[checkerIndex[<span class="number">1</span>]] + strArr[checkerIndex[<span class="number">0</span>]];</div><div class="line">                    num -= checkerNum;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    result += strArr[i];</div><div class="line">                    num -= numArr[i];</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>再回顾一遍整体思路：<ul>
+<li>以 <code>num &gt; 0</code> 为跳出条件进行循环</li>
+<li>对于 <code>num</code>，通过 <code>numArr</code> 来逐个判断。如果大于当前元素，就表示匹配到，可以进行转换了</li>
+<li>进一步判断特殊值，如果是特殊值，就按照特殊值方式转换，否则就按标准思路转换</li>
+</ul>
+</li>
+<li>其实，唯一需要解释的就是 <code>[i + 1, i % 2 ? i - 1 : i]</code> 那里吧。我们先看看它所在的 <code>if</code> 区域是干什么的</li>
+<li>这个 <code>if</code> 处于遍历数组的过程中，作用是判断特殊值。如果你不明白上面的这个写法，请你和我一样，列出来这样的一个表格：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>当前元素</th>
+<th>索引(index)</th>
+<th>特殊值</th>
+<th>特殊值计算方式</th>
+<th>特殊值计算索引</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td>6</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>500</td>
+<td>5</td>
+<td>900</td>
+<td>1000 - 100</td>
+<td>6, 4</td>
+</tr>
+<tr>
+<td>100</td>
+<td>4</td>
+<td>400</td>
+<td>500 - 100</td>
+<td>5, 4</td>
+</tr>
+<tr>
+<td>50</td>
+<td>3</td>
+<td>90</td>
+<td>100 - 10</td>
+<td>4, 2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>40</td>
+<td>50 - 10</td>
+<td>3, 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>9</td>
+<td>10 - 1</td>
+<td>2, 0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>5 - 1</td>
+<td>1, 0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>仔细看第二列，也就是当前索引与最后一列的关系。设当前索引为 <code>i</code>，那么最后一列要么是 <code>(i + 1), (i)</code>，要么是 <code>(i + 1), (i - 1)</code></li>
+<li>进一步观察可以发现，除了索引为 <code>6</code> 的情况，其他情况都符合：当索引 <code>i</code> 为奇数时最后一列是 <code>(i + 1), (i - 1)</code>，当索引为偶数时最后一列是 <code>(i + 1), (i)</code></li>
+<li>代码中的 <code>checkerIndex</code> 就是表格的最后一列，特殊值计算索引；<code>checkerNum</code> 就是求差之后的特殊值，也就是表格的第三列。需要注意的是，元素 <code>1000</code> 没有特殊值需要检查，因此我们要加上 <code>i &lt; 6</code> 的判断</li>
+<li>这个解法可以算是暴力解法了。但能做的优化我还是尽力做了的。比如，不需要每次都判断所有的特殊值，而是动态地生成特殊值，只检查当前情况下的特殊值</li>
+<li>这个解法，效率一定是不高的，时间复杂度达到了 <code>n</code> 平方。只是这个解法不需要太多的技巧，相信只要你理解了一开始说的思路，知道要做特殊情况判断，写出来这个答案还是不成问题的</li>
+</ul>
+<h1 id="优化-优化初始值定义"><a href="#优化-优化初始值定义" class="headerlink" title="优化 - 优化初始值定义"></a>优化 - 优化初始值定义</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>既然判断特殊值这么麻烦，而且特殊值也就那几个，为什么不把它们也写进数组中呢？比如特殊值 <code>40</code>，我们完全可以把它定义在 <code>10</code> 与 <code>50</code> 之间，因为这个 <code>40</code> 是数字小于 <code>50</code> 并且大于 <code>10</code> 的时候需要判断的，那我们在 <code>10</code> 之前先判断就好了</li>
+<li>有的朋友可能会想到，为什么不用 <code>Object</code> 去定义呢？这样就不用定义两个数组了。但请注意，对象存储的是<strong>一一对应</strong>关系，<strong>而不是顺序</strong>。JavaScript 中遍历对象的方法你肯定知道，那就是 <code>for...in</code>，即使是 ES6 的 <code>for...of</code> 也不能保证按”顺序”输出对象中的元素，因为，<code>Object</code> 本身<strong>就不存在顺序的概念</strong></li>
+<li>而遍历数组，我们可以用 <code>for</code>、<code>while</code>、<code>.forEach()</code> 或者 <code>for...of</code>。这些一定是按照一定顺序的。所以还是得用两个数组，然后通过索引来建立对应关系</li>
+<li>有朋友可能会说，”我用 Object，测试通过了噢”，”为什么不能用？在浏览器控制台中也是按’顺序’输出的”。那我们进一步展开来讲。如果对象的 <code>key</code> 是唯一类型的，那么确实，<code>for...of</code> 会按定义的顺序输出。如果对象的 <code>key</code> 是包含多种类型的(比如数字和字符串)，而且定义的顺序也是混的，那么输出就不一定会按照原来的顺序了</li>
+<li>这道题目中，显然我们的 <code>key</code> 只有数字(注意，用数字作为对象的 <code>key</code>，会被自动转换为字符串，你可以试试)，之所以我不打算才用对象来写，就是防止产生 “对象是有顺序的” 这样的误会</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">convert</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> numArr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">90</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">500</span>, <span class="number">900</span>, <span class="number">1000</span>];</div><div class="line">    <span class="keyword">var</span> strArr = [<span class="string">"I"</span>, <span class="string">"IV"</span>, <span class="string">"V"</span>, <span class="string">"IX"</span>, <span class="string">"X"</span>, <span class="string">"XL"</span>, <span class="string">"L"</span>, <span class="string">"XC"</span>, <span class="string">"C"</span>, <span class="string">"CD"</span>, <span class="string">"D"</span>, <span class="string">"CM"</span>, <span class="string">"M"</span>];</div><div class="line">    <span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">var</span> i = numArr.length;</div><div class="line"></div><div class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (num &gt;= numArr[i]) &#123;</div><div class="line">                result += strArr[i];</div><div class="line">                num -= numArr[i];</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>思路还是跟之前的一样，没有任何性能方面的优化，但至少不用去写复杂的逻辑判断了</li>
+</ul>
+<h1 id="优化-封装函数"><a href="#优化-封装函数" class="headerlink" title="优化 - 封装函数"></a>优化 - 封装函数</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>说到封装，还记得 “DRY” 原则么？请查看上一片博文，里面提到过</li>
+<li>先来看看，需不需要封装。举个例子，对于 <code>30</code> 这样的数，我们需要进行 3 次判断、添加字符串和减去 <code>10</code> 这样的重复操作</li>
+<li>进一步思考，对于任何需要转换的数，我们都需要进行判断、添加字符串和减去特定值的操作。因此，由于存在这样的重复操作，至少封装是可以进行的</li>
+<li>既然决定要封装，那么下一步就要定好传入的参数和返回值。既然原先的输入是数字，我们最终要输出字符串，很显然，封装好的参数也应该是这样：输入数字，输出字符串</li>
+<li>继续考虑，我们可以举一个例子。比如传入的是 <code>30</code>，那我们应该输出 <code>&quot;XXX&quot;</code>。按照原先的思路，<code>30</code> 是在遍历中匹配 <code>10</code> 的。因此，这里我们不难推导出输出就是重复 <code>30 / 10 = 3</code> 次 <code>10</code> 的对应字符串 <code>&quot;X&quot;</code></li>
+<li>接下来考虑特殊情况，按照上一条的思路考虑<ul>
+<li>对于 <code>40</code> 来说，输出的就会是 <code>&quot;XXXX&quot;</code>，当然这个结果不是我们想要的。因此，我们需要把前三个或后三个 <code>&quot;X&quot;</code> 去掉，并在结尾补上更高一级的 <code>&quot;L&quot;</code></li>
+<li>比如 <code>90</code> 不应为 <code>&quot;LXXXX&quot;</code>，而应该是 <code>&quot;XC&quot;</code>。在这种情况下，显然我们要去掉的是前四个 <code>&quot;LXXX&quot;</code></li>
+<li>再比如，<code>4</code> 不应为 <code>&quot;IIII&quot;</code> 是 <code>&quot;IV&quot;</code>，所以我们要去掉前三个 <code>&quot;I&quot;</code></li>
+</ul>
+</li>
+<li>综上所述，遇到特殊值，我们处理的方式就是：保留最后一个罗马字符，并在后面添加更高级的罗马字符</li>
+<li>以下代码，我用到了递归写法，供大家参考。由于是递归调用，不仅需要遍历过程中当前的元素和索引，还需要当前已生成的罗马字符。当然，如果你愿意，也可以把这个结果存到函数外部。只是我个人更喜欢写到参数里面去</li>
+<li>就算不用递归，一样是可以写成的，请大家尝试一下</li>
+</ul>
+<h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/repeat" target="_blank" rel="external">String.repeat()</a></li>
+</ul>
+<h2 id="伪代码-逻辑思路-1"><a href="#伪代码-逻辑思路-1" class="headerlink" title="伪代码(逻辑思路)"></a>伪代码(逻辑思路)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># 初始化不含特殊条件的数字数组与罗马字符对应数组</div><div class="line"># 封装好的 function，参数为当前遍历中的元素 num，元素的索引 i 以及目前已生成的罗马字符 str</div><div class="line"># function 内部逻辑如下</div><div class="line"></div><div class="line">如果 num 为 0 或 i &lt; 0，则应该跳出并返回 str</div><div class="line"></div><div class="line">如果 num 大于等于当前元素:</div><div class="line">    如果当前数字符合 4，9，40 等特殊值:</div><div class="line">        递归回调，num 减去特殊值，i 减 1 判断下一个元素，罗马字符为左小右大</div><div class="line">    如果不为特殊值，暂存下来当前的结果，即重复 `num / 当前元素` 次当前数对应的罗马字符</div><div class="line"></div><div class="line">    如果当前结果长度大于 3:</div><div class="line">        递归回调，num 减去当前元素的重复次数倍，i 减 1 判断下一个元素，第三个参数为当前结果保留最后一个字符，并添加数组中的下一个字符，即第 `i + 1` 个字符</div><div class="line">    否则:</div><div class="line">        递归回调，前两个参数与上面相同，但第三个参数在 str 基础上直接加当前结果</div><div class="line">    </div><div class="line">如果 num 小于当前元素:</div><div class="line">    i 减 1，继续循环判断</div></pre></td></tr></table></figure>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">convert</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> numArr = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">1000</span>];</div><div class="line">    <span class="keyword">var</span> strArr = [<span class="string">"I"</span>, <span class="string">"V"</span>, <span class="string">"X"</span>, <span class="string">"L"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"M"</span>];</div><div class="line"></div><div class="line">    <span class="comment">// 递归辅助函数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">helper</span>(<span class="params">num, i, str</span>) </span>&#123;</div><div class="line">        <span class="comment">// 边界及跳出条件</span></div><div class="line">        <span class="keyword">if</span> (num === <span class="number">0</span> || i &lt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> str;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 暂时生成的罗马字符</span></div><div class="line">        <span class="keyword">var</span> temp = <span class="string">""</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (num &gt;= numArr[i]) &#123;</div><div class="line">            <span class="comment">// 这里与上一个方法一致</span></div><div class="line">            <span class="keyword">var</span> checkerIndex = [i + <span class="number">1</span>, i % <span class="number">2</span> ? i - <span class="number">1</span> : i];</div><div class="line">            <span class="keyword">var</span> checkerValue = numArr[checkerIndex[<span class="number">0</span>]] - numArr[checkerIndex[<span class="number">1</span>]];</div><div class="line">            <span class="comment">// 暂存差值</span></div><div class="line">            <span class="keyword">var</span> tempDiff = <span class="built_in">Math</span>.floor(num / numArr[i]) * numArr[i];</div><div class="line"></div><div class="line">            <span class="comment">// 特殊情况判断。如果 num 与特殊值的第一位相同，那就证明遇到了特殊情况</span></div><div class="line">            <span class="keyword">if</span> (num.toString()[<span class="number">0</span>] === checkerValue.toString()[<span class="number">0</span>]) &#123;</div><div class="line">                <span class="comment">// 直接减掉特殊值，罗马字符则为左小右大，与上一个方法思路一致</span></div><div class="line">                <span class="keyword">return</span> str + helper(num - checkerValue, i - <span class="number">1</span>, strArr[checkerIndex[<span class="number">1</span>]] + strArr[checkerIndex[<span class="number">0</span>]])</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// 如果不是特殊情况，字符重复输出 `num / numArr[i]` 次</span></div><div class="line">            temp += strArr[i].repeat(<span class="built_in">Math</span>.floor(num / numArr[i]));</div><div class="line"></div><div class="line">            <span class="comment">// 特殊情况，即连续出现三次以上相同字符</span></div><div class="line">            <span class="keyword">if</span> (temp.length &gt; <span class="number">3</span>) &#123;</div><div class="line">                <span class="comment">// 此时字符串应取最后一位，并把后一个元素加进来</span></div><div class="line">                <span class="keyword">return</span> helper(num - tempDiff, i - <span class="number">1</span>, str + temp.slice(<span class="number">-1</span>) + strArr[i + <span class="number">1</span>]);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> helper(num - tempDiff, i - <span class="number">1</span>, str + temp);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 否则，当前元素太大，索引减一继续判断，str 不变</span></div><div class="line">            <span class="keyword">return</span> helper(num, i - <span class="number">1</span>, str);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 初始调用，字符串为 0，从 numArr 的最后一个元素开始判断</span></div><div class="line">    <span class="keyword">return</span> helper(num, numArr.length - <span class="number">1</span>, <span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>要解释的，都在上面的伪代码和代码注释中。如果你有哪里不明白的，或者有更好的建议，请在下方评论留言</li>
+<li>如果你觉得我写的方法漏洞很大，或者有很明显的优化空间，也请在下方评论指出，不胜感激</li>
+</ul>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/fcc/roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a></p>
+        <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
+        <p><span>发布时间:</span>2017年04月04日 - 00时14分</p>
+        <p><span>最后更新:</span>2017年04月04日 - 00时25分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/fcc/roman-numeral-converter/" title="FreeCodeCamp 中级算法题 - 罗马数字转换器">S1ngS1ng.github.io/blog/blog/fcc/roman-numeral-converter/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/blog/fcc/roman-numeral-converter/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/blog/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/blog/fcc/diff-two-arrays/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 中级算法题 - 比较两数组差异</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#罗马数字转换器"><span class="toc-number">1.</span> <span class="toc-text">罗马数字转换器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法"><span class="toc-number">2.</span> <span class="toc-text">基本解法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">2.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">2.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#伪代码-逻辑思路"><span class="toc-number">2.3.</span> <span class="toc-text">伪代码(逻辑思路)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.4.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">2.5.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-优化初始值定义"><span class="toc-number">3.</span> <span class="toc-text">优化 - 优化初始值定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-1"><span class="toc-number">3.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">3.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-1"><span class="toc-number">3.3.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-封装函数"><span class="toc-number">4.</span> <span class="toc-text">优化 - 封装函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-2"><span class="toc-number">4.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接-1"><span class="toc-number">4.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#伪代码-逻辑思路-1"><span class="toc-number">4.3.</span> <span class="toc-text">伪代码(逻辑思路)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">4.4.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-2"><span class="toc-number">4.5.</span> <span class="toc-text">解释</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/blog/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'singsing-io-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/blog/fcc/diff-two-arrays/" title="下一篇: FreeCodeCamp 中级算法题 - 比较两数组差异">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/diff-two-arrays/">FreeCodeCamp 中级算法题 - 比较两数组差异</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 S1ngS1ng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >大神到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/blog/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/blog/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86282270-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
