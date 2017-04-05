@@ -9,13 +9,13 @@ categories: FCC
 - [中文链接](https://www.freecodecamp.cn/challenges/where-art-thou)
 - [英文链接](https://www.freecodecamp.com/challenges/wherefore-art-thou)
 - 级别：中级 (Intermediate Algorithm Scripting)
-<!-- more -->
 
 ## 问题解释
 - 这个 `function` 接收两个参数。第一个参数 `collection` 为对象数组 (JSON)，第二个参数 `source` 为对象 (Object)。返回值为过滤后的第一个参数
 - 例如，第一个参数是 `[{"a": 1}, {"b": 2}, {"a": 1, "b": 2}]`，第二个参数是 `{"a": 1}`。那么返回值就是 `[{"a": 1}, {"a": 1, "b": 2}]`
 - 需要注意的是，如果第二个参数包含多个键值对，那么需要在第一个参数中找出包含第二个参数每一对键值对的数据
 - 这么说可能有一点绕，简单来说，匹配的规则就是完全包含。可以多，但不能少。另外，光包含属性是不够的，还要满足对应的值相等
+<!-- more -->
 
 # 基本解法
 ## 思路提示

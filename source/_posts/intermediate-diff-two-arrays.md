@@ -9,12 +9,12 @@ categories: FCC
 - [中文链接](https://www.freecodecamp.cn/challenges/diff-two-arrays)
 - [英文链接](https://www.freecodecamp.com/challenges/diff-two-arrays)
 - 级别：中级 (Intermediate Algorithm Scripting)
-<!-- more -->
 
 ## 问题解释
 - 这个 `function` 接收两个数组参数，分别为 `arr1` 和 `arr2`。返回值也为一个数组，元素是两数组的差异部分
 - 比如接收的是 `[1, 2, 3, 5]` 与 `[1, 2, 3, 4, 5]`，那么输出就是 `[4]`
 - 需要注意的是，返回值不一定完全来自第二个数组。也就是说，差异部分也有可能包含在第一个数组中。举个例子，如果接收的参数是 `[1, 2, 3]` 与 `[1, 2, 4]`，那么返回值应该为 `[3, 4]`
+<!-- more -->
 
 # 基本解法 - 循环
 ## 思路提示
