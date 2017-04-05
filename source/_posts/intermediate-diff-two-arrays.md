@@ -4,7 +4,7 @@ date: 2017-04-04 00:10:39
 tags: [FreeCodeCamp,中级,算法]
 categories: FCC
 ---
-# 比较两数组差异
+# 比较两数组差异 (Diff Two Arrays)
 ## 题目链接
 - [中文链接](https://www.freecodecamp.cn/challenges/diff-two-arrays)
 - [英文链接](https://www.freecodecamp.com/challenges/diff-two-arrays)
