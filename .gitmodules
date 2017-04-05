@@ -1,0 +1,3 @@
+[submodule "themes/spfk"]
+	path = themes/spfk
+	url = https://github.com/S1ngS1ng/hexo-theme-spfk.git
