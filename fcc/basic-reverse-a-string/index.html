@@ -12,7 +12,7 @@
 <meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/basic-reverse-a-string/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
 <meta property="og:description" content="翻转字符串 (Reverse a String)题目链接 中文链接 英文链接 级别：初级 (Basic Algorithm Scripting)  问题解释 这个 function 接收一个字符串参数，返回翻转后的字符串 比如接收的是 “hello”，那么输出就是 “olleh”">
-<meta property="og:updated_time" content="2017-04-03T05:31:29.000Z">
+<meta property="og:updated_time" content="2017-04-07T21:14:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 翻转字符串">
 <meta name="twitter:description" content="翻转字符串 (Reverse a String)题目链接 中文链接 英文链接 级别：初级 (Basic Algorithm Scripting)  问题解释 这个 function 接收一个字符串参数，返回翻转后的字符串 比如接收的是 “hello”，那么输出就是 “olleh”">
@@ -357,8 +357,10 @@
 </ul>
 <h1 id="中级解法"><a href="#中级解法" class="headerlink" title="中级解法"></a>中级解法</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>直接利用字符串方法，而不需要转换成数组</li>
+<li>多说一句，获取字符串中 <code>str</code> 的某一个字符有两种方式，分别是 <code>str.charAt(i)</code> 和 <code>str[i]</code>。两种方式都只是读取，均<strong>不可以</strong>通过赋值修改原字符串</li>
+<li>至于该用哪种，前者 (<code>charAt</code>) 是 ES3 标准中的，后者(中括号的写法)是 ES5 中加入的。鉴于目前不支持 ES5 的浏览器很少，因此我觉得用中括号写法是没问题的</li>
 </ul>
-<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = str.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">        result += str[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newString;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = str.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">        result += str[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><ul>
 <li>首先我们先创建一个变量，叫 <code>result</code>，用于保存输出结果</li>
 <li>然后，从右边开始遍历字符串。值得注意的是，就像数组一样，字符串一样可以通过所以来获取某一个字符。比如，<code>str[0]</code> 就是获取第一个字符。再比如，<code>str[-1]</code> 就是获取最后一个字符</li>
@@ -368,33 +370,29 @@
 <h1 id="高级解法"><a href="#高级解法" class="headerlink" title="高级解法"></a>高级解法</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>通过字符串方法以及递归来翻转</li>
 </ul>
-<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 设置递归终点(弹出条件)</span></div><div class="line">    <span class="keyword">if</span> (!str) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 递归调用</span></div><div class="line">        <span class="keyword">return</span> reverseString(str.substr(<span class="number">1</span>)) + str.charAt(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 设置递归终点(弹出条件)</span></div><div class="line">	<span class="keyword">if</span> (str.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> str;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 递归调用</span></div><div class="line">        <span class="keyword">return</span> reverseString(str.substr(<span class="number">1</span>)) + str[<span class="number">0</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-3"><a href="#解释-3" class="headerlink" title="解释"></a>解释</h2><ul>
 <li>这种方法，一开始不能理解没关系。等做到高级算法题，再回来看看应该就可以理解了</li>
-<li>递归涉及到两个因素，递归调用以及弹出过程。<code>reverseString(str.substr(1))</code> 就是递归调用，<code>+ str.charAt(0)</code> 就是弹出过程</li>
-<li>代码在执行到 <code>reverseString(str.substr(1))</code> 的时候，会重新调用 <code>reverseString</code>，并传入 <code>str.substr(1)</code> 作为参数。后面的 <code>+ str.charAt(0)</code> 暂时不会执行</li>
-<li>直到遇见传入的字符串为 <code>&quot;&quot;</code>，因为有了 <code>&quot;&quot;</code> 返回值，就不会再去调用 <code>reverseString</code> 了。这时候，才会一步一步地执行 <code>+ str.charAt(0)</code>，也就是弹出过程</li>
+<li>递归涉及到两个因素，递归调用以及弹出过程。<code>reverseString(str.substr(1))</code> 就是递归调用，<code>+ str[0]</code> 就是弹出过程</li>
+<li>代码在执行到 <code>reverseString(str.substr(1))</code> 的时候，会重新调用 <code>reverseString</code>，并传入 <code>str.substr(1)</code> 作为参数。后面的 <code>+ str[0]</code> 暂时不会执行</li>
+<li>直到传入的字符串长度为 <code>1</code>，就不会再去调用 <code>reverseString</code> 了，而是会执行 <code>if</code> 里面的部分，返回当前传入的 <code>str</code>。然后就会一步一步地执行之前的 <code>+ str[0]</code>，也就是弹出过程</li>
 </ul>
 <p>举个例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"abc"</span>;</div><div class="line"></div><div class="line">reverseString(str)</div></pre></td></tr></table></figure></p>
 <ul>
 <li>执行过程如下：<ul>
-<li>首先执行 reverseString(“abc”)，这时候传入的 <code>str</code> 不为空，所以执行 <code>else</code> 部分。读到了 <code>reverseString(str.substr(1))</code>，这时候就是递归调用，执行这段代码，其中 <code>str.substr(1)</code> 为 <code>&quot;bc&quot;</code><ul>
-<li><code>reverseString(&quot;bc&quot;)</code>，这时候传入的 <code>str</code> 不为空，所以执行 <code>reverseString(str.substr(1))</code>，其中 <code>str.substr(1)</code> 为 <code>&quot;c&quot;</code><ul>
-<li><code>reverseString(&quot;c&quot;)</code>，这时候传入的 <code>str</code> 依旧不为空，所以执行 <code>reverseString(str.substr(1))</code>，其中 <code>str.substr(1)</code> 为 <code>&quot;&quot;</code><ul>
-<li><code>reverseString(&quot;&quot;)</code>，终于，传入的 <code>str</code> 为空，这时候返回 <code>&quot;&quot;</code></li>
+<li>首先执行 <code>reverseString(&quot;abc&quot;)</code>，这时候传入的 <code>str</code> 长度不为 1，所以执行 <code>else</code> 部分，也就是 <code>reverseString(str.substr(1))</code>。这就是递归调用，执行这段代码，其中 <code>str.substr(1)</code> 为 <code>&quot;bc&quot;</code><ul>
+<li><code>reverseString(&quot;bc&quot;)</code>，这时候传入的 <code>str</code> 长度依旧不为 1，所以执行 <code>reverseString(str.substr(1))</code>，其中 <code>str.substr(1)</code> 为 <code>&quot;c&quot;</code><ul>
+<li><code>reverseString(&quot;c&quot;)</code>，这时候传入的 <code>str</code> 长度为 1，所以执行 <code>if</code> 中的部分，返回传入的 <code>str</code>，也就是返回 <code>&quot;c&quot;</code></li>
 </ul>
 </li>
-<li>回到 <code>reverseString(&quot;c&quot;)</code> 这一步，刚才的返回值是 “”，此时的 <code>str.charAt(0)</code> 为 <code>&quot;c&quot;</code>，那么这一步的返回值是 <code>&quot;c&quot;</code></li>
+<li>回到 <code>reverseString(&quot;bc&quot;)</code> 这一步，此时的 <code>str[0]</code> 为 <code>&quot;b&quot;</code>。由于上一步的返回值是 <code>&quot;c&quot;</code>，那么这一步的返回值是 <code>&quot;cb&quot;</code></li>
 </ul>
 </li>
-<li>回到 <code>reverseString(&quot;bc&quot;)</code>，刚才的返回值是 <code>&quot;c&quot;</code>，此时的 <code>str.charAt(0)</code> 为 <code>&quot;b&quot;</code>，那么这一步的返回值是 <code>&quot;cb&quot;</code></li>
-</ul>
-</li>
-<li>回到 <code>reverseString(&quot;abc&quot;)</code>，刚才的返回值是 <code>&quot;cb&quot;</code>，此时的 <code>str.charAt(0)</code> 为 <code>&quot;a&quot;</code>，那么这一步的返回值是 <code>&quot;cba&quot;</code></li>
+<li>回到 <code>reverseString(&quot;abc&quot;)</code>，此时的 <code>str[0]</code> 为 <code>&quot;a&quot;</code>。由于上一步的返回值是 <code>&quot;cb&quot;</code>，那么这一步的返回值是 <code>&quot;cba&quot;</code></li>
 </ul>
 </li>
 </ul>
-<p>至此，我们得到了最终结果，”cba”</p>
+<p>至此，我们得到了最终结果，<code>&quot;cba&quot;</code></p>
 
       
       
@@ -407,7 +405,7 @@
         <p><span>本文标题:</span><a href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
         <p><span>发布时间:</span>2017年03月17日 - 22时53分</p>
-        <p><span>最后更新:</span>2017年04月03日 - 00时31分</p>
+        <p><span>最后更新:</span>2017年04月07日 - 16时14分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/fcc/basic-reverse-a-string/" title="FreeCodeCamp 初级算法题 - 翻转字符串">S1ngS1ng.github.io/blog/fcc/basic-reverse-a-string/</a>
             <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/basic-reverse-a-string/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
