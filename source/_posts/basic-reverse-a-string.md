@@ -58,6 +58,8 @@ function reverseString(str) {
 # 中级解法
 ## 思路提示
 - 直接利用字符串方法，而不需要转换成数组
+- 多说一句，获取字符串中 `str` 的某一个字符有两种方式，分别是 `str.charAt(i)` 和 `str[i]`。两种方式都只是读取，均**不可以**通过赋值修改原字符串
+- 至于该用哪种，前者 (`charAt`) 是 ES3 标准中的，后者(中括号的写法)是 ES5 中加入的。鉴于目前不支持 ES5 的浏览器很少，因此我觉得用中括号写法是没问题的
 
 ## 代码
 ```js
@@ -66,7 +68,7 @@ function reverseString(str) {
     for (var i = str.length - 1; i >= 0; i--) {
         result += str[i];
     }
-    return newString;
+    return result;
 }
 ```
 
@@ -84,21 +86,21 @@ function reverseString(str) {
 ```js
 function reverseString(str) {
     // 设置递归终点(弹出条件)
-    if (!str) {
-        return "";
+	if (str.length === 1) {
+        return str;
     }
     else {
         // 递归调用
-        return reverseString(str.substr(1)) + str.charAt(0);
+        return reverseString(str.substr(1)) + str[0];
     }
 }
 ```
 
 ## 解释
 - 这种方法，一开始不能理解没关系。等做到高级算法题，再回来看看应该就可以理解了
-- 递归涉及到两个因素，递归调用以及弹出过程。`reverseString(str.substr(1))` 就是递归调用，`+ str.charAt(0)` 就是弹出过程
-- 代码在执行到 `reverseString(str.substr(1))` 的时候，会重新调用 `reverseString`，并传入 `str.substr(1)` 作为参数。后面的 `+ str.charAt(0)` 暂时不会执行
-- 直到遇见传入的字符串为 `""`，因为有了 `""` 返回值，就不会再去调用 `reverseString` 了。这时候，才会一步一步地执行 `+ str.charAt(0)`，也就是弹出过程
+- 递归涉及到两个因素，递归调用以及弹出过程。`reverseString(str.substr(1))` 就是递归调用，`+ str[0]` 就是弹出过程
+- 代码在执行到 `reverseString(str.substr(1))` 的时候，会重新调用 `reverseString`，并传入 `str.substr(1)` 作为参数。后面的 `+ str[0]` 暂时不会执行
+- 直到传入的字符串长度为 `1`，就不会再去调用 `reverseString` 了，而是会执行 `if` 里面的部分，返回当前传入的 `str`。然后就会一步一步地执行之前的 `+ str[0]`，也就是弹出过程
 
 举个例子：
 ```js
@@ -107,12 +109,10 @@ var str = "abc";
 reverseString(str)
 ```
 - 执行过程如下：
-	- 首先执行 reverseString("abc")，这时候传入的 `str` 不为空，所以执行 `else` 部分。读到了 `reverseString(str.substr(1))`，这时候就是递归调用，执行这段代码，其中 `str.substr(1)` 为 `"bc"`
-		- `reverseString("bc")`，这时候传入的 `str` 不为空，所以执行 `reverseString(str.substr(1))`，其中 `str.substr(1)` 为 `"c"`
-			- `reverseString("c")`，这时候传入的 `str` 依旧不为空，所以执行 `reverseString(str.substr(1))`，其中 `str.substr(1)` 为 `""`
-				- `reverseString("")`，终于，传入的 `str` 为空，这时候返回 `""`
-			- 回到 `reverseString("c")` 这一步，刚才的返回值是 ""，此时的 `str.charAt(0)` 为 `"c"`，那么这一步的返回值是 `"c"`
-		- 回到 `reverseString("bc")`，刚才的返回值是 `"c"`，此时的 `str.charAt(0)` 为 `"b"`，那么这一步的返回值是 `"cb"`
-	- 回到 `reverseString("abc")`，刚才的返回值是 `"cb"`，此时的 `str.charAt(0)` 为 `"a"`，那么这一步的返回值是 `"cba"`
+	- 首先执行 `reverseString("abc")`，这时候传入的 `str` 长度不为 1，所以执行 `else` 部分，也就是 `reverseString(str.substr(1))`。这就是递归调用，执行这段代码，其中 `str.substr(1)` 为 `"bc"`
+		- `reverseString("bc")`，这时候传入的 `str` 长度依旧不为 1，所以执行 `reverseString(str.substr(1))`，其中 `str.substr(1)` 为 `"c"`
+			- `reverseString("c")`，这时候传入的 `str` 长度为 1，所以执行 `if` 中的部分，返回传入的 `str`，也就是返回 `"c"`
+		- 回到 `reverseString("bc")` 这一步，此时的 `str[0]` 为 `"b"`。由于上一步的返回值是 `"c"`，那么这一步的返回值是 `"cb"`
+	- 回到 `reverseString("abc")`，此时的 `str[0]` 为 `"a"`。由于上一步的返回值是 `"cb"`，那么这一步的返回值是 `"cba"`
 
-至此，我们得到了最终结果，"cba"
+至此，我们得到了最终结果，`"cba"`
