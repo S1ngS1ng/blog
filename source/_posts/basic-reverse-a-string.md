@@ -13,6 +13,7 @@ categories: FCC
 ## 问题解释
 - 这个 `function` 接收一个字符串参数，返回翻转后的字符串
 - 比如接收的是 "hello"，那么输出就是 "olleh"
+
 <!-- more -->
 
 # 基本解法
@@ -109,10 +110,10 @@ var str = "abc";
 reverseString(str)
 ```
 - 执行过程如下：
-	- 首先执行 `reverseString("abc")`，这时候传入的 `str` 长度不为 1，所以执行 `else` 部分，也就是 `reverseString(str.substr(1))`。这就是递归调用，执行这段代码，其中 `str.substr(1)` 为 `"bc"`
-		- `reverseString("bc")`，这时候传入的 `str` 长度依旧不为 1，所以执行 `reverseString(str.substr(1))`，其中 `str.substr(1)` 为 `"c"`
-			- `reverseString("c")`，这时候传入的 `str` 长度为 1，所以执行 `if` 中的部分，返回传入的 `str`，也就是返回 `"c"`
-		- 回到 `reverseString("bc")` 这一步，此时的 `str[0]` 为 `"b"`。由于上一步的返回值是 `"c"`，那么这一步的返回值是 `"cb"`
-	- 回到 `reverseString("abc")`，此时的 `str[0]` 为 `"a"`。由于上一步的返回值是 `"cb"`，那么这一步的返回值是 `"cba"`
+    - 首先执行 `reverseString("abc")`，这时候传入的 `str` 长度不为 1，所以执行 `else` 部分，也就是 `reverseString(str.substr(1))`。这就是递归调用，执行这段代码，其中 `str.substr(1)` 为 `"bc"`
+        - `reverseString("bc")`，这时候传入的 `str` 长度依旧不为 1，所以执行 `reverseString(str.substr(1))`，其中 `str.substr(1)` 为 `"c"`
+            - `reverseString("c")`，这时候传入的 `str` 长度为 1，所以执行 `if` 中的部分，返回传入的 `str`，也就是返回 `"c"`
+        - 回到 `reverseString("bc")` 这一步，此时的 `str[0]` 为 `"b"`。由于上一步的返回值是 `"c"`，那么这一步的返回值是 `"cb"`
+    - 回到 `reverseString("abc")`，此时的 `str[0]` 为 `"a"`。由于上一步的返回值是 `"cb"`，那么这一步的返回值是 `"cba"`
 
 至此，我们得到了最终结果，`"cba"`
