@@ -8,7 +8,6 @@ categories: FCC
 # 转换 HTML 实体字符 (Convert HTML Entities)
 
 ## 题目链接
-
 - [中文链接](https://www.freecodecamp.cn/challenges/convert-html-entities)
 - [英文链接](https://www.freecodecamp.com/challenges/convert-html-entities)
 - 级别：中级 (Intermediate Algorithm Scripting)
