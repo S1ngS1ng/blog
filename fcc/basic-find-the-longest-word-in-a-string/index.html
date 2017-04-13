@@ -12,7 +12,7 @@
 <meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/basic-find-the-longest-word-in-a-string/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
 <meta property="og:description" content="找出最长单词 (Find the Longest word in a String)题目链接 中文链接 英文链接 级别：初级 (Basic Algorithm Scripting)  问题解释 这个 function 接收一个字符串参数，返回最长单词的长度(一个数值) 比如接收的是 “May the force be with you”，那么最长的单词是 “force”，因此返回 5 这道题目的参">
-<meta property="og:updated_time" content="2017-04-06T17:00:41.000Z">
+<meta property="og:updated_time" content="2017-04-12T20:45:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 找出最长的单词">
 <meta name="twitter:description" content="找出最长单词 (Find the Longest word in a String)题目链接 中文链接 英文链接 级别：初级 (Basic Algorithm Scripting)  问题解释 这个 function 接收一个字符串参数，返回最长单词的长度(一个数值) 比如接收的是 “May the force be with you”，那么最长的单词是 “force”，因此返回 5 这道题目的参">
@@ -329,13 +329,13 @@
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个字符串参数，返回最长单词的长度(一个数值)</li>
 <li>比如接收的是 “May the force be with you”，那么最长的单词是 “force”，因此返回 5</li>
-<li>这道题目的参数不含标点和特殊符号，单词之间使用空格分割<a id="more"></a>
-</li>
+<li>这道题目的参数不含标点和特殊符号，单词之间使用空格分割</li>
 </ul>
+<a id="more"></a>
 <h1 id="基本解法"><a href="#基本解法" class="headerlink" title="基本解法"></a>基本解法</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>不含标点和特殊符号的意思就是，不需要对字符串进行预先的处理</li>
-<li>既然字符串是通过空格分割的，那么我们可以通过 <code>.split()</code> 方法，传入空格为参数，形成分割之后的数组，每个元素即为一个单词</li>
-<li>核心逻辑在于，首先设置一个变量用于储存最长单词的长度，初始化为 0。然后，遍历数组，如果遇到一个单词长度比这个变量储存的长度大的，那就更新这个变量。否则，继续遍历</li>
+<li>既然字符串是通过空格分割的，那么我们可以通过 <code>split</code> 方法，传入空格为参数，形成分割之后的数组，每个元素即为一个单词</li>
+<li>核心逻辑在于，首先设置一个变量用于储存最长单词的长度，初始值为 0。然后，遍历数组，如果遇到一个单词长度比这个变量储存的长度大的，那就更新这个变量。否则，继续遍历</li>
 <li>由于我们并不需要返回最长的单词是哪个，也不需要返回最长单词的位置，因此只需要存储长度即可</li>
 <li>如果不用数组，单纯地遍历字符串 + 双指针，也是可以实现的，只是写起来会很麻烦。因此这道题，建议用数组去解决。在进阶方法中，你会体会到用数组的好处</li>
 </ul>
@@ -349,7 +349,7 @@
 <li>至于为什么不在 <code>for</code> 循环里设置变量，因为如果这样，执行循环的每一步都会重新初始化这个变量，我们就不能用这个变量来追踪循环过程了</li>
 </ul>
 <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>可以优化的方案是，采用数组内置方法 <code>.reduce()</code> 来实现</li>
+<li>可以优化的方案是，采用数组内置方法 <code>reduce</code> 来实现</li>
 </ul>
 <h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="external">Array.reduce()</a></li>
@@ -357,8 +357,8 @@
 </ul>
 <h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> stringArr = str.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> stringArr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, next</span>) </span>&#123;</div><div class="line">        <span class="comment">// 返回值为参数与当前字符串中较大的数</span></div><div class="line">        <span class="comment">// 返回值会作为下次计算的 prev 传入</span></div><div class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.max(prev, next.length);</div><div class="line">    &#125;, <span class="number">0</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>如果不熟悉 <code>.reduce()</code> 语法和参数，请先去上面的链接看一下</li>
-<li><code>.reduce()</code> 的第一个参数为回调，第二个参数为初始值。第二个参数可以为空</li>
+<li>如果不熟悉 <code>reduce</code> 语法和参数，请先去上面的链接看一下</li>
+<li><code>reduce</code> 的第一个参数为回调，第二个参数为初始值。第二个参数可以为空</li>
 <li>举个例子，如果我们传入的字符串是 “a bb ccc d” 执行过程如下：</li>
 </ul>
 <table>
@@ -399,7 +399,7 @@
 </table>
 <ul>
 <li>因此，最终结果为 3</li>
-<li>关于 <code>.reduce()</code>，一句话概括，就是：遍历数组，把上一次计算的结果用于下次计算</li>
+<li>关于 <code>reduce</code>，一句话概括，就是：遍历数组，把上一次计算的结果用于下次计算</li>
 </ul>
 <h1 id="再优化"><a href="#再优化" class="headerlink" title="再优化"></a>再优化</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>有没有更简单的写法呢？当然是有的</li>
@@ -411,12 +411,12 @@
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, str.split(<span class="string">" "</span>).map(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> e.length;</div><div class="line">    &#125;))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><ul>
 <li>一行搞定，看起来可能很酷炫，当然，生产环境中为了可读性，一般不推荐这么写。之所以把我的这个写法放出来，是因为里面涉及到的知识点</li>
-<li>我们分开来看这段代码。先看 <code>str.split(&quot; &quot;).map()</code> 这部分。<code>.split()</code> 不用多说了，大家都见过很多次了，重点说说 <code>.map()</code>。<code>.map()</code> 是我个人很喜欢的一个方法，对于这个方法，一句话概括，就是：返回等长度的，经过处理后的数组</li>
+<li>我们分开来看这段代码。先看 <code>str.split(&quot; &quot;).map()</code> 这部分。<code>split</code> 不用多说了，大家都见过很多次了，重点说说 <code>map</code>。<code>map</code> 是我个人很喜欢的一个方法，对于这个方法，一句话概括，就是：返回等长度的，经过处理后的数组</li>
 <li><code>e</code> 就是遍历过程中，每一步的元素。比如，数组是 <code>[1, 2, 3]</code>。那么 <code>.map(function (e))</code> 里面的 <code>e</code> 就分别是 1, 2, 3。如果我们写成 <code>.map(function (e) { return e + 1 })</code> 这样，意思就是，对每一个元素都分别执行 <code>+ 1</code> 操作，因此，最终我们就会得到 <code>[2, 3, 4]</code></li>
-<li>对于上面的代码来说，我们在 <code>.map()</code> 中的返回值为 <code>e.length</code>。原来的数组元素是句子中的每一个单词，<code>.map()</code> 一下 <code>e.length</code>，我们就得到了由每个单词长度组成的数组。举例说明，如果原数组是 <code>[&#39;a&#39;, &#39;bb&#39;, &#39;ccc&#39;]</code>，那么操作之后我们就得到了 <code>[1, 2, 3]</code></li>
-<li>再说 <code>Math.max.apply()</code> 这部分，可以先去看一下上面的链接。<code>apply</code> 的第一个参数是 <code>this</code> 指向，而关键在于第二个参数是数组或者类数组。举个例子，我们可以通过 <code>Math.max(1, 2, 3)</code> 得到 3，也可以通过 <code>Math.max.apply(null, [1, 2, 3])</code> 来得到 3</li>
-<li>这样，由于 <code>.map()</code> 那一步返回的是单词长度组成的数组，我们把这个数组扔给 <code>Math.max.apply()</code> 的第二个参数，就得到了那个数组的最大值</li>
-<li>多说一句，由于 <code>Math.max()</code> 这个方法，并不依赖 context (执行上下文)，因此我们只需要给第一个参数传入 <code>null</code>。当然，第一个参数传入 <code>undefined</code> 或者 <code>Math</code> 都是可以的</li>
+<li>因此，如果我们在 <code>map</code> 的回调函数中，把返回值设置为 <code>e.length</code>，意思就是对数组的每一个元素都执行一次 <code>.length</code>。然后，返回由每个元素的 <code>.length</code> 组成的数组，这个新数组的长度显然应与原数组长度相等。举例来说，如果原数组是 <code>[&#39;a&#39;, &#39;bb&#39;, &#39;ccc&#39;]</code>，那么操作之后我们就得到了 <code>[1, 2, 3]</code></li>
+<li>再说 <code>Math.max.apply</code> 这部分，可以先去看一下上面的链接。<code>apply</code> 的第一个参数是 <code>this</code> 指向，而关键在于第二个参数是数组或者类数组。举个例子，我们可以通过 <code>Math.max(1, 2, 3)</code> 得到 3，也可以通过 <code>Math.max.apply(null, [1, 2, 3])</code> 来得到 3</li>
+<li>这样，由于 <code>map</code> 那一步返回的是单词长度组成的数组，我们把这个数组扔给 <code>Math.max.apply</code> 的第二个参数，就得到了那个数组的最大值</li>
+<li>多说一句，由于 <code>Math.max</code> 这个方法，并不依赖 context (执行上下文)，因此我们只需要给第一个参数传入 <code>null</code>。当然，第一个参数传入 <code>undefined</code> 或者 <code>Math</code> 都是可以的</li>
 </ul>
 <h1 id="高级解法-递归"><a href="#高级解法-递归" class="headerlink" title="高级解法 - 递归"></a>高级解法 - 递归</h1><h2 id="思路提示-3"><a href="#思路提示-3" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>有一句话要说，递归，并不能提高算法效率，只是一些情况下，写起来方便</li>
@@ -425,15 +425,13 @@
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="external">Array.slice()</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="external">Array.splice()</a></li>
 </ul>
-<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 分割字符串</span></div><div class="line">    <span class="keyword">var</span> stringArr = str.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line">    <span class="comment">// 边界值及递归跳出条件</span></div><div class="line">    <span class="keyword">if</span> (stringArr.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> stringArr[<span class="number">0</span>].length;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 比较数组中第一个元素(字符串)与第二个元素(字符串)的长度</span></div><div class="line">    <span class="keyword">if</span> (stringArr[<span class="number">0</span>].length &gt;= stringArr[<span class="number">1</span>].length) &#123;</div><div class="line">        <span class="comment">// 如果第一个元素比第二个长</span></div><div class="line">        <span class="comment">// 把第二个元素删掉</span></div><div class="line">        stringArr.splice(<span class="number">1</span>, <span class="number">1</span>);</div><div class="line">        <span class="comment">// 由于 findLongestWord 接收字符串为参数，因此需要用空格 join</span></div><div class="line">        <span class="keyword">return</span> findLongestWord(stringArr.join(<span class="string">" "</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (stringArr[<span class="number">0</span>].length &lt; stringArr[<span class="number">1</span>].length) &#123;</div><div class="line">        <span class="comment">// 如果第一个元素比第二个元素短</span></div><div class="line">        <span class="comment">// 忽略第一个元素，从第二个开始 `.join()`</span></div><div class="line">        <span class="keyword">return</span> findLongestWord(stringArr.slice(<span class="number">1</span>).join(<span class="string">" "</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="comment">// 分割字符串</span></div><div class="line">    <span class="keyword">var</span> stringArr = str.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line">    <span class="comment">// 边界值及递归跳出条件</span></div><div class="line">    <span class="keyword">if</span> (stringArr.length === <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> stringArr[<span class="number">0</span>].length;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 比较数组中第一个元素(字符串)与第二个元素(字符串)的长度</span></div><div class="line">    <span class="keyword">if</span> (stringArr[<span class="number">0</span>].length &gt;= stringArr[<span class="number">1</span>].length) &#123;</div><div class="line">        <span class="comment">// 如果第一个元素比第二个长</span></div><div class="line">        <span class="comment">// 把第二个元素删掉</span></div><div class="line">        stringArr.splice(<span class="number">1</span>, <span class="number">1</span>);</div><div class="line">        <span class="comment">// 由于 findLongestWord 接收字符串为参数，因此需要用空格 join</span></div><div class="line">        <span class="keyword">return</span> findLongestWord(stringArr.join(<span class="string">" "</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (stringArr[<span class="number">0</span>].length &lt; stringArr[<span class="number">1</span>].length) &#123;</div><div class="line">        <span class="comment">// 如果第一个元素比第二个元素短</span></div><div class="line">        <span class="comment">// 忽略第一个元素，从第二个开始 `join`</span></div><div class="line">        <span class="keyword">return</span> findLongestWord(stringArr.slice(<span class="number">1</span>).join(<span class="string">" "</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-3"><a href="#解释-3" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>整体思路就是，每次我们只判断数组中的前两个元素<ul>
+<li>整体思路就是，每次我们只判断数组中的前两个元素</li>
 <li>如果第一个比较长，那么我们就把第二个删除(留下较长的)，然后再去比较第一个和第三个</li>
 <li>如果第二个比较长，那么我们就选取数组中的第二个元素至末尾，然后继续去比较第二个和第三个</li>
-</ul>
-</li>
 <li>这样看来，每次递归调用，数组会越来越短。那么最后留下来的，就是最长的那个字符串</li>
-<li>值得注意的是，由于 <code>splice()</code> 返回的是被删除的元素，而并非删除后的数组。因此我们不能直接链式调用 <code>.join()</code></li>
+<li>值得注意的是，由于 <code>splice</code> 返回的是被删除的元素，而并非删除后的数组。因此我们不能直接链式调用 <code>join</code></li>
 </ul>
 
       
@@ -447,7 +445,7 @@
         <p><span>本文标题:</span><a href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
         <p><span>发布时间:</span>2017年03月18日 - 03时35分</p>
-        <p><span>最后更新:</span>2017年04月06日 - 12时00分</p>
+        <p><span>最后更新:</span>2017年04月12日 - 15时45分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/fcc/basic-find-the-longest-word-in-a-string/" title="FreeCodeCamp 初级算法题 - 找出最长的单词">S1ngS1ng.github.io/blog/fcc/basic-find-the-longest-word-in-a-string/</a>
             <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/basic-find-the-longest-word-in-a-string/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -463,18 +461,18 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/fcc/basic-title-case-a-sentence/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/fcc/basic-check-for-palindromes/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          FreeCodeCamp 初级算法题 - 句中单词首字母大写
+          FreeCodeCamp 初级算法题 - 检查回文字符串
         
       </div>
     </a>
   
   
-    <a href="/blog/fcc/basic-return-largest-numbers-in-arrays/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</div>
+    <a href="/blog/fcc/basic-title-case-a-sentence/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 句中单词首字母大写</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -552,13 +550,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/fcc/basic-title-case-a-sentence/" title="上一篇: FreeCodeCamp 初级算法题 - 句中单词首字母大写">
+            <a href="/blog/fcc/basic-check-for-palindromes/" title="上一篇: FreeCodeCamp 初级算法题 - 检查回文字符串">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/fcc/basic-return-largest-numbers-in-arrays/" title="下一篇: FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">
+            <a href="/blog/fcc/basic-title-case-a-sentence/" title="下一篇: FreeCodeCamp 初级算法题 - 句中单词首字母大写">
                 <i class="fa fa-angle-right"></i>
             </a>
         

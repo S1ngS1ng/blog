@@ -12,7 +12,7 @@
 <meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/basic-title-case-a-sentence/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
 <meta property="og:description" content="句中单词首字母大写 (Title Case a Sentence)题目链接 中文链接 英文链接 级别：初级 (Basic Algorithm Scripting)  问题解释 这个 function 接收一个字符串参数，返回操作之后的字符串 比如接收的是 &amp;quot;short sentence&amp;quot;，那么输出就是 Short Sentence，如果接收的是 &amp;quot;shOrT sEnT">
-<meta property="og:updated_time" content="2017-04-06T17:00:41.000Z">
+<meta property="og:updated_time" content="2017-04-12T20:52:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FreeCodeCamp 初级算法题 - 句中单词首字母大写">
 <meta name="twitter:description" content="句中单词首字母大写 (Title Case a Sentence)题目链接 中文链接 英文链接 级别：初级 (Basic Algorithm Scripting)  问题解释 这个 function 接收一个字符串参数，返回操作之后的字符串 比如接收的是 &amp;quot;short sentence&amp;quot;，那么输出就是 Short Sentence，如果接收的是 &amp;quot;shOrT sEnT">
@@ -329,14 +329,14 @@
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个字符串参数，返回操作之后的字符串</li>
 <li>比如接收的是 <code>&quot;short sentence&quot;</code>，那么输出就是 <code>Short Sentence</code>，如果接收的是 <code>&quot;shOrT sEnTEnce&quot;</code>，那么输出也应该是 <code>Short Sentence</code></li>
-<li>需要注意的是，题目中暗含了一个情况需要处理，就是每个单词，如果在非首字母位置出现了大写，也要输出小写<a id="more"></a>
-</li>
+<li>需要注意的是，题目中暗含了一个情况需要处理，就是每个单词，如果在非首字母位置出现了大写，也要输出小写</li>
 </ul>
+<a id="more"></a>
 <h1 id="基本解法"><a href="#基本解法" class="headerlink" title="基本解法"></a>基本解法</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>既然我们要操作每一个单词，那可以先用 <code>split(&quot; &quot;)</code> 去分割传入的字符串成为数组，这样操作起来就会方便很多</li>
-<li>另一方面，为了方便操作，我们可以在分割之前先把所有字符都用 <code>.toLowerCase()</code> 转换成小写。JavaScript 只会去操作大写字符，转换成小写。至于特殊符号和空格，不会影响函数执行</li>
-<li>分割之后，遍历数据，然后把第一个字符变成大写就行。转换方式就是用 <code>toUpperCase()</code></li>
-<li>为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 <code>.substr()</code> 或者 <code>.slice()</code> 取出单词剩余部分，拼凑起来就可以了</li>
+<li>另一方面，为了方便操作，我们可以在分割之前先把所有字符都用 <code>toLowerCase</code> 转换成小写。JavaScript 只会去操作大写字符，转换成小写。至于特殊符号和空格，不会影响函数执行</li>
+<li>分割之后，遍历数据，然后把第一个字符变成大写就行。转换方式就是用 <code>toUpperCase</code></li>
+<li>为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 <code>substr</code> 或者 <code>slice</code> 取出单词剩余部分，拼凑起来就可以了</li>
 <li>同样，这道题也可以使用正则表达式以及字符串方法完成</li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
@@ -351,28 +351,28 @@
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
 <li>可能会有朋友问，为什么不在 <code>function</code> 里生成一个空字符串，再遍历数组，动态地把处理过的字符串添加进去呢？这个思路当然是没问题的，只是需要多做一步，就是处理多余的空格。大家可以写一下试试，顺便，去掉首尾空格的方法叫 <code>.trim()</code></li>
 <li><code>.slice(1)</code> 的意思就是，从索引为 1 的字符，一直复制到字符串结尾。这个步骤同样可以写成 <code>.substr(1)</code></li>
-<li>最后那里，一定要 <code>.join(&quot; &quot;)</code>，这表示我们用空格把所有元素合并起来。而且这个空格，不会加到首尾。这也许是用数组的一个好处，毕竟 <code>.join()</code> 是数组方法</li>
+<li>最后那里，一定要 <code>.join(&quot; &quot;)</code>，这表示我们用空格把所有元素合并起来。而且这个空格，不会加到首尾。这也许是用数组的一个好处，毕竟 <code>join</code> 是数组方法</li>
 </ul>
 <h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>既然用了数组，这里又是要对每一个元素执行相同的操作，不妨用用 <code>.map()</code><h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2></li>
+<li>既然用了数组，这里又是要对每一个元素执行相同的操作，不妨用用 <code>map</code><h2 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h2></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Array/map" target="_blank" rel="external">Array.map()</a></li>
 </ul>
 <h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.toLowerCase().split(<span class="string">" "</span>).map(<span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> word[<span class="number">0</span>].toUpperCase() + word.slice(<span class="number">1</span>);</div><div class="line">    &#125;).join(<span class="string">" "</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><ul>
-<li><code>.toLowerCase()</code> 返回字符串，调用 <code>.split()</code> 方法之后返回数组。数组再去调用 <code>.map()</code> 方法</li>
-<li>只要你理解了上面的基本解法，同时理解了 <code>.map()</code> 方法的作用，就应该不难理解这段代码。<code>.map()</code> 的好处就在于，它是数组方法，而且返回值为操作之后的数组</li>
+<li><code>toLowerCase</code> 返回字符串，调用 <code>split</code> 方法之后返回数组。数组再去调用 <code>map</code> 方法</li>
+<li>只要你理解了上面的基本解法，同时理解了 <code>map</code> 方法的作用，就应该不难理解这段代码。<code>map</code> 的好处就在于，它是数组方法，而且返回值为操作之后的数组</li>
 </ul>
 <h1 id="中级解法-使用正则表达式及字符串方法"><a href="#中级解法-使用正则表达式及字符串方法" class="headerlink" title="中级解法 - 使用正则表达式及字符串方法"></a>中级解法 - 使用正则表达式及字符串方法</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
 <li>思路上来说，就是通过正则匹配到首字母，并把它替换成为大写字符，同时，保留其他字符不变</li>
-<li>当然，也是需要先进行 <code>.toLowerCase()</code> 操作的</li>
+<li>当然，也是需要先进行 <code>toLowerCase</code> 操作的</li>
 </ul>
 <h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> str.toLowerCase().replace(<span class="regexp">/(\s|^)[a-z]/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params">match</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> match.toUpperCase();</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h2><ul>
 <li>首先转换成小写，这一步应该不需要多解释</li>
-<li>然后我们调用字符串的 <code>.replace()</code> 方法，这个正则其实不复杂。<code>\s</code> 包含了空格，<code>^</code> 是用来匹配字符串开头。意思就是，如果在空格之后有一个字母，或者一个字母位于 <code>str</code> 的开头，那就可以匹配</li>
+<li>然后我们调用字符串的 <code>replace</code> 方法，这个正则其实不复杂。<code>\s</code> 包含了空格，<code>^</code> 是用来匹配字符串开头。意思就是，如果在空格之后有一个字母，或者一个字母位于 <code>str</code> 的开头，那就可以匹配</li>
 <li>而且，我们还设置了 flag 为 <code>/g</code>。因此，对于 <code>abc def ghi</code> 这个 <code>str</code>，会匹配到三个位置，分别是 <code>a</code>，<code>d</code> 以及 <code>g</code>。值得注意的是，d 和 g 前面的空格也是会被匹配到的</li>
-<li><code>.replace()</code> 的第二个参数，常见的情况是传入字符。但其实，传入一个 callback function (回调函数) 也是没问题的。传入的回调函数，第一个参数即为匹配的组，这个函数的返回值一定要是一个字符串，即为我们要把前面匹配到的部分替换成什么</li>
-<li>由于匹配的部分 (也就是上面代码中的形式参数 match) 本身就是字符，那么我们可以直接调用 <code>.toUpperCase()</code> 把它转成大写。<code>.toUpperCase()</code> 会忽略掉不能转换的东西，比如特殊字符、大写字符和空格</li>
+<li><code>replace</code> 的第二个参数，常见的情况是传入字符。但其实，传入一个 callback function (回调函数) 也是没问题的。传入的回调函数，第一个参数即为匹配的组，这个函数的返回值一定要是一个字符串，即为我们要把前面匹配到的部分替换成什么</li>
+<li>由于匹配的部分 (也就是上面代码中的形式参数 match) 本身就是字符，那么我们可以直接调用 <code>toUpperCase</code> 把它转成大写。<code>toUpperCase</code> 会忽略掉不能转换的东西，比如特殊字符、大写字符和空格</li>
 </ul>
 
       
@@ -386,7 +386,7 @@
         <p><span>本文标题:</span><a href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
         <p><span>发布时间:</span>2017年03月18日 - 03时35分</p>
-        <p><span>最后更新:</span>2017年04月06日 - 12时00分</p>
+        <p><span>最后更新:</span>2017年04月12日 - 15时52分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/fcc/basic-title-case-a-sentence/" title="FreeCodeCamp 初级算法题 - 句中单词首字母大写">S1ngS1ng.github.io/blog/fcc/basic-title-case-a-sentence/</a>
             <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/basic-title-case-a-sentence/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -402,18 +402,18 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/fcc/basic-check-for-palindromes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/fcc/basic-find-the-longest-word-in-a-string/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          FreeCodeCamp 初级算法题 - 检查回文字符串
+          FreeCodeCamp 初级算法题 - 找出最长的单词
         
       </div>
     </a>
   
   
-    <a href="/blog/fcc/basic-find-the-longest-word-in-a-string/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 找出最长的单词</div>
+    <a href="/blog/fcc/basic-return-largest-numbers-in-arrays/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -491,13 +491,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/fcc/basic-check-for-palindromes/" title="上一篇: FreeCodeCamp 初级算法题 - 检查回文字符串">
+            <a href="/blog/fcc/basic-find-the-longest-word-in-a-string/" title="上一篇: FreeCodeCamp 初级算法题 - 找出最长的单词">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/fcc/basic-find-the-longest-word-in-a-string/" title="下一篇: FreeCodeCamp 初级算法题 - 找出最长的单词">
+            <a href="/blog/fcc/basic-return-largest-numbers-in-arrays/" title="下一篇: FreeCodeCamp 初级算法题 - 找出多个数组中的最大数">
                 <i class="fa fa-angle-right"></i>
             </a>
         
