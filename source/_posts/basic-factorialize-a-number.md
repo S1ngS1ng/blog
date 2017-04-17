@@ -43,6 +43,30 @@ function factorialize(num) {
 - `result *= num` 就相当于 `result = result * num`。这种写法适用于计算并重新赋值
 - 一定不要忘了 `num--`，否则会无限循环下去。当然，这里用 `for` 循环写也是没问题的
 
+# 换一种思路 - 使用 reduce
+## 思路提示
+- 如果要使用 reduce，首先要根据传入的 `num` 创建一个数组。范围是 `1` 至 `num`
+- 可以用 `Array.from` 来创建，也可以用 Spead Operator (也就是 `...`) 来创建
+
+## 参考链接
+- [Array.from()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+- [Array.reduce()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+- [Array.map()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Array.keys()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
+
+## 代码
+```js
+function factorialize(num) {
+    return Array.from(Array(num).keys()).map(e => e + 1).reduce((prev, next) => {
+        retrun prev * next;
+    }, 1);
+}
+```
+
+## 解释
+- 除了 `reduce` 以外，`from` 和 `.keys()` 都是 ES6 语法。详情请参考上面的链接
+- 由于 `.keys()` 返回的是类数组，而且从 `0` 开始，而我们需要返回从 `1` 开始的数组。因此，只需要在 `map` 里面加上 `1`
+
 # 进阶答案
 ## 思路提示
 - 嗯，递归是个好东西
