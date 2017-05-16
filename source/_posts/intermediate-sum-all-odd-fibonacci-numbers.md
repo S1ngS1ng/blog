@@ -1,9 +1,16 @@
 ---
-title: intermediate-sum-all-odd-fibonacci-numbers
+title: FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和
 date: 2017-05-14 23:56:07
-tags:
+tags: [FreeCodeCamp,中级,算法]
+categories: FCC
 ---
 # 斐波那契数列奇数项求和
+
+## 题目链接
+
+-   [中文链接](https://www.freecodecamp.cn/challenges/sum-all-odd-fibonacci-numbers)
+-   [英文链接](https://www.freecodecamp.com/challenges/sum-all-odd-fibonacci-numbers)
+-   级别：中级 (Intermediate Algorithm Scripting)
 
 ## 问题解释
 - 这个 `function` 接收一个数字参数 `num`。返回值小于等于 `num` 的斐波那契奇数之和
@@ -16,6 +23,8 @@ tags:
         - 遍历这个数组，在遍历过程中判断奇偶，求和
         - 直接用 `filter` 方法过滤掉偶数，然后求数组元素总和
 - 两种思路都不太难。可以先尝试一下
+
+<!-- more -->
 
 # 第一种思路
 ## 思路提示
@@ -80,7 +89,7 @@ function sumFibs(num) {
 }
 ```
 
-# 不会造成栈溢出的递归写法
+## 不会造成栈溢出的递归写法
 ```js
 function sumFibs(num) {
     function getSum(curr, prev, sum) {
