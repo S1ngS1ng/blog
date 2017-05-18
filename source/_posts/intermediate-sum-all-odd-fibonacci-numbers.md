@@ -36,11 +36,13 @@ categories: FCC
 ```js
 function sumFibs(num) {
     if (num === 0) {
+        // num 为 0 时，结果应为 0
         return 0;
     }
 
     var former = 1;
     var beforeFormer = 1;
+    // 若 num 大于等于 1，那么以和为 2 作为初始值
     var sum = 2;
 
     while (former + beforeFormer <= num) {
@@ -89,7 +91,7 @@ function sumFibs(num) {
 }
 ```
 
-## 不会造成栈溢出的递归写法
+## 代码 - 不会造成栈溢出的递归写法
 ```js
 function sumFibs(num) {
     function getSum(curr, prev, sum) {
