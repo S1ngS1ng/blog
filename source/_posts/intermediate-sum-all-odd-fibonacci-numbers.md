@@ -68,11 +68,18 @@ function sumFibs(num) {
 
 # 第二种思路 - 生成数组
 ## 思路提示
-- 循环写起来应该是很容易的。如果要写递归，请一定要注意优化。否则会造成 "Stack overflow"。在 Chrome 中，会提示你 "Maximum call stack size exceeded"
+- 与第一种思路类似，我们可以先生成不大于 `num` 的斐波那契数组，然后在用 `reduce` 求和的过程中判断奇偶
+- 或者，我们也可以在生成不大于 `num` 的斐波那契数组之后，通过 `filter` 方法过滤一下，只保留奇数项。然后再求和
+- 我们还可以在生成数组的过程中判断奇偶性，最后生成只包含奇数的斐波那契数组，然后求和
 
-## 代码 - 循环
+## 代码 - 求和中判断
 ```js
 function sumFibs(num) {
+    // 边界值的判断是不能少的
+    if (num === 0) {
+      return 0;
+    }
+
     var fibsArr = [1, 1];
     var current = 2;
 
@@ -90,6 +97,7 @@ function sumFibs(num) {
     }, 0);
 }
 ```
+
 
 ## 代码 - 不会造成栈溢出的递归写法
 ```js
