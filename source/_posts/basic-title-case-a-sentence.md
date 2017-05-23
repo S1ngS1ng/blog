@@ -17,13 +17,13 @@ categories: FCC
 
 <!-- more -->
 
-# 基本解法
+# 基本解法 - for 循环
 ## 思路提示
-- 既然我们要操作每一个单词，那可以先用 `split(" ")` 去分割传入的字符串成为数组，这样操作起来就会方便很多
+- 既然我们要操作每一个单词，那可以先用 `split(" ")` 来按照空格分割传入的字符串成为数组，这样操作起来就会方便很多
 - 另一方面，为了方便操作，我们可以在分割之前先把所有字符都用 `toLowerCase` 转换成小写。JavaScript 只会去操作大写字符，转换成小写。至于特殊符号和空格，不会影响函数执行
 - 分割之后，遍历数据，然后把第一个字符变成大写就行。转换方式就是用 `toUpperCase`
-- 为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 `substr` 或者 `slice` 取出单词剩余部分，拼凑起来就可以了
-- 同样，这道题也可以使用正则表达式以及字符串方法完成
+- 为保证单词其他部分不变，我们只需要把第一个字符转换成大写，再用 `substr` 或者 `slice` 方法取出单词剩余部分，拼接起来就可以了
+- 同样，这道题也可以使用正则表达式以及字符串的 `replace` 方法完成
 
 ## 参考链接
 - [String.split()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
@@ -53,7 +53,7 @@ function titleCase(str) {
 - `.slice(1)` 的意思就是，从索引为 1 的字符，一直复制到字符串结尾。这个步骤同样可以写成 `.substr(1)`
 - 最后那里，一定要 `.join(" ")`，这表示我们用空格把所有元素合并起来。而且这个空格，不会加到首尾。这也许是用数组的一个好处，毕竟 `join` 是数组方法
 
-# 优化
+# 基本解法 - 使用 map
 ## 思路提示
 - 既然用了数组，这里又是要对每一个元素执行相同的操作，不妨用用 `map`
 ## 参考链接
@@ -64,7 +64,7 @@ function titleCase(str) {
 function titleCase(str) {
     return str.toLowerCase().split(" ").map(function (word) {
         return word[0].toUpperCase() + word.slice(1);
-    }).join(" ")
+    }).join(" ");
 }
 ```
 
