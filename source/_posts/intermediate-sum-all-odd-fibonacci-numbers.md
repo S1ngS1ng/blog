@@ -98,6 +98,33 @@ function sumFibs(num) {
 }
 ```
 
+## 代码 - 生成过程中判断
+```js
+function sumFibs(num) {
+    if (num === 0) {
+      return 0;
+    }
+
+    var fibsArr = [1, 1];
+    var current = 2;
+
+    while(current <= num) {
+        if (current % 2 === 1) {
+            fibsArr.push(current); 
+        }
+        var lastTwo = fibsArr.slice(-2);
+        current = lastTwo[0] + lastTwo[1];
+    }
+
+    return fibsArr.reduce(function(prev, next) {
+        if (next % 2 === 1) {
+            return prev + next;
+        }
+        return prev;
+    }, 0);
+}
+```
+
 
 ## 代码 - 不会造成栈溢出的递归写法
 ```js
