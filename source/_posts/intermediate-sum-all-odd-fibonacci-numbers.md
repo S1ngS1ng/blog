@@ -35,8 +35,8 @@ categories: FCC
 ## 代码
 ```js
 function sumFibs(num) {
+    // num 为 0 时，结果应为 0
     if (num === 0) {
-        // num 为 0 时，结果应为 0
         return 0;
     }
 
@@ -69,24 +69,26 @@ function sumFibs(num) {
 # 第二种思路 - 生成数组
 ## 思路提示
 - 与第一种思路类似，我们可以先生成不大于 `num` 的斐波那契数组，然后在用 `reduce` 求和的过程中判断奇偶
-- 或者，我们也可以在生成不大于 `num` 的斐波那契数组之后，通过 `filter` 方法过滤一下，只保留奇数项。然后再求和
-- 我们还可以在生成数组的过程中判断奇偶性，最后生成只包含奇数的斐波那契数组，然后求和
+- 或者，我们可以在生成数组的过程中判断奇偶性，最后生成只包含奇数的斐波那契数组，然后求和
 
 ## 代码 - 求和中判断
 ```js
 function sumFibs(num) {
-    // 边界值的判断是不能少的
     if (num === 0) {
-      return 0;
+        return 0;
     }
 
-    var fibsArr = [1, 1];
-    var current = 2;
+    // 当然这里也可以定义成 [1, 1]，然后 current 定义成 2
+    var fibsArr = [1];
+    var current = 1;
 
     while(current <= num) {
         fibsArr.push(current);
+
+        // 通过最后两位数字来求下一位
         var lastTwo = fibsArr.slice(-2);
         current = lastTwo[0] + lastTwo[1];
+        // 至于是否需要保存进 fibsArr，要先判断是否小于等于 num
     }
 
     return fibsArr.reduce(function(prev, next) {
@@ -105,22 +107,18 @@ function sumFibs(num) {
       return 0;
     }
 
-    var fibsArr = [1, 1];
-    var current = 2;
+    var fibsArr = [1];
+    var current = 1;
 
-    while(current <= num) {
+    while(current + fibsArr[fibsArr.length - 1] <= num) {
         if (current % 2 === 1) {
             fibsArr.push(current); 
         }
-        var lastTwo = fibsArr.slice(-2);
-        current = lastTwo[0] + lastTwo[1];
+      	current += fibsArr[fibsArr.length - 1];
     }
 
     return fibsArr.reduce(function(prev, next) {
-        if (next % 2 === 1) {
-            return prev + next;
-        }
-        return prev;
+        return prev + next;
     }, 0);
 }
 ```
