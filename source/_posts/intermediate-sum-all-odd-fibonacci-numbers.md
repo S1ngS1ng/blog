@@ -69,7 +69,6 @@ function sumFibs(num) {
 # 第二种思路 - 生成数组
 ## 思路提示
 - 与第一种思路类似，我们可以先生成不大于 `num` 的斐波那契数组，然后在用 `reduce` 求和的过程中判断奇偶
-- 或者，我们可以在生成数组的过程中判断奇偶性，最后生成只包含奇数的斐波那契数组，然后求和
 
 ## 代码 - 求和中判断
 ```js
@@ -100,29 +99,10 @@ function sumFibs(num) {
 }
 ```
 
-## 代码 - 生成过程中判断
-```js
-function sumFibs(num) {
-    if (num === 0) {
-      return 0;
-    }
-
-    var fibsArr = [1];
-    var current = 1;
-
-    while(current + fibsArr[fibsArr.length - 1] <= num) {
-        if (current % 2 === 1) {
-            fibsArr.push(current); 
-        }
-      	current += fibsArr[fibsArr.length - 1];
-    }
-
-    return fibsArr.reduce(function(prev, next) {
-        return prev + next;
-    }, 0);
-}
-```
-
+# 第三种思路 - 递归
+## 思路提示
+- 题目中说到，"此题不能用递归来实现"，个人觉得是不够准确的
+- 这道题当然可以用递归，只是要注意优化。否则，`num` 较大时确实会造成栈溢出
 
 ## 代码 - 不会造成栈溢出的递归写法
 ```js
