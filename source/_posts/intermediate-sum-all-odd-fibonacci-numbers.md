@@ -138,11 +138,52 @@ a();
 - 这时候按下 Resume script execution 按钮 (快捷键 F8)，走到下一个断点，Call Stack 里才会出现 `c`。这也就表明，`a` 和 `b` 都执行完了，才会执行 `c`
 - 你可以在断点中清晰地看到那时候的函数执行顺序。如果没有断点，那么这些都是一瞬间发生的
 ### 递归的执行
-现在我们回到斐波那契数列，看一看递归究竟是如何执行的，来看以下这段代码：
+现在我们回到斐波那契数列，看一看递归究竟是如何执行的，以获取斐波那契数列第 n 位为例：
 ```javascript
-
+function fibonacci(n) {
+    if (n < 2){
+        return 1;
+    }else{
+        debugger;
+        return fibonacci(n - 2) + fibonacci(n - 1);
+    }
+}
 ```
 
+在调试这段代码的时候需要注意，最好点击左边第三个按钮 Step into next function call （快捷键 F11）进行调试。你可以在 Watch 那一栏加上个 `n`，这样方便观察。或者，你也可以留意一下左边面板上，`fibonacci(n) {` 旁边的 `n`，这个 `n` 表示**当前传入**的实际参数
+
+比如，我们执行 `fibonacci(3)`，你可以按 F11，对照着下文看，它的过程是这样的：
+- `n < 2` 不成立，因此执行 `else` 的部分 `return fibonacci(n - 2) + fibonacci(n - 1)`，即为 `fibonacci(1) + fibonacci(2)`
+  - 执行 `fibonacci(1)`，此时 `n < 2` 成立，因此**这一步**返回 `1`
+  - 执行 `fibonacci(2)`，此时 `n < 2` 不成立，执行 `else` 部分，即 `fibonacci(0) + fibonacci(1)`
+    - 执行 `fibonacci(0)`，此时 `n < 2` 成立，因此**这一步**返回 `1`。注意观察，此时右边的 Call Stack 里面有 3 个 `fibonacci`，你可以分别点一下他们，它们的 `n` 分别为 3，2 和 0
+    - 执行 `fibonacci(1)`，此时 `n < 2` 成立，因此**这一步**返回 `1`。此时右边 Call Stack 里面也有 3 个 `fibonacci`，它们的 `n` 分别为 3，2 和 1
+  - 得出 `fibonacci(0) + fibonacci(1)` 为 `2`
+- 得出 `fibonacci(1) + fibonacci(2)` 为 `3`
+
+这就是我们执行 `fibonacci(3)` 的全过程。你可以试着执行以下 `fibonacci(5)`，或者更大的数。接下来，我们试试这样做：
+
+```javascript
+var count = 0;
+function fibonacci(n) {
+    count += 1;
+    if (n < 2){
+        return 1;
+    }else{
+        return fibonacci(n - 2) + fibonacci(n - 1);
+    }
+}
+fibonacci(5)
+```
+
+没错，这段代码作用就是记录下来 `fibonacci` 调用了多少次。如果 `n` 为 `5`，那么 `count` 为 `8`。但 `n` 为 `10` 的时候，`count` 就达到了 `89`。简直惊悚
+
+更惊悚的在于，如果你也按照上面的方式，列出来执行过程，你就会发现，层级会变得非常深。上面只执行到了第三级就够了。但如果 `n` 稍微大一点，这个层级可就很深了。再换句话说，Call Stack 也就会有一长串的调用
+
+那么，这就是递归导致内存溢出的根本原因。如果你还是不明白，那就把 `n` 为 `10` 的情况，像上面那样，列一个执行过程出来
+
+
+- 你会发现，它其实调用了很多次 `fibonacci` 方法。而且，就上面的过程而言，`fibonacci(1)`
 
 ## 代码 - 不会造成栈溢出的递归写法
 ```js
