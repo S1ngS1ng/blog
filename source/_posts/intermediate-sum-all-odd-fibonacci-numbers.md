@@ -8,9 +8,9 @@ categories: FCC
 
 ## 题目链接
 
--   [中文链接](https://www.freecodecamp.cn/challenges/sum-all-odd-fibonacci-numbers)
--   [英文链接](https://www.freecodecamp.com/challenges/sum-all-odd-fibonacci-numbers)
--   级别：中级 (Intermediate Algorithm Scripting)
+- [中文链接](https://www.freecodecamp.cn/challenges/sum-all-odd-fibonacci-numbers)
+- [英文链接](https://www.freecodecamp.com/challenges/sum-all-odd-fibonacci-numbers)
+- 级别：中级 (Intermediate Algorithm Scripting)
 
 ## 问题解释
 - 这个 `function` 接收一个数字参数 `num`。返回值小于等于 `num` 的斐波那契奇数之和
@@ -178,12 +178,31 @@ fibonacci(5)
 
 没错，这段代码作用就是记录下来 `fibonacci` 调用了多少次。如果 `n` 为 `5`，那么 `count` 为 `8`。但 `n` 为 `10` 的时候，`count` 就达到了 `89`。简直惊悚
 
-更惊悚的在于，如果你也按照上面的方式，列出来执行过程，你就会发现，层级会变得非常深。上面只执行到了第三级就够了。但如果 `n` 稍微大一点，这个层级可就很深了。再换句话说，Call Stack 也就会有一长串的调用
+更可怕的在于，对于比较大的 `n`，如果你也按照上面的方式列出来执行过程，就会发现层级非常深。再换句话说，Call Stack 也就会有一长串的调用
 
 那么，这就是递归导致内存溢出的根本原因。如果你还是不明白，那就把 `n` 为 `10` 的情况，像上面那样，列一个执行过程出来
 
+### 优化
+- 你会发现，上面写的递归会有很多次重复调用。比如，对于 `fibonacci(3)`，`fibonacci(1)` 被调用了两次。对于更大的 `n`，可以预见地，`fibonacci(1)` 和 `fibonacci(0)` 会被调用更多次
+- 如果你多想一步，这些调用的根源在哪里呢？试想一下：
+  - 对于 `n = 3` 来说，会执行 `fibonacci(1)` 和 `fibonacci(2)`。在 `fibonacci(2)` 里面会再调用 `fibonacci(1)`
+  - 对于 `n = 4` 来说，会执行 `fibonacci(2)` 和 `fibonacci(3)`。`fibonacci(3)` 的调用中也会再去调用 `fibonacci(2)`
+  - ......
+  - 推广到 `n`，对于 `n` 来说，会执行 `fibonacci(n - 2)` 和 `fibonacci(n - 1)`。而 `fibonacci(n - 2)` 的调用中会再去调用 `fibonacci(n - 1)`
+- 为了避免这种情况的发生，如果我们可以 "暂时存储" 之前的计算结果，那就是极好的了
+- 那么，最简单的方式就是给函数添加几个变量。我们只要在递归调用的时候传入当前的计算值，也就实现了上面说的步骤
 
-- 你会发现，它其实调用了很多次 `fibonacci` 方法。而且，就上面的过程而言，`fibonacci(1)`
+```javascript
+function fibonacci(n, sum, prev) {
+  if (n === 0) {
+    return prev;
+  }
+  if (n === 1) {
+    return sum;
+  }
+  return fibonacci(n - 1, sum + prev, sum)
+}
+```
 
 ## 代码 - 不会造成栈溢出的递归写法
 ```js
