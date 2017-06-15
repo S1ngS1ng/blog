@@ -13,7 +13,7 @@ categories: FCC
 - 级别：中级 (Intermediate Algorithm Scripting)
 
 ## 问题解释
-- 这个 `function` 接收一个数字参数 `num`。返回值小于等于 `num` 的斐波那契奇数之和
+- 这个 `function` 接收一个数字参数 `num`。返回小于等于 `num` 的斐波那契数列奇数项之和
 - 如果 `num` 是 `1`，那么返回值应为 `1`；如果 `num` 是 `4`，那么返回值应为 `5`
 
 ## 思路简介
