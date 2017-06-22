@@ -100,3 +100,17 @@ function sumPrimes(num) {
 证毕
 ```
 
+这样，对于 `isPrime` 方法，我们就可以写成这样：
+
+```javascript
+function isPrime(num) {
+    for (var i = 2; i < num / 2; i++) {
+        if (current % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+但其实，我们还可以再缩小范围至 `[2, Math.sqrt(x)]`，即 `2` 至 `根号 x`
