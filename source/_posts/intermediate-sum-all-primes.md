@@ -114,3 +114,24 @@ function isPrime(num) {
 ```
 
 但其实，我们还可以再缩小范围至 `[2, Math.sqrt(x)]`，即 `2` 至 `根号 x`
+
+```
+对于正整数 x，试证在 (√x, x) 不存在 x 的约数
+```
+
+因此，现在代码就是：
+
+```javascript
+function isPrime(num) {
+    for (var i = 2; i < Math.sqrt(num); i++) {
+        if (current % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+这样的优化对于较小的数看起来可能不明显，但当数字比较大的时候，速度确实会优化一些
+
+因为只是替换一个判断方法，就不再粘贴全部代码了。大家可以粘贴进去试一试
