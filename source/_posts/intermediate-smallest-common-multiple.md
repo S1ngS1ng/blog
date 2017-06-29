@@ -78,3 +78,34 @@ function smallestCommons(arr) {
     return result;
 }
 ```
+
+## 解释
+- 首先，根据传入的数组参数，取出较大值和较小值，方便后续操作
+- 生成数组那里应该不用多说。至于初始值的设置，原因在于，`n` 与 `n + 1` 的最小公倍数一定是 `n * (n + 1)`。这样，我们只要把这个结果带到第三个数 (索引为 `2`) 继续计算就好了
+- 至于求两个数最小公倍数的方法，比如 `n` 和 `m`，我们只需要去测试 `n`、`2n`、`3n`、`4n`……是否能被 `m` 整除。当然，试到 `m * n` 就够了，因为这个数肯定能被 `m` 整除
+- 当然，`n` 和 `m` 都不能为 `0`。这个要进行边界判断
+- 如果还有细节想不明白的，再看一下代码中的注释吧
+
+## 代码 - reduce
+- 之前说过，这里也可以用 `reduce` 去实现。因为本身就是一个迭代的过程。`getSCM` 和上面的一样，这里就不重复了
+
+```js
+function smallestCommons(arr) {
+    var smaller = Math.min(arr[0], arr[1]);
+    var greater = Math.max(arr[0], arr[1]);
+    var numArr = [];
+    
+    for (var i = smaller; i <= greater; i++) {
+        numArr.push(i);
+    }
+    
+    function getSCM(left, right) {
+        // ...
+    }
+    
+    // 初始值设为 1 就好，因为任何数与 1 的最小公倍数都是这个数本身
+    return numArr.reduce(function(previous, next) {
+        return getSCM(previous, next)
+    }, 1);
+}
+```
