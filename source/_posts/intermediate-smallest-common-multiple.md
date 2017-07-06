@@ -141,6 +141,8 @@ LCM(A1, A2, A3, ...) = ∏(An) / GCD(A1, A2, A3, ...)
 
 ```js
 function smallestCommons(arr) {
+    if (arr.length !== 2) return;
+
     var smaller = Math.min.apply(null, arr);
     var greater = Math.max.apply(null, arr);
     var result = 1;
@@ -162,3 +164,7 @@ function smallestCommons(arr) {
     return result;
 }
 ```
+
+## 解释
+- 要解释的不多了，如果看不明白，请再回去看一下上面的解释以及维基百科链接
+- 这里用到了 `.apply`，原因在于 `Math.min` 和 `Math.max` 接受的参数是多个数字。如果我们想给它传入数组参数，就需要用 `apply`，因为 `apply` 的第二个参数就是数组。熟悉 ES6 的朋友也可以写成 `Math.min(...arr)`，其中 `...` 是 Spread Operator
