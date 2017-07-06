@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FreeCodeCamp 中级算法题 - 质数求和 | S1ngS1ng</title>
+  <title>intermediate-smallest-common-multiple | S1ngS1ng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="质数求和 (Sum All Primes)题目链接 中文链接 英文链接 级别：中级 (Intermediate Algorithm Scripting)  问题解释 这个 function 接收一个数字参数 num。返回小于等于 num 的质数之和 如果 num 是 4，那么返回值应为 5。如果 num 是 10，那么返回值应为 17">
+  <meta name="description" content="找出数字范围的最小公倍数 (Smallest Common Multiple)题目链接 中文链接 英文链接  问题解释 这个 function 接收一个数组参数 arr，其中包含两个数字元素。返回这两个数字之间所有数的最小公倍数 如果 arr 是 [1, 5]，那么返回值应为 60 需要注意的是，这个 arr 是没有排序的，因此对于 [5, 1]，也应该返回 60">
 <meta name="keywords" content="FreeCodeCamp,算法,中级">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeCodeCamp 中级算法题 - 质数求和">
-<meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/intermediate-sum-all-primes/index.html">
+<meta property="og:title" content="intermediate-smallest-common-multiple">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/intermediate-smallest-common-multiple/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
-<meta property="og:description" content="质数求和 (Sum All Primes)题目链接 中文链接 英文链接 级别：中级 (Intermediate Algorithm Scripting)  问题解释 这个 function 接收一个数字参数 num。返回小于等于 num 的质数之和 如果 num 是 4，那么返回值应为 5。如果 num 是 10，那么返回值应为 17">
-<meta property="og:updated_time" content="2017-06-26T03:10:51.000Z">
+<meta property="og:description" content="找出数字范围的最小公倍数 (Smallest Common Multiple)题目链接 中文链接 英文链接  问题解释 这个 function 接收一个数组参数 arr，其中包含两个数字元素。返回这两个数字之间所有数的最小公倍数 如果 arr 是 [1, 5]，那么返回值应为 60 需要注意的是，这个 arr 是没有排序的，因此对于 [5, 1]，也应该返回 60">
+<meta property="og:updated_time" content="2017-07-06T04:54:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FreeCodeCamp 中级算法题 - 质数求和">
-<meta name="twitter:description" content="质数求和 (Sum All Primes)题目链接 中文链接 英文链接 级别：中级 (Intermediate Algorithm Scripting)  问题解释 这个 function 接收一个数字参数 num。返回小于等于 num 的质数之和 如果 num 是 4，那么返回值应为 5。如果 num 是 10，那么返回值应为 17">
+<meta name="twitter:title" content="intermediate-smallest-common-multiple">
+<meta name="twitter:description" content="找出数字范围的最小公倍数 (Smallest Common Multiple)题目链接 中文链接 英文链接  问题解释 这个 function 接收一个数组参数 arr，其中包含两个数字元素。返回这两个数字之间所有数的最小公倍数 如果 arr 是 [1, 5]，那么返回值应为 60 需要注意的是，这个 arr 是没有排序的，因此对于 [5, 1]，也应该返回 60">
   
     <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
   
@@ -279,11 +279,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-intermediate-sum-all-primes" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-intermediate-smallest-common-multiple" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/fcc/intermediate-sum-all-primes/" class="article-date">
-      <time datetime="2017-06-15T04:32:51.000Z" itemprop="datePublished">2017-06-15</time>
+      <a href="/blog/fcc/intermediate-smallest-common-multiple/" class="article-date">
+      <time datetime="2017-06-26T04:36:21.000Z" itemprop="datePublished">2017-06-26</time>
 </a>
     </div>
   
@@ -296,7 +296,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      FreeCodeCamp 中级算法题 - 质数求和
+      intermediate-smallest-common-multiple
     </h1>
   
 
@@ -321,56 +321,59 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="质数求和-Sum-All-Primes"><a href="#质数求和-Sum-All-Primes" class="headerlink" title="质数求和 (Sum All Primes)"></a>质数求和 (Sum All Primes)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/https://freecodecamp.cn/challenges/sum-all-primes" target="_blank" rel="external">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/https://freecodecamp.cn/challenges/sum-all-primes" target="_blank" rel="external">英文链接</a></li>
-<li>级别：中级 (Intermediate Algorithm Scripting)</li>
+        <h1 id="找出数字范围的最小公倍数-Smallest-Common-Multiple"><a href="#找出数字范围的最小公倍数-Smallest-Common-Multiple" class="headerlink" title="找出数字范围的最小公倍数 (Smallest Common Multiple)"></a>找出数字范围的最小公倍数 (Smallest Common Multiple)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://freecodecamp.cn/challenges/smallest-common-multiple" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/smallest-common-multiple" target="_blank" rel="external">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收一个数字参数 <code>num</code>。返回小于等于 <code>num</code> 的质数之和</li>
-<li>如果 <code>num</code> 是 <code>4</code>，那么返回值应为 <code>5</code>。如果 <code>num</code> 是 <code>10</code>，那么返回值应为 <code>17</code></li>
+<li>这个 <code>function</code> 接收一个数组参数 <code>arr</code>，其中包含两个数字元素。返回这两个数字之间所有数的最小公倍数</li>
+<li>如果 <code>arr</code> 是 <code>[1, 5]</code>，那么返回值应为 <code>60</code></li>
+<li>需要注意的是，这个 <code>arr</code> 是没有排序的，因此对于 <code>[5, 1]</code>，也应该返回 <code>60</code></li>
 </ul>
 <a id="more"></a>
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><ul>
-<li>这道题会涉及一些数学知识，其实代码不难写</li>
-<li>质数的定义是，如果一个数 <strong>只能</strong> 被 <code>1</code> 和这个数自己整除，那么这个数就是质数。与这个概念相对应的叫合数</li>
-<li><code>1</code> 既不是质数也不是合数</li>
-<li>比如，20 以内的质数，有且仅有这些：2, 3, 5, 7, 11, 13, 17, 19</li>
-<li>那么首先我们需要写一个判断质数的方法。根据定义，可以这样写：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPrime</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; num; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (num % i === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><code>1</code> 是不用判断的，因为任何整数都可以被 <code>1</code> 整除。<code>num</code> 本身也是不用判断的，因为 <code>num</code> 肯定可以被 <code>num</code> 整除</li>
-<li>我们先把这个写法用到基础解法中，后面再优化</li>
+<li>先回顾一些定义。如果存在一个数 <code>x</code>，可以被 <code>a</code> 和 <code>b</code> 分别整除，且 <code>x</code> 大于等于 <code>a</code> 和 <code>b</code>，则称 <code>x</code> 为 <code>a</code> 和 <code>b</code> 的<strong>公倍数</strong>。<code>a</code> 和 <code>b</code> 的公倍数有无限多个，其中最小的就叫<strong>最小公倍数</strong></li>
+<li>经常与最小公倍数一起提及的还有<strong>最大公约数</strong>，也叫最大公因数。指的是某几个整数共有约数中最大的一个。约数的定义在上一篇文章中提到过，也叫因数</li>
+<li>这道题目的关键在于最小公倍数的算法。在基本的解法中我们先用循环来解决</li>
+<li>先要明白一点，最小公倍数<strong>不会超过两个数的乘积</strong>。这个结论很重要，因为我们可以通过这个来确定循环的边界</li>
+<li>后面我们还会谈到计算最小公倍数的其他算法。基本解法的思路并不复杂，可以根据上面的提示先试着自己写一写</li>
 </ul>
 <h1 id="基本解法-遍历"><a href="#基本解法-遍历" class="headerlink" title="基本解法 - 遍历"></a>基本解法 - 遍历</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>上面我们已经写好了判断，那么只需要从 <code>2</code> 开始一直到 <code>num</code> 遍历一遍，每一个数都进行一次判断，是质数的我们加起来就可以了</li>
+<li>由于题目中要判断范围内多个数字的最小公倍数，最简单且暴力的方法就是两两地进行判断</li>
+<li>既然需要多次判断，那么我们首先需要封装一个判断函数，用于得出两个数字的最小公倍数。当然，写成递归也是没问题的。或者，用数组的 <code>reduce</code> 方法也行</li>
+<li>有一点需要注意。记”求最小公倍数”为 <code>LCM</code>。对于求三个数字 <code>a</code>、<code>b</code> 和 <code>c</code> 的最小公倍数 <code>LCM(a, b, c)</code>，则相当于 <code>LCM(LCM(a, b), c)</code>。由于 <code>LCM</code> 也存在结合律，因此也相当于 <code>LCM(a, LCM(b, c))</code>。所以，先求哪一组都是可以的</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumPrimes</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt;= num; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (isPrime(i)) &#123;</div><div class="line">            sum += i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isPrime</span>(<span class="params">current</span>) </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; current; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (current % i === <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="优化-数学方法"><a href="#优化-数学方法" class="headerlink" title="优化 - 数学方法"></a>优化 - 数学方法</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>首先，对于一个数字 <code>x</code>，我们不需要从 <code>2</code> 一直循环到 <code>x</code> 来验证它是否为质数，只需要验证到 <code>x/2</code> 就够了，也就是 <code>x</code> 的一半。因为 <code>x</code> 除以 <code>x/2</code> 到 <code>x</code> 的范围内的任何数，商一定是小于 <code>2</code> 的。因此，对于 <code>isPrime</code> 方法，我们就可以写成这样：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPrime</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; num / <span class="number">2</span>; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (current % i === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>因此，现在代码就是：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPrime</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; <span class="built_in">Math</span>.sqrt(num); i++) &#123;</div><div class="line">        <span class="keyword">if</span> (current % i === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>由于这里只是替换一个判断方法，就不再粘贴全部代码了。大家可以粘贴进去试一试。这样的优化对于较小的数看起来可能不明显，但当数字比较大的时候，速度确实会优化一些</p>
-<h1 id="优化-Sieve-of-Eratosthenes"><a href="#优化-Sieve-of-Eratosthenes" class="headerlink" title="优化 - Sieve of Eratosthenes"></a>优化 - Sieve of Eratosthenes</h1><h2 id="思路提示-2"><a href="#思路提示-2" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
-<li>判断质数的方式有很多。详情可以参考维基百科词条 <a href="https://zh.wikipedia.org/wiki/%E7%B4%A0%E6%80%A7%E6%B5%8B%E8%AF%95" target="_blank" rel="external">素性测试</a> 及其 <a href="https://en.wikipedia.org/wiki/Primality_test" target="_blank" rel="external">英文版本</a></li>
-<li>相比之下，最容易实现的应该是 <a href="https://zh.wikipedia.org/wiki/%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC%E7%AD%9B%E6%B3%95" target="_blank" rel="external">Sieve of Eratosthenes(埃拉托斯特尼筛法)</a> 了。详细内容请参考其 <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">英文版本</a></li>
-<li>简单说一下，这个算法就是在 <code>2</code> 至 <code>num</code> 范围内，筛掉 <code>2</code> 至 <code>Math.sqrt(num)</code> 范围中质数的倍数，结果就可以得到 <code>2</code> 至 <code>num</code> 范围内的所有质数</li>
-<li>执行过程是，先生成一个长度为 <code>num</code> 的数组，把所有的元素都设为 <code>true</code>。然后遍历这个数组，如果索引是 <code>2</code> 的倍数 (不包含 2)，就把元素标记为 <code>false</code>；再从头遍历，如果索引是 <code>3</code> 的倍数 (不包含 3)，就把元素标记为 <code>false</code> …… 以此类推</li>
-<li>最终，索引范围在 <code>2</code> 至 <code>num</code> 之间，元素为 <code>true</code> 的就是质数</li>
-</ul>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumPrimes</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> flagArr = [];</div><div class="line"></div><div class="line">    <span class="comment">// 生成标记数组，初始化为 true</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= num; i++) &#123;</div><div class="line">        flagArr.push(<span class="literal">true</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt;= <span class="built_in">Math</span>.sqrt(num); i++) &#123;</div><div class="line">        <span class="keyword">var</span> j = <span class="built_in">Math</span>.pow(i, <span class="number">2</span>);</div><div class="line">        <span class="comment">// 如果本身就是 `false`，说明已经标记过，因此不需要再进入循环</span></div><div class="line">        <span class="keyword">while</span> (flagArr[i] &amp;&amp; j &lt;= num) &#123;</div><div class="line">            flagArr[j] = <span class="literal">false</span>;</div><div class="line">            j += i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 计算最终标记为 true 的 index 之和</span></div><div class="line">    <span class="keyword">return</span> flagArr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">accum, value, index</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> accum + (value ? index : <span class="number">0</span>);</div><div class="line">    &#125;, <span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="代码-for-循环"><a href="#代码-for-循环" class="headerlink" title="代码 - for 循环"></a>代码 - for 循环</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallestCommons</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> smaller = <span class="built_in">Math</span>.min(arr[<span class="number">0</span>], arr[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">var</span> greater = <span class="built_in">Math</span>.max(arr[<span class="number">0</span>], arr[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">var</span> numArr = [];</div><div class="line">    <span class="comment">// 设置用于保存结果的初始值</span></div><div class="line">    <span class="keyword">var</span> result = smaller * (smaller + <span class="number">1</span>);</div><div class="line">    </div><div class="line">    <span class="comment">// 根据参数生成一个范围内所有数字的数组</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = smaller; i &lt;= greater; i++) &#123;</div><div class="line">        numArr.push(i);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 用于获取两个数最小公倍数的方法</span></div><div class="line">    <span class="comment">// 其中参数 left 为较小数，right 为较大数</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getSCM</span>(<span class="params">left, right</span>) </span>&#123;</div><div class="line">        <span class="comment">// 边界判断</span></div><div class="line">        <span class="keyword">if</span> (left === <span class="number">0</span> || right === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (left === right) &#123;</div><div class="line">            <span class="keyword">return</span> left;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 设置 scm 初始值为较大数</span></div><div class="line">        <span class="keyword">var</span> scm = right;</div><div class="line">        </div><div class="line">        <span class="comment">// 循环，用 scm % left 是否为 0 来判断是不是最小公倍数</span></div><div class="line">        <span class="keyword">while</span> (scm &lt;= right * left) &#123;</div><div class="line">            <span class="keyword">if</span> (scm % left === <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> scm;</div><div class="line">            &#125;</div><div class="line">            scm += right;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 外面可以不 return。因为理论上，当 scm 的值为 right * left 的时候，scm % left 是肯定为 0 的</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">2</span>; i &lt; numArr.length; i++) &#123;</div><div class="line">        <span class="comment">// 显然，要么 result 和 numArr[i] 相等，要么 result 大于 numArr[i]</span></div><div class="line">        result = getSCM(numArr[i], result);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>如果你看不明白上面的解法，请去上面的维基百科页面看一下。词条里有一个 gif 图，应该会对你理解这个算法有很大帮助</li>
-<li>强调一句，<code>flagArr</code> 里的元素全都是 <code>Boolean</code>，作用是标记对应的索引是否为质数。因此最终求和，我们需要求索引的和</li>
-<li>需要注意的是，题目中说了 “小于等于给定数值”，因此生成 <code>flagArr</code> 以及筛选过程 (第二个 <code>for</code> 循环) 都需要以 <code>=num</code> 为边界</li>
-<li>另一方面，注释中提到了。如果 <code>flagArr[i]</code> 本身就是 <code>false</code>，那我们就不需要进入 <code>while</code> 循环了。因为 <code>while</code> 循环里干的事儿是把目前还为 <code>true</code> 的标记为 <code>false</code>，不存在把 <code>false</code> 标记为 <code>true</code> 的可能。至于为什么是 <code>j += i</code> 而不是 <code>j += 1</code>，如果你理解了这个算法就会明白。可以尝试举一些实际的例子，带进去分析一下</li>
-<li>最后的 <code>reduce</code>，我们把初始值设置成了 <code>-1</code>。原因也很显然，因为 <code>flagArr</code> 的 <code>index</code> 是从 <code>0</code> 开始的。索引 <code>0</code> 对应的元素一定是 <code>true</code>，不会被修改。但 <code>0</code> 不会影响最终结果。但 <code>1</code> 对应的也一定是 <code>true</code>，循环中一样不会修改，因此在最终计算结果的时候要把最终的结果 <code>-1</code>。那么和初始值设置为 <code>-1</code> 是一个道理</li>
-<li>思路虽然是这样，写法却有很多。我们可以一上来就把 <code>flagArr[1]</code> 定义为 <code>false</code>，也可以在最后 <code>reduce</code> 的回调函数里面判断一下 <code>index</code> 是否等于 <code>1</code>。记得去处理这个情况就好，根源在于 <code>1</code> 既不是质数也不是合数</li>
+<li>首先，根据传入的数组参数，取出较大值和较小值，方便后续操作</li>
+<li>生成数组那里应该不用多说。至于初始值的设置，原因在于，<code>n</code> 与 <code>n + 1</code> 的最小公倍数一定是 <code>n * (n + 1)</code>。这样，我们只要把这个结果带到第三个数 (索引为 <code>2</code>) 继续计算就好了</li>
+<li>至于求两个数最小公倍数的方法，比如 <code>n</code> 和 <code>m</code>，我们只需要去测试 <code>n</code>、<code>2n</code>、<code>3n</code>、<code>4n</code>……是否能被 <code>m</code> 整除。当然，试到 <code>m * n</code> 就够了，因为这个数肯定能被 <code>m</code> 整除</li>
+<li>当然，<code>n</code> 和 <code>m</code> 都不能为 <code>0</code>。这个要进行边界判断</li>
+<li>如果还有细节想不明白的，再看一下代码中的注释吧</li>
+</ul>
+<h2 id="代码-reduce"><a href="#代码-reduce" class="headerlink" title="代码 - reduce"></a>代码 - reduce</h2><ul>
+<li>之前说过，这里也可以用 <code>reduce</code> 去实现。因为本身就是一个迭代的过程。<code>getSCM</code> 和上面的一样，这里就不重复了</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallestCommons</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> smaller = <span class="built_in">Math</span>.min(arr[<span class="number">0</span>], arr[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">var</span> greater = <span class="built_in">Math</span>.max(arr[<span class="number">0</span>], arr[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">var</span> numArr = [];</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = smaller; i &lt;= greater; i++) &#123;</div><div class="line">        numArr.push(i);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getSCM</span>(<span class="params">left, right</span>) </span>&#123;</div><div class="line">        <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 初始值设为 1 就好，因为任何数与 1 的最小公倍数都是这个数本身</span></div><div class="line">    <span class="keyword">return</span> numArr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">previous, next</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> getSCM(previous, next)</div><div class="line">    &#125;, <span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="优化-数学方法"><a href="#优化-数学方法" class="headerlink" title="优化 - 数学方法"></a>优化 - 数学方法</h1><h2 id="思路提示-1"><a href="#思路提示-1" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>有一种计算最小公倍数的数学方法，但要先计算出最大公约数。详情可以参考<a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B8" target="_blank" rel="external">最小公倍数的维基百科词条</a></li>
+<li>计算最大公约数，有一种比较快捷的方法叫<a href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95" target="_blank" rel="external">辗转相除法</a></li>
+<li>简单举个例子，对于数字 <code>a</code> 和 <code>b</code>，若要求他们的最大公约数，则将较大数不断减去较小数，直到所得的差小于较小数。重复此步骤，直到差为 0，此时较小数即为最大公约数，伪代码如下：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(b !== <span class="number">0</span>)</div><div class="line">    temp = b</div><div class="line">    b = a % b</div><div class="line">    a = temp</div><div class="line"><span class="keyword">return</span> a</div></pre></td></tr></table></figure>
+<ul>
+<li>有朋友可能觉得这里需要处理特殊值。但由于任何数都可以整除 <code>0</code>，因此 <code>0</code> 与任何数的最大公约数都为那个数本身。所以，不需要进行特殊处理</li>
+<li>根据<a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B8" target="_blank" rel="external">维基百科</a>，任何两个整数的最大公约数与最小公倍数存在如下关系：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LCM(a, b) = |a * b| / GCD(a, b)</div></pre></td></tr></table></figure>
+<ul>
+<li>其中，<code>LCM</code> 为最小公倍数，<code>GCD</code> 为最大公约数。同样，这个可以推论到 <code>n</code> 个数的情况，即：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LCM(A1, A2, A3, ...) = ∏(An) / GCD(A1, A2, A3, ...)</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallestCommons</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (arr.length !== <span class="number">2</span>) <span class="keyword">return</span>;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> smaller = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr);</div><div class="line">    <span class="keyword">var</span> greater = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr);</div><div class="line">    <span class="keyword">var</span> result = <span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getGCD</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">        <span class="keyword">while</span> (b !== <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">var</span> temp = b;</div><div class="line">            b = a % b;</div><div class="line">            a = temp;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> a;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">while</span> (smaller &lt;= greater) &#123;</div><div class="line">        result = smaller * result / getGCD(smaller, result);</div><div class="line">        smaller++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>要解释的不多了，如果看不明白，请再回去看一下上面的解释以及维基百科链接</li>
+<li>这里用到了 <code>.apply</code>，原因在于 <code>Math.min</code> 和 <code>Math.max</code> 接受的参数是多个数字。如果我们想给它传入数组参数，就需要用 <code>apply</code>，因为 <code>apply</code> 的第二个参数就是数组。熟悉 ES6 的朋友也可以写成 <code>Math.min(...arr)</code>，其中 <code>...</code> 是 Spread Operator</li>
 </ul>
 
       
@@ -381,13 +384,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/fcc/intermediate-sum-all-primes/">FreeCodeCamp 中级算法题 - 质数求和</a></p>
+        <p><span>本文标题:</span><a href="/blog/fcc/intermediate-smallest-common-multiple/">intermediate-smallest-common-multiple</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
-        <p><span>发布时间:</span>2017年06月15日 - 00时32分</p>
-        <p><span>最后更新:</span>2017年06月25日 - 23时10分</p>
+        <p><span>发布时间:</span>2017年06月26日 - 00时36分</p>
+        <p><span>最后更新:</span>2017年07月06日 - 00时54分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/fcc/intermediate-sum-all-primes/" title="FreeCodeCamp 中级算法题 - 质数求和">S1ngS1ng.github.io/blog/fcc/intermediate-sum-all-primes/</a>
-            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/intermediate-sum-all-primes/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/fcc/intermediate-smallest-common-multiple/" title="intermediate-smallest-common-multiple">S1ngS1ng.github.io/blog/fcc/intermediate-smallest-common-multiple/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/intermediate-smallest-common-multiple/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/blog/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -400,20 +403,15 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/fcc/intermediate-sum-all-primes/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和
+          FreeCodeCamp 中级算法题 - 质数求和
         
       </div>
     </a>
   
-  
-    <a href="/blog/fcc/intermediate-smallest-common-multiple/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">intermediate-smallest-common-multiple</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -422,7 +420,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#质数求和-Sum-All-Primes"><span class="toc-number">1.</span> <span class="toc-text">质数求和 (Sum All Primes)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法-遍历"><span class="toc-number">3.</span> <span class="toc-text">基本解法 - 遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">3.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-数学方法"><span class="toc-number">4.</span> <span class="toc-text">优化 - 数学方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-1"><span class="toc-number">4.1.</span> <span class="toc-text">思路提示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-Sieve-of-Eratosthenes"><span class="toc-number">5.</span> <span class="toc-text">优化 - Sieve of Eratosthenes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-2"><span class="toc-number">5.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">5.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">5.3.</span> <span class="toc-text">解释</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#找出数字范围的最小公倍数-Smallest-Common-Multiple"><span class="toc-number">1.</span> <span class="toc-text">找出数字范围的最小公倍数 (Smallest Common Multiple)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法-遍历"><span class="toc-number">3.</span> <span class="toc-text">基本解法 - 遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">3.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-for-循环"><span class="toc-number">3.2.</span> <span class="toc-text">代码 - for 循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">3.3.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-reduce"><span class="toc-number">3.4.</span> <span class="toc-text">代码 - reduce</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优化-数学方法"><span class="toc-number">4.</span> <span class="toc-text">优化 - 数学方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示-1"><span class="toc-number">4.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释-1"><span class="toc-number">4.3.</span> <span class="toc-text">解释</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -489,15 +487,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/" title="上一篇: FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和">
+            <a href="/blog/fcc/intermediate-sum-all-primes/" title="上一篇: FreeCodeCamp 中级算法题 - 质数求和">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/fcc/intermediate-smallest-common-multiple/" title="下一篇: intermediate-smallest-common-multiple">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/blog/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-smallest-common-multiple/">intermediate-smallest-common-multiple</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-primes/">FreeCodeCamp 中级算法题 - 质数求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/">FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-spinal-tap-case/">FreeCodeCamp 中级算法题 - 字符串格式转换 - 短线连接格式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-convert-html-entities/">FreeCodeCamp 中级算法题 - 转换 HTML 实体字符</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sorted-union/">FreeCodeCamp 中级算法题 - 多个数组元素排序</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-boo-hoo/">FreeCodeCamp 中级算法题 - 基本布尔类型检查</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-missing-letters/">FreeCodeCamp 中级算法题 - 寻找缺失的字母</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-dna-pairing/">FreeCodeCamp 中级算法题 - DNA 配对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-pig-latin/">FreeCodeCamp 中级算法题 - 儿童黑话</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-search-and-replace/">FreeCodeCamp 中级算法题 - 句中查找替换</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-where-art-thou/">FreeCodeCamp 中级算法题 - 找出对象包含的特定键值对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-diff-two-arrays/">FreeCodeCamp 中级算法题 - 比较两数组差异</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
