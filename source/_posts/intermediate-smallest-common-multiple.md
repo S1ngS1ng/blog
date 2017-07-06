@@ -143,7 +143,7 @@ LCM(A1, A2, A3, ...) = ∏(An) / GCD(A1, A2, A3, ...)
 function smallestCommons(arr) {
     var smaller = Math.min.apply(null, arr);
     var greater = Math.max.apply(null, arr);
-    var result;
+    var result = 1;
     
     function getGCD(a, b) {
         while (b !== 0) {
@@ -155,7 +155,7 @@ function smallestCommons(arr) {
     }
     
     while (smaller <= greater) {
-        result = (smaller * result) / getGCD(smaller, result);
+        result = smaller * result / getGCD(smaller, result);
         smaller++;
     }
     
