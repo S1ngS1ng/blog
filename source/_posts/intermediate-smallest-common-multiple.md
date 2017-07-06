@@ -137,3 +137,28 @@ LCM(a, b) = |a * b| / GCD(a, b)
 LCM(A1, A2, A3, ...) = ∏(An) / GCD(A1, A2, A3, ...)
 ```
 
+## 代码
+
+```js
+function smallestCommons(arr) {
+    var smaller = Math.min.apply(null, arr);
+    var greater = Math.max.apply(null, arr);
+    var result;
+    
+    function getGCD(a, b) {
+        while (b !== 0) {
+            var temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+    
+    while (smaller <= greater) {
+        result = (smaller * result) / getGCD(smaller, result);
+        smaller++;
+    }
+    
+    return result;
+}
+```
