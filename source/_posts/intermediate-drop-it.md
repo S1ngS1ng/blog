@@ -16,6 +16,8 @@ categories: FCC
 - 如果 `arr` 是 `[1, 2, 3, 4]`，`func` 是 `function(n) {return n >=3;}`，那么此时返回值应为 `[3, 4]`
 - 更值得关注的是这样的情况，如果 `arr` 是 `[0, 1, 0, 1]`，`func` 是 `function(n) {return n === 1;}`，那么此时返回值应为 `[1, 0, 1]`
 
+<!--more-->
+
 # 基本解法
 ## 思路提示
 - 这道题目和上一道 Finders Keepers 的基本思路很相似，难度也很低。区别仅仅在于 Finders Keepers 需要返回一个元素，这道题是返回一个数组
