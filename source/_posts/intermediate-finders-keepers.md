@@ -13,7 +13,7 @@ categories: FCC
 
 ## 问题解释
 - 这个 `function` 接受一个数组参数 `arr` 和一个函数参数 `func`。返回值为 `arr` 中满足参数 `func` 的第一个元素
-- 如果 `arr` 是 `[1, 2, 3]`，`func` 是 `function(num) {return num === 2;}`，那么返回值因为 `2`
+- 如果 `arr` 是 `[1, 2, 3]`，`func` 是 `function(num) {return num === 2;}`，那么返回值应为 `2`
 
 <!--more-->
 
