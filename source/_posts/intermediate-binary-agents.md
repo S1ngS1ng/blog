@@ -71,3 +71,59 @@ function binaryAgent(str) {
     return result;
 }
 ```
+
+## 解释
+- 这种解法是很容易理解的双指针思路。执行过程如下
+
+```
+(以下用 ↑ 表示左边的指针，↓ 表示右边的)
+
+010101 111111 000000
+↑↓                   初始状态。此时 if 不满足，right++
+
+010101 111111 000000
+↑ ↓                  此时 if 依旧不满足，继续 right++
+
+……
+
+010101 111111 000000
+↑     ↓              此时 if 满足，取到第一组
+
+010101 111111 000000
+      ↓↑             这是 left = right + 1 执行后的情况
+
+010101 111111 000000
+       ↑↓            这是 right = left + 1 执行后的情况。继续 while 循环。此时 if 不满足，right++
+
+010101 111111 000000
+       ↑ ↓           ……以此类推
+```
+
+- 底下写了一个 `binaryToString` 的方法。这其实就是把二进制数字转换成对应的字符。要解释的都在代码里，应该不复杂。其实这个 `function` 里面的内容，放到上面去也是一个效果。只是这样看起来更舒服些
+- 二进制转十进制应该也不需要太多解释了，一开始就说了如何计算的
+
+# 中级解法 - 使用 map 和 parseInt
+## 思路提示
+- `parseInt` 这个方法相信大家都见过也用过。但我们一般只给它传一个参数，其实 `parseInt` 是可以接收两个参数的。因此，才会有这道题：
+
+> 插播一则面试题：
+> [1, 2 ,3].map(parseInt) 的结果是什么？当然不是 [1, 2, 3]
+
+- 惊不惊喜？意不意外？其实 `parseInt` 的第二个参数是 `radix` (基数)。比如，第二个参数传入 `8` 就代表第一个参数是八进制的，`16` 就代表第一个参数是十六进制的。传入 `1` 是肯定不对的，肯定返回 `NaN`。如果**传入 0 或者不传**，那要先看第一个参数的开头。如果是 `"0x"` 或者 `"0X"` 开头，则会按十六进制解析；如果是 `"0"` 开头就会按八进制解析，其余均按照十进制解析
+- 那么我们只要给第二个参数传入 `2`，就可以直接得到十进制的结果了，代码也变得容易很多
+- 很多朋友应该都想到了，既然空格分割，又是字符串，那我们给它 `split` 一下就行了。当然，之后我们只要再 `map` 一次就解决了。别忘了最后要 `join`
+
+## 参考链接
+- [parseInt](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+- [String.split](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [Array.map](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Array.join](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+## 代码
+```js
+function binaryAgent(str) {
+    return str.split(' ').map(function(e) {
+        return String.fromCharCode(parseInt(e, 2));
+    }).join('')
+}
+```
