@@ -12,7 +12,7 @@
 <meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/intermediate-arguments-optional/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
 <meta property="og:description" content="可选的参数 (Arguments Optional)题目链接 中文链接 英文链接  问题解释 这个 function 在定义的时候没有声明任何参数，但在调用的时候会传入一个或者两个参数。最后返回两数之和 如果参数是一个，那么调用方式就是 add(1)(2) 的形式，返回值为 3 如果参数是两个，那么调用方式就会是 add(1, 2) 的形式，返回值也为 3">
-<meta property="og:updated_time" content="2017-07-12T04:10:25.000Z">
+<meta property="og:updated_time" content="2017-07-12T04:12:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="intermediate-arguments-optional">
 <meta name="twitter:description" content="可选的参数 (Arguments Optional)题目链接 中文链接 英文链接  问题解释 这个 function 在定义的时候没有声明任何参数，但在调用的时候会传入一个或者两个参数。最后返回两数之和 如果参数是一个，那么调用方式就是 add(1)(2) 的形式，返回值为 3 如果参数是两个，那么调用方式就会是 add(1, 2) 的形式，返回值也为 3">
@@ -359,7 +359,7 @@
 <li>返回两数的和应该没什么多说的。题目中只有两种情况，有兴趣的朋友可以尝试一下，能不能写成可以接收不定数目参数的，类似于 <code>add(1, 2, 3)(4)(5, 6)(7)(8)</code>。这个实现起来会更加有挑战</li>
 <li>关键在于后面那个 <code>return function</code>，其实这一部分，我自己刚开始学 JS 的时候也懵了很久。我们可以这么去理解，<code>add(2)(3)</code> 这样的调用方式，其实就是在 <code>add(2)</code> 执行之后，<code>(3)</code> 执行之前的那个瞬间是一个函数，我们暂且称这个函数为 <code>function foo() {}</code>。那么，<code>foo(3)</code> 就很好理解了，相当于把 <code>3</code> 作为参数传入 <code>foo</code>。简单画个图：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;&#125;</div><div class="line"></div><div class="line">add(2)(3)    </div><div class="line">   |</div><div class="line">   |  如果我们可以让 add(2) 返回函数 foo</div><div class="line">   |</div><div class="line">   ↓</div><div class="line">foo(3)    -- 那么这就成了这样</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;&#125;</div><div class="line"></div><div class="line">add(2)(3)    </div><div class="line">   |</div><div class="line">   |  如果我们可以让 add(2) 返回函数 foo</div><div class="line">   |</div><div class="line">   ↓</div><div class="line">foo(3)    -- 那么就变成了这样</div></pre></td></tr></table></figure>
 <ul>
 <li>这样画是想说明，对于这里说的那个 <code>foo</code> 函数，根据题目要求，我们只需要在定义的时候让它接收一个参数就好了，也就是图中的 <code>3</code></li>
 <li>那么，如果我们把 <code>add</code> 函数的返回值设置成上面说到的 <code>foo</code> 函数 (<strong>确切一点说，是返回 <code>foo</code> 函数的引用</strong>)，那么它就可以通过 <code>add(2)(3)</code> 这样的形式来调用了，并且 <code>3</code> 会传到 <code>foo</code> 里面去</li>
@@ -378,7 +378,7 @@
         <p><span>本文标题:</span><a href="/blog/fcc/intermediate-arguments-optional/">intermediate-arguments-optional</a></p>
         <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
         <p><span>发布时间:</span>2017年07月11日 - 21时21分</p>
-        <p><span>最后更新:</span>2017年07月12日 - 00时10分</p>
+        <p><span>最后更新:</span>2017年07月12日 - 00时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/fcc/intermediate-arguments-optional/" title="intermediate-arguments-optional">S1ngS1ng.github.io/blog/fcc/intermediate-arguments-optional/</a>
             <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/intermediate-arguments-optional/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
