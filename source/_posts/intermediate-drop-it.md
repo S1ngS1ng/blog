@@ -1,5 +1,5 @@
 ---
-title: intermediate-drop-it
+title: FreeCodeCamp 中级算法题 - 按参数删除数组元素
 date: 2017-07-07 22:55:42
 tags: [FreeCodeCamp,中级,算法]
 categories: FCC

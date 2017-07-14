@@ -1,5 +1,5 @@
 ---
-title: intermediate-steamroller
+title: FreeCodeCamp 中级算法题 - 数组扁平化
 date: 2017-07-08 22:18:56
 tags: [FreeCodeCamp,中级,算法]
 categories: FCC

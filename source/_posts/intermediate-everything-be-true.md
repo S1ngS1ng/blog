@@ -1,5 +1,5 @@
 ---
-title: intermediate-everything-be-true
+title: FreeCodeCamp 中级算法题 - 检查对象属性
 date: 2017-07-11 00:06:42
 tags: [FreeCodeCamp,中级,算法]
 categories: FCC

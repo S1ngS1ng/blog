@@ -1,5 +1,5 @@
 ---
-title: intermediate-smallest-common-multiple
+title: FreeCodeCamp 中级算法题 - 找出数字范围的最小公倍数
 date: 2017-06-26 00:36:21
 tags: [FreeCodeCamp,中级,算法]
 categories: FCC

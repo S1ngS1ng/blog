@@ -1,5 +1,5 @@
 ---
-title: intermediate-binary-agents
+title: FreeCodeCamp 中级算法题 - 翻译二进制字符串
 date: 2017-07-09 23:18:43
 tags: [FreeCodeCamp,中级,算法]
 categories: FCC
