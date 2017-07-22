@@ -239,7 +239,7 @@ function fibonacci(n, sum, prev) {
 
 ### 性能比较
 - 不得不说，用循环还真的是最快的，因为只需要一个 `while` 循环即可解决，复杂度是 `O(n)`
-- 请参考这个链接：[jsperf 性能比较](http://singsing.io/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/)
+- 请参考这个链接：[jsperf 性能比较](https://jsperf.com/fcc-recursion-test/1)
 
 ## 代码 - 不会造成栈溢出的递归解法
 - 回到题目中，我的做法是在递归过程里判断奇偶。另外，为了方便，调用的时候直接传入了 `curr`、`prev` 和 `sum` 的初始值，就不需要再在 `getSum` 中处理了
