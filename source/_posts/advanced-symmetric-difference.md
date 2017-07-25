@@ -18,8 +18,26 @@ categories: FCC
 <!--more-->
 
 # 解题思路
-- 高级算法第二题，难度也没有想象中的那么大。建议先去了解一下对称差的定义
-- 根据定义，对称差的意思就是：
+- 建议先去了解一下对称差的定义
+- 根据定义，对于两个数组来说，对称差的意思就是：
     - 要么在第一个数组中，要么在第二个数组中
-    - 从另一个角度考虑，其实就是排除掉既在第一个数组也在第二个数组的元素，也排除掉既不在第一个数组也不在第二个数组的元素
-- 以上就是我们的解题思路，其实按照哪种思路写都是没问题的
+    - 从另一个角度考虑，其实就是先把两个数组中所有元素都合并成一个数组，然后排除掉既在第一个数组也在第二个数组的元素
+- 对于多个数组的操作也不难理解。设 `A`、`B` 和 `C` 分别代表三个数组，设 `sym()` 为求对称差的函数。那么 `sym(A, B, C)` 就相当于 `sym(sym(A, B), C)`
+
+# 基本解法
+## 思路提示
+
+## 代码
+```js
+function sym(arg) {
+    var argArr = [].slice.call(arguments);
+    
+    return argArr.reduce(function(accum, e) {
+		return accum.concat(e).filter(function(ele) {
+			return accum.indexOf(ele) === -1 || e.indexOf(ele) === -1
+		}).filter(function(e, i, arr) {
+			return arr.indexOf(e) === i;
+		})
+	});
+}
+```
