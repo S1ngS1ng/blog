@@ -69,7 +69,7 @@ function getSym(arr1, arr2) {
 - 第一个思路应该不难理解。我们先把在 `arr1` 中但不在 `arr2` 中的元素直接作为初始值赋给 `result`。然后，把在 `arr2` 中但不在 `arr1` 中的元素添加到 `result` 里。最后，去重
 - 去重的写法可能有点儿不好理解。原理是这样，对于有相同元素的数组，`Array.indexOf` 总是返回重复元素中第一个元素的索引。`filter` 方法的回调函数，第一个参数是元素本身，第二个参数是当前的索引。通过判断这个当前索引和 `Array.indexOf` 返回值是否相等 (相等即保留) 就可以实现去重
 - 第二种写法，注意到第二个 `filter` 方法的回调函数中，我们多设置了一个参数。如果没有很多次链式调用，需要传入第三个参数的情况不是很多，因为我们可以直接通过调用者的变量名去调用
-- 注意，这里我们不可以用 `this`。原因很简单，因为任何匿名函数的的 `this` 指向的都是全局对象，比如 `window`
+- 注意，这里我们不可以用 `this`。原因很简单，因为任何匿名函数的 `this` 指向的都是全局对象，比如 `window`
 
 # 初级解法 - filter，循环
 ## 思路提示
@@ -80,26 +80,65 @@ function getSym(arr1, arr2) {
 ## 代码
 ```js
 function sym() {
+    // 设置初始值
+    var result = [];
+    for (var i = 0; i < arguments.length - 1; i++) {
+        if (result.length > 0) {
+            // 表示已经调用过 getSym，因此需要传入 result 进行迭代
+            result = getSym(result, arguments[i + 1]) ;
+        } else {
+            // 表示未调用过 getSym，换句话说，这时候就是 i 为 0 的情况
+            result = getSym(arguments[i], arguments[i + 1]);
+        }
+
+    }
     
+    // 按照第二个思路封装的 getSym
+    function getSym(arr1, arr2) {
+        return arr1.concat(arr2)
+            .filter(function(e) {
+                return !(arr1.indexOf(e) > -1 && arr2.indexOf(e) > -1);
+            })
+            .filter(function(e, i, arr) {
+                return arr.indexOf(e) === i;
+            });
+    }
+    return result;
 }
 ```
 
+## 解释
+- 需要注意的是，既然我们会在 `for` 循环中调用 `i+1`，那么，我们就不能用 `arguments.length` 作为跳出条件了，因为当 `i` 为 `arguments.length - 1` 的时候，`i + 1` 为 `arguments.length`。对于一个数组 `arr`，显然 `arr[arr.length]` 是 `undefined`
+- 类似地，如果我们需要在循环中调用 `i - 1`，那我们就要把初始值设置为 `1`，而不是 `0`。`arr[-1]` 虽然不会报错，但它会访问数组的最后一个元素，很可能会影响结果
+
 # 中级解法 - reduce
 ## 思路提示
-- 考虑到参数可能传入多个数组，我们的思路就是对前两个求一次 `sym`，再对计算结果和下一个数组求一次 `sym`。这就是数组 `reduce` 方法的作用
-- 
+- 其实应该很多朋友已经反应过来了，上面的就是在 `reduce`。对于 `for` 循环那里，我们可以这样写：
+
+```js
+var result = arguments[0];
+
+for (var i = 1; i < arguments.length; i++) {
+    result = getSym(result, arguments[i]);
+}
+```
+
+- 这就不难看出，其实就是在迭代 `result`，且 `result` 具有初始值 `arguments[0]`
+
+## 参考链接
+- [Array.reduce](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 ## 代码
 ```js
 function sym(arg) {
     var argArr = [].slice.call(arguments);
-    
+
     return argArr.reduce(function(accum, e) {
-		return accum.concat(e).filter(function(ele) {
-			return accum.indexOf(ele) === -1 || e.indexOf(ele) === -1
-		}).filter(function(e, i, arr) {
-			return arr.indexOf(e) === i;
-		})
-	});
+        return accum.concat(e).filter(function(ele) {
+            return accum.indexOf(ele) === -1 || e.indexOf(ele) === -1
+        }).filter(function(e, i, arr) {
+            return arr.indexOf(e) === i;
+        });
+    });
 }
 ```
