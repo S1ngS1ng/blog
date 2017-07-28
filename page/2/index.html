@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 12px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 14px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 12px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 18px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 16px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a> <a href="/blog/tags/高级/" style="font-size: 10px;">高级</a>
+                        <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 10px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 12.5px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 17.5px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 15px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a> <a href="/blog/tags/高级/" style="font-size: 10px;">高级</a>
                     </div>
                 </section>
                 
@@ -281,6 +281,93 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-intermediate-sum-all-odd-fibonacci-numbers" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/" class="article-date">
+      <time datetime="2017-05-15T03:56:07.000Z" itemprop="datePublished">2017-05-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/">FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="斐波那契数列奇数项求和"><a href="#斐波那契数列奇数项求和" class="headerlink" title="斐波那契数列奇数项求和"></a>斐波那契数列奇数项求和</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://www.freecodecamp.cn/challenges/sum-all-odd-fibonacci-numbers">中文链接</a></li>
+<li><a href="https://www.freecodecamp.com/challenges/sum-all-odd-fibonacci-numbers">英文链接</a></li>
+<li>级别：中级 (Intermediate Algorithm Scripting)</li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>这个 <code>function</code> 接收一个数字参数 <code>num</code>。返回小于等于 <code>num</code> 的斐波那契数列奇数项之和</li>
+<li>如果 <code>num</code> 是 <code>1</code>，那么返回值应为 <code>1</code>；如果 <code>num</code> 是 <code>4</code>，那么返回值应为 <code>5</code></li>
+</ul>
+<h2 id="思路简介"><a href="#思路简介" class="headerlink" title="思路简介"></a>思路简介</h2><ul>
+<li>整体上，思路可以有以下几种：<ul>
+<li>建立三个变量，分别为当前位置的前两个数以及当前的总和。以当前值大于 <code>num</code> 为跳出条件，循环并动态地给这三个变量赋值，最后返回总和</li>
+<li>根据 <code>num</code> 建立一个斐波那契数组(可以用循环写，也可以用递归)<ul>
+<li>遍历这个数组，在遍历过程中判断奇偶，求和</li>
+<li>直接用 <code>filter</code> 方法过滤掉偶数，然后求数组元素总和</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>两种思路都不太难。可以先尝试一下</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-intermediate-spinal-tap-case" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -951,80 +1038,6 @@
       
         <p class="article-more-link">
           <a  href="/blog/fcc/intermediate-where-art-thou/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-intermediate-roman-numeral-converter" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/fcc/intermediate-roman-numeral-converter/" class="article-date">
-      <time datetime="2017-04-04T04:14:18.000Z" itemprop="datePublished">2017-04-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/fcc/intermediate-roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="罗马数字转换器-Roman-Numeral-Converter"><a href="#罗马数字转换器-Roman-Numeral-Converter" class="headerlink" title="罗马数字转换器 (Roman Numeral Converter)"></a>罗马数字转换器 (Roman Numeral Converter)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/roman-numeral-converter">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/roman-numeral-converter">英文链接</a></li>
-<li>级别：中级 (Intermediate Algorithm Scripting)</li>
-</ul>
-<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收一个数字参数 <code>num</code>。返回值为转换罗马数字字符串</li>
-<li>比如接收的是 <code>2</code>，那么输出就是 <code>&quot;II&quot;</code>。如果接受的是 <code>12</code>，那么输出就是 <code>&quot;XII&quot;</code>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/blog/fcc/intermediate-roman-numeral-converter/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
