@@ -103,3 +103,60 @@ var denominationObj = {
 - [罗马数字转换器](http://singsing.io/blog/fcc/intermediate-roman-numeral-converter/)
 
 ## 代码
+```js
+function checkCashRegister(price, cash, cid) {
+    // 计算应找金额
+    var change = (cash - price) * 100;
+    // 面值数组
+    var numRef = [1, 5, 10, 25, 100, 500, 1000, 2000, 10000];
+    // 面值名称数组，遍历的过程中添加
+    var denominations = [];
+    // 零钱柜中可用找零总额
+    var total = 0;
+    // 零钱柜中面值与可用额度的 map
+    var counterMap = {};
+    // 结果数组
+    var output = [];
+
+    // 遍历 cid，更新上面定义的数组，对象
+    for (var i = 0; i < cid.length; i++) {
+        var temp = cid[i][1] * 100;
+        denominations.push(cid[i][0]);
+        counterMap[cid[i][0]] = Math.round(temp);
+        total += Math.round(temp);
+    }
+
+    // 边界条件
+    if (change > total) {
+        return 'Insufficient Funds';
+    }
+    if (change === total) {
+        return 'Closed';
+    }
+
+    for (var i = denominations.length - 1; i >= 0; i--) {
+        // 找出需要试的金额，条件为比 change 小
+        // 注意这里是从右开始遍历
+        if (numRef[i] < change) {
+            var currentTotal = Math.floor(change / numRef[i]) * numRef[i];
+
+
+            if (counterMap[denominations[i]] < currentTotal && counterMap[denominations[i]] > 0) {
+                // 处理柜台中当前面值的总额不为 0，但不够的情况
+                output.push([denominations[i], counterMap[denominations[i]] / 100]);
+                change -= counterMap[denominations[i]];
+            } else if (counterMap[denominations[i]] > currentTotal) {
+                // 处理柜台中当前面值的总额够用的情况
+                output.push([denominations[i], currentTotal / 100]);
+                change -= currentTotal;
+            }
+        }
+        // 只要 change 为 0，就可以返回结果数组了
+        if (change === 0) {
+            return output;
+        }
+    }
+    // 执行到这里表示无法凑出应找金额
+    return "Insufficient Funds";
+}
+```
