@@ -15,7 +15,7 @@ categories: FCC
 - 这个 `function` 接收三个参数，`price` 为购买总价，`cash` 为付款金额，`cid` 为收银机中可用的零钱。返回值为应找回的零钱列表
 - 需要注意的是，`cid` 中，每个子数组的第一个元素代表面值，第二个元素代表这个面值的总额。比如 `["TEN", 30.00]` 就表示十元纸币共有 `30` 元，即三张
 - 如果 `price` 为 `19.50`，`cash` 为 `20.00`，`cid` 为 `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.10], ["QUARTER", 4.25], ["ONE", 90.00], ["FIVE", 55.00], ["TEN", 20.00], ["TWENTY", 60.00], ["ONE HUNDRED", 100.00]]`，则返回值应为 `[["QUARTER", 0.50]]`
-- 补充一句，这道题的基本解法虽然可以通过 FCC 的测试，但明显是有漏洞的
+- 注意，这道题的基本解法虽然可以通过 FCC 的测试，但明显是有漏洞的
 
 <!--more-->
 
@@ -108,12 +108,12 @@ function checkCashRegister(price, cash, cid) {
     // 计算应找金额
     var change = cash * 100 - price * 100;
     // 面值数组
-    var numRef = [1, 5, 10, 25, 100, 500, 1000, 2000, 10000];
+    var denoNum = [1, 5, 10, 25, 100, 500, 1000, 2000, 10000];
     // 面值名称数组，遍历的过程中添加
-    var denominations = [];
+    var denoStr = [];
     // 零钱柜中可用找零总额
     var total = 0;
-    // 零钱柜中面值与可用额度的 map
+    // 零钱柜中面值名称与可用额度的 map
     var counterMap = {};
     // 结果数组
     var output = [];
@@ -121,7 +121,7 @@ function checkCashRegister(price, cash, cid) {
     // 遍历 cid，更新上面定义的数组，对象
     for (var i = 0; i < cid.length; i++) {
         var temp = cid[i][1] * 100;
-        denominations.push(cid[i][0]);
+        denoStr.push(cid[i][0]);
         counterMap[cid[i][0]] = Math.round(temp);
         total += Math.round(temp);
     }
@@ -134,20 +134,20 @@ function checkCashRegister(price, cash, cid) {
         return 'Closed';
     }
 
-    for (var i = denominations.length - 1; i >= 0; i--) {
+    for (var i = denoNum.length - 1; i >= 0; i--) {
         // 找出需要试的金额，条件为比 change 小
         // 注意这里是从右开始遍历
-        if (numRef[i] <= change) {
-            var currentTotal = Math.floor(change / numRef[i]) * numRef[i];
+        if (denoNum[i] <= change) {
+            // 计算当前面值需要的总额
+            var currentTotal = change - change % denoNum[i];
 
-
-            if (counterMap[denominations[i]] < currentTotal && counterMap[denominations[i]] > 0) {
+            if (counterMap[denoStr[i]] < currentTotal && counterMap[denoStr[i]] > 0) {
                 // 处理柜台中当前面值的总额不为 0，但不够的情况
-                output.push([denominations[i], counterMap[denominations[i]] / 100]);
-                change -= counterMap[denominations[i]];
-            } else if (counterMap[denominations[i]] >= currentTotal) {
+                output.push([denoStr[i], counterMap[denoStr[i]] / 100]);
+                change -= counterMap[denoStr[i]];
+            } else if (counterMap[denoStr[i]] >= currentTotal) {
                 // 处理柜台中当前面值的总额够用的情况
-                output.push([denominations[i], currentTotal / 100]);
+                output.push([denoStr[i], currentTotal / 100]);
                 change -= currentTotal;
             }
         }
@@ -160,3 +160,22 @@ function checkCashRegister(price, cash, cid) {
     return "Insufficient Funds";
 }
 ```
+
+## 解释
+- 计算应找金额，一定要先把两个数都乘以 `100`，否则可能需要在求差之后 `Math.round` 一下
+- 然后定义一些后续会用到的变量。`denoNum` 直接通过 literal 形式定义，代表所有的面值。与之对应的是 `denoStr`，代表面值的名称。这两个数组通过 `index` 关联 (顺便说一句，"面值" 这个词英文叫 `denomination`，这里缩写为 `deno`)
+- 遍历 `cid` 的过程中其实完成了三件事。将 `cid` 中每个子数组的第一个元素添加到 `denoStr`，生成面值名称与可用额度的对应关系 `counterMap`，以及计算出零钱柜中可用的总额 `total`
+- 第二个遍历 `denoNum` 可能看起来会很复杂。我们来分析一下，注意这个遍历从右边开始：
+    - 如果当前 `denoNum[i]` 比 `change` 大，那我们就可以跳过这个 `denoNum[i]`，寻找下一个值。举例来说，为了凑 `30` 的找零，我们不可能需要一百元
+    - `currentTotal` 是一个临时变量。它的意义是，对于 `change`，假如我们要用 `denoNum[i]` 来凑，那么需要 `currentTotal` 这么多的钱。比如，当 `change = 70`，`denoNum[i] = 20` 时，`currentTotal` 就是 `60`，意思是三张二十元。这里写成 `Math.floor(change / denoNum[i]) * denoNum[i]` 也是一个效果
+    - 然后我们需要比较 `currentTotal` 与零钱柜中当前面值的可用金额，即 `counterMap[denoStr[i]]`
+        - 如果可用金额比 `currentTotal` 大，那我们可以直接用 `currentTotal / 100` 作为输出，面值当然就是 `denoStr[i]`。因此把这两个值，合并成数组，`push` 到结果数组中
+        - 如果可用金额比 `currentTotal` 小，就要进一步讨论可用金额是否为 `0`
+            - 如果为 `0`，那我们就不该添加到结果数组，继续下一次判断就可以了
+            - 如果不为 `0`，那我们就应该用当前的可用金额作为输出，即 `counterMap[denoStr[i]] / 100`
+    - 只要在 `output` 中添加了找零金额，那我们就应该把这个添加的金额从 `change` 中减掉，然后继续下一次循环
+    - 只要 `change` 为 `0` 了，那就表示我们已经完成了找零的计算，可以返回 `output` 了
+    - 如果遍历结束，`change` 依然不为 `0`，那我们就可以认为是 `"Insufficient Funds"` 的情况
+
+# 关于漏洞
+- 这个思路实现起来不难，理解起来也相对容易。尽管可以通过测试，但漏洞也是很明显的
