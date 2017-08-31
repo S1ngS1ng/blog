@@ -106,7 +106,7 @@ var denominationObj = {
 ```js
 function checkCashRegister(price, cash, cid) {
     // 计算应找金额
-    var change = (cash - price) * 100;
+    var change = cash * 100 - price * 100;
     // 面值数组
     var numRef = [1, 5, 10, 25, 100, 500, 1000, 2000, 10000];
     // 面值名称数组，遍历的过程中添加
@@ -137,7 +137,7 @@ function checkCashRegister(price, cash, cid) {
     for (var i = denominations.length - 1; i >= 0; i--) {
         // 找出需要试的金额，条件为比 change 小
         // 注意这里是从右开始遍历
-        if (numRef[i] < change) {
+        if (numRef[i] <= change) {
             var currentTotal = Math.floor(change / numRef[i]) * numRef[i];
 
 
@@ -145,7 +145,7 @@ function checkCashRegister(price, cash, cid) {
                 // 处理柜台中当前面值的总额不为 0，但不够的情况
                 output.push([denominations[i], counterMap[denominations[i]] / 100]);
                 change -= counterMap[denominations[i]];
-            } else if (counterMap[denominations[i]] > currentTotal) {
+            } else if (counterMap[denominations[i]] >= currentTotal) {
                 // 处理柜台中当前面值的总额够用的情况
                 output.push([denominations[i], currentTotal / 100]);
                 change -= currentTotal;
