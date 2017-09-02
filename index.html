@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 10px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 12.5px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 17.5px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 15px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a> <a href="/blog/tags/高级/" style="font-size: 10px;">高级</a>
+                        <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 10px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 12.5px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 17.5px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 15px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a> <a href="/blog/tags/高级/" style="font-size: 12.5px;">高级</a>
                     </div>
                 </section>
                 
@@ -281,6 +281,82 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-advanced-exact-change" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/advanced-exact-change/" class="article-date">
+      <time datetime="2017-08-23T03:50:22.000Z" itemprop="datePublished">2017-08-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/fcc/advanced-exact-change/">FreeCodeCamp 高级算法题 - 计算找零</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="计算找零-Exact-Change"><a href="#计算找零-Exact-Change" class="headerlink" title="计算找零 (Exact Change)"></a>计算找零 (Exact Change)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://freecodecamp.cn/challenges/exact-change">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/exact-change">英文链接</a></li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>这个 <code>function</code> 接收三个参数，<code>price</code> 为购买总价，<code>cash</code> 为付款金额，<code>cid</code> 为收银机中可用的零钱。返回值为应找回的零钱列表</li>
+<li>需要注意的是，<code>cid</code> 中，每个子数组的第一个元素代表面值，第二个元素代表这个面值的总额。比如 <code>[&quot;TEN&quot;, 30.00]</code> 就表示十元纸币共有 <code>30</code> 元，即三张</li>
+<li>如果 <code>price</code> 为 <code>19.50</code>，<code>cash</code> 为 <code>20.00</code>，<code>cid</code> 为 <code>[[&quot;PENNY&quot;, 1.01], [&quot;NICKEL&quot;, 2.05], [&quot;DIME&quot;, 3.10], [&quot;QUARTER&quot;, 4.25], [&quot;ONE&quot;, 90.00], [&quot;FIVE&quot;, 55.00], [&quot;TEN&quot;, 20.00], [&quot;TWENTY&quot;, 60.00], [&quot;ONE HUNDRED&quot;, 100.00]]</code>，则返回值应为 <code>[[&quot;QUARTER&quot;, 0.50]]</code></li>
+<li>注意，这道题的基本解法虽然可以通过 FCC 的测试，但明显是有漏洞的</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/高级/">高级</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/blog/fcc/advanced-exact-change/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-advanced-symmetric-difference" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -935,81 +1011,6 @@
       
         <p class="article-more-link">
           <a  href="/blog/fcc/intermediate-smallest-common-multiple/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-intermediate-sum-all-primes" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/fcc/intermediate-sum-all-primes/" class="article-date">
-      <time datetime="2017-06-15T04:32:51.000Z" itemprop="datePublished">2017-06-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/fcc/intermediate-sum-all-primes/">FreeCodeCamp 中级算法题 - 质数求和</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="质数求和-Sum-All-Primes"><a href="#质数求和-Sum-All-Primes" class="headerlink" title="质数求和 (Sum All Primes)"></a>质数求和 (Sum All Primes)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://www.freecodecamp.cn/challenges/https://freecodecamp.cn/challenges/sum-all-primes">中文链接</a></li>
-<li><a href="https://www.freecodecamp.com/challenges/https://freecodecamp.cn/challenges/sum-all-primes">英文链接</a></li>
-<li>级别：中级 (Intermediate Algorithm Scripting)</li>
-</ul>
-<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接收一个数字参数 <code>num</code>。返回小于等于 <code>num</code> 的质数之和</li>
-<li>如果 <code>num</code> 是 <code>4</code>，那么返回值应为 <code>5</code>。如果 <code>num</code> 是 <code>10</code>，那么返回值应为 <code>17</code></li>
-</ul>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/blog/fcc/intermediate-sum-all-primes/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

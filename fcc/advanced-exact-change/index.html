@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FreeCodeCamp 高级算法题 - 计算找零 | S1ngS1ng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="计算找零 (Exact Change)题目链接 中文链接 英文链接  问题解释 这个 function 接收三个参数，price 为购买总价，cash 为付款金额，cid 为收银机中可用的零钱。返回值为应找回的零钱列表 需要注意的是，cid 中，每个子数组的第一个元素代表面值，第二个元素代表这个面值的总额。比如 [&amp;quot;TEN&amp;quot;, 30.00] 就表示十元纸币共有 30 元，即三张">
+<meta name="keywords" content="FreeCodeCamp,高级,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeCodeCamp 高级算法题 - 计算找零">
+<meta property="og:url" content="S1ngS1ng.github.io/blog/fcc/advanced-exact-change/index.html">
+<meta property="og:site_name" content="S1ngS1ng">
+<meta property="og:description" content="计算找零 (Exact Change)题目链接 中文链接 英文链接  问题解释 这个 function 接收三个参数，price 为购买总价，cash 为付款金额，cid 为收银机中可用的零钱。返回值为应找回的零钱列表 需要注意的是，cid 中，每个子数组的第一个元素代表面值，第二个元素代表这个面值的总额。比如 [&amp;quot;TEN&amp;quot;, 30.00] 就表示十元纸币共有 30 元，即三张">
+<meta property="og:updated_time" content="2017-09-02T03:19:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FreeCodeCamp 高级算法题 - 计算找零">
+<meta name="twitter:description" content="计算找零 (Exact Change)题目链接 中文链接 英文链接  问题解释 这个 function 接收三个参数，price 为购买总价，cash 为付款金额，cid 为收银机中可用的零钱。返回值为应找回的零钱列表 需要注意的是，cid 中，每个子数组的第一个元素代表面值，第二个元素代表这个面值的总额。比如 [&amp;quot;TEN&amp;quot;, 30.00] 就表示十元纸币共有 30 元，即三张">
+  
+    <link rel="alternative" href="/atom.xml" title="S1ngS1ng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/blog/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  <link rel="stylesheet" href="/blog/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/blog/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/blog/js/pace.js"></script>
+    <link href="/blog/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/blog/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+<a href="https://github.com/S1ngS1ng/blog" class="github-corner" aria-label="View Source Code on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+         style="fill:#BA68C8; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);"
+         aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+<style>
+    a.github-corner > svg {
+        z-index: 100;
+    }
+    .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+    @keyframes octocat-wave {
+        0%, 100% {
+            transform: rotate(0)
+        }
+        20%, 60% {
+            transform: rotate(-25deg)
+        }
+        40%, 80% {
+            transform: rotate(10deg)
+        }
+    }
+    @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+            animation: none
+        }
+        .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    }
+</style>
+</body>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            
+            <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/" title="Hi Mate">S1ngS1ng</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸡前端</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/">博客首页</a></li>
+                        
+                            <li><a href="/blog/tags/Tools">工具控</a></li>
+                        
+                            <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                        
+                            <li><a href="/blog/tags/FreeCodeCamp">FCC 算法题详解</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                            
+                                <a class="fl facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                            
+                                <a class="fl QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                            
+                                <a class="fl segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/blog/tags/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/blog/tags/HammerSpoon/" style="font-size: 10px;">HammerSpoon</a> <a href="/blog/tags/Mac/" style="font-size: 12.5px;">Mac</a> <a href="/blog/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/blog/tags/中级/" style="font-size: 17.5px;">中级</a> <a href="/blog/tags/初级/" style="font-size: 15px;">初级</a> <a href="/blog/tags/算法/" style="font-size: 20px;">算法</a> <a href="/blog/tags/高级/" style="font-size: 12.5px;">高级</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">luuman</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.fengchenguyi.com/">浮生</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">修身治国平天下，洗脸刷牙写代码</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                
+                    <img lazy-src="/blog/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="Me">S1ngS1ng</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸡前端</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/">博客首页</a></li>
+                
+                    <li><a href="/blog/tags/Tools">工具控</a></li>
+                
+                    <li><a href="/blog/tags/Mac">Mac 系列</a></li>
+                
+                    <li><a href="/blog/tags/FreeCodeCamp">FCC 算法题详解</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:liuxing0514@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/S1ngS1ng" title="github">github</a>
+                    
+                        <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/liuxing0514" title="linkedin">linkedin</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/liuxing0514" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="https://plus.google.com/u/0/115378822919090728542" title="google">google</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/xing.liu.5688" title="facebook">facebook</a>
+                    
+                        <a class="QQ" target="_blank" href="tencent://message/?uin=1025583636" title="QQ">QQ</a>
+                    
+                        <a class="segmentfault" target="_blank" href="https://segmentfault.com/u/s1ngs1ng" title="segmentfault">segmentfault</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-advanced-exact-change" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/advanced-exact-change/" class="article-date">
+      <time datetime="2017-08-23T03:50:22.000Z" itemprop="datePublished">2017-08-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      FreeCodeCamp 高级算法题 - 计算找零
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/高级/">高级</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="计算找零-Exact-Change"><a href="#计算找零-Exact-Change" class="headerlink" title="计算找零 (Exact Change)"></a>计算找零 (Exact Change)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://freecodecamp.cn/challenges/exact-change" target="_blank" rel="external">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/exact-change" target="_blank" rel="external">英文链接</a></li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>这个 <code>function</code> 接收三个参数，<code>price</code> 为购买总价，<code>cash</code> 为付款金额，<code>cid</code> 为收银机中可用的零钱。返回值为应找回的零钱列表</li>
+<li>需要注意的是，<code>cid</code> 中，每个子数组的第一个元素代表面值，第二个元素代表这个面值的总额。比如 <code>[&quot;TEN&quot;, 30.00]</code> 就表示十元纸币共有 <code>30</code> 元，即三张</li>
+<li>如果 <code>price</code> 为 <code>19.50</code>，<code>cash</code> 为 <code>20.00</code>，<code>cid</code> 为 <code>[[&quot;PENNY&quot;, 1.01], [&quot;NICKEL&quot;, 2.05], [&quot;DIME&quot;, 3.10], [&quot;QUARTER&quot;, 4.25], [&quot;ONE&quot;, 90.00], [&quot;FIVE&quot;, 55.00], [&quot;TEN&quot;, 20.00], [&quot;TWENTY&quot;, 60.00], [&quot;ONE HUNDRED&quot;, 100.00]]</code>，则返回值应为 <code>[[&quot;QUARTER&quot;, 0.50]]</code></li>
+<li>注意，这道题的基本解法虽然可以通过 FCC 的测试，但明显是有漏洞的</li>
+</ul>
+<a id="more"></a>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><ul>
+<li>可能有些朋友不知道美元的硬币面值，<code>&quot;PENNY&quot;</code> 代表一分，<code>&quot;NICKEL&quot;</code> 代表五分，<code>&quot;DIME&quot;</code> 代表一角，<code>&quot;QUARTER&quot;</code> 代表二十五分 (两毛五)</li>
+<li>首先，计算出找零金额不难，直接用 <code>cash</code> 减去 <code>price</code> 就可以了</li>
+<li>根据 <code>cid</code>，我们可以很明确地知道零钱的总额。如果这个总额小于应找金额则应返回 <code>&quot;Insufficient Funds&quot;</code>，如果这个总额等于应找金额则应返回 <code>&quot;Closed&quot;</code>。这两个条件我们可以在一开始判断，如果符合即可直接返回，不需要进行任何其他的计算</li>
+<li>可以回想一下<a href="http://singsing.io/blog/fcc/intermediate-roman-numeral-converter/" target="_blank" rel="external">罗马数字转换器</a>那道题。在那道题中，我们的思路就是先写一个可用字母代表的数字组成的数组，然后从数组中最大的数开始与给定的数字比较，只要是小于等于原数字，就减去匹配到的数字，得到的结果继续进行匹配。尽管还涉及一些特殊情况，但整体思路是这样</li>
+<li>这道题同理，我们先生成一个零钱面值数组，然后对应找金额进行迭代就可以了</li>
+<li>比如说，应找金额为 <code>23.5</code> 元<ul>
+<li>显然我们是不需要 100 元的。我们需要先凑出来二十。如果我们有 20 元，就应该直接给一张。如果没有，那就应该继续找，看有没有两张十块。以此类推。这一步完成后再去凑剩下的三块五</li>
+<li>对于三块五，我们要先凑三块钱出来。显然我们是不需要 5 元的。只需要看看有没有三张 1 元。如果没有，就要继续找，看看硬币的 Quarter 够不够，以此类推</li>
+<li>最后再凑五角，显然我们应该从 Quarter 开始试，两个 Quarter 就可以。如果没有，就看看有没有五个 Dime，以此类推</li>
+</ul>
+</li>
+<li>显然，如果计算到中间的步骤，比如五角这一步。就算前面都可以满足，但这时候发现任何一个面值都没法付清五角，那就表示我们没法付清找零，因此就应该直接跳出，返回 <code>&quot;Insufficient Funds&quot;</code></li>
+</ul>
+<h1 id="注意事项-关于浮点数"><a href="#注意事项-关于浮点数" class="headerlink" title="注意事项 - 关于浮点数"></a>注意事项 - 关于浮点数</h1><ul>
+<li>在绝大部分计算机语言中，小数都是允许使用的，JavaScript 也不例外。只是限于 <a href="http://grouper.ieee.org/groups/754/" target="_blank" rel="external">IEEE 754 标准</a>，很多语言处理浮点数会出现问题。比如 JavaScript 中很经典的 <code>0.1 + 0.2 === 0.3</code> 返回 <code>false</code>。<strong>这个不是 JavaScript 语言本身的问题，而是浮点数需要以二进制形式存储。</strong></li>
+<li><p>内部的原理，大致上是这样。比如 <code>0.1</code>，首先它等于 <code>1/10</code>，但 <code>10</code> 并不是一个二进制数。对于 <code>1/10</code>，我们需要用二进制数来无限接近它，<code>1/8</code> 显然不可能，因为它已经比 <code>1/10</code> 大了。那我们可以表示为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.1</span> = <span class="number">1</span>/<span class="number">10</span> = <span class="number">1</span>/<span class="number">16</span> + (<span class="number">1</span>/<span class="number">10</span> - <span class="number">1</span>/<span class="number">16</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>计算 <code>1/10 - 1/16</code>，我们得到 <code>0.0375</code>。进而可以表示为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">0.0375</span> = <span class="number">1</span>/<span class="number">32</span> + (<span class="number">0.0375</span> - <span class="number">1</span>/<span class="number">32</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后继续运算。这样就可以得到一个无限趋近于 <code>0.1</code> 的表示方式。这也就是计算精度丢失的根本来源</p>
+</li>
+<li>这是我们无法避免的，换语言也不能避免。常用的处理方式有两种<ol>
+<li>把需要计算的数字转换成整数，也就是乘以 <code>10</code> 的 <code>n</code> 次方。计算后再除回来。这样做相对保险</li>
+<li>将计算结果保留到一定精度，然后与保留前的值求差。显然，如果计算结果 “正确”，那这个差应该是 <code>0</code>。然后，将这个差值与一个很小的数字比较，如果差值小于这个很小的数字，那就表示我们可以直接使用保留后的结果</li>
+</ol>
+</li>
+<li>第一种方式很好理解。比如我们要计算 <code>0.1 + 0.2</code>，那我们就先把他们都乘以 <code>10</code> 来计算 <code>1 + 2</code>，得到 <code>3</code>，结果再除以 <code>10</code> 就可以得到 <code>0.3</code></li>
+<li>对于第二种方式，可能有些人会问，那我们怎么知道这个 “很小的数字” 是多少？理论上来说这取决于实际的精度要求。但事实上，JavaScript 已经为我们内置了这个很小的数，叫 <code>Number.EPSILON</code>。请移步到这里查看：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON" target="_blank" rel="external">文档</a></li>
+<li>虽然这个是 ES6 中才有的，但这个数本身就是一个常数，我们自己定义就没问题了。而且 MDN 页面上也给出了 Polyfill 的方案</li>
+<li>有兴趣的朋友可以试试实现以上两种思路，其实代码都非常简单</li>
+</ul>
+<p>那么，之所以提到这件事儿，是因为在这道题目中，我们需要处理小数。由于这道题的场景是计算交易金额/找零，那么我们可以认为，小数点后最多只可能有两位</p>
+<p>因此，我们就都把所有的过程，按照单位为 <code>分</code> 去处理就可以了。比如，一元我们用 <code>100</code> 表示，”Quarter” 我们就用 <code>25</code> 表示。这样会在很大的程度上简化代码和计算</p>
+<p>只是别忘了，输出的结果还是要以 <code>元</code> 为单位，那么我们在生成最终结果的时候，或者生成的过程中转换一下就好了</p>
+<h1 id="基本解法-警告：虽然可以通过-FCC-测试，但解法本身存在漏洞"><a href="#基本解法-警告：虽然可以通过-FCC-测试，但解法本身存在漏洞" class="headerlink" title="基本解法 (警告：虽然可以通过 FCC 测试，但解法本身存在漏洞)"></a>基本解法 (警告：虽然可以通过 FCC 测试，但解法本身存在漏洞)</h1><h2 id="思路提示"><a href="#思路提示" class="headerlink" title="思路提示"></a>思路提示</h2><ul>
+<li>按照上面的思路，我们再来考虑一些实现中的细节问题。上面已经说了，建议在这道题中，把所有涉及到钱的计算都乘以 <code>100</code> 来处理</li>
+<li>我们需要先构建关于面值和名称的参考数组。与 <a href="http://singsing.io/blog/fcc/intermediate-roman-numeral-converter/" target="_blank" rel="external">罗马数字转换器</a> 类似，在那道题中我们构建了一个用于存储每个罗马字符代表的阿拉伯数字的 <code>numArr</code>，以及一个用于存储所有罗马字符的 <code>strArr</code>。这两个数组可以通过索引来建立联系。对于这道题，同理，我们可以建立一个面值名称的数组，和每一个面值代表的钱数的数组，同样用索引来建立联系。就像这样：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注意，这里给每种面值都乘了 100</span></div><div class="line"><span class="keyword">var</span> denomination = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">1000</span>, <span class="number">2000</span>, <span class="number">10000</span>];</div><div class="line"><span class="keyword">var</span> denominationName = [<span class="string">'PENNY'</span>, <span class="string">'NICKEL'</span>, <span class="string">'DIME'</span>, <span class="string">'QUARTER'</span>, <span class="string">'ONE'</span>, <span class="string">'TEN'</span>, <span class="string">'TWENTY'</span>, <span class="string">'ONE HUNDRED'</span>];</div></pre></td></tr></table></figure>
+<ul>
+<li>可能有些朋友会问，既然需要建立一一对应的关系，为什么不像这样，使用对象呢？</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> denominationObj = &#123;</div><div class="line">    <span class="attr">PENNY</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">NICKEL</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">DIME</span>: <span class="number">10</span>,</div><div class="line">    <span class="attr">QUARTER</span>: <span class="number">25</span>,</div><div class="line">    <span class="comment">// ....</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>由于对象本身是无序的 (至少，我们不应该认为它是有序的)，我们在用 <code>for...in</code> 遍历对象的时候也就无法保证实际遍历的顺序。这样说虽然不够确切，因为默认会按照定义时候的顺序来遍历。但不同浏览器内核对 <code>for...in</code> 的实现也不尽相同，因此我们无法保证顺序一定是我们最开始定义的，详情请参考底下的链接。所以，不建议使用</li>
+<li>对于这道题来说，由于我们希望的是从最大的 <code>10000</code> 也就是一百元开始尝试，然后尝试二十元，十元，五元，以此类推。因此，这里我还是建议使用两个数组去定义</li>
+<li>遍历的过程大概是这样。假如，目前需要找零 <code>43.30</code> 元：<ul>
+<li>可以不用试一百元了</li>
+<li>二十元这里要分情况讨论了：<ul>
+<li>如果我们能找到两张二十元，就可以添加到结果数组，并在应找零钱中减去 <code>40</code>。也就是用 <code>3.30</code> 继续做后面的步骤</li>
+<li>如果我们有一张二十元，也可以添加到结果数组，并在应找零钱中减去 <code>20</code>。也就是用 <code>23.30</code> 继续做后面的步骤</li>
+<li>如果我们没有二十元，那就继续用 <code>43.30</code> 继续做后面的步骤</li>
+</ul>
+</li>
+<li>十元这里讨论如下：<ul>
+<li>如果上一步找到了两张二十元，那这一步就不用试十元了</li>
+<li>如果上一步只有一张二十元，那我们要看能不能找到两张十元</li>
+<li>如果上一步没有二十元，那我们就要看能不能找到四张十元</li>
+</ul>
+</li>
+<li>以此类推……</li>
+</ul>
+</li>
+<li>不难得出一个结论：<strong>如果某个面值合适，并且数量大于 0，那我们就把合适的数量添加到结果数组，并在应找零钱中减去当前的 <code>面值 * 数量</code>，用于下次计算</strong></li>
+<li>这就是一开始说的，这道题的核心思路就是基于一个数字的迭代。在罗马数字转换器中，我们基于传入的阿拉伯数字迭代。那么在这道题中，其实就是在迭代我们根据传入的实际参数计算出来的应找零钱</li>
+<li>如果看到这里你还是没想清楚代码该如何写，建议你从头再看一遍思路分析，或者想想罗马数字那道题的思路。看起来内容好像很多，但我觉得这个思路还是比较容易理解的</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="external">for…in</a></li>
+<li><a href="http://singsing.io/blog/fcc/intermediate-roman-numeral-converter/" target="_blank" rel="external">罗马数字转换器</a></li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkCashRegister</span>(<span class="params">price, cash, cid</span>) </span>&#123;</div><div class="line">    <span class="comment">// 计算应找金额</span></div><div class="line">    <span class="keyword">var</span> change = cash * <span class="number">100</span> - price * <span class="number">100</span>;</div><div class="line">    <span class="comment">// 面值数组</span></div><div class="line">    <span class="keyword">var</span> denoNum = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">1000</span>, <span class="number">2000</span>, <span class="number">10000</span>];</div><div class="line">    <span class="comment">// 面值名称数组，遍历的过程中添加</span></div><div class="line">    <span class="keyword">var</span> denoStr = [];</div><div class="line">    <span class="comment">// 零钱柜中可用找零总额</span></div><div class="line">    <span class="keyword">var</span> total = <span class="number">0</span>;</div><div class="line">    <span class="comment">// 零钱柜中面值名称与可用额度的 map</span></div><div class="line">    <span class="keyword">var</span> counterMap = &#123;&#125;;</div><div class="line">    <span class="comment">// 结果数组</span></div><div class="line">    <span class="keyword">var</span> output = [];</div><div class="line"></div><div class="line">    <span class="comment">// 遍历 cid，更新上面定义的数组，对象</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cid.length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> temp = cid[i][<span class="number">1</span>] * <span class="number">100</span>;</div><div class="line">        denoStr.push(cid[i][<span class="number">0</span>]);</div><div class="line">        counterMap[cid[i][<span class="number">0</span>]] = <span class="built_in">Math</span>.round(temp);</div><div class="line">        total += <span class="built_in">Math</span>.round(temp);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 边界条件</span></div><div class="line">    <span class="keyword">if</span> (change &gt; total) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'Insufficient Funds'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (change === total) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">'Closed'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = denoNum.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="comment">// 找出需要试的金额，条件为比 change 小</span></div><div class="line">        <span class="comment">// 注意这里是从右开始遍历</span></div><div class="line">        <span class="keyword">if</span> (denoNum[i] &lt;= change) &#123;</div><div class="line">            <span class="comment">// 计算当前面值需要的总额</span></div><div class="line">            <span class="keyword">var</span> currentTotal = change - change % denoNum[i];</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (counterMap[denoStr[i]] &lt; currentTotal &amp;&amp; counterMap[denoStr[i]] &gt; <span class="number">0</span>) &#123;</div><div class="line">                <span class="comment">// 处理柜台中当前面值的总额不为 0，但不够的情况</span></div><div class="line">                output.push([denoStr[i], counterMap[denoStr[i]] / <span class="number">100</span>]);</div><div class="line">                change -= counterMap[denoStr[i]];</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (counterMap[denoStr[i]] &gt;= currentTotal) &#123;</div><div class="line">                <span class="comment">// 处理柜台中当前面值的总额够用的情况</span></div><div class="line">                output.push([denoStr[i], currentTotal / <span class="number">100</span>]);</div><div class="line">                change -= currentTotal;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 只要 change 为 0，就可以返回结果数组了</span></div><div class="line">        <span class="keyword">if</span> (change === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> output;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 执行到这里表示无法凑出应找金额</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"Insufficient Funds"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>计算应找金额，一定要先把两个数都乘以 <code>100</code>，否则可能需要在求差之后 <code>Math.round</code> 一下</li>
+<li>然后定义一些后续会用到的变量。<code>denoNum</code> 直接通过 literal 形式定义，代表所有的面值。与之对应的是 <code>denoStr</code>，代表面值的名称。这两个数组通过 <code>index</code> 关联 (顺便说一句，”面值” 这个词英文叫 <code>denomination</code>，这里缩写为 <code>deno</code>)</li>
+<li>遍历 <code>cid</code> 的过程中其实完成了三件事。将 <code>cid</code> 中每个子数组的第一个元素添加到 <code>denoStr</code>，生成面值名称与可用额度的对应关系 <code>counterMap</code>，以及计算出零钱柜中可用的总额 <code>total</code></li>
+<li>第二个遍历 <code>denoNum</code> 可能看起来会很复杂。我们来分析一下，注意这个遍历从右边开始：<ul>
+<li>如果当前 <code>denoNum[i]</code> 比 <code>change</code> 大，那我们就可以跳过这个 <code>denoNum[i]</code>，寻找下一个值。举例来说，为了凑 <code>30</code> 的找零，我们不可能需要一百元</li>
+<li><code>currentTotal</code> 是一个临时变量。它的意义是，对于 <code>change</code>，假如我们要用 <code>denoNum[i]</code> 来凑，那么需要 <code>currentTotal</code> 这么多的钱。比如，当 <code>change = 70</code>，<code>denoNum[i] = 20</code> 时，<code>currentTotal</code> 就是 <code>60</code>，意思是三张二十元。这里写成 <code>Math.floor(change / denoNum[i]) * denoNum[i]</code> 也是一个效果</li>
+<li>然后我们需要比较 <code>currentTotal</code> 与零钱柜中当前面值的可用金额，即 <code>counterMap[denoStr[i]]</code><ul>
+<li>如果可用金额比 <code>currentTotal</code> 大，那我们可以直接用 <code>currentTotal / 100</code> 作为输出，面值当然就是 <code>denoStr[i]</code>。因此把这两个值，合并成数组，<code>push</code> 到结果数组中</li>
+<li>如果可用金额比 <code>currentTotal</code> 小，就要进一步讨论可用金额是否为 <code>0</code><ul>
+<li>如果为 <code>0</code>，那我们就不该添加到结果数组，继续下一次判断就可以了</li>
+<li>如果不为 <code>0</code>，那我们就应该用当前的可用金额作为输出，即 <code>counterMap[denoStr[i]] / 100</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>只要在 <code>output</code> 中添加了找零金额，那我们就应该把这个添加的金额从 <code>change</code> 中减掉，然后继续下一次循环</li>
+<li>只要 <code>change</code> 为 <code>0</code> 了，那就表示我们已经完成了找零的计算，可以返回 <code>output</code> 了</li>
+<li>如果遍历结束，<code>change</code> 依然不为 <code>0</code>，那我们就可以认为是 <code>&quot;Insufficient Funds&quot;</code> 的情况</li>
+</ul>
+</li>
+</ul>
+<h1 id="漏洞与优化"><a href="#漏洞与优化" class="headerlink" title="漏洞与优化"></a>漏洞与优化</h1><ul>
+<li>上面的这个思路实现起来不难，理解起来也相对容易。尽管可以通过测试，但漏洞也是很明显的</li>
+<li>问题主要出在循环结束判断 <code>&quot;Insufficient Funds&quot;</code> 那里，我们先来回想一下计算过程。计算找零的时候，总会先匹配可用的最大值。比如对于 <code>0.30</code> 元，会首先尝试 Quarter，这是有道理的，因为我们总不希望找给顾客三十个一分硬币</li>
+<li>换个角度想想，如果我们需要找零 <code>0.30</code> 元，而我们手里有三个 Dime (一角) 和一个 Quarter (两毛五)。那么按照这个思路，会先匹配一个 Quarter，然后继续往下找 Nickel (五分)。如果我们手里没有五分，那么就会返回 <code>&quot;Insufficient Funds&quot;</code>，这样其实是不确切的。显然，我们也可以匹配三个 Dime</li>
+<li>可能会有朋友说，那我们从最小开始匹配不就行了？也不尽然，如果遇到 <code>0.40</code> 元，而我们有一个 Nickel (五分)，三个 Dime (一角) 和一个 Quarter (两毛五)，就算不出来了</li>
+<li>因此我们需要一种 “尝试” 机制。意思是，当一条路走不通的时候，我们要回到可能出错的点，然后换一条路继续尝试。这样的处理，在算法中成为回溯 (backtrack)</li>
+<li>另一点，我能想到的优化就是能否算出 “最优解”。比如，我们需要找零 <code>0.30</code> 元，手里有五个 Penny (一分)，三个 Dime (一角) 和一个 Quarter (两毛五)。按照现在的算法，我们会得到一个 Quarter 与五个 Penny 的结果。事实上，三个 Dime 才是我们想要的结果。在现实生活中，我们也会给出三个 Dime，而不是前者</li>
+<li>处理这个问题也不会很简单，尽管按照上面提到的回溯法也是可以解决的，但回溯法本身时间复杂度就比较高。从算法 (面试) 角度来说，这应该会是一个动态规划 (Dynamic Programming，简称 DP) 思路的应用场景</li>
+<li>限于篇幅，就不在这篇中过多展开了，学有余力的朋友们可以去了解一下。我打算先更新完高级算法题所有题目的思路和解法，如果有空，再回来更新这道题目的优化思路和解法</li>
+</ul>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/fcc/advanced-exact-change/">FreeCodeCamp 高级算法题 - 计算找零</a></p>
+        <p><span>文章作者:</span><a href="/blog/" title="访问 S1ngS1ng 的个人博客">S1ngS1ng</a></p>
+        <p><span>发布时间:</span>2017年08月22日 - 23时50分</p>
+        <p><span>最后更新:</span>2017年09月01日 - 23时19分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/fcc/advanced-exact-change/" title="FreeCodeCamp 高级算法题 - 计算找零">S1ngS1ng.github.io/blog/fcc/advanced-exact-change/</a>
+            <span class="copy-path" data-clipboard-text="原文: S1ngS1ng.github.io/blog/fcc/advanced-exact-change/　　作者: S1ngS1ng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/blog/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/blog/fcc/advanced-symmetric-difference/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          FreeCodeCamp 高级算法题 - 数组的对称差
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#计算找零-Exact-Change"><span class="toc-number">1.</span> <span class="toc-text">计算找零 (Exact Change)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目链接"><span class="toc-number">1.1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题解释"><span class="toc-number">1.2.</span> <span class="toc-text">问题解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意事项-关于浮点数"><span class="toc-number">3.</span> <span class="toc-text">注意事项 - 关于浮点数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本解法-警告：虽然可以通过-FCC-测试，但解法本身存在漏洞"><span class="toc-number">4.</span> <span class="toc-text">基本解法 (警告：虽然可以通过 FCC 测试，但解法本身存在漏洞)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路提示"><span class="toc-number">4.1.</span> <span class="toc-text">思路提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">4.2.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解释"><span class="toc-number">4.4.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#漏洞与优化"><span class="toc-number">5.</span> <span class="toc-text">漏洞与优化</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/blog/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'singsing-io-blog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/fcc/advanced-symmetric-difference/" title="上一篇: FreeCodeCamp 高级算法题 - 数组的对称差">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/blog/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-exact-change/">FreeCodeCamp 高级算法题 - 计算找零</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-symmetric-difference/">FreeCodeCamp 高级算法题 - 数组的对称差</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-validate-us-telephone-numbers/">FreeCodeCamp 高级算法题 - 验证美国电话号</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-arguments-optional/">FreeCodeCamp 中级算法题 - 可选的参数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-everything-be-true/">FreeCodeCamp 中级算法题 - 检查对象属性</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-binary-agents/">FreeCodeCamp 中级算法题 - 翻译二进制字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-steamroller/">FreeCodeCamp 中级算法题 - 数组扁平化</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-drop-it/">FreeCodeCamp 中级算法题 - 按参数删除数组元素</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-finders-keepers/">FreeCodeCamp 中级算法题 - 按参数过滤数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-smallest-common-multiple/">FreeCodeCamp 中级算法题 - 找出数字范围的最小公倍数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-primes/">FreeCodeCamp 中级算法题 - 质数求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/">FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-spinal-tap-case/">FreeCodeCamp 中级算法题 - 字符串格式转换 - 短线连接格式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-convert-html-entities/">FreeCodeCamp 中级算法题 - 转换 HTML 实体字符</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sorted-union/">FreeCodeCamp 中级算法题 - 多个数组元素排序</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-boo-hoo/">FreeCodeCamp 中级算法题 - 基本布尔类型检查</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-missing-letters/">FreeCodeCamp 中级算法题 - 寻找缺失的字母</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-dna-pairing/">FreeCodeCamp 中级算法题 - DNA 配对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-pig-latin/">FreeCodeCamp 中级算法题 - 儿童黑话</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-search-and-replace/">FreeCodeCamp 中级算法题 - 句中查找替换</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-where-art-thou/">FreeCodeCamp 中级算法题 - 找出对象包含的特定键值对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-diff-two-arrays/">FreeCodeCamp 中级算法题 - 比较两数组差异</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 S1ngS1ng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >大神到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/blog/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/blog/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86282270-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
