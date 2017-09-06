@@ -29,7 +29,7 @@ categories: FCC
 - 最后的排序，我们可以用数组的 `sort` 方法。但有一个细节要注意，由于 `sort` 方法的回调函数返回值有三种情况，分别是大于 0，等于 0 和小于 0。因此，我们需要比较字符串，并返回一个大于 0 的数，和一个小于 0 的数。如果你不理解这一点，请去 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 看一下 `sort` 的文档
 - 看到这里，如果你能理解上面说的，请先自己试着完成一下这道题。如果你在实现过程中遇到困难，再回来看看这篇博客后面的部分
 
-### 实现 - return, break, flag
+### 实现 - flag 变量
 - 写代码的时候你可能会发现，上面说到的思路仿佛很容易，但实现起来却有点麻烦。我们先不讨论最后的返回值，逻辑部分，你可能会想到这样的写法：
 
 ```js
@@ -50,12 +50,12 @@ function updateInventory(arr1, arr2) {
 }
 ```
 
-- 请暂时记住这几个位置编号。其中 `位置 1` 表示找到相同货物，`位置 2` 表示执行完找相同货物判断，`位置 3` 表示 `arr1` 遍历结束，`位置 4` 表示 `arr2` 遍历结束
+- 请暂时记住这几个位置编号。其中 `位置 1` 表示找到相同货物，`位置 2` 表示执行完找相同货物判断，`位置 3` 表示 `arr1` 遍历结束，`位置 4` 表示 `arr2` 遍历结束。显然，在 `位置 4`，我们需要对 `arr1` 进行排序，并返回
 - 我们先遍历 `arr2`，对于 `arr2` 中的每一个元素，我们都要遍历一遍 `arr1` 来进行比较。暂且不讨论复杂度的问题，我们先来想想如何实现
 - 在遍历 `arr1` 的时候，有两种情况：
     1. 只要发现第二个元素相等，我们就给 `arr1[i][0]` 加上 `arr2[j][0]`，**并跳出当前循环**
     2. **如果遍历完 `arr1` 仍找不到相等的**，那么我们就要把 `arr2[j]` 添加到 `arr1`
-- 你可能会觉得这个情景很熟悉，事实上这里的思路和 [Profile Lookup](https://www.freecodecamp.cn/challenges/profile-lookup) 那道题很类似。那道题我们可以用 `return` 解决，因此你可能会想到在 `位置 1` 加上 `return`，但 `return` 就跳出了整个 `function`，显然这样做不行 (注：其实，只需要封装成一个函数就可以用 `return` 了，这个我们放到后面的优化部分细说)
+- 你可能会觉得这个情景很熟悉，事实上这里的思路和 [Profile Lookup](https://www.freecodecamp.cn/challenges/profile-lookup) 那道题很类似。那道题我们可以用 `return` 解决，因此你可能会想到在 `位置 1` 加上 `return`，但 `return` 就跳出了整个 `function`，显然这样做不行 (注：其实，只需要封装成一个函数就可以用 `return` 了，这个我们放到后面再说)
 - 你还可能想到用 `break`。但这个 `break` 加在哪里都不太合适。如果我们加在 `位置 1`，那我们就没法处理上面说的第二种，也就是遍历完 `arr1` 找不到相等的情况。我们把 `push(arr2[j])` 写到 `位置 2` 显然不能实现要求，这样会 `push` 很多次 `arr2[j]`。如果我们写到 `位置 3`，那么每次遍历完 `arr1` 都会 `push` 一次 `arr2[j]`
 - 如果一定要这么写，有一种方式是可行的，那就是引入一个 `flag` 变量。每次我们在遍历 `arr1` 之前初始化它为 `false`，一旦进入了 `if (arr1[i][1] === arr2[j][1])` 我们就给它赋值 `true`。遍历完 `arr1` 的时候，我们根据这个 `flag` 决定是否要 `push(arr2[j])`。代码如下：
 
@@ -81,18 +81,90 @@ function updateInventory(arr1, arr2) {
 
 - 我们需要在 `位置 3` 执行是否该 `push(arr2[j])` 的判断，因为这里我们已经遍历完了 `arr1`，也就是说，已经可以得出当前遍历到的 `arr2[j]` 是否在 `arr1` 中存在的结论
 
-### 实现 - label
-- 以前的计算机课，我们或多或少接触过一些编程语言。在我们接触过的语言中，你可能会接触过一个关键字叫 `GOTO`。至少，Visual Basic、C#、C++ 之类的语言，都有 `GOTO` 关键字
-- 在 JavaScript 中，我们并没有 `GOTO` 关键字，但我们可以通过一些方式让它实现类似功能。请参考 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/break) 上 `break` 的文档，我们会发现，在 "语法" 部分，写的是 `break [label];`。这表示，我们可以直接用 `break` (这就是最常见的用法)，也可以在 `break` 之后加上一个 `label`，也就是 `break xxx`。注意，这里的中括号表示可选参数，而不表示 `break` 之后需要加上中括号
-- 于是，我们就需要去看看这个 `label` 到底是什么，MDN 文档在 [这里](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/label)
-- 
+### 实现 - 封装函数
+- 如果我们想用 `return`，也不麻烦，只需要封装一个 "遍历 `arr1`" 的函数就行。传入的参数显然是外层遍历的 `arr2[j]`，由于这是某一个件货物，我们记作 `item`。至于 `arr1`，我们可以直接调用，不需要传入方法
+
+```js
+function compareAndMerge(item) {
+    for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i][1] === item[1]) {
+            arr1[i][0] += item[0];
+            return;
+        }
+    }
+    arr1.push(item);
+}
+```
+
+- 放到外面的循环中，结果就是：
+```js
+function updateInventory(arr1, arr2) {
+    for (var j = 0; j < arr2.length; j++) {
+        compareAndMerge(arr2[j]);
+    }
+    function compareAndMerge(item) {
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i][1] === item[1]) {
+                arr1[i][0] += item[0];
+                return;
+            }
+        }
+        arr1.push(item);
+    }
+}
+```
+
+### 结果排序
+- 题目中要求，结果需要按照货物名称的字母顺序排列。事实上，JavaScript 的 `>` 和 `<` 就可以比较出字符串的 "大小"。遇到一样的字符，就会继续比较下一位。至于大小，则是根据 ASCII 码来决定的。你可以试试 `'a' < 'b'`，以及 `'abc' < 'az'`，看一下输出结果
+- 请注意，如果我们写成 `arr1.sort((a, b) => a[1] > b[1])` 是不行的。因为 `sort` 方法回调函数返回值不应该是 `true` 或 `false`；而应该是正数/负数/0
+- 文档中提到，如果返回值小于 `0`，那么会把 `a` 放到 `b` 的前面；反之，则会把 `b` 放到 `a` 的前面。至于等于 `0`  的情况，文档中提到，理论上应该是保持 `a` 和 `b` 顺序不变，但这不一定适用于所有浏览器
+- 还是上面的例子，如果我们写成 `arr1.sort((a, b) => a[1] > b[1])`，`true` 会被隐式转换成 `1`，即大于 `0` 的返回值，而 `false` 会被隐式转换成 `0`，即等于 `0` 的返回值，这样就会导致结果不稳定。你可以运行一下 `'gwxutwznyfb'.split('').sort((a, b) => a > b)`，结果 `'w'` 被排在了第一个
+- 因此，最终的排序我们应该这么写：
+
+```js
+return arr1.sort(function(a, b) {
+    return a[1] > b[1] ? 1 : -1;
+});
+```
+
+- 其中，`1` 和 `-1` 为任意正数和负数，我们也可以写成 `10000` 和 `-123`
+
 
 ## 参考链接
 - [Array.sort](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 - [return](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/return)
 - [break](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/break)
-- [label](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/label)
+
+## 代码
+- 最终代码这里就不粘贴了，上面已经给出
+
+# 中级解法 - 使用数组方法
+## 思路提示
+- 我们需要用 `arr2` 中的子数组的第二个值进行比较，而且它还是一个字符串。字符串是原始类型，也就意味着我们可以通过 `indexOf` 方法来获取索引。如果是 `-1` 那就表示不存在，这样我们就可以 `push` 了
+- 那我们只需要把 `arr1` 中，每个子数组的第二个元素提取出来，成为一个新数组，然后我们就可以获取到字符串的索引了。这个操作，就是用数组的 `map` 方法
+- 当然，最终的排序也是不能省的
+
+## 参考链接
+- [Array.indexOf](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [Array.map](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 ## 代码
 ```js
+function updateInventory(arr1, arr2) {
+    // 提取第二个元素，成为一个新数组 valueArr
+    var valueArr = arr1.map(function(e) {
+        return e[1]
+    });
+    for (var i = 0; i < arr2.length; i++) {
+        var index = valueArr.indexOf(arr2[i][1])
+        if (index > -1) {
+            arr1[index][0] += arr2[i][0];
+        } else {
+            arr1.push(arr2[i]);
+        }
+    }
+    return arr1.sort(function(a, b) {
+        return a[1] > b[1] ? 1 : -1;
+    });
+}
 ```
