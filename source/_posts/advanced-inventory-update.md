@@ -1,5 +1,5 @@
 ---
-title: FreeCodeCamp 高级算法题 - 计算找零
+title: FreeCodeCamp 高级算法题 - 更新库存
 date: 2017-09-02 00:04:32
 tags: [FreeCodeCamp,高级,算法]
 categories: FCC
