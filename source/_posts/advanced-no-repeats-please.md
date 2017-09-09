@@ -40,7 +40,7 @@ categories: FCC
 - 对于我们封装的函数，可以直接使用字符串作为参数。这是因为，在获取剩余字符串全排列，即 `P(n - 1)` 时，我们并不关心去掉的那个，用作开头的字符是什么，只需要关心现在我们要生成谁的全排列就好
 - 因此，我们需要在递归调用时，传入去掉那个用作开头的字符之后的，剩余字符串。这个很容易实现，如果我们知道了去掉的那个字符的索引，那我们就可以用 `str.slice(0, i)` 来获取这个字符之前的字符串，用 `str.slice(i + 1, str.length)` 来获取这个字符之后的字符串 (注意，`slice` 方法的第一个参数是包含的，第二个不包含。如果 `i` 本身就是 `0`，那么取到的是 **空字符串**)，拼接在一起就可以作为递归调用的参数
 - 跳出条件也不难想，只要传入的参数长度为 `1` 或 `0`，直接返回即可
-- 另外，每次调用，我们都需要一个数组来保存根据当前参数生成的全排列
+- 另外，每次调用，我们都需要一个数组来保存根据当前参数生成的全排列。代码如下
 
 ```js
 function permAlone(string) {
@@ -63,3 +63,78 @@ function permAlone(string) {
     }
 }
 ```
+
+## 判断连续重复字符
+### 遍历
+- 判断是否有连续重复的字符，最简单的方式是遍历。只需要在外面用一个变量记录上一个字符就可以
+- 只要当前的和上一个相同，直接跳出就可以，不需要继续判断。代码如下：
+
+```js
+function hasRepeatChar(str) {
+    var previous = '';
+    for (var i = 0; i < str.length; i++) {
+        if (previous === str[i]) {
+            return true;
+        } else {
+            // 赋值，用于下次判断
+            previous = str[i];
+        }
+    }
+    // 不存在连续重复字符
+    return false;
+}
+```
+
+### 递归
+- 递归也是很容易写的。跟上面的思路一样，调用的时候传入两个参数，分别是上一个字符，和剩余字符串。其中，剩余字符串可以通过 `str.slice(1)` 获取
+- 为避免 `str` 本身就是空字符串，需要多一次判断，即如果 `prevChar` 不是空的 (这说明 `prevChar` 被赋过值，而并非初始的空值)，我们才可以认为 `str` 不含连续重复字符，则返回 `false`。因此，跳出条件是 `str` 为空且 `prevChar` 有值。如果这时候 `prevChar` 也是空的，那就证明传入的 `str` 本身就是空的。为了防止混淆，我们直接给它返回 `"Empty string"`。事实上，这种 corner case 在这道题目中不会遇到。代码如下：
+
+```js
+function hasRepeatChar(str, prevChar) {
+    if (str.length === 0) return prevChar ? false : 'Empty string';
+    if (prevChar === str[0]) return true;
+
+    return hasRepeatChar(str.slice(1), str[0]);
+}
+```
+
+### 正则表达式
+- 正则是个好东西。在正则里，有一中写法叫做 `back reference`，就是 `\\` 后面加一个正整数。请参考 [文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions) 中 `\\n` 的那一行
+- 简单来说，`\\x` 就是匹配之前，正数第 `x` 个 matched group (匹配组，也叫捕获组，其实就是小括号包含的内容)
+- 对于判断一个字符串是否含有连续重复字符，我们并不关注它重复了几次，也不需要关注它有几组重复的。因此，这里不需要 `global` flag `/g`
+- 那么，对于字符串中的任意字符，只要这个字符右边的字符和它相同，那就匹配到，并且返回 `false`。听起来像是句废话，只是，如果你看不懂后面的正则，记得回来再读读这句话。代码如下：
+
+```js
+function hasRepeatChar(str) {
+    return !/(\w)\1/.test(str);
+}
+```
+
+# 基本解法
+## 思路提示
+- 思路上面已经说得很清楚。通过上面的递归调用，我们可以得到了一个包含字符串全排列的数组，只需要通过上面的正则过滤一下，保留不含连续重复字符的字符串，并返回它的 `length`
+
+## 代码
+```js
+function permAlone(string) {
+    function _perm(str) {
+        if (str.length < 2) return str;
+        var permutations = [];
+
+        for (var i = 0; i < str.length; i++) {
+            var start = str[i];
+            var remaining = str.slice(0, i) + str.slice(i + 1, str.length);
+
+            for (var j = 0; j < _perm(remaining).length; j++) {
+                permutations.push(start + _perm(remaining)[j]);;
+            }
+        }
+        return permutations;
+    }
+    return _perm(string).filter(function(str) {
+        return !/(\w)\1/.test(str);
+    }).length;
+}
+```
+
+# 数组方法
