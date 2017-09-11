@@ -55,8 +55,8 @@ function permAlone(string) {
             var remaining = str.slice(0, i) + str.slice(i + 1, str.length);
 
             // 根据通过剩余字符串的全排列，生成前一次的全排列。注意 _perm(remaining) 是一个数组
-            for (var j = 0; j < _perm(remaining).length; j++) {
-                permutations.push(start + _perm(remaining)[j]);;
+            for (var permutation of _perm(remaining)) {
+                permutations.push(start + permutation);
             }
         }
         return permutations;
@@ -125,8 +125,8 @@ function permAlone(string) {
             var start = str[i];
             var remaining = str.slice(0, i) + str.slice(i + 1, str.length);
 
-            for (var j = 0; j < _perm(remaining).length; j++) {
-                permutations.push(start + _perm(remaining)[j]);;
+            for (var permutation of _perm(remaining)) {
+                permutations.push(start + permutation);
             }
         }
         return permutations;
