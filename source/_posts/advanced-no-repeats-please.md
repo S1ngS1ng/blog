@@ -138,3 +138,32 @@ function permAlone(string) {
 ```
 
 # 数组方法
+## 思路提示
+- 和上面方法的思路十分类似，我们还是要先取出一个字符，然后递归地对剩余的字符串继续求全排列，最后合并。写法上稍有区别
+- 写成数组方法可能看起来会比较复杂，但只要理解了上面的思路，底下的写法也不会难理解
+- 这段代码加注释不太方便，详细解释还是写到代码之后吧
+
+## 代码
+```js
+function permAlone(string) {
+    return _perm(string.split('')).filter(function(str) {
+        return !/(\w)\1/.test(str);
+    }).length;
+
+    function _perm(arr) {
+        return arr.length === 0 ? [] : _perm(arr.slice(1)).reduce(function(accum, curr) {
+            for (var i = 0; i < arr.length; i++) {
+                accum.push([].concat(curr.slice(0, i), arr[0], curr.slice(i)).join(''));
+            }
+            return accum;
+        }, []);
+    }
+}
+```
+
+## 解释
+- 外面那层应该没啥疑问，既然决定了用数组去处理，那就干脆直接传入数组，一个 `split` 的事儿而已
+- 封装的 `_perm`，其实还是要进行递归调用的。当外面的 `string` 是空字符串时，返回空数组，这个应该也没有什么疑问
+- 只要 `arr` 长度不为 `0`，那我们就递归调用 `_perm(arr.slice(1))`，直到遇到传入的 `arr` 长度为 `0`，才开始执行 `reduce` 弹出的过程
+- 核心步骤是里面的 `for` 循环。注意里面那一行完成了三件事：
+    1. 
