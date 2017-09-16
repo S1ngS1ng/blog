@@ -274,20 +274,48 @@ var arr = [1, 2, 3, 4, 5, 6];
 console.log(arr);  // [1, 2, 5, 4, 3, 6]
 ```
 
-- 维基百科页面也提供了伪代码，而且提供了递归和非递归的两个版本。这里我就按照递归的版本写了，注意在维基百科页面，它用到了两个参数，但我们只需要一个 `n` 就够了，不需要第二个 `A`，因为我们的数组可以通过 `var strArr = str.split('');` 将它定义到函数 `generate` 外面。伪代码如下：
+- 维基百科页面也提供了伪代码，而且提供了递归和非递归的两个版本。两个版本都用到了两个参数，但我们只需要一个 `n` 就够了，不需要第二个 `A`，因为我们的数组可以通过 `var arr = str.split('');` 将它定义到函数 `generate` 外面。这样，伪代码如下：
 
 ```js
 函数 generate
 参数 num
 
 如果 num 等于 1:
-    strArr.join('')，并添加到结果数组
+    arr.join('')，并添加到结果数组
 否则:
-    循环，范围
+    循环，0 至 num:
+        递归调用 generate(num - 1)
+        如果 num 为偶数:
+            交换 strArr[i] 与 strArr[num - 1]
+        如果 num 为奇数:
+            交换 strArr[0] 与 strArr[num - 1]
 ```
 
 ## 代码
 
 ```js
+function permAlone(str) {
+    var arr = str.split('');
+    var result = [];
+    // 声明需要放在这里，因为赋值是在弹出的时候执行的
+    var tempIndex;
 
+    function generate(num) {
+        if (num === 1) {
+            result.push(arr.join(''));
+        } else {
+            for (var i = 0; i < num; i++) {
+                generate(num - 1);
+                tempIndex = num % 2 ? 0 : i;
+                arr[tempIndex] = [arr[num - 1], arr[num - 1] = arr[tempIndex]][0];
+            }
+        }
+    }
+    
+    generate(arr.length);
+    
+    return result.filter(function(str) {
+        return !/(\w)\1/.test(str);
+    }).length;
+}
 ```
