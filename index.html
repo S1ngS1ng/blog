@@ -11,6 +11,7 @@
 <meta property="og:url" content="S1ngS1ng.github.io/blog/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
 <meta property="og:description" content="修身治国平天下，洗脸刷牙写代码">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="S1ngS1ng">
 <meta name="twitter:description" content="修身治国平天下，洗脸刷牙写代码">
@@ -282,6 +283,99 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-advanced-friendly-date-ranges" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/advanced-friendly-date-ranges/" class="article-date">
+      <time datetime="2017-09-19T02:58:49.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/fcc/advanced-friendly-date-ranges/">FreeCodeCamp 高级算法题 - 日期区间</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="日期区间-Friendly-Date-Ranges"><a href="#日期区间-Friendly-Date-Ranges" class="headerlink" title="日期区间 (Friendly Date Ranges)"></a>日期区间 (Friendly Date Ranges)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://freecodecamp.cn/challenges/friendly-date-ranges" target="_blank" rel="noopener">中文链接</a></li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>先说一下，这道题的英文链接是不存在的。之前英文版有这道题，后来因为种种原因删除了。我们把题目稍作修改，重新发布了上来</li>
+<li>这个 <code>function</code> 接收一个数组参数 <code>arr</code>，含有两个表示日期的字符串元素。返回值同样为两个字符串元素的数组，代表经过处理的日期区间</li>
+<li>如果 <code>arr</code> 为 <code>[&quot;2003-08-15&quot;, &quot;2009-09-21&quot;]</code>，则返回值应为 <code>[&quot;August 15th, 2003&quot;, &quot;September 21st, 2009&quot;]</code></li>
+<li>还有一些特殊情况，要去掉可以推测出来的情况，比如当两个日期具有相同年份和月份，那么只显示一次就好。详情见题目中的描述</li>
+</ul>
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ul>
+<li>别看这道题描述的内容很多，但真的没有那么复杂，重点在于理清所有的可能性，我们来一点一点的分析</li>
+<li>按题意，首先我们要用月份名称代替月份数字，这个很好解决，用数组或者对象都行。月份如果不会拼的话，查查字典吧= =！</li>
+<li>用序数词表示天，这个也要分情况讨论一下：<ul>
+<li>如果是 <code>1</code>、<code>21</code> 和 <code>31</code> 号，结尾加上 <code>st</code> 就行。<strong>注意 <code>11</code> 结尾是 <code>th</code></strong></li>
+<li>如果是 <code>2</code> 或 <code>22</code> 号，结尾加上 <code>nd</code> 就行。<strong>注意，不存在 <code>32</code> 号</strong></li>
+<li>如果是 <code>3</code> 或 <code>23</code> 号，结尾加上 <code>rd</code> 就行。<strong>注意，不存在 <code>33</code> 号</strong></li>
+<li>其他情况，直接加上 <code>th</code> 就行。就这四种情况</li>
+</ul>
+</li>
+<li>关键在于后面这句话：<strong>不要显示那些可以被推测出来的信息</strong>，这句话是解题的关键。我们先来列举一下可能出现的情况：<ul>
+<li>如果开始日期和结束日期是同年同月同日，显然我们只要显示一个日期就够了，不需要显示两个相同的</li>
+<li>如果开始日期和结束日期是同年同月不同日，那我们在第一个日期显示年月日，第二个日期只需要显示日就够了。因为年月相同，就算省略掉也不会造成误会</li>
+<li>如果开始日期和结束日期同年不同月，那么我们还是在第一个日期显示年月日，第二个日期需要显示月和日，年份可以省略</li>
+</ul>
+</li>
+<li>上面是几个比较容易分析出来的情景，题目中还提到了一种可以省略年份的情况，就是开始日期与结束日期相差小于一年，那么年份也可以省略。即使两者不同年，年份差距也不会大于 1。因此，这时候省略年份是不会造成误会的。如果你想不明白，后面会有详细的例子</li>
+<li>对于年份，还需要处理一种情况，这个在题目描述中也提到了，就是当前年份是否与给出的开始/结束年份相同。原则上，在上面的判断前提下，只要出现当前年份那么都可以省略的。但需要注意处理这个特殊情况：<ul>
+<li>如果开始日期是一年前，结束日期是当前年份，而且日期差小于 365/366 天。举个例子，现在是 2017 年，比如我们传入 <code>[&#39;2016-8-11&#39;, &#39;2017-5-5&#39;]</code>，尽管它符合差距小于一年 (365 天)，但我们还是要在输出结果中包含 <code>2016</code>。原因在于，如果输出的是 <code>[&#39;August 8th&#39;, &#39;May 5th&#39;]</code>，那就会造成误会，因为这既可以代表 <code>[&#39;2017-8-8&#39;, &#39;2018-5-5&#39;]</code>，也可以代表 <code>[&#39;2016-8-8&#39;, &#39;2017-5-5&#39;]</code></li>
+</ul>
+</li>
+</ul>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/高级/">高级</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-advanced-no-repeats-please" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -310,8 +404,8 @@
       
           
               <h1 id="字符串排列-No-repeats-please"><a href="#字符串排列-No-repeats-please" class="headerlink" title="字符串排列 (No repeats please)"></a>字符串排列 (No repeats please)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/no-repeats-please">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/no-repeats-please">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/no-repeats-please" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/no-repeats-please" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个字符串参数 <code>str</code>。返回值为参数 <code>str</code> 没有连续重复字符串的排列个数</li>
@@ -384,8 +478,8 @@
       
           
               <h1 id="更新库存-Inventory-Update"><a href="#更新库存-Inventory-Update" class="headerlink" title="更新库存 (Inventory Update)"></a>更新库存 (Inventory Update)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/inventory-update">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/inventory-update">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/inventory-update" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/inventory-update" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收两个二维数组参数 <code>arr1</code> 与 <code>arr2</code>。其中 <code>arr1</code> 为更新前的现有库存，<code>arr2</code> 为需要更新的内容。返回值为更新后的库存，用二维数组表示</li>
@@ -458,8 +552,8 @@
       
           
               <h1 id="计算找零-Exact-Change"><a href="#计算找零-Exact-Change" class="headerlink" title="计算找零 (Exact Change)"></a>计算找零 (Exact Change)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/exact-change">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/exact-change">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/exact-change" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/exact-change" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收三个参数，<code>price</code> 为购买总价，<code>cash</code> 为付款金额，<code>cid</code> 为收银机中可用的零钱。返回值为应找回的零钱列表</li>
@@ -534,8 +628,8 @@
       
           
               <h1 id="数组的对称差-Symmetric-Difference"><a href="#数组的对称差-Symmetric-Difference" class="headerlink" title="数组的对称差 (Symmetric Difference)"></a>数组的对称差 (Symmetric Difference)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/symmetric-difference">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/symmetric-difference">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/symmetric-difference" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/symmetric-difference" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个参数 <code>arg</code>，其中包含至少两个数组。返回值也为数组，即为给出数组的对称差</li>
@@ -608,8 +702,8 @@
       
           
               <h1 id="验证美国电话号-Validate-US-Telephone-Numbers"><a href="#验证美国电话号-Validate-US-Telephone-Numbers" class="headerlink" title="验证美国电话号 (Validate US Telephone Numbers)"></a>验证美国电话号 (Validate US Telephone Numbers)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/validate-us-telephone-numbers">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/validate-us-telephone-numbers">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/validate-us-telephone-numbers" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/validate-us-telephone-numbers" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个字符串参数 <code>str</code>，表示一个电话号码。返回值为 <code>Boolean</code>，表示这个 <code>str</code> 是否符合美国电话号码格式</li>
@@ -682,8 +776,8 @@
       
           
               <h1 id="可选的参数-Arguments-Optional"><a href="#可选的参数-Arguments-Optional" class="headerlink" title="可选的参数 (Arguments Optional)"></a>可选的参数 (Arguments Optional)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/arguments-optional">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/arguments-optional">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/arguments-optional" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/arguments-optional" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 在定义的时候没有声明任何参数，但在调用的时候会传入一个或者两个参数。最后返回两数之和</li>
@@ -757,8 +851,8 @@
       
           
               <h1 id="检查对象属性-Everything-Be-True"><a href="#检查对象属性-Everything-Be-True" class="headerlink" title="检查对象属性 (Everything Be True)"></a>检查对象属性 (Everything Be True)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/everything-be-true">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/everything-be-true">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/everything-be-true" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/everything-be-true" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个 JSON 对象参数 <code>collection</code> 和一个字符串参数 <code>pre</code>。若 <code>pre</code> 表示的属性在 <code>collection</code> 中的每一个对象都存在且对应的值为真则返回 <code>true</code>，否则返回 <code>false</code></li>
@@ -832,8 +926,8 @@
       
           
               <h1 id="翻译二进制字符串-Binary-Agents"><a href="#翻译二进制字符串-Binary-Agents" class="headerlink" title="翻译二进制字符串 (Binary Agents)"></a>翻译二进制字符串 (Binary Agents)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/binary-agents">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/binary-agents">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/binary-agents" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/binary-agents" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接收一个字符串参数 <code>str</code>，返回值为转换之后的字符串</li>
@@ -906,8 +1000,8 @@
       
           
               <h1 id="数组扁平化-Steamroller"><a href="#数组扁平化-Steamroller" class="headerlink" title="数组扁平化 (Steamroller)"></a>数组扁平化 (Steamroller)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/steamroller">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/steamroller">英文链接</a></li>
+<li><a href="https://freecodecamp.cn/challenges/steamroller" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/steamroller" target="_blank" rel="noopener">英文链接</a></li>
 </ul>
 <h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
 <li>这个 <code>function</code> 接受一个数组参数 <code>arr</code>，返回值为扁平化之后的数组</li>
@@ -953,81 +1047,6 @@
 
 
   
-    <article id="post-intermediate-drop-it" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/fcc/intermediate-drop-it/" class="article-date">
-      <time datetime="2017-07-08T02:55:42.000Z" itemprop="datePublished">2017-07-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/fcc/intermediate-drop-it/">FreeCodeCamp 中级算法题 - 按参数删除数组元素</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="按参数删除数组元素-Drop-it"><a href="#按参数删除数组元素-Drop-it" class="headerlink" title="按参数删除数组元素 (Drop it)"></a>按参数删除数组元素 (Drop it)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/drop-it">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/drop-it">英文链接</a></li>
-</ul>
-<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接受一个数组参数 <code>arr</code> 和一个函数参数 <code>func</code>。返回值为 <code>arr</code> 第一个满足参数 <code>func</code> 的元素及其之后的所有元素</li>
-<li>如果 <code>arr</code> 是 <code>[1, 2, 3, 4]</code>，<code>func</code> 是 <code>function(n) {return n &gt;=3;}</code>，那么此时返回值应为 <code>[3, 4]</code></li>
-<li>更值得关注的是这样的情况，如果 <code>arr</code> 是 <code>[0, 1, 0, 1]</code>，<code>func</code> 是 <code>function(n) {return n === 1;}</code>，那么此时返回值应为 <code>[1, 0, 1]</code></li>
-</ul>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/blog/fcc/intermediate-drop-it/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
@@ -1038,7 +1057,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2017 S1ngS1ng
+                &copy; 2018 S1ngS1ng
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman

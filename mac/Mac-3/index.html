@@ -12,6 +12,7 @@
 <meta property="og:url" content="S1ngS1ng.github.io/blog/mac/Mac-3/index.html">
 <meta property="og:site_name" content="S1ngS1ng">
 <meta property="og:description" content="找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……希望我的这一系列博文能帮到你。推 (an) 荐 (li) 一下自己写的 HammerSpoon 插件，帮助大家更方便地进行窗口管理，以及其他实用功能。点我 查看。也可以去看看我的 第一篇博客  概述上一篇博">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/blog/mac/Mac-3/window-icons.jpg">
 <meta property="og:image" content="/blog/mac/Mac-3/window-icons-plus.jpg">
 <meta property="og:image" content="/blog/mac/Mac-3/hide.jpg">
@@ -333,9 +334,9 @@
       
           
         <blockquote>
-<p>找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……<br>希望我的这一系列博文能帮到你。<br>推 (an) 荐 (li) 一下自己写的 HammerSpoon 插件，帮助大家更方便地进行窗口管理，以及其他实用功能。<a href="https://github.com/S1ngS1ng/hammerspoon" target="_blank" rel="external">点我</a> 查看。也可以去看看我的 <a href="http://singsing.io/blog/hs/HammerSpoon-1/" target="_blank" rel="external">第一篇博客</a></p>
+<p>找不到 Mac 上的 Home，End，PageUp？想截图还得打开 QQ？不知道 Mac 如何剪切文件？找不到全屏窗口的按钮？找不到隐藏文件夹？不知道如何向后删除？想少用鼠标，多用键盘？……<br>希望我的这一系列博文能帮到你。<br>推 (an) 荐 (li) 一下自己写的 HammerSpoon 插件，帮助大家更方便地进行窗口管理，以及其他实用功能。<a href="https://github.com/S1ngS1ng/hammerspoon" target="_blank" rel="noopener">点我</a> 查看。也可以去看看我的 <a href="http://singsing.io/blog/hs/HammerSpoon-1/" target="_blank" rel="noopener">第一篇博客</a></p>
 </blockquote>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><a href="http://singsing.io/blog/mac/Mac-2/" target="_blank" rel="external">上一篇博客</a> 内容略多，本来没打算写成一篇。提纲已更新，大家可以翻到文末看下（<kbd>Cmd</kbd> + <kbd>↓</kbd> 可以直接跳到文末，你还记得不？😏），如果忘记了基本操作，请回去翻翻 <a href="http://singsing.io/blog/mac/Mac-1/" target="_blank" rel="external">第一篇博客</a></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><a href="http://singsing.io/blog/mac/Mac-2/" target="_blank" rel="noopener">上一篇博客</a> 内容略多，本来没打算写成一篇。提纲已更新，大家可以翻到文末看下（<kbd>Cmd</kbd> + <kbd>↓</kbd> 可以直接跳到文末，你还记得不？😏），如果忘记了基本操作，请回去翻翻 <a href="http://singsing.io/blog/mac/Mac-1/" target="_blank" rel="noopener">第一篇博客</a></p>
 <p>不少朋友刚上手 Mac，对 macOS 系统提供的功能会很不适应，确实，有些功能隐藏的比较深，多少会影响些效率。我是一个做前端开发的菜鸡，所以这个系列多少也会涉及到一些开发相关的配置，写给有需要的朋友</p>
 <p>文中提到的功能，强烈建议大家边看边试，有些东西文字描述起来会很复杂，自己操作一下就明白了，其实都很简单</p>
 <p>老规矩，如果大家有任何疑问、意见或者建议，请在下方留言评论</p>
@@ -348,17 +349,17 @@
 <p>一些和编辑相关的 App 中：<br><kbd>Cmd</kbd> + <kbd>o</kbd> 打开文件<br><kbd>Cmd</kbd> + <kbd>s</kbd> 保存文件<br><kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>s</kbd> 文件另存为</p>
 <p>至于如何让隐藏或最小化的窗口重新显示，后文会详细说明</p>
 <h2 id="窗口按钮"><a href="#窗口按钮" class="headerlink" title="窗口按钮"></a>窗口按钮</h2><p>在 macOS 上，所有窗口的左上角都有四种按钮：</p>
-<img src="/blog/mac/Mac-3/window-icons.jpg" alt="window-icons" title="window-icons">
+<img src="/blog/mac/Mac-3/window-icons.jpg" title="window-icons">
 <p>这不是三个嘛？其实，按住 <kbd>Option</kbd>，第四种就出来了：</p>
-<img src="/blog/mac/Mac-3/window-icons-plus.jpg" alt="window-icons-plus" title="window-icons-plus">
+<img src="/blog/mac/Mac-3/window-icons-plus.jpg" title="window-icons-plus">
 <p>先说第一个按钮，就是最左边的那个”×”。要注意的是，点”×”并不能退出程序。如果要退出，可以用上面提到的快捷键；可以在菜单栏点击 App 名称，然后点退出；也可以右键点 Dock 栏的程序图标，然后点退出。有时候会遇到 App 停止响应的情况，我们可以通过 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>ESC</kbd> 来打开强制退出窗口，或者点击菜单栏里的苹果图标，也能找到强制退出</p>
 <p>第二个按钮，功能上相当于 <kbd>Cmd</kbd> + <kbd>m</kbd>，也就是最小化。最小化之后，<kbd>Cmd</kbd> + <kbd>Tab</kbd> 是不能重新打开的，请继续看下一节</p>
 <p>第三个按钮有两种形式，第一种，就是两个箭头的那个，确实会把 App 全屏，但是会创建一个新的 Space。关于 Space 的使用方式，后文会讨论。另一种就是那个加号，尽管在一些 App 中，点击这个就可以全屏，但确切的说，是“把当前窗口放大到<strong>合适尺寸</strong>”</p>
 <h2 id="最小化和隐藏"><a href="#最小化和隐藏" class="headerlink" title="最小化和隐藏"></a>最小化和隐藏</h2><p>macOS 提供两种不显示窗口的方式，一个叫“最小化”，一个叫“隐藏”，快捷键分别为：<br><kbd>Cmd</kbd> + <kbd>h</kbd> 隐藏<br><kbd>Cmd</kbd> + <kbd>m</kbd> 最小化</p>
 <p>他们的区别在于，“隐藏”是 App 级别的操作，把当前 App 的<strong>所有窗口</strong>都收起来，而“最小化”，是窗口级别的操作，只把<strong>当前窗口</strong>收起来。收入的位置也不同，“隐藏”会把 App 都收入 Dock 上的程序图标内，其实看起来和平时没有什么区别：</p>
-<img src="/blog/mac/Mac-3/hide.jpg" alt="hide" title="hide">
+<img src="/blog/mac/Mac-3/hide.jpg" title="hide">
 <p>而“最小化”会把窗口放到 Dock 的最右边（或者最下边，比如图里这样）：</p>
-<img src="/blog/mac/Mac-3/minimized.jpg" alt="minimized" title="minimized">
+<img src="/blog/mac/Mac-3/minimized.jpg" title="minimized">
 <p>这时候我们想把窗口恢复回来，如果我们是“隐藏的”，只需要按 <kbd>Cmd</kbd> + <kbd>Tab</kbd> 就可以了。但如果是“最小化”的，事情就变得十分微妙</p>
 <p>试一下就可以发现，<kbd>Cmd</kbd> + <kbd>Tab</kbd> 是不能让窗口显示回来的。这时候我们有三种方式把窗口弄回来。第一种当然是用鼠标点，点击 Dock 栏最右边（下边）的窗口图标。只是这样不够效率，特别是在多屏的情况下。以下提供两种键盘快捷键操作：</p>
 <p>这种方式看起来复杂，但适应之后，其实很顺手的。美中不足的是，它只适合开启了单个窗口的 App：</p>
@@ -367,7 +368,7 @@
 <li>大拇指滑一下，<strong>保持</strong> <kbd>Cmd</kbd> <strong>按住的同时</strong>按住 <kbd>Option</kbd></li>
 <li>继续滑大拇指，<strong>保持</strong> <kbd>Option</kbd> <strong>按住的情况下</strong>松开 <kbd>Cmd</kbd>，这时候就能看到窗口已经回来了。然后松开 <kbd>Option</kbd> 即可</li>
 </ol>
-<img src="/blog/mac/Mac-3/show-minimized-1.gif" alt="show-minimized-1" title="show-minimized-1">
+<img src="/blog/mac/Mac-3/show-minimized-1.gif" title="show-minimized-1">
 <p>另一种方式需要自带的一个类似与 App Expose 的功能。如果我们的一个 App 有很多窗口打开，可以这样做：</p>
 <ol>
 <li><kbd>Cmd</kbd> + <kbd>Tab</kbd> 选中最小化窗口的 App，和上面一样</li>
@@ -376,7 +377,7 @@
 <li>按回车，窗口就回来了</li>
 </ol>
 <p>另外，这个功能在任何时候都可以用，默认设置这里是开启的，只是在键盘快捷键设置中叫 Application Windows，在触摸板设置中叫 App Expose。我们可以通过 <kbd>Ctrl</kbd> + <kbd>↓</kbd> 激活：</p>
-<img src="/blog/mac/Mac-3/application-windows.jpg" alt="application-windows" title="application-windows">
+<img src="/blog/mac/Mac-3/application-windows.jpg" title="application-windows">
 <p>激活之后还可以通过 <kbd>Tab</kbd> 来切换其他 App。顺便，那个 Mission Control，也就是 <kbd>Ctrl</kbd> + <kbd>↓</kbd> 和触摸板四指上滑效果是一样的，都是查看所有打开的窗口。</p>
 <h1 id="Tab"><a href="#Tab" class="headerlink" title="Tab"></a>Tab</h1><p>在 Chrome，Webstorm，iTerm 以及 Safari 等绝大部分常用 App 中，我们可以通过快捷键 <kbd>Cmd</kbd> + <kbd>t</kbd> 来新建一个 tab。最新版的 macOS 还引入了系统原生 App 对 tabs（标签）的支持，比如 Finder</p>
 <p>切换方面，macOS 原生的 App，比如 Finder 和 Safari，都可以通过 <kbd>Ctrl</kbd> + <kbd>Tab</kbd> 或者 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 来切换，也可以通过 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd> 或者 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd> 来切换。我更喜欢前面的那种方式</p>
@@ -387,22 +388,22 @@
 <li>Chrome 是 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>←</kbd> 和 <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>→</kbd></li>
 </ul>
 <p>对于 Safari 的快捷键，我们可以直接在系统设置里改：</p>
-<img src="/blog/mac/Mac-3/safari-shortcut.jpg" alt="safari-shortcut" title="safari-shortcut">
+<img src="/blog/mac/Mac-3/safari-shortcut.jpg" title="safari-shortcut">
 <h1 id="Space"><a href="#Space" class="headerlink" title="Space"></a>Space</h1><p>Space 本义是空间，macOS 中，官方也没有给出中文翻译，我们可以简单地把它理解为“工作区”。这个功能确实可以为我们在使用中提供不少的便利，只是我个人不太习惯这种操作方式，尤其是在已经配了多屏幕的条件下</p>
 <p>如果我们点击窗口左上角，最右边那个两个箭头的按钮，就会把这个窗口放到一个新的 Space 里面，并且全屏。这时候我们可以调出来 Mission Control 看看。按照<strong>默认设置</strong>，我们可以通过 <kbd>Ctrl</kbd> + <kbd>↑</kbd> 或者直接按 <kbd>F3</kbd> 或者在触摸板上四指上滑来打开。<strong>所有的屏幕以及屏幕上的所有窗口</strong>都会显示出来：</p>
-<img src="/blog/mac/Mac-3/space.jpg" alt="space" title="space">
+<img src="/blog/mac/Mac-3/space.jpg" title="space">
 <p>最上面的就是 Space，我们可以点击最右侧的“＋”新建一个空的 Space，也可以拖拽一个窗口上去形成新的 Space：</p>
-<img src="/blog/mac/Mac-3/new-space.jpg" alt="new-space" title="new-space">
+<img src="/blog/mac/Mac-3/new-space.jpg" title="new-space">
 <p>新建的 Space 中窗口是全屏的。上文提到过，点击窗口按钮最右边那个两个箭头的图标也可以实现相同的效果。这时，我们还可以再拖一个窗口上去，这样就可以让这两个窗口在屏幕上左右排列，各占 50%，这个功能是在上一个 macOS 稳定版 El Capitan 系统中才加入的，效果如图：</p>
-<img src="/blog/mac/Mac-3/split-screen.jpg" alt="split-screen" title="split-screen">
+<img src="/blog/mac/Mac-3/split-screen.jpg" title="split-screen">
 <p>切换 Space 其实非常方便，我们只需要在触摸板上四指向左右滑动就可以了，默认的键盘快捷键是 <kbd>Ctrl</kbd> + <kbd>←</kbd> 和 <kbd>Ctrl</kbd> + <kbd>→</kbd></p>
 <p>记得我一年多以前，刚开始接触 macOS 的时候，那时候刚更新了 El Capitan 系统，朋友就教会了我这个玩法。那时候我还没入多屏的坑，写代码的时候 IDE 放到一个 Space，Google 和 Dash 之类的放到另一个，需要查资料，一滑就行。很可惜的是，macOS 新建的 Space 只能放两个窗口，而且只能横向排列。但好消息是，Space 是无限的 😂</p>
-<p>直到我发现我同时开的窗口越来越多，也就开始寻找窗口管理的解决方案了。第三方 App 很多，付费的、免费的和开源的都有。试了大部分之后，我决定自己写配置。如果你对这个感兴趣，欢迎来看看我的第一篇<a href="http://singsing.io/blog/hs/HammerSpoon-1/" target="_blank" rel="external">博客</a>。我写的插件也放到了 <a href="https://github.com/S1ngS1ng/hammerspoon" target="_blank" rel="external">Github</a> 上，<a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/README-cn.md" target="_blank" rel="external">中文文档和示例</a> 也都加好了。最新的一次更新，加入了类似与 Windows 中 “Cycle through” 的效果，就是 <kbd>Win</kbd> + <kbd>←/→</kbd> 的效果。安装和使用也很简单，希望你能从中获得些思路。如果你也是开发者，欢迎给我的这个 repo 提交 issue 和 PR</p>
+<p>直到我发现我同时开的窗口越来越多，也就开始寻找窗口管理的解决方案了。第三方 App 很多，付费的、免费的和开源的都有。试了大部分之后，我决定自己写配置。如果你对这个感兴趣，欢迎来看看我的第一篇<a href="http://singsing.io/blog/hs/HammerSpoon-1/" target="_blank" rel="noopener">博客</a>。我写的插件也放到了 <a href="https://github.com/S1ngS1ng/hammerspoon" target="_blank" rel="noopener">Github</a> 上，<a href="https://github.com/S1ngS1ng/HammerSpoon/blob/master/README-cn.md" target="_blank" rel="noopener">中文文档和示例</a> 也都加好了。最新的一次更新，加入了类似与 Windows 中 “Cycle through” 的效果，就是 <kbd>Win</kbd> + <kbd>←/→</kbd> 的效果。安装和使用也很简单，希望你能从中获得些思路。如果你也是开发者，欢迎给我的这个 repo 提交 issue 和 PR</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这篇主要涉及到了 macOS 最基本的三个概念：窗口、标签和工作区。用好这三个功能，一定可以起到事半功倍的效果</p>
 <h1 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h1><p>下一篇博客将为大家介绍一些常用的系统内置功能。以下为更新之后的大纲：</p>
 <ol>
-<li><a href="http://singsing.io/blog/mac/Mac-1/" target="_blank" rel="external">文本编辑相关操作</a></li>
-<li><a href="http://singsing.io/blog/mac/Mac-2/" target="_blank" rel="external">截图，Gif 制作以及 App 推荐</a></li>
+<li><a href="http://singsing.io/blog/mac/Mac-1/" target="_blank" rel="noopener">文本编辑相关操作</a></li>
+<li><a href="http://singsing.io/blog/mac/Mac-2/" target="_blank" rel="noopener">截图，Gif 制作以及 App 推荐</a></li>
 <li>macOS 的窗口、标签与工作区（本篇）</li>
 <li>macOS 的实用功能</li>
 <li>如何调教系统，让它更符合你的使用习惯</li>
@@ -440,18 +441,18 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/mac/Mac-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/fcc/basic-reverse-a-string/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐
+          FreeCodeCamp 初级算法题 - 翻转字符串
         
       </div>
     </a>
   
   
-    <a href="/blog/fcc/basic-reverse-a-string/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FreeCodeCamp 初级算法题 - 翻转字符串</div>
+    <a href="/blog/mac/Mac-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -529,18 +530,18 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/mac/Mac-2/" title="上一篇: 你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐">
+            <a href="/blog/fcc/basic-reverse-a-string/" title="上一篇: FreeCodeCamp 初级算法题 - 翻转字符串">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/blog/fcc/basic-reverse-a-string/" title="下一篇: FreeCodeCamp 初级算法题 - 翻转字符串">
+            <a href="/blog/mac/Mac-2/" title="下一篇: 你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-no-repeats-please/">FreeCodeCamp 高级算法题 - 字符串排列</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-inventory-update/">FreeCodeCamp 高级算法题 - 更新库存</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-exact-change/">FreeCodeCamp 高级算法题 - 计算找零</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-symmetric-difference/">FreeCodeCamp 高级算法题 - 数组的对称差</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-validate-us-telephone-numbers/">FreeCodeCamp 高级算法题 - 验证美国电话号</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-arguments-optional/">FreeCodeCamp 中级算法题 - 可选的参数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-everything-be-true/">FreeCodeCamp 中级算法题 - 检查对象属性</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-binary-agents/">FreeCodeCamp 中级算法题 - 翻译二进制字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-steamroller/">FreeCodeCamp 中级算法题 - 数组扁平化</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-drop-it/">FreeCodeCamp 中级算法题 - 按参数删除数组元素</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-finders-keepers/">FreeCodeCamp 中级算法题 - 按参数过滤数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-smallest-common-multiple/">FreeCodeCamp 中级算法题 - 找出数字范围的最小公倍数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-primes/">FreeCodeCamp 中级算法题 - 质数求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/">FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-spinal-tap-case/">FreeCodeCamp 中级算法题 - 字符串格式转换 - 短线连接格式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-convert-html-entities/">FreeCodeCamp 中级算法题 - 转换 HTML 实体字符</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sorted-union/">FreeCodeCamp 中级算法题 - 多个数组元素排序</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-boo-hoo/">FreeCodeCamp 中级算法题 - 基本布尔类型检查</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-missing-letters/">FreeCodeCamp 中级算法题 - 寻找缺失的字母</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-dna-pairing/">FreeCodeCamp 中级算法题 - DNA 配对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-pig-latin/">FreeCodeCamp 中级算法题 - 儿童黑话</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-search-and-replace/">FreeCodeCamp 中级算法题 - 句中查找替换</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-where-art-thou/">FreeCodeCamp 中级算法题 - 找出对象包含的特定键值对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-diff-two-arrays/">FreeCodeCamp 中级算法题 - 比较两数组差异</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-friendly-date-ranges/">FreeCodeCamp 高级算法题 - 日期区间</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-no-repeats-please/">FreeCodeCamp 高级算法题 - 字符串排列</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-inventory-update/">FreeCodeCamp 高级算法题 - 更新库存</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-exact-change/">FreeCodeCamp 高级算法题 - 计算找零</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-symmetric-difference/">FreeCodeCamp 高级算法题 - 数组的对称差</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/advanced-validate-us-telephone-numbers/">FreeCodeCamp 高级算法题 - 验证美国电话号</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-arguments-optional/">FreeCodeCamp 中级算法题 - 可选的参数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-everything-be-true/">FreeCodeCamp 中级算法题 - 检查对象属性</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-binary-agents/">FreeCodeCamp 中级算法题 - 翻译二进制字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-steamroller/">FreeCodeCamp 中级算法题 - 数组扁平化</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-drop-it/">FreeCodeCamp 中级算法题 - 按参数删除数组元素</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-finders-keepers/">FreeCodeCamp 中级算法题 - 按参数过滤数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-smallest-common-multiple/">FreeCodeCamp 中级算法题 - 找出数字范围的最小公倍数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-primes/">FreeCodeCamp 中级算法题 - 质数求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-odd-fibonacci-numbers/">FreeCodeCamp 中级算法题 - 斐波那契数列奇数项求和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-spinal-tap-case/">FreeCodeCamp 中级算法题 - 字符串格式转换 - 短线连接格式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-convert-html-entities/">FreeCodeCamp 中级算法题 - 转换 HTML 实体字符</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sorted-union/">FreeCodeCamp 中级算法题 - 多个数组元素排序</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-boo-hoo/">FreeCodeCamp 中级算法题 - 基本布尔类型检查</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-missing-letters/">FreeCodeCamp 中级算法题 - 寻找缺失的字母</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-dna-pairing/">FreeCodeCamp 中级算法题 - DNA 配对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-pig-latin/">FreeCodeCamp 中级算法题 - 儿童黑话</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-search-and-replace/">FreeCodeCamp 中级算法题 - 句中查找替换</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-where-art-thou/">FreeCodeCamp 中级算法题 - 找出对象包含的特定键值对</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-roman-numeral-converter/">FreeCodeCamp 中级算法题 - 罗马数字转换器</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-diff-two-arrays/">FreeCodeCamp 中级算法题 - 比较两数组差异</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/intermediate-sum-all-numbers-in-a-range/">FreeCodeCamp 中级算法题 - 给定范围内的数字总和</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-caesars-cipher/">FreeCodeCamp 初级算法题 - 凯撒密码</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-where-do-i-belong/">FreeCodeCamp 初级算法题 - 数组排序并找出元素索引</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-seek-and-destroy/">FreeCodeCamp 初级算法题 - 摧毁数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-falsy-bouncer/">FreeCodeCamp 初级算法题 - 过滤数组假值</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-mutations/">FreeCodeCamp 初级算法题 - 比较字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-slasher-flick/">FreeCodeCamp 初级算法题 - 截断数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-chunky-monkey/">FreeCodeCamp 初级算法题 - 猴子吃香蕉, 分割数组</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-truncate-a-string/">FreeCodeCamp 初级算法题 - 截断字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-repeat-a-string-repeat-a-string/">FreeCodeCamp 初级算法题 - 重复输出字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-confirm-the-ending/">FreeCodeCamp 初级算法题 - 检查字符串结尾</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-return-largest-numbers-in-arrays/">FreeCodeCamp 初级算法题 - 找出多个数组中的最大数</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-title-case-a-sentence/">FreeCodeCamp 初级算法题 - 句中单词首字母大写</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-find-the-longest-word-in-a-string/">FreeCodeCamp 初级算法题 - 找出最长的单词</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-check-for-palindromes/">FreeCodeCamp 初级算法题 - 检查回文字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-factorialize-a-number/">FreeCodeCamp 初级算法题 - 计算整数阶乘</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/fcc/basic-reverse-a-string/">FreeCodeCamp 初级算法题 - 翻转字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-3/">你可能不知道的 Mac 技巧 - macOS 的窗口、标签与工作区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-2/">你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/mac/Mac-1/">你可能不知道的 Mac 技巧 - 文本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-2/">HammerSpoon - 实现音乐播放的全局键盘控制</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/hs/HammerSpoon-1/">HammerSpoon - 不止是窗口管理</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/dev/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -570,7 +571,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2017 S1ngS1ng
+                &copy; 2018 S1ngS1ng
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
