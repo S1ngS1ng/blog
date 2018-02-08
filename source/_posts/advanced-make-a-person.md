@@ -1,5 +1,5 @@
 ---
-title: FreeCodeCamp 高级算法题 - 字符串排列
+title: FreeCodeCamp 高级算法题 - 构造对象
 date: 2018-02-06 21:38:37
 tags: [FreeCodeCamp,高级,算法]
 categories: FCC
