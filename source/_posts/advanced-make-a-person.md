@@ -30,8 +30,39 @@ var bob = new Person('Bob Ross');
     2. 对象拥有 `Person` 函数中用 `this` 定义的属性或方法
     3. 如果 `Person` 函数本身又返回值，那这个返回值就会赋值给 `bob`。否则，就把第一步创建的对象赋值给 `bob`
 
+- 题目中，第一个测试实例说到，`Object.keys(bob).length` 应该返回 `6`。这句话的意思是，我们只应该给实例绑定题目中列出的六个方法。至于传入的 `firstAndLast`，虽然这就是全名，但我们也不应该用 `this` 把这个值绑定给实例
+- 需要注意的是，如果用 `prototype` 给构造函数添加属性，那么生成的实例是可以通过属性名来获取到对应的值的。而且，这个属性不会直接出现在实例中，而是藏在 `__proto__` 属性里面，而 `Object.keys` 是不会计算 `__proto__` 原型对象中的属性的。在这道题目中，我们其实不需要去折腾原型链。只要把名字作为局部变量放在构造函数里就可以了
+- 根据题目要求，有时候我们需要返回全名，有时候我们只需要返回姓或名。因此，比较简单的处理方式就是把姓和名放到数组中来保存，如果需要返回全名，直接 `join` 一下就可以了
+- 为了方便，我们也可以把全名作为字符串赋值给一个局部变量。当然，如果这样做，更新的时候不要忘了同时更新这个变量和数组
+
 ## 参考资料
 - [new 操作符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new)
 
-## 关于原型链继承
-- 上面说到，原型继承自构造函数的 `.prototype`。原型链继承一直是一个比较难理解的部分，至少对我来说，理解了原理，有时候还是用不好
+## 代码
+```js
+var Person = function(firstAndLast) {
+    var nameArr = firstAndLast.split(' ');
+    
+    this.getFirstName = function() {
+        return nameArr[0];
+    };
+    this.getLastName = function() {
+        return nameArr[1];
+    }
+    this.getFullName = function() {
+        return nameArr.join(' ');
+    }
+    
+    this.setLastName = function(lastName) {
+        nameArr[1] = lastName;
+    }
+    this.setFirstName = function(firstName) {
+        nameArr[0] = firstName;
+    }
+    this.setFullName = function(fullName) {
+        nameArr = fullName.split(' ');
+    }
+}
+
+var bob = new Person('Bob Ross');
+```
