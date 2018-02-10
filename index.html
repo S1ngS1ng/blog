@@ -283,6 +283,177 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-advanced-map-the-debris" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/advanced-map-the-debris/" class="article-date">
+      <time datetime="2018-02-08T04:24:45.000Z" itemprop="datePublished">2018-02-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/fcc/advanced-map-the-debris/">FreeCodeCamp 高级算法题 - 计算轨道周期</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="计算轨道周期-Map-the-debris"><a href="#计算轨道周期-Map-the-debris" class="headerlink" title="计算轨道周期 (Map the debris)"></a>计算轨道周期 (Map the debris)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://freecodecamp.cn/challenges/map-the-debris" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/map-the-debris" target="_blank" rel="noopener">英文链接</a></li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>这个 <code>function</code> 接收一个对象数组 <code>arr</code>。每个对象包含 <code>name</code> 和 <code>avgAlt</code> 属性。返回值也是一个对象数组，每个对象包含 <code>name</code> 和 <code>orbitalPeriod</code> 属性</li>
+</ul>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><ul>
+<li>这可能是高级算法中最简单的题目之一。用遍历，或者 <code>map</code> 实现都可以</li>
+<li>如果不知道如何计算轨道周期，请先点开 wikipedia 的链接查看公式。题目要求的返回值，其实就是根据传入数据中每一个 <code>avgAlt</code> 的值计算出轨道周期，然后把属性改为 <code>orbitalPeriod</code>，并保持 <code>name</code> 属性和值不变</li>
+<li>需要注意的是，公式 <code>T = 2π * (a^3 / μ)^(-1/2)</code> 中的 <code>a</code> 在题目中等于 <code>avgAlt + earthRadius</code>。<code>μ</code> 的值就是代码中给出的 <code>GM</code></li>
+<li>如果采用 ES6 的写法，会有一个小坑，详情看博文最后的解释</li>
+</ul>
+<h1 id="解法-遍历"><a href="#解法-遍历" class="headerlink" title="解法 - 遍历"></a>解法 - 遍历</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orbitalPeriod</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> GM = <span class="number">398600.4418</span>;</span><br><span class="line">    <span class="keyword">var</span> earthRadius = <span class="number">6367.4447</span>;</span><br><span class="line">    <span class="comment">// 用于存储结果</span></span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> name = arr[i].name;</span><br><span class="line">        <span class="keyword">var</span> orbitalPeriod = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow((earthRadius + arr[i].avgAlt), <span class="number">3</span>) / GM) * <span class="number">2</span> * <span class="built_in">Math</span>.PI);</span><br><span class="line">        result.push(&#123;</span><br><span class="line">            name: name,</span><br><span class="line">            orbitalPeriod: orbitalPeriod</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="解法-数组-map-方法"><a href="#解法-数组-map-方法" class="headerlink" title="解法 - 数组 map 方法"></a>解法 - 数组 map 方法</h1><h2 id="代码-ES5"><a href="#代码-ES5" class="headerlink" title="代码 - ES5"></a>代码 - ES5</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orbitalPeriod</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> GM = <span class="number">398600.4418</span>;</span><br><span class="line">    <span class="keyword">var</span> earthRadius = <span class="number">6367.4447</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            name: obj.name,</span><br><span class="line">            orbitalPeriod: <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow((earthRadius + obj.avgAlt), <span class="number">3</span>) / GM) * <span class="number">2</span> * <span class="built_in">Math</span>.PI)</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解法-ES6"><a href="#解法-ES6" class="headerlink" title="解法 - ES6"></a>解法 - ES6</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orbitalPeriod</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> GM = <span class="number">398600.4418</span>;</span><br><span class="line">    <span class="keyword">var</span> earthRadius = <span class="number">6367.4447</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> arr.map(<span class="function"><span class="params">obj</span> =&gt;</span> (&#123;</span><br><span class="line">        name: obj.name,</span><br><span class="line">        orbitalPeriod: <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow((earthRadius + obj.avgAlt), <span class="number">3</span>) / GM) * <span class="number">2</span> * <span class="built_in">Math</span>.PI)</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>使用箭头函数的时候，如果不加大括号，那箭头函数后面的就是返回值。当然，我们也可以用大括号包起来，并在里面加上 <code>return</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下两种写法都返回 [2, 3, 4]</span></span><br><span class="line">arr.map(<span class="function"><span class="params">num</span> =&gt;</span> num + <span class="number">1</span>);</span><br><span class="line">arr.map(<span class="function"><span class="params">num</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num + <span class="number">1</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>因此，如果我们希望返回 object，就不能直接用对象字面量 (Object Literal，也就是大括号的形式) 定义返回值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们希望给每个 age 加 10</span></span><br><span class="line"><span class="keyword">var</span> json = [&#123;<span class="attr">name</span>: <span class="string">'a'</span>, <span class="attr">age</span>: <span class="number">1</span>&#125;, &#123;<span class="attr">name</span>: <span class="string">'b'</span>, <span class="attr">age</span>: <span class="number">5</span>&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这种写法是错误的，会得到 [undefined, undefined]</span></span><br><span class="line">json.map(<span class="function"><span class="params">obj</span> =&gt;</span> &#123;<span class="attr">age</span>: obj.age + <span class="number">10</span>&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面的写法在编译到 ES5 的时候，会是这样的结果：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">json.map(<span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    age: obj.age + <span class="number">10</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>显然，这里是没有返回值的。因此，需要写成：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回 [&#123;age: 11&#125;, &#123;age: 15&#125;]</span></span><br><span class="line">json.map(<span class="function"><span class="params">obj</span> =&gt;</span> (&#123;<span class="attr">age</span>: obj.age + <span class="number">10</span>&#125;));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当然，这道题用 <code>forEach</code> 也是可以的。个人更喜欢用 <code>map</code>，因为 <code>map</code> 有返回值，而 <code>forEach</code> 没有</li>
+</ul>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/高级/">高级</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-advanced-make-a-person" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/fcc/advanced-make-a-person/" class="article-date">
+      <time datetime="2018-02-07T02:38:37.000Z" itemprop="datePublished">2018-02-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/fcc/advanced-make-a-person/">FreeCodeCamp 高级算法题 - 构造对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="构造对象-Make-a-person"><a href="#构造对象-Make-a-person" class="headerlink" title="构造对象 (Make a person)"></a>构造对象 (Make a person)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
+<li><a href="https://freecodecamp.cn/challenges/make-a-person" target="_blank" rel="noopener">中文链接</a></li>
+<li><a href="https://freecodecamp.com/challenges/make-a-person" target="_blank" rel="noopener">英文链接</a></li>
+</ul>
+<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
+<li>不同于其他题目，在这道题中，我们需要写一个构造函数。这个构造函数接收一个字符串参数 <code>firstAndLast</code></li>
+<li>如果 <code>str</code> 为 <code>&quot;Bob Ross&quot;</code>，则构造出实例的全名为 “Bob Ross”，姓氏为 “Ross”，名字为 “Bob”</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/高级/">高级</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/blog/fcc/advanced-make-a-person/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-advanced-no-repeats-please" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -861,156 +1032,6 @@
       
         <p class="article-more-link">
           <a  href="/blog/fcc/intermediate-binary-agents/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-intermediate-steamroller" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/fcc/intermediate-steamroller/" class="article-date">
-      <time datetime="2017-07-09T02:18:56.000Z" itemprop="datePublished">2017-07-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/fcc/intermediate-steamroller/">FreeCodeCamp 中级算法题 - 数组扁平化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="数组扁平化-Steamroller"><a href="#数组扁平化-Steamroller" class="headerlink" title="数组扁平化 (Steamroller)"></a>数组扁平化 (Steamroller)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/steamroller" target="_blank" rel="noopener">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/steamroller" target="_blank" rel="noopener">英文链接</a></li>
-</ul>
-<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接受一个数组参数 <code>arr</code>，返回值为扁平化之后的数组</li>
-<li>如果 <code>arr</code> 是 <code>[1, [2], [[3]]]</code>，那么返回值应为 <code>[1, 2, 3]</code></li>
-<li>值得注意的是，如果存在空数组，那我们不应保留，如果存在空的 <code>Object</code>，那我们需要保留。比如，当 <code>arr</code> 是 <code>[1, [], {}]</code> 时，返回值应为 <code>[1, {}]</code></li>
-</ul>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/blog/fcc/intermediate-steamroller/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-intermediate-drop-it" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/fcc/intermediate-drop-it/" class="article-date">
-      <time datetime="2017-07-08T02:55:42.000Z" itemprop="datePublished">2017-07-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/fcc/intermediate-drop-it/">FreeCodeCamp 中级算法题 - 按参数删除数组元素</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="按参数删除数组元素-Drop-it"><a href="#按参数删除数组元素-Drop-it" class="headerlink" title="按参数删除数组元素 (Drop it)"></a>按参数删除数组元素 (Drop it)</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><ul>
-<li><a href="https://freecodecamp.cn/challenges/drop-it" target="_blank" rel="noopener">中文链接</a></li>
-<li><a href="https://freecodecamp.com/challenges/drop-it" target="_blank" rel="noopener">英文链接</a></li>
-</ul>
-<h2 id="问题解释"><a href="#问题解释" class="headerlink" title="问题解释"></a>问题解释</h2><ul>
-<li>这个 <code>function</code> 接受一个数组参数 <code>arr</code> 和一个函数参数 <code>func</code>。返回值为 <code>arr</code> 第一个满足参数 <code>func</code> 的元素及其之后的所有元素</li>
-<li>如果 <code>arr</code> 是 <code>[1, 2, 3, 4]</code>，<code>func</code> 是 <code>function(n) {return n &gt;=3;}</code>，那么此时返回值应为 <code>[3, 4]</code></li>
-<li>更值得关注的是这样的情况，如果 <code>arr</code> 是 <code>[0, 1, 0, 1]</code>，<code>func</code> 是 <code>function(n) {return n === 1;}</code>，那么此时返回值应为 <code>[1, 0, 1]</code></li>
-</ul>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/fcc/">FCC</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/中级/">中级</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/blog/fcc/intermediate-drop-it/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
