@@ -14,6 +14,8 @@ categories: FCC
 ## 问题解释
 - 这个 `function` 接收一个对象数组 `arr`。每个对象包含 `name` 和 `avgAlt` 属性。返回值也是一个对象数组，每个对象包含 `name` 和 `orbitalPeriod` 属性
 
+<!--more-->
+
 # 解题思路
 - 这可能是高级算法中最简单的题目之一。用遍历，或者 `map` 实现都可以
 - 如果不知道如何计算轨道周期，请先点开 wikipedia 的链接查看公式。题目要求的返回值，其实就是根据传入数据中每一个 `avgAlt` 的值计算出轨道周期，然后把属性改为 `orbitalPeriod`，并保持 `name` 属性和值不变
