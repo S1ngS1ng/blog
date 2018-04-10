@@ -68,12 +68,12 @@ function sumPrimes(num) {
 
 # 优化 - 数学方法
 ## 思路提示
--   首先，对于一个数字 `x`，我们不需要从 `2` 一直循环到 `x` 来验证它是否为质数，只需要验证到 `x/2` 就够了，也就是 `x` 的一半。因为 `x` 除以 `x/2` 到 `x` 的范围内的任何数，商一定是小于 `2` 的。因此，对于 `isPrime` 方法，我们就可以写成这样：
+- 首先，对于一个数字 `x`，我们不需要从 `2` 一直循环到 `x` 来验证它是否为质数，只需要验证到 `x/2` 就够了，也就是 `x` 的一半。因为 `x` 除以 `x/2` 到 `x` 的范围内的任何数，商一定是小于 `2` 的。因此，对于 `isPrime` 方法，我们就可以写成这样：
 
 ```javascript
 function isPrime(num) {
     for (var i = 2; i < num / 2; i++) {
-        if (current % i === 0) {
+        if (num % i === 0) {
             return false;
         }
     }
@@ -81,12 +81,12 @@ function isPrime(num) {
 }
 ```
 
-- 因此，现在代码就是：
+- 另外，其实判断到 `x/2` 也是不必要的，判断到 `x^(1/2)` 就够了，也就是根号 `x` (证明从略)。因此，现在代码就是：
 
 ```javascript
 function isPrime(num) {
     for (var i = 2; i < Math.sqrt(num); i++) {
-        if (current % i === 0) {
+        if (num % i === 0) {
             return false;
         }
     }
