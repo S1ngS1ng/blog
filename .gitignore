@@ -1,0 +1,36 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project dependencies
+node_modules
+.cache/
+
+# Build directory
+public/
+
+# Log
+yarn-error.log
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+
+# VSCode
+.vscode/*
+.vscode*.json
+
+# Jetbrains
+.idea/
+
+# Sublime
+*.sublime-workspace
